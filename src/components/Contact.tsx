@@ -55,38 +55,37 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <Phone className="w-6 h-6" />,
-      title: "Phone Support",
-      details: ["+27 (0)11 123 4567", "+61 (0)2 9876 5432"],
-      description: "24/7 Emergency Support Available"
+      title: "Call Us",
+      details: ["+27 87 822 2380", "+27 78 862 0716 (WhatsApp)", "@SupportCALL.01 (Signal)"],
+      description: "Available with after-hours standby"
     },
     {
       icon: <Mail className="w-6 h-6" />,
-      title: "Email Us",
-      details: ["info@techconnect.co.za", "support@techconnect.com.au"],
-      description: "We respond within 2 hours"
+      title: "Email Support",
+      details: ["info@supportcall.co.za", "info@supportcall.com.au"],
+      description: "We aim to respond ASAP, within 24 hours"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
-      title: "Our Offices",
+      title: "Offices",
       details: ["Johannesburg, South Africa", "Sydney, Australia"],
-      description: "Serving clients globally"
+      description: "Serving both continents"
     },
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Business Hours",
-      details: ["Mon - Fri: 8:00 AM - 6:00 PM", "Weekend: Emergency Support"],
-      description: "All time zones covered"
+      details: ["Mon - Fri: 09H00 - 16H00 SAST", "After-hours standby for urgent issues"],
+      description: "Regular support hours"
     }
   ];
 
   const services = [
-    "Enterprise ICT Solutions",
-    "Security & Compliance",
-    "Cloud Services",
-    "24/7 Support",
-    "Remote Management",
-    "Consulting Services",
-    "Other"
+    "SupportCALL Site - General Enquiry",
+    "SupportCALL Site - Web Development", 
+    "SupportCALL Site - Managed or Unmanaged Services",
+    "SupportCALL Site - ISP & Connectivity",
+    "SupportCALL Site - Join our Team",
+    "SupportCALL Site - Other"
   ];
 
   return (
@@ -98,11 +97,11 @@ const Contact = () => {
             Get In Touch
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Ready to Transform Your ICT?
+            Are You Looking For Someone To Take Care Of All Your ICT Needs?
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Contact our experts today for a free consultation. We're here to help you 
-            navigate your digital transformation journey.
+            We value every client and would love to hear from you. Contact us today for expert 
+            ICT solutions tailored to your business needs.
           </p>
         </div>
 

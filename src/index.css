@@ -1,3 +1,8 @@
+/* SupportCALL and David Maree */
+/* https://www.supportcall.co.za/index.html */
+/* ./index.html */
+/* FILE CODE CREATION DATE and TIME: 2025/01/04 12H00 */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -41,11 +46,12 @@ All colors MUST be HSL for consistency.
 
     --radius: 0.75rem;
 
-    /* ICT Specific Colors */
-    --tech-blue: 200 100% 40%;
-    --tech-green: 142 71% 45%;
-    --tech-navy: 220 15% 25%;
-    --tech-gray: 220 9% 46%;
+    /* SupportCALL brand colors - Professional ICT palette */
+    --supportcall-blue: 210 100% 45%;
+    --supportcall-green: 142 76% 35%;
+    --supportcall-navy: 210 50% 12%;
+    --supportcall-gray: 220 15% 88%;
+    --supportcall-orange: 25 95% 53%;
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));

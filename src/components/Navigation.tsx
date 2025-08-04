@@ -10,6 +10,7 @@ const Navigation = () => {
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
     { name: "Testimonials", href: "#testimonials" },
+    { name: "Locations", href: "#locations" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -19,7 +20,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-bold text-primary">TechConnect</h1>
+            <h1 className="text-xl font-bold text-primary">SupportCALL</h1>
           </div>
 
           {/* Desktop Navigation */}

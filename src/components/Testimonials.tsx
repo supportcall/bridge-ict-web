@@ -8,60 +8,60 @@ const Testimonials = () => {
       company: "Highway Corporate Services",
       duration: "20+ Years Service",
       logo: "HCS",
-      testimonial: "TechConnect provides exceptional ICT support with unmatched reliability. Their proactive approach and deep technical expertise have been instrumental in our business growth over two decades.",
+      testimonial: "SupportCALL provides a high quality, independent, professional advisory and support service to our clients in the fields of company secretaryship and corporate governance.",
       rating: 5,
-      contact: "Managing Director"
+      contact: "Corporate Services"
     },
     {
-      company: "Australian Mining Corp",
-      duration: "15+ Years Service",
-      logo: "AMC",
-      testimonial: "Outstanding service delivery across multiple time zones. TechConnect's 24/7 support ensures our operations never skip a beat, whether we're in Perth or Johannesburg.",
+      company: "Sherwood After Hours Veterinary Clinic",
+      duration: "10+ Years Service",
+      logo: "SAH",
+      testimonial: "Being an after-hours emergency clinic we have often needed to call on him for support at all hours of the day and night. David has always made himself available and has gone out of his way to resolve any problems that we may have had as soon as possible, even if it meant a midnight callout.",
       rating: 5,
-      contact: "IT Director"
+      contact: "Practice Manager"
     },
     {
-      company: "FinServ Solutions",
-      duration: "12+ Years Service",
-      logo: "FSS",
-      testimonial: "Their security-first approach and compliance expertise make them our trusted ICT partner. TechConnect understands the critical nature of financial services infrastructure.",
+      company: "Sheriff Camperdown",
+      duration: "5+ Years Service",
+      logo: "SC",
+      testimonial: "We incorporated SupportCALL in our team of experts when we were setting up our business in 2017. By the time we opened our doors everything was in its place and we were up and running. Thanks to SupportCALL's speedy, friendly and professional service.",
       rating: 5,
-      contact: "CTO"
+      contact: "Business Operations"
     },
     {
-      company: "MedTech Innovation",
-      duration: "8+ Years Service",
-      logo: "MTI",
-      testimonial: "Reliable, professional, and always available when we need them. TechConnect's support has been crucial in maintaining our healthcare technology systems.",
+      company: "National Renal Care",
+      duration: "25+ Years Service",
+      logo: "NRC",
+      testimonial: "IT related issues at our units that he services have been taken care of by SupportCALL for over 5 years. I trust him with the quality products and equipment he uses for support and his work is always on time. I have never faced a situation where the work has been delayed and not done properly.",
       rating: 5,
-      contact: "Operations Manager"
+      contact: "IT Operations"
     }
   ];
 
   const stats = [
     {
       icon: <Users className="w-8 h-8" />,
-      number: "500+",
-      label: "Happy Clients",
-      description: "Enterprises trust us globally"
-    },
-    {
-      icon: <Clock className="w-8 h-8" />,
-      number: "20+",
-      label: "Years Experience",
-      description: "Proven track record"
+      number: "18",
+      label: "Locations",
+      description: "Service points across regions"
     },
     {
       icon: <Award className="w-8 h-8" />,
-      number: "99.9%",
-      label: "Uptime Guarantee",
-      description: "Reliable service delivery"
+      number: "99%",
+      label: "Happy Clients",
+      description: "Client satisfaction rate"
     },
     {
-      icon: <TrendingUp className="w-8 h-8" />,
-      number: "24/7",
-      label: "Support Coverage",
-      description: "Always here when you need us"
+      icon: <Clock className="w-8 h-8" />,
+      number: "1.2",
+      label: "Avg Time Onsite",
+      description: "Hours to resolution"
+    },
+    {
+      icon: <Shield className="w-8 h-8" />,
+      number: "0",
+      label: "Injuries on Duty",
+      description: "Perfect safety record"
     }
   ];
 
@@ -74,11 +74,11 @@ const Testimonials = () => {
             Client Testimonials
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            What Our Clients Say
+            Hear What Our Valued Clients Say
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Hear from our valued clients who have trusted us for decades. 
-            Many have been with us for over 20 years!
+            Many have trusted us for over two decades! Here's what some of our 
+            long-standing clients think of our services.
           </p>
         </div>
 
@@ -152,7 +152,7 @@ const Testimonials = () => {
           <CardContent className="p-8">
             <div className="text-center">
               <h3 className="text-2xl font-semibold mb-4">
-                Why Industry Leaders Choose TechConnect
+                Why Industry Leaders Choose SupportCALL
               </h3>
               <div className="grid md:grid-cols-3 gap-8 mt-8">
                 <div className="text-center">

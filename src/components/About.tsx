@@ -27,10 +27,10 @@ const About = () => {
   ];
 
   const achievements = [
-    { number: "500+", label: "Enterprise Clients" },
-    { number: "24/7", label: "Support Coverage" },
-    { number: "99.9%", label: "Uptime Guarantee" },
-    { number: "2", label: "Continents Served" }
+    { number: "18", label: "Locations" },
+    { number: "99%", label: "Happy Clients" },
+    { number: "1.2", label: "Avg Time Onsite - HRS" },
+    { number: "0", label: "Injuries on Duty" }
   ];
 
   return (
@@ -39,15 +39,15 @@ const About = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-4">
-            About TechConnect
+            About SupportCALL
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Your Trusted ICT Partner
+            Your Trusted ICT & iSP Partner
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Delivering comprehensive ICT services, management, and products to clients across 
-            Enterprise, Corporate, SME, and home user levels with a focus on building lasting 
-            trust relationships.
+            SupportCALL delivers comprehensive ICT services, management, and products to clients across 
+            Enterprise, Corporate, SME, and home user levels. With clients in South Africa and internationally, 
+            we prioritize building true trust relationships by putting our clients' needs, interests, and budgets first.
           </p>
         </div>
 
@@ -60,19 +60,21 @@ const About = () => {
             </h3>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                TechConnect delivers comprehensive ICT services to clients not only based in 
-                South Africa and Australia but also internationally. We aim to supply our 
-                clients with the best products and services for their needs and budget.
+                SupportCALL delivers comprehensive ICT services to clients not only based in 
+                South Africa but also internationally. We aim to supply our clients with the best 
+                products and services for their needs and budget. We always deliver and have worked 
+                hard on simple principles to build true trust relationships with our clients.
               </p>
               <p>
-                We always deliver and have worked hard on simple principles to build true 
-                trust relationships with our clients. We are at our happiest when our clients 
-                are happy with the results we deliver.
+                We are at our happiest when our clients are happy with the results we deliver. 
+                Our success stems from our company founder and staff - every staff member loves 
+                our company and being with SupportCALL. Our team therefore loves to do their very best.
               </p>
               <p>
-                Our success stems from our company culture - every staff member loves our 
-                company and being with TechConnect. Our team therefore loves to do their very 
-                best, building long-standing relationships with our clients based on mutual trust.
+                Building long-standing relationships with our clients is very important to us, 
+                building on trust relationships. We employ right and empower our team to be the 
+                best that they could be. We even have clients in the industry themselves calling 
+                for guidance, making us an essential part of their team and business.
               </p>
             </div>
 
@@ -86,9 +88,9 @@ const About = () => {
                       Essential Services During COVID-19
                     </h4>
                     <p className="text-sm text-muted-foreground">
-                      During the challenging COVID-19 lockdown, TechConnect continued to provide 
+                      During the challenging COVID-19 lockdown, SupportCALL continued to provide 
                       essential services, products, and unwavering support, contributing to keeping 
-                      trade, industry, and the public safe.
+                      trade, industry, and the public safe and our country moving forward.
                     </p>
                   </div>
                 </div>

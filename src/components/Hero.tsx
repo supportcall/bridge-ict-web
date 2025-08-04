@@ -17,23 +17,23 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8 animate-fade-in">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full border border-primary/20 bg-primary/10 text-primary text-sm font-medium">
+          <div className="inline-flex items-center px-4 py-2 rounded-full border border-supportcall-orange/20 bg-supportcall-orange/10 text-supportcall-orange text-sm font-medium">
             <Globe className="w-4 h-4 mr-2" />
-            Serving South Africa & Australia
+            SupportCALL - Serving SA & AU since 2004
           </div>
 
           {/* Main Headline */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
             We do{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
-              ICT.
+              ICT & iSP.
             </span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Delivering cutting-edge ICT services, management, and products to enterprises across two continents. 
-            Your trusted technology partner for digital transformation.
+            Delivering comprehensive ICT services, management, and products to clients across Enterprise, 
+            Corporate, SME, and home user levels. Your trusted partner for over 20 years.
           </p>
 
           {/* Feature highlights */}
@@ -67,11 +67,11 @@ const Hero = () => {
           <div className="pt-8">
             <p className="text-sm text-muted-foreground mb-4">Trusted by industry leaders for 20+ years</p>
             <div className="flex justify-center items-center space-x-8 opacity-60">
-              <div className="text-xs font-medium">Enterprise Clients</div>
+              <div className="text-xs font-medium">99% Happy Clients</div>
               <div className="w-px h-4 bg-border"></div>
-              <div className="text-xs font-medium">24/7 Support</div>
+              <div className="text-xs font-medium">24/7 Emergency Support</div>
               <div className="w-px h-4 bg-border"></div>
-              <div className="text-xs font-medium">Global Coverage</div>
+              <div className="text-xs font-medium">18 Locations</div>
             </div>
           </div>
         </div>

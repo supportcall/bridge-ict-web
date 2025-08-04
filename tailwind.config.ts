@@ -63,10 +63,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				'tech-blue': 'hsl(var(--tech-blue))',
-				'tech-green': 'hsl(var(--tech-green))',
-				'tech-navy': 'hsl(var(--tech-navy))',
-				'tech-gray': 'hsl(var(--tech-gray))'
+				'supportcall-blue': 'hsl(var(--supportcall-blue))',
+				'supportcall-green': 'hsl(var(--supportcall-green))',
+				'supportcall-navy': 'hsl(var(--supportcall-navy))',
+				'supportcall-gray': 'hsl(var(--supportcall-gray))',
+				'supportcall-orange': 'hsl(var(--supportcall-orange))'
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
