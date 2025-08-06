@@ -37,7 +37,12 @@ const Navigation = () => {
                   {item.name}
                 </a>
               ))}
-              <Button variant="premium" size="sm" className="ml-4">
+              <Button 
+                variant="premium" 
+                size="sm" 
+                className="ml-4"
+                onClick={() => window.open('https://calendar.google.com/calendar/appointments/AcZssZ080B_PhEBAKSwXoxQoRe5UoUNhjEfq07OIxgo=?gv=true', '_blank')}
+              >
                 Book Consultation
               </Button>
             </div>
@@ -72,7 +77,14 @@ const Navigation = () => {
                 </a>
               ))}
               <div className="pt-3 px-3">
-                <Button variant="premium" className="w-full h-12 text-base">
+                <Button 
+                  variant="premium" 
+                  className="w-full h-12 text-base"
+                  onClick={() => {
+                    window.open('https://calendar.google.com/calendar/appointments/AcZssZ080B_PhEBAKSwXoxQoRe5UoUNhjEfq07OIxgo=?gv=true', '_blank');
+                    setIsOpen(false);
+                  }}
+                >
                   Book Consultation
                 </Button>
               </div>

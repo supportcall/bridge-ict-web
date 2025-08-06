@@ -228,7 +228,11 @@ const Services = () => {
             Get in touch with our experts to discuss your specific requirements
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="premium" size="lg">
+            <Button 
+              variant="premium" 
+              size="lg"
+              onClick={() => window.open('https://calendar.google.com/calendar/appointments/AcZssZ080B_PhEBAKSwXoxQoRe5UoUNhjEfq07OIxgo=?gv=true', '_blank')}
+            >
               Book Consultation
             </Button>
             <Button variant="outline" size="lg">
