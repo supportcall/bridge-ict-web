@@ -16,6 +16,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import Acknowledgement from "@/components/Acknowledgement";
 import Footer from "@/components/Footer";
 
 const WSystem = () => {
@@ -277,6 +278,7 @@ const WSystem = () => {
         </div>
       </section>
 
+      <Acknowledgement />
       <Footer />
     </div>
   );

@@ -16,6 +16,7 @@ import {
   Monitor
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import Acknowledgement from "@/components/Acknowledgement";
 import Footer from "@/components/Footer";
 import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelector";
 
@@ -384,6 +385,7 @@ const HireUs = () => {
         </div>
       </section>
 
+      <Acknowledgement />
       <Footer />
     </div>
   );
