@@ -66,9 +66,9 @@ const GlobalMap = () => {
 
       // Animation between locations
       const locations = [
-        { center: [24.7461, -28.2292], zoom: 5 }, // South Africa
-        { center: [151.2093, -33.8688], zoom: 5 }, // Australia
-        { center: [87, -30], zoom: 1.8 }, // Global view
+        { center: [20, 0], zoom: 3.5 }, // Africa (Central view)
+        { center: [140, -25], zoom: 3.5 }, // Oceania (Australia/Pacific)
+        { center: [80, -12], zoom: 2.2 }, // Wide view showing both continents
       ];
 
       let currentLocation = 0;
