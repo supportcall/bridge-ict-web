@@ -263,15 +263,15 @@ const Services = () => {
                   <div className="relative">
                     <button
                       onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                      className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium rounded-lg text-sm px-4 py-2.5 inline-flex items-center border focus:ring-4 focus:outline-none focus:ring-primary/20 shadow-md"
+                      className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium rounded-lg text-sm px-4 py-2.5 inline-flex items-center border focus:ring-4 focus:outline-none focus:ring-primary/20"
                       type="button"
                     >
-                      Currency: {currencies.find(c => c.code === selectedCurrency)?.name} ({selectedCurrency})
+                      {currencies.find(c => c.code === selectedCurrency)?.name} ({selectedCurrency})
                       <ChevronDown className="w-4 h-4 ml-2" />
                     </button>
 
                     {isDropdownOpen && (
-                      <div className="absolute top-full left-0 mt-1 z-50 bg-background border border-border rounded-lg shadow-xl w-56">
+                      <div className="absolute top-full left-0 mt-1 z-50 bg-card border border-border rounded-lg shadow-lg w-48">
                         <ul className="py-2 text-sm">
                           {currencies.map((currency) => (
                             <li key={currency.code}>
