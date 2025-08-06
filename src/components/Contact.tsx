@@ -291,7 +291,7 @@ const Contact = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Badge variant="outline" className="text-white border-white/30">
-                  South African Expertise - Australian Operations - Global Standards
+                  Australian - South African - Global | Operations - Standards - Expertise
                 </Badge>
               </div>
             </div>
