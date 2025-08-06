@@ -12,141 +12,91 @@ import {
   ArrowRight,
   Users,
   Server,
-  AlertTriangle,
-  Download,
-  Calendar,
-  ChevronDown
+  AlertTriangle
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { useState } from "react";
 
 const RMM = () => {
-  const [selectedCurrency, setSelectedCurrency] = useState('USD');
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  const currencies = [
-    { code: 'USD', symbol: '$', name: 'US Dollar' },
-    { code: 'AUD', symbol: 'A$', name: 'Australian Dollar' },
-    { code: 'ZAR', symbol: 'R', name: 'South African Rand' }
-  ];
-
-  const exchangeRates = {
-    USD: 1,
-    AUD: 1.52,
-    ZAR: 18.0
-  };
-
-  const convertPrice = (baseUSDPrice: string) => {
-    const numericPrice = parseFloat(baseUSDPrice.replace(/[^0-9.]/g, ''));
-    const convertedPrice = numericPrice * exchangeRates[selectedCurrency as keyof typeof exchangeRates];
-    const currency = currencies.find(c => c.code === selectedCurrency);
-    
-    if (convertedPrice >= 1000) {
-      return `${currency?.symbol}${(convertedPrice / 1000).toFixed(1)}k`;
-    }
-    return `${currency?.symbol}${Math.round(convertedPrice)}`;
-  };
-
-  const convertPriceRange = (baseUSDRange: string) => {
-    const [min, max] = baseUSDRange.split('-').map(price => {
-      const numericPrice = parseFloat(price.replace(/[^0-9.]/g, ''));
-      const convertedPrice = numericPrice * exchangeRates[selectedCurrency as keyof typeof exchangeRates];
-      const currency = currencies.find(c => c.code === selectedCurrency);
-      
-      if (convertedPrice >= 1000) {
-        return `${currency?.symbol}${(convertedPrice / 1000).toFixed(1)}k`;
-      }
-      return `${currency?.symbol}${Math.round(convertedPrice)}`;
-    });
-    
-    return max ? `${min}-${max}` : min;
-  };
-  const keyFeatures = [
+  const features = [
     {
       icon: <Monitor className="w-6 h-6" />,
-      title: "Proactive Monitoring",
-      description: "Our system constantly tracks critical metrics like CPU and memory usage, disk space, and SMART status to ensure your systems are running smoothly. With real-time alerts, potential issues are flagged before they disrupt your business."
+      title: "Real-time Monitoring",
+      description: "24/7 monitoring of all your systems, networks, and applications"
+    },
+    {
+      icon: <Bell className="w-6 h-6" />,
+      title: "Proactive Alerts",
+      description: "Instant notifications when issues are detected before they impact your business"
     },
     {
       icon: <Settings className="w-6 h-6" />,
-      title: "Patch Management",
-      description: "Keeping your systems up-to-date with the latest patches is essential for security and performance. TacticalRMM streamlines this process, reducing vulnerabilities and improving system reliability."
-    },
-    {
-      icon: <Shield className="w-6 h-6" />,
-      title: "Security Checks",
-      description: "We perform continuous security checks to safeguard your data and infrastructure from potential threats, ensuring your environment remains secure."
+      title: "Remote Management",
+      description: "Complete remote control and management of your IT infrastructure"
     },
     {
       icon: <BarChart3 className="w-6 h-6" />,
-      title: "Backup (Optional as Extra)",
-      description: "Optional backup solutions are available to ensure that critical data is regularly backed up and can be quickly restored if needed, adding an extra layer of security for your business."
+      title: "Performance Analytics",
+      description: "Detailed reports and analytics on system performance and health"
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: "Security Monitoring",
+      description: "Continuous security monitoring and threat detection"
+    },
+    {
+      icon: <Clock className="w-6 h-6" />,
+      title: "Automated Maintenance",
+      description: "Scheduled updates, patches, and maintenance tasks"
     }
   ];
 
-  const whyChooseFeatures = [
-    "Proactive Issue Resolution: We don't just monitor; we act. With SupportCALL's tacticalRMM, we identify and resolve potential problems before they affect your business operations.",
-    "Enhanced Security: Continuous real-time monitoring ensures your data and systems are always secure. We help protect against potential vulnerabilities and cyber threats.",
-    "Cost Efficiency: By addressing issues early and automating maintenance tasks, tacticalRMM reduces downtime and costly repairs, ensuring your IT infrastructure runs smoothly.",
-    "Custom Alerts: Stay informed with personalized notifications for critical events, so you're always in the loop about your system's health and security.",
-    "Peace of Mind: With SupportCALL's expertise, you can rest easy knowing your IT systems are optimized, secure, and always running at their best.",
-    "Reduced Need for IT Callouts: By leveraging SupportCALL's tacticalRMM, many routine IT issues can be addressed proactively, reducing the frequency of on-site IT callouts. This not only helps optimize your IT infrastructure but also reduces associated costs and downtime."
-  ];
-
   const benefits = [
-    "For Clients: TacticalRMM ensures smooth, uninterrupted operations with enhanced security and system reliability. Proactive monitoring and maintenance reduce the risk of downtime and improve the overall performance of your IT infrastructure.",
-    "For MSPs: TacticalRMM offers a streamlined approach to managing multiple client systems with ease. Automated tasks, remote support capabilities, and real-time alerts make it easier to provide superior service while reducing operational costs."
+    "Reduced downtime and system failures",
+    "Lower IT operational costs",
+    "Improved system performance",
+    "Enhanced security posture",
+    "Proactive issue resolution",
+    "Comprehensive reporting and compliance"
   ];
 
-  const osSupport = [
-    { os: "Windows OS", supported: "SUPPORTED", color: "text-green-500" },
-    { os: "Linux OS", supported: "Contact us for pricing (once-off per site charge)", color: "text-blue-500" },
-    { os: "Mac OS", supported: "Contact us for pricing (once-off per site charge)", color: "text-blue-500" }
-  ];
-
-  const pricingTiers = [
+  const packages = [
     {
-      category: "Senior/Pensioner",
-      description: "Discounted rate with standard features (including 30min Remote Standard Support)",
-      price: "$11",
-      priceRange: "$8-$14",
-      features: ["30min Remote Standard Support", "Standard monitoring", "Security patching", "Proactive maintenance"]
-    },
-    {
-      category: "Individual",
-      description: "Standard features with included remote support",
-      price: "$14",
-      priceRange: "$8-$17",
-      features: ["30min Remote Standard Support", "Standard monitoring", "Security patching", "Proactive maintenance"],
-      extras: [
-        { name: "Extra Monitoring Points", price: "$5", range: "$3-$8" },
-        { name: "Advanced Support per 30min", price: "$19", range: "$3-$28" }
+      name: "Essential",
+      price: "From $99/month",
+      description: "Perfect for small businesses",
+      features: [
+        "Up to 10 devices",
+        "Basic monitoring",
+        "Email alerts",
+        "Monthly reports",
+        "Business hours support"
       ]
     },
     {
-      category: "SME",
-      description: "Standard features with volume discounts available",
-      price: "$14",
-      priceRange: "$6-$17",
-      volumeDiscounts: [
-        { devices: "15-24 Devices", price: "$12", discount: "10%" },
-        { devices: "25-34 Devices", price: "$11", discount: "20%" },
-        { devices: "35+ Devices", price: "$10", discount: "30%" }
-      ],
-      sitePackages: [
-        { devices: "25+ Devices per site", price: "$195", range: "$110-$280" },
-        { devices: "50+ Devices per site", price: "$385", range: "$110-$840" }
+      name: "Professional",
+      price: "From $199/month",
+      description: "Ideal for growing companies",
+      features: [
+        "Up to 50 devices",
+        "Advanced monitoring",
+        "SMS & email alerts",
+        "Weekly reports",
+        "24/7 support",
+        "Remote management"
       ]
     },
     {
-      category: "Corporate",
-      description: "Enterprise-level features and support",
-      configFee: "$167",
-      packages: [
-        { devices: "50-199 Devices per site", price: "$1,395", range: "$560-$2,230" },
-        { devices: "200-999 Devices per site", price: "$5,025", range: "$2,230-$8,370" },
-        { devices: "1000+ Devices per site", price: "$8,370+", range: "$8,370+" }
+      name: "Enterprise",
+      price: "Custom pricing",
+      description: "For large organizations",
+      features: [
+        "Unlimited devices",
+        "Full monitoring suite",
+        "Multi-channel alerts",
+        "Real-time reports",
+        "Dedicated support",
+        "Custom integrations"
       ]
     }
   ];
@@ -160,69 +110,41 @@ const RMM = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Badge variant="secondary" className="mb-4">
-              SupportCALL's tacticalRMM
+              Remote Monitoring & Management
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Confidence in Your IT Systems
+              Proactive IT Management for Your Business
             </h1>
-            <p className="text-xl text-white/80 max-w-4xl mx-auto mb-8">
-              SupportCALL's tacticalRMM offers extensive Remote Monitoring and Management (RMM) services, designed to ensure your IT systems run at peak performance. With our proactive monitoring and management tools, businesses can focus on growth and productivity, while we handle the technical details—maintaining security, reliability, and efficiency.
+            <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
+              Our RMM solutions provide 24/7 monitoring, proactive maintenance, and remote management 
+              to keep your IT infrastructure running at peak performance.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                variant="premium" 
-                size="lg"
-                onClick={() => window.open('https://calendar.google.com/calendar/appointments/AcZssZ080B_PhEBAKSwXoxQoRe5UoUNhjEfq07OIxgo=?gv=true', '_blank')}
-              >
-                <Calendar className="w-5 h-5 mr-2" />
-                Book an Appointment
+              <Button variant="premium" size="lg">
+                Start Free Trial
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="text-white border-white hover:bg-primary hover:text-white"
-                onClick={() => window.open('https://www.supportcall.co.za/store/forms/SC-RegForm.pdf', '_blank')}
-              >
-                <Download className="w-5 h-5 mr-2" />
-                Signup Now
+              <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-primary">
+                Schedule Demo
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Current Special */}
-      <section className="py-12 bg-primary/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="border-primary/20 bg-primary/5">
-            <CardContent className="p-8 text-center">
-              <Badge variant="secondary" className="mb-4">
-                CURRENT SPECIAL
-              </Badge>
-              <h3 className="text-2xl font-bold text-foreground mb-4">
-                Signup for 6 months and get 2 months free!
-              </h3>
-              <p className="text-muted-foreground">
-                tacticalRMM for up to 10 devices (laptop or PC). Standard monitoring only. 
-                Additional services and requests will be billed separately. 
-                Not available for senior/pensioner or individuals.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Key Features Section */}
+      {/* Features Section */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Key Features of SupportCALL's tacticalRMM
+              Comprehensive RMM Features
             </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Everything you need to monitor, manage, and maintain your IT infrastructure
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            {keyFeatures.map((feature, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
               <Card key={index} className="hover:shadow-elegant transition-all duration-300">
                 <CardHeader>
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
@@ -241,287 +163,112 @@ const RMM = () => {
         </div>
       </section>
 
-      {/* Operating System Support */}
-      <section className="py-16 bg-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-6">
-              Operating System Support
-            </h2>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {osSupport.map((item, index) => (
-              <Card key={index} className="text-center">
-                <CardContent className="p-6">
-                  <h3 className="font-bold text-lg mb-2">{item.os}</h3>
-                  <p className={`text-sm ${item.color}`}>{item.supported}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Section */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Why Choose SupportCALL's tacticalRMM?
-            </h2>
-          </div>
-
-          <div className="space-y-6 max-w-4xl mx-auto">
-            {whyChooseFeatures.map((feature, index) => (
-              <div key={index} className="flex items-start">
-                <CheckCircle className="w-6 h-6 text-primary mr-4 flex-shrink-0 mt-1" />
-                <p className="text-muted-foreground">{feature}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Proactive and Reactive Support */}
-      <section className="py-16 bg-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-6">
-              Proactive and Reactive Support
-            </h2>
-            <p className="text-lg text-foreground max-w-4xl mx-auto">
-              TacticalRMM offers both proactive and reactive support. Proactively, we monitor and automate system maintenance to avoid issues before they arise. If a problem does occur, our team can quickly react, accessing your systems remotely to diagnose and resolve issues swiftly, minimizing downtime and disruptions.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Benefits Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              The Benefits of SupportCALL's tacticalRMM for MSPs and Clients
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {benefits.map((benefit, index) => (
-              <Card key={index} className="hover:shadow-elegant transition-all duration-300">
-                <CardContent className="p-8">
-                  <div className="flex items-start">
-                    <CheckCircle className="w-6 h-6 text-primary mr-4 flex-shrink-0 mt-1" />
-                    <p className="text-muted-foreground">{benefit}</p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Why Choose Our RMM Solution?
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                Our Remote Monitoring & Management service delivers measurable business value 
+                through proactive IT management and continuous optimization.
+              </p>
+              <div className="space-y-4">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                    <span className="text-foreground">{benefit}</span>
                   </div>
-                </CardContent>
+                ))}
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <Card className="text-center p-6">
+                <div className="text-2xl font-bold text-primary mb-2">99.9%</div>
+                <div className="text-sm text-muted-foreground">Uptime Guarantee</div>
               </Card>
-            ))}
+              <Card className="text-center p-6">
+                <div className="text-2xl font-bold text-primary mb-2">24/7</div>
+                <div className="text-sm text-muted-foreground">Monitoring</div>
+              </Card>
+              <Card className="text-center p-6">
+                <div className="text-2xl font-bold text-primary mb-2">50%</div>
+                <div className="text-sm text-muted-foreground">Cost Reduction</div>
+              </Card>
+              <Card className="text-center p-6">
+                <div className="text-2xl font-bold text-primary mb-2">15min</div>
+                <div className="text-sm text-muted-foreground">Response Time</div>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 bg-card">
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              tacticalRMM Pricing
+              Choose Your RMM Package
             </h2>
-            <p className="text-lg text-foreground max-w-3xl mx-auto mb-8">
-              RMM, Patching and Security with 30min Remote Support. Pricing below is per device per month.
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Flexible pricing options to match your business needs and budget
             </p>
-            
-            {/* Currency Selector */}
-            <div className="flex justify-center mb-8">
-              <div className="relative">
-                <button
-                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium rounded-lg text-sm px-4 py-2.5 inline-flex items-center border focus:ring-4 focus:outline-none focus:ring-primary/20"
-                  type="button"
-                >
-                  {currencies.find(c => c.code === selectedCurrency)?.name} ({selectedCurrency})
-                  <ChevronDown className="w-4 h-4 ml-2" />
-                </button>
-
-                {isDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-1 z-50 bg-card border border-border rounded-lg shadow-lg w-48">
-                    <ul className="py-2 text-sm">
-                      {currencies.map((currency) => (
-                        <li key={currency.code}>
-                          <button
-                            onClick={() => {
-                              setSelectedCurrency(currency.code);
-                              setIsDropdownOpen(false);
-                            }}
-                            className="w-full text-left block px-4 py-2 hover:bg-muted text-foreground"
-                          >
-                            {currency.name} ({currency.code})
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            <Badge variant="secondary" className="mb-4">
-              MSP partners: Contact your account manager for your pricing
-            </Badge>
           </div>
 
-          <div className="grid gap-8">
-            {pricingTiers.map((tier, index) => (
-              <Card key={index} className="hover:shadow-elegant transition-all duration-300">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-2xl font-bold text-primary">{tier.category}</CardTitle>
-                      <p className="text-muted-foreground mt-2">{tier.description}</p>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-3xl font-bold text-primary">{convertPrice(tier.price)}</div>
-                      <div className="text-sm text-muted-foreground">Range: {convertPriceRange(tier.priceRange)}</div>
-                    </div>
-                  </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {packages.map((pkg, index) => (
+              <Card key={index} className={`relative ${index === 1 ? 'border-primary shadow-elegant' : ''}`}>
+                {index === 1 && (
+                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary">
+                    Most Popular
+                  </Badge>
+                )}
+                <CardHeader className="text-center pb-8">
+                  <CardTitle className="text-2xl font-bold">{pkg.name}</CardTitle>
+                  <div className="text-3xl font-bold text-primary mt-4">{pkg.price}</div>
+                  <p className="text-muted-foreground mt-2">{pkg.description}</p>
                 </CardHeader>
                 <CardContent>
-                  {tier.category === "Corporate" && tier.configFee && (
-                    <div className="mb-6 p-4 bg-primary/10 rounded-lg">
-                      <p className="font-semibold">One-time Configuration Fee: {convertPrice(tier.configFee)}</p>
-                    </div>
-                  )}
-                  
-                  {tier.features && (
-                    <div className="mb-6">
-                      <h4 className="font-semibold mb-3">Standard Features:</h4>
-                      <ul className="space-y-2">
-                        {tier.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center">
-                            <CheckCircle className="w-4 h-4 text-primary mr-2 flex-shrink-0" />
-                            <span className="text-sm">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-
-                  {tier.extras && (
-                    <div className="mb-6">
-                      <h4 className="font-semibold mb-3">Optional Extras:</h4>
-                      <div className="space-y-2">
-                        {tier.extras.map((extra, extraIndex) => (
-                          <div key={extraIndex} className="flex justify-between items-center text-sm">
-                            <span>{extra.name}</span>
-                            <span className="font-semibold">{convertPrice(extra.price)} ({convertPriceRange(extra.range)})</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {tier.volumeDiscounts && (
-                    <div className="mb-6">
-                      <h4 className="font-semibold mb-3">Volume Discounts:</h4>
-                      <div className="space-y-2">
-                        {tier.volumeDiscounts.map((discount, discountIndex) => (
-                          <div key={discountIndex} className="flex justify-between items-center text-sm">
-                            <span>{discount.devices}</span>
-                            <span className="font-semibold">{convertPrice(discount.price)} (-{discount.discount})</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {tier.sitePackages && (
-                    <div className="mb-6">
-                      <h4 className="font-semibold mb-3">Site Packages:</h4>
-                      <div className="space-y-2">
-                        {tier.sitePackages.map((pkg, pkgIndex) => (
-                          <div key={pkgIndex} className="flex justify-between items-center text-sm">
-                            <span>{pkg.devices}</span>
-                            <span className="font-semibold">{convertPrice(pkg.price)} ({convertPriceRange(pkg.range)})</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {tier.packages && (
-                    <div className="mb-6">
-                      <h4 className="font-semibold mb-3">Enterprise Packages:</h4>
-                      <div className="space-y-2">
-                        {tier.packages.map((pkg, pkgIndex) => (
-                          <div key={pkgIndex} className="flex justify-between items-center text-sm">
-                            <span>{pkg.devices}</span>
-                            <span className="font-semibold">{convertPrice(pkg.price)} ({convertPriceRange(pkg.range)})</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                  <ul className="space-y-3 mb-8">
+                    {pkg.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center">
+                        <CheckCircle className="w-4 h-4 text-primary mr-3 flex-shrink-0" />
+                        <span className="text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button 
+                    variant={index === 1 ? "premium" : "outline"} 
+                    className="w-full"
+                  >
+                    Get Started
+                  </Button>
                 </CardContent>
               </Card>
             ))}
           </div>
-
-          <div className="mt-12 text-center">
-            <Card className="bg-primary/10 border-primary/20">
-              <CardContent className="p-6">
-                <p className="text-blue-800 dark:text-blue-200 font-semibold">
-                  We want to partner with you, our MSP, to win more business. If price is a barrier with a potential client, let's talk. We're committed to finding a win-win solution that works for everyone. A deal rather than no deal.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </section>
 
-      {/* Call to Action */}
+      {/* CTA Section */}
       <section className="py-20 bg-gradient-dark">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Struggling to Manage Your IT Systems?
+            Ready to Transform Your IT Management?
           </h2>
-          <div className="space-y-2 mb-6">
-            <h3 className="text-2xl font-bold text-white">Too busy with the normal stuff?</h3>
-            <h3 className="text-2xl font-bold text-white">No time to manage hundreds of little things?</h3>
-            <h3 className="text-2xl font-bold text-white">Let us help you with it.</h3>
-          </div>
-          <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
-            Worried about system downtime or security risks? SupportCALL's tacticalRMM simplifies IT management, ensuring your business runs smoothly and securely. Empowering businesses with proactive support and peace of mind. Call today!
+          <p className="text-xl text-white/80 mb-8">
+            Join hundreds of businesses that trust our RMM solutions for their IT infrastructure
           </p>
-          <div className="mb-8">
-            <h4 className="text-2xl font-bold text-white mb-4">
-              Empowering Businesses with Proactive IT Management and Security!
-            </h4>
-          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              variant="premium" 
-              size="lg"
-              onClick={() => window.open('https://calendar.google.com/calendar/appointments/AcZssZ080B_PhEBAKSwXoxQoRe5UoUNhjEfq07OIxgo=?gv=true', '_blank')}
-            >
-              <Calendar className="w-5 h-5 mr-2" />
-              Book an Appointment
+            <Button variant="premium" size="lg">
+              Start Free 30-Day Trial
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="text-white border-white hover:bg-primary hover:text-white"
-              onClick={() => window.open('https://www.supportcall.co.za/store/forms/SC-RegForm.pdf', '_blank')}
-            >
-              <Download className="w-5 h-5 mr-2" />
-              Signup Now
+            <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-primary">
+              Contact Sales Team
             </Button>
-          </div>
-
-          <div className="mt-12">
-            <p className="text-white/70 text-sm">
-              SupportCALL's tacticalRMM is the ideal solution for businesses seeking to maintain peak system performance while helping to safeguard their data and reducing the risk of costly disruptions.
-            </p>
           </div>
         </div>
       </section>

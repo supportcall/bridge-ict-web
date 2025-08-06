@@ -106,7 +106,7 @@ const WSystem = () => {
               <Button variant="premium" size="lg">
                 Request Demo
               </Button>
-              <Button variant="outline" size="lg" className="text-white border-white hover:bg-primary hover:text-white">
+              <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-primary">
                 View Features
               </Button>
             </div>
@@ -147,7 +147,7 @@ const WSystem = () => {
       </section>
 
       {/* Workflow Section */}
-      <section className="py-20 bg-card">
+      <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -228,7 +228,7 @@ const WSystem = () => {
       </section>
 
       {/* Integration Section */}
-      <section className="py-20 bg-card">
+      <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -270,7 +270,7 @@ const WSystem = () => {
             <Button variant="premium" size="lg">
               Get Started Today
             </Button>
-            <Button variant="outline" size="lg" className="text-white border-white hover:bg-primary hover:text-white">
+            <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-primary">
               Download Brochure
             </Button>
           </div>

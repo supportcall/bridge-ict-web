@@ -141,7 +141,7 @@ const Seniors = () => {
               <Button variant="premium" size="lg">
                 Call for Free Consultation
               </Button>
-              <Button variant="outline" size="lg" className="text-white border-white hover:bg-primary hover:text-white">
+              <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-primary">
                 Learn More
               </Button>
             </div>
@@ -182,7 +182,7 @@ const Seniors = () => {
       </section>
 
       {/* Common Needs Section */}
-      <section className="py-20 bg-card">
+      <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -273,7 +273,7 @@ const Seniors = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 bg-card">
+      <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -332,7 +332,7 @@ const Seniors = () => {
             <Button variant="premium" size="lg">
               Call Now: (555) 123-4567
             </Button>
-            <Button variant="outline" size="lg" className="text-white border-white hover:bg-primary hover:text-white">
+            <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-primary">
               Schedule Home Visit
             </Button>
           </div>
