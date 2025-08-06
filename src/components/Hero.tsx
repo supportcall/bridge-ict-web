@@ -19,7 +19,7 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 rounded-full border border-supportcall-orange/20 bg-supportcall-orange/10 text-supportcall-orange text-sm font-medium">
             <Globe className="w-4 h-4 mr-2" />
-            SupportCALL - Serving SA & AU since 2004
+            SupportCALL - Est. 2013 in SA
           </div>
 
           {/* Main Headline */}
@@ -32,8 +32,7 @@ const Hero = () => {
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Delivering comprehensive ICT services, management, and products to clients across Enterprise, 
-            Corporate, SME, and home user levels. Your trusted partner for over 20 years.
+            Delivering cutting-edge ICT services, management, and products to enterprises across South Africa, Australia and the world. Your trusted partner for digital transformation.
           </p>
 
           {/* Feature highlights */}
@@ -44,7 +43,7 @@ const Hero = () => {
             </div>
             <div className="flex items-center">
               <Zap className="w-4 h-4 mr-2 text-accent" />
-              24/7 Support
+              Proactive Support
             </div>
             <div className="flex items-center">
               <Globe className="w-4 h-4 mr-2 text-accent" />
@@ -67,11 +66,9 @@ const Hero = () => {
           <div className="pt-8">
             <p className="text-sm text-muted-foreground mb-4">Trusted by industry leaders for 20+ years</p>
             <div className="flex justify-center items-center space-x-8 opacity-60">
-              <div className="text-xs font-medium">99% Happy Clients</div>
+              <div className="text-xs font-medium">1.2 Avg Time Onsite - HRS</div>
               <div className="w-px h-4 bg-border"></div>
-              <div className="text-xs font-medium">24/7 Emergency Support</div>
-              <div className="w-px h-4 bg-border"></div>
-              <div className="text-xs font-medium">18 Locations</div>
+              <div className="text-xs font-medium">Emergency Support</div>
             </div>
           </div>
         </div>

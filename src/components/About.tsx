@@ -17,7 +17,7 @@ const About = () => {
     {
       icon: <Clock className="w-6 h-6" />,
       title: "20+ Years Experience",
-      description: "Two decades of proven expertise in enterprise ICT solutions."
+      description: "Two decades of proven expertise in client focused ICT solutions."
     },
     {
       icon: <Heart className="w-6 h-6" />,
@@ -27,8 +27,6 @@ const About = () => {
   ];
 
   const achievements = [
-    { number: "18", label: "Locations" },
-    { number: "99%", label: "Happy Clients" },
     { number: "1.2", label: "Avg Time Onsite - HRS" },
     { number: "0", label: "Injuries on Duty" }
   ];
@@ -60,10 +58,10 @@ const About = () => {
             </h3>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                SupportCALL delivers comprehensive ICT services to clients not only based in 
-                South Africa but also internationally. We aim to supply our clients with the best 
-                products and services for their needs and budget. We always deliver and have worked 
-                hard on simple principles to build true trust relationships with our clients.
+                SupportCALL delivers comprehensive ICT services to clients across both South Africa 
+                and Australia, as well as internationally. We provide tailored solutions that align 
+                with our clients' needs and budgets, regardless of location. Our consistent delivery, 
+                grounded in clear, proven principles, has earned us genuine trust-based relationships with our clients.
               </p>
               <p>
                 We are at our happiest when our clients are happy with the results we deliver. 
@@ -123,7 +121,7 @@ const About = () => {
         </div>
 
         {/* Achievements */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 gap-8">
           {achievements.map((achievement, index) => (
             <div key={index} className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">

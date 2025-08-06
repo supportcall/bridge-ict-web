@@ -56,7 +56,7 @@ const Contact = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us",
-      details: ["+27 87 822 2380", "+27 78 862 0716 (WhatsApp)", "@SupportCALL.01 (Signal)"],
+      details: ["+27 (0)87 822 2380", "+61 (0)4 7822 2380"],
       description: "Available with after-hours standby"
     },
     {
@@ -68,13 +68,13 @@ const Contact = () => {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Offices",
-      details: ["Johannesburg, South Africa", "Sydney, Australia"],
+      details: ["Regional HQ Offices in Durban, South Africa and Launceston, Australia"],
       description: "Serving both continents"
     },
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Business Hours",
-      details: ["Mon - Fri: 09H00 - 16H00 SAST", "After-hours standby for urgent issues"],
+      details: ["SA: Mon - Fri: 09H00 - 15H00 SAST", "AU: Mon - Fri: 09H00 - 15H00 AEST"],
       description: "Regular support hours"
     }
   ];
@@ -295,13 +295,7 @@ const Contact = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Badge variant="outline" className="text-white border-white/30">
-                  🇿🇦 South African Expertise
-                </Badge>
-                <Badge variant="outline" className="text-white border-white/30">
-                  🇦🇺 Australian Operations
-                </Badge>
-                <Badge variant="outline" className="text-white border-white/30">
-                  🌍 Global Standards
+                  South African Expertise - Australian Operations - Global Standards
                 </Badge>
               </div>
             </div>

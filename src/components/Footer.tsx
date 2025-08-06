@@ -61,11 +61,11 @@ const Footer = () => {
             <div className="lg:col-span-2">
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-primary-glow mb-4">
-                  TechConnect
+                  SupportCALL
                 </h3>
                 <p className="text-white/80 mb-6 leading-relaxed">
                   Delivering cutting-edge ICT services, management, and products to 
-                  enterprises across South Africa and Australia. Your trusted partner 
+                  enterprises across South Africa, Australia and the world. Your trusted partner 
                   for digital transformation.
                 </p>
               </div>
@@ -74,15 +74,15 @@ const Footer = () => {
               <div className="space-y-3 mb-6">
                 <div className="flex items-center">
                   <Phone className="w-4 h-4 mr-3 text-primary-glow" />
-                  <span className="text-sm">+27 (0)11 123 4567 | +61 (0)2 9876 5432</span>
+                  <span className="text-sm">+27 (0)87 822 2380 | +61 (0)4 7822 2380</span>
                 </div>
                 <div className="flex items-center">
                   <Mail className="w-4 h-4 mr-3 text-primary-glow" />
-                  <span className="text-sm">info@techconnect.global</span>
+                  <span className="text-sm">info@supportcall.co.za | info@supportcall.com.au</span>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="w-4 h-4 mr-3 text-primary-glow" />
-                  <span className="text-sm">Johannesburg, SA | Sydney, AU</span>
+                  <span className="text-sm">Regional HQ Offices in Durban, SA and Launceston, AU</span>
                 </div>
                 <div className="flex items-center">
                   <Globe className="w-4 h-4 mr-3 text-primary-glow" />
@@ -183,14 +183,14 @@ const Footer = () => {
         <div className="py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-white/60 mb-4 md:mb-0">
-              © 2024 TechConnect. All rights reserved. | 
+              © 2024 SupportCALL. All rights reserved. | 
               <a href="#" className="hover:text-primary-glow ml-1">Privacy Policy</a> | 
               <a href="#" className="hover:text-primary-glow ml-1">Terms of Service</a>
             </div>
             
             <div className="flex items-center space-x-4">
               <div className="text-xs text-white/40">
-                Proudly serving SA & AU since 2004
+                SupportCALL - Est. 2013 in SA
               </div>
               <Button
                 variant="ghost"

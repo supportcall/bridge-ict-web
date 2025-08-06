@@ -14,8 +14,8 @@ const Locations = () => {
       phone: "+27 87 822 2380",
       whatsapp: "+27 78 862 0716",
       email: "info@supportcall.co.za",
-      hours: "Mon - Fri: 09H00 - 16H00 SAST",
-      services: ["Enterprise Solutions", "Emergency Response", "On-site Support", "Cabling"],
+      hours: "Mon - Fri: 09H00 - 15H00 SAST",
+      services: ["Remote Management", "Cloud Services", "Security Solutions", "Consulting", "Enterprise Solutions", "SME Solutions", "Home Solutions", "Emergency Response", "On-site Support", "Cabling", "Wireless", "ISP", "Hosting"],
       coverage: "Nationwide Coverage"
     },
     {
@@ -23,11 +23,11 @@ const Locations = () => {
       city: "Sydney",
       region: "New South Wales",
       description: "Expanding our reach across the Asia-Pacific region",
-      phone: "+61 (0)2 9876 5432",
+      phone: "+61 (0)4 7822 2380",
       whatsapp: "+61 488 123 456",
       email: "info@supportcall.com.au",
-      hours: "Mon - Fri: 09H00 - 17H00 AEST",
-      services: ["Remote Management", "Cloud Services", "Security Solutions", "Consulting"],
+      hours: "Mon - Fri: 09H00 - 15H00 AEST",
+      services: ["Remote Management", "Cloud Services", "Security Solutions", "Consulting", "Enterprise Solutions", "SME Solutions", "Home Solutions", "Emergency Response", "On-site Support", "Cabling", "Wireless", "ISP", "Hosting"],
       coverage: "Australia & New Zealand"
     }
   ];
@@ -50,10 +50,6 @@ const Locations = () => {
           </p>
         </div>
 
-        {/* Interactive Map */}
-        <div className="mb-16">
-          <GlobalMap />
-        </div>
 
         {/* Location Cards */}
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
@@ -143,9 +139,10 @@ const Locations = () => {
                   Expanding Our Network
                 </h4>
                 <p className="text-sm text-muted-foreground mb-4">
-                  We actively expand our network of technicians across both countries. 
-                  Even if we don't have immediate coverage in your area, we'll secure 
-                  local support within two weeks. Remote support is available immediately.
+                  We're actively expanding our technician network across all serviced regions. 
+                  Where permanent on-site coverage isn't immediately available, we deploy a temporary 
+                  support solution as soon as possible and commit to securing local support within two weeks. 
+                  Remote support is available immediately.
                 </p>
                 <Button variant="premium" size="sm">
                   Request Coverage Assessment
