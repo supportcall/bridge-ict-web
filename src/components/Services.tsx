@@ -104,15 +104,15 @@ const Services = () => {
                 alt="ICT Services" 
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-dark/80 flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                      Complete ICT Ecosystem
-                    </h3>
-                    <p className="text-white/90 max-w-2xl mx-auto text-lg font-medium">
-                      Integrated solutions covering every aspect of your technology infrastructure
-                    </p>
-                  </div>
+              <div className="absolute inset-0 bg-black/70 flex items-center justify-center">
+                <div className="text-center text-white">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 drop-shadow-lg">
+                    Complete ICT Ecosystem
+                  </h3>
+                  <p className="text-white max-w-2xl mx-auto text-lg font-medium drop-shadow-md">
+                    Integrated solutions covering every aspect of your technology infrastructure
+                  </p>
+                </div>
               </div>
             </div>
           </Card>
