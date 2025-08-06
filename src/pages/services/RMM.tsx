@@ -192,9 +192,9 @@ const RMM = () => {
       </section>
 
       {/* Current Special */}
-      <section className="py-12 bg-primary/10">
+      <section className="py-12 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="border-primary/20 bg-primary/5">
+          <Card className="border-primary/20 bg-primary/10">
             <CardContent className="p-8 text-center">
               <Badge variant="secondary" className="mb-4">
                 CURRENT SPECIAL
@@ -202,7 +202,7 @@ const RMM = () => {
               <h3 className="text-2xl font-bold text-foreground mb-4">
                 Signup for 6 months and get 2 months free!
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-foreground">
                 tacticalRMM for up to 10 devices (laptop or PC). Standard monitoring only. 
                 Additional services and requests will be billed separately. 
                 Not available for senior/pensioner or individuals.
