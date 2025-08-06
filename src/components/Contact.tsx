@@ -152,10 +152,6 @@ const Contact = () => {
                 <Calendar className="w-4 h-4 mr-2" />
                 Schedule Consultation
               </Button>
-              <Button variant="outline" className="w-full" size="lg">
-                <MessageSquare className="w-4 h-4 mr-2" />
-                Live Chat Support
-              </Button>
             </div>
           </div>
 
