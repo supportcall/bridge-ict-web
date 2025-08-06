@@ -90,18 +90,6 @@ const Footer = () => {
                 </div>
               </div>
 
-              {/* Social Links */}
-              <div className="flex space-x-4">
-                <Button variant="ghost" size="icon" className="text-white/60 hover:text-primary-glow">
-                  <Linkedin className="w-5 h-5" />
-                </Button>
-                <Button variant="ghost" size="icon" className="text-white/60 hover:text-primary-glow">
-                  <Twitter className="w-5 h-5" />
-                </Button>
-                <Button variant="ghost" size="icon" className="text-white/60 hover:text-primary-glow">
-                  <Facebook className="w-5 h-5" />
-                </Button>
-              </div>
             </div>
 
             {/* Services */}
@@ -183,15 +171,15 @@ const Footer = () => {
         <div className="py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-white/60 mb-4 md:mb-0">
-              © 2024 SupportCALL. All rights reserved. | 
+              © {new Date().getFullYear()} SupportCALL. All rights reserved. | 
               <a href="#" className="hover:text-primary-glow ml-1">Privacy Policy</a> | 
               <a href="#" className="hover:text-primary-glow ml-1">Terms of Service</a>
             </div>
             
             <div className="flex items-center space-x-4">
-              <div className="text-xs text-white/40">
-                SupportCALL - Est. 2013 in SA
-              </div>
+                <div className="text-xs text-white/40">
+                  Australian - South African - Global | Expertise - Operations - Standards
+                </div>
               <Button
                 variant="ghost"
                 size="icon"

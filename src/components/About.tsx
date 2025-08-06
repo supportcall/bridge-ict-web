@@ -142,9 +142,9 @@ const About = () => {
               <h3 className="text-2xl font-semibold">Global Presence</h3>
             </div>
             <p className="text-center text-white/80 max-w-2xl mx-auto">
-              Serving clients across South Africa and Australia with plans for further 
-              international expansion. Our global perspective combined with local expertise 
-              ensures world-class ICT solutions tailored to your market needs.
+              We operate across South Africa, Australia, and other international markets, 
+              with ongoing expansion into new regions. Our global reach, combined with local 
+              expertise, ensures world-class ICT solutions tailored to the specific needs of each market.
             </p>
           </CardContent>
         </Card>

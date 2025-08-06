@@ -82,27 +82,6 @@ const Testimonials = () => {
           </p>
         </div>
 
-        {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-          {stats.map((stat, index) => (
-            <Card key={index} className="text-center hover:shadow-elegant transition-all duration-300">
-              <CardContent className="p-6">
-                <div className="text-primary mb-4 flex justify-center">
-                  {stat.icon}
-                </div>
-                <div className="text-3xl font-bold text-foreground mb-2">
-                  {stat.number}
-                </div>
-                <div className="font-semibold text-foreground mb-1">
-                  {stat.label}
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  {stat.description}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
 
         {/* Testimonials Grid */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">

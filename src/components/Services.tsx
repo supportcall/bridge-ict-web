@@ -39,8 +39,8 @@ const Services = () => {
     },
     {
       icon: <Headphones className="w-8 h-8" />,
-      title: "24/7 Support",
-      description: "Round-the-clock technical support and monitoring to ensure your systems run smoothly.",
+      title: "Proactive Support & Monitoring",
+      description: "Continuous monitoring, automation, patching, and preventive systems operate 24/7 to maintain system integrity and uptime. After-hours technical support, emergency response, and help desk services are available based on operational coverage and client requirements.",
       features: ["Remote Monitoring", "Help Desk", "Emergency Response", "Preventive Maintenance"]
     }
   ];
@@ -105,14 +105,14 @@ const Services = () => {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-dark/80 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                    Complete ICT Ecosystem
-                  </h3>
-                  <p className="text-white/80 max-w-2xl mx-auto">
-                    Integrated solutions covering every aspect of your technology infrastructure
-                  </p>
-                </div>
+                  <div className="text-center text-white">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                      Complete ICT Ecosystem
+                    </h3>
+                    <p className="text-white/90 max-w-2xl mx-auto text-lg font-medium">
+                      Integrated solutions covering every aspect of your technology infrastructure
+                    </p>
+                  </div>
               </div>
             </div>
           </Card>
@@ -142,10 +142,6 @@ const Services = () => {
                     </div>
                   ))}
                 </div>
-                <Button variant="outline" className="w-full mt-6 group/btn">
-                  Learn More
-                  <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-1" />
-                </Button>
               </CardContent>
             </Card>
           ))}
