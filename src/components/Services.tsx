@@ -13,11 +13,38 @@ import {
   Database,
   Lock,
   Phone,
-  ArrowRight
+  ArrowRight,
+  ChevronDown,
+  DollarSign
 } from "lucide-react";
 import servicesIcon from "@/assets/services-icon.jpg";
+import { useState } from "react";
 
 const Services = () => {
+  const [selectedCurrency, setSelectedCurrency] = useState('USD');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const currencies = [
+    { code: 'USD', symbol: '$', name: 'US Dollar' },
+    { code: 'AUD', symbol: 'A$', name: 'Australian Dollar' },
+    { code: 'ZAR', symbol: 'R', name: 'South African Rand' }
+  ];
+
+  const exchangeRates = {
+    USD: 1,
+    AUD: 1.52,
+    ZAR: 18.0
+  };
+
+  const formatPrice = (baseUSDPrice: number) => {
+    const convertedPrice = baseUSDPrice * exchangeRates[selectedCurrency as keyof typeof exchangeRates];
+    const currency = currencies.find(c => c.code === selectedCurrency);
+    
+    if (convertedPrice >= 1000) {
+      return `${currency?.symbol}${Math.round(convertedPrice / 1000)}k`;
+    }
+    return `${currency?.symbol}${Math.round(convertedPrice)}`;
+  };
   const primaryServices = [
     {
       icon: <Server className="w-8 h-8" />,
@@ -218,6 +245,102 @@ const Services = () => {
             </div>
           </CardContent>
         </Card>
+
+        {/* Pricing Overview Section */}
+        <div className="mt-16 mb-16">
+          <Card className="bg-primary/5 border-primary/20">
+            <CardContent className="p-8">
+              <div className="text-center mb-8">
+                <div className="flex items-center justify-center mb-4">
+                  <DollarSign className="w-6 h-6 text-primary mr-2" />
+                  <h3 className="text-2xl font-semibold text-foreground">
+                    Service Pricing Overview
+                  </h3>
+                </div>
+                
+                {/* Currency Selector */}
+                <div className="flex justify-center mb-6">
+                  <div className="relative">
+                    <button
+                      onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                      className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium rounded-lg text-sm px-4 py-2.5 inline-flex items-center border focus:ring-4 focus:outline-none focus:ring-primary/20"
+                      type="button"
+                    >
+                      {currencies.find(c => c.code === selectedCurrency)?.name} ({selectedCurrency})
+                      <ChevronDown className="w-4 h-4 ml-2" />
+                    </button>
+
+                    {isDropdownOpen && (
+                      <div className="absolute top-full left-0 mt-1 z-50 bg-card border border-border rounded-lg shadow-lg w-48">
+                        <ul className="py-2 text-sm">
+                          {currencies.map((currency) => (
+                            <li key={currency.code}>
+                              <button
+                                onClick={() => {
+                                  setSelectedCurrency(currency.code);
+                                  setIsDropdownOpen(false);
+                                }}
+                                className="w-full text-left block px-4 py-2 hover:bg-muted text-foreground"
+                              >
+                                {currency.name} ({currency.code})
+                              </button>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                <p className="text-muted-foreground mb-6 max-w-3xl mx-auto">
+                  <strong>Pricing Disclaimer:</strong> All pricing shown on this website serves as a general guide only. 
+                  Final pricing may vary based on specific requirements, project scope, and current market conditions. 
+                  Please contact us for accurate, up-to-date pricing tailored to your needs.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="text-center p-4 bg-background rounded-lg">
+                  <h4 className="font-semibold text-foreground mb-2">Basic Support</h4>
+                  <div className="text-2xl font-bold text-primary mb-2">
+                    {formatPrice(25)}/month
+                  </div>
+                  <p className="text-sm text-muted-foreground">Essential ICT support and monitoring</p>
+                </div>
+                
+                <div className="text-center p-4 bg-background rounded-lg">
+                  <h4 className="font-semibold text-foreground mb-2">RMM Services</h4>
+                  <div className="text-2xl font-bold text-primary mb-2">
+                    {formatPrice(50)}/month
+                  </div>
+                  <p className="text-sm text-muted-foreground">Remote monitoring and management</p>
+                </div>
+                
+                <div className="text-center p-4 bg-background rounded-lg">
+                  <h4 className="font-semibold text-foreground mb-2">Enterprise Solutions</h4>
+                  <div className="text-2xl font-bold text-primary mb-2">
+                    {formatPrice(200)}+/month
+                  </div>
+                  <p className="text-sm text-muted-foreground">Comprehensive enterprise packages</p>
+                </div>
+                
+                <div className="text-center p-4 bg-background rounded-lg">
+                  <h4 className="font-semibold text-foreground mb-2">Custom Projects</h4>
+                  <div className="text-2xl font-bold text-primary mb-2">
+                    Quote
+                  </div>
+                  <p className="text-sm text-muted-foreground">Tailored solutions and consulting</p>
+                </div>
+              </div>
+              
+              <div className="text-center mt-6">
+                <Badge variant="secondary" className="text-xs">
+                  * Prices are estimates and subject to change. Contact us for detailed quotes.
+                </Badge>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
 
         {/* CTA Section */}
         <div className="text-center mt-16">
