@@ -67,44 +67,44 @@ const RMM = () => {
     {
       category: "Senior/Pensioner",
       description: "Discounted rate with standard features (including 30min Remote Standard Support)",
-      price: "R199",
-      priceRange: "R150-R250",
+      price: "$11",
+      priceRange: "$8-$14",
       features: ["30min Remote Standard Support", "Standard monitoring", "Security patching", "Proactive maintenance"]
     },
     {
       category: "Individual",
       description: "Standard features with included remote support",
-      price: "R249",
-      priceRange: "R150-R300",
+      price: "$14",
+      priceRange: "$8-$17",
       features: ["30min Remote Standard Support", "Standard monitoring", "Security patching", "Proactive maintenance"],
       extras: [
-        { name: "Extra Monitoring Points", price: "R99", range: "R50-R150" },
-        { name: "Advanced Support per 30min", price: "R349", range: "R50-R500" }
+        { name: "Extra Monitoring Points", price: "$5", range: "$3-$8" },
+        { name: "Advanced Support per 30min", price: "$19", range: "$3-$28" }
       ]
     },
     {
       category: "SME",
       description: "Standard features with volume discounts available",
-      price: "R249",
-      priceRange: "R100-R300",
+      price: "$14",
+      priceRange: "$6-$17",
       volumeDiscounts: [
-        { devices: "15-24 Devices", price: "R224", discount: "10%" },
-        { devices: "25-34 Devices", price: "R199", discount: "20%" },
-        { devices: "35+ Devices", price: "R174", discount: "30%" }
+        { devices: "15-24 Devices", price: "$12", discount: "10%" },
+        { devices: "25-34 Devices", price: "$11", discount: "20%" },
+        { devices: "35+ Devices", price: "$10", discount: "30%" }
       ],
       sitePackages: [
-        { devices: "25+ Devices per site", price: "R3,499", range: "R2,000-R5,000" },
-        { devices: "50+ Devices per site", price: "R6,899", range: "R2,000-R15,000" }
+        { devices: "25+ Devices per site", price: "$195", range: "$110-$280" },
+        { devices: "50+ Devices per site", price: "$385", range: "$110-$840" }
       ]
     },
     {
       category: "Corporate",
       description: "Enterprise-level features and support",
-      configFee: "R2,999",
+      configFee: "$167",
       packages: [
-        { devices: "50-199 Devices per site", price: "R24,999", range: "R10,000-R40,000" },
-        { devices: "200-999 Devices per site", price: "R89,999", range: "R40,000-R150,000" },
-        { devices: "1000+ Devices per site", price: "R150,000+", range: "R150,000+" }
+        { devices: "50-199 Devices per site", price: "$1,395", range: "$560-$2,230" },
+        { devices: "200-999 Devices per site", price: "$5,025", range: "$2,230-$8,370" },
+        { devices: "1000+ Devices per site", price: "$8,370+", range: "$8,370+" }
       ]
     }
   ];
@@ -200,7 +200,7 @@ const RMM = () => {
       </section>
 
       {/* Operating System Support */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-16 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-foreground mb-6">
@@ -242,13 +242,13 @@ const RMM = () => {
       </section>
 
       {/* Proactive and Reactive Support */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-16 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-foreground mb-6">
               Proactive and Reactive Support
             </h2>
-            <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+            <p className="text-lg text-foreground max-w-4xl mx-auto">
               TacticalRMM offers both proactive and reactive support. Proactively, we monitor and automate system maintenance to avoid issues before they arise. If a problem does occur, our team can quickly react, accessing your systems remotely to diagnose and resolve issues swiftly, minimizing downtime and disruptions.
             </p>
           </div>
@@ -280,14 +280,14 @@ const RMM = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               tacticalRMM Pricing
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-              RMM, Patching and Security with 30min Remote Support. Pricing below is per device per month (ZAR).
+            <p className="text-lg text-foreground max-w-3xl mx-auto mb-8">
+              RMM, Patching and Security with 30min Remote Support. Pricing below is per device per month (USD).
             </p>
             <Badge variant="secondary" className="mb-4">
               MSP partners: Contact your account manager for your pricing
