@@ -3,7 +3,7 @@ import { Heart, Globe } from "lucide-react";
 
 const Acknowledgement = () => {
   return (
-    <section className="py-16 bg-muted/30">
+    <section className="py-16 bg-background">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <Card className="border-l-4 border-l-primary/60 bg-background shadow-lg">
           <CardContent className="p-8">
