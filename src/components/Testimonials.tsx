@@ -169,7 +169,7 @@ const Testimonials = () => {
         {/* Client Industries */}
         <div className="mt-16 text-center">
           <h3 className="text-xl font-semibold text-foreground mb-8">
-            Trusted Across Industries
+            Across Industries
           </h3>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
             <Badge variant="outline">Financial Services</Badge>
