@@ -14,12 +14,54 @@ import {
   Server,
   AlertTriangle,
   Download,
-  Calendar
+  Calendar,
+  ChevronDown
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { useState } from "react";
 
 const RMM = () => {
+  const [selectedCurrency, setSelectedCurrency] = useState('USD');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const currencies = [
+    { code: 'USD', symbol: '$', name: 'US Dollar' },
+    { code: 'AUD', symbol: 'A$', name: 'Australian Dollar' },
+    { code: 'ZAR', symbol: 'R', name: 'South African Rand' }
+  ];
+
+  const exchangeRates = {
+    USD: 1,
+    AUD: 1.52,
+    ZAR: 18.0
+  };
+
+  const convertPrice = (baseUSDPrice: string) => {
+    const numericPrice = parseFloat(baseUSDPrice.replace(/[^0-9.]/g, ''));
+    const convertedPrice = numericPrice * exchangeRates[selectedCurrency as keyof typeof exchangeRates];
+    const currency = currencies.find(c => c.code === selectedCurrency);
+    
+    if (convertedPrice >= 1000) {
+      return `${currency?.symbol}${(convertedPrice / 1000).toFixed(1)}k`;
+    }
+    return `${currency?.symbol}${Math.round(convertedPrice)}`;
+  };
+
+  const convertPriceRange = (baseUSDRange: string) => {
+    const [min, max] = baseUSDRange.split('-').map(price => {
+      const numericPrice = parseFloat(price.replace(/[^0-9.]/g, ''));
+      const convertedPrice = numericPrice * exchangeRates[selectedCurrency as keyof typeof exchangeRates];
+      const currency = currencies.find(c => c.code === selectedCurrency);
+      
+      if (convertedPrice >= 1000) {
+        return `${currency?.symbol}${(convertedPrice / 1000).toFixed(1)}k`;
+      }
+      return `${currency?.symbol}${Math.round(convertedPrice)}`;
+    });
+    
+    return max ? `${min}-${max}` : min;
+  };
   const keyFeatures = [
     {
       icon: <Monitor className="w-6 h-6" />,
@@ -287,8 +329,43 @@ const RMM = () => {
               tacticalRMM Pricing
             </h2>
             <p className="text-lg text-foreground max-w-3xl mx-auto mb-8">
-              RMM, Patching and Security with 30min Remote Support. Pricing below is per device per month (USD).
+              RMM, Patching and Security with 30min Remote Support. Pricing below is per device per month.
             </p>
+            
+            {/* Currency Selector */}
+            <div className="flex justify-center mb-8">
+              <div className="relative">
+                <button
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium rounded-lg text-sm px-4 py-2.5 inline-flex items-center border focus:ring-4 focus:outline-none focus:ring-primary/20"
+                  type="button"
+                >
+                  {currencies.find(c => c.code === selectedCurrency)?.name} ({selectedCurrency})
+                  <ChevronDown className="w-4 h-4 ml-2" />
+                </button>
+
+                {isDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-1 z-50 bg-card border border-border rounded-lg shadow-lg w-48">
+                    <ul className="py-2 text-sm">
+                      {currencies.map((currency) => (
+                        <li key={currency.code}>
+                          <button
+                            onClick={() => {
+                              setSelectedCurrency(currency.code);
+                              setIsDropdownOpen(false);
+                            }}
+                            className="w-full text-left block px-4 py-2 hover:bg-muted text-foreground"
+                          >
+                            {currency.name} ({currency.code})
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
+
             <Badge variant="secondary" className="mb-4">
               MSP partners: Contact your account manager for your pricing
             </Badge>
@@ -304,15 +381,15 @@ const RMM = () => {
                       <p className="text-muted-foreground mt-2">{tier.description}</p>
                     </div>
                     <div className="text-right">
-                      <div className="text-3xl font-bold text-primary">{tier.price}</div>
-                      <div className="text-sm text-muted-foreground">Range: {tier.priceRange}</div>
+                      <div className="text-3xl font-bold text-primary">{convertPrice(tier.price)}</div>
+                      <div className="text-sm text-muted-foreground">Range: {convertPriceRange(tier.priceRange)}</div>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
                   {tier.category === "Corporate" && tier.configFee && (
                     <div className="mb-6 p-4 bg-primary/10 rounded-lg">
-                      <p className="font-semibold">One-time Configuration Fee: {tier.configFee}</p>
+                      <p className="font-semibold">One-time Configuration Fee: {convertPrice(tier.configFee)}</p>
                     </div>
                   )}
                   
@@ -337,7 +414,7 @@ const RMM = () => {
                         {tier.extras.map((extra, extraIndex) => (
                           <div key={extraIndex} className="flex justify-between items-center text-sm">
                             <span>{extra.name}</span>
-                            <span className="font-semibold">{extra.price} ({extra.range})</span>
+                            <span className="font-semibold">{convertPrice(extra.price)} ({convertPriceRange(extra.range)})</span>
                           </div>
                         ))}
                       </div>
@@ -351,7 +428,7 @@ const RMM = () => {
                         {tier.volumeDiscounts.map((discount, discountIndex) => (
                           <div key={discountIndex} className="flex justify-between items-center text-sm">
                             <span>{discount.devices}</span>
-                            <span className="font-semibold">{discount.price} (-{discount.discount})</span>
+                            <span className="font-semibold">{convertPrice(discount.price)} (-{discount.discount})</span>
                           </div>
                         ))}
                       </div>
@@ -365,7 +442,7 @@ const RMM = () => {
                         {tier.sitePackages.map((pkg, pkgIndex) => (
                           <div key={pkgIndex} className="flex justify-between items-center text-sm">
                             <span>{pkg.devices}</span>
-                            <span className="font-semibold">{pkg.price} ({pkg.range})</span>
+                            <span className="font-semibold">{convertPrice(pkg.price)} ({convertPriceRange(pkg.range)})</span>
                           </div>
                         ))}
                       </div>
@@ -379,7 +456,7 @@ const RMM = () => {
                         {tier.packages.map((pkg, pkgIndex) => (
                           <div key={pkgIndex} className="flex justify-between items-center text-sm">
                             <span>{pkg.devices}</span>
-                            <span className="font-semibold">{pkg.price} ({pkg.range})</span>
+                            <span className="font-semibold">{convertPrice(pkg.price)} ({convertPriceRange(pkg.range)})</span>
                           </div>
                         ))}
                       </div>
