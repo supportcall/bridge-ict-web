@@ -13,10 +13,10 @@ const CurrencySelector = ({ onCurrencyChange, selectedCurrency }: CurrencySelect
     <div className="flex items-center gap-2">
       <span className="text-sm text-muted-foreground">Currency:</span>
       <Select value={selectedCurrency} onValueChange={(value: Currency) => onCurrencyChange(value)}>
-        <SelectTrigger className="w-24 bg-card border-border">
+        <SelectTrigger className="w-24 bg-card border-border text-foreground">
           <SelectValue />
         </SelectTrigger>
-        <SelectContent className="bg-card border-border">
+        <SelectContent className="bg-card border-border z-50">
           <SelectItem value="USD">USD</SelectItem>
           <SelectItem value="AUD">AUD</SelectItem>
           <SelectItem value="ZAR">ZAR</SelectItem>

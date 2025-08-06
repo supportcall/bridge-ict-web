@@ -187,24 +187,6 @@ const RMM = () => {
                 ))}
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <Card className="text-center p-6">
-                <div className="text-2xl font-bold text-primary mb-2">99.9%</div>
-                <div className="text-sm text-muted-foreground">Uptime Guarantee</div>
-              </Card>
-              <Card className="text-center p-6">
-                <div className="text-2xl font-bold text-primary mb-2">24/7</div>
-                <div className="text-sm text-muted-foreground">Monitoring</div>
-              </Card>
-              <Card className="text-center p-6">
-                <div className="text-2xl font-bold text-primary mb-2">50%</div>
-                <div className="text-sm text-muted-foreground">Cost Reduction</div>
-              </Card>
-              <Card className="text-center p-6">
-                <div className="text-2xl font-bold text-primary mb-2">15min</div>
-                <div className="text-sm text-muted-foreground">Response Time</div>
-              </Card>
-            </div>
           </div>
         </div>
       </section>
