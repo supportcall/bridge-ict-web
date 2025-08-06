@@ -54,7 +54,7 @@ const Navigation = () => {
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-foreground hover:text-primary hover:bg-muted/50 relative z-10"
+              className="text-foreground hover:text-primary hover:bg-card relative z-10"
               aria-label="Toggle menu"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -70,7 +70,7 @@ const Navigation = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-foreground hover:text-primary hover:bg-muted/50 block px-3 py-3 rounded-md text-base font-medium transition-all duration-200 border-l-2 border-transparent hover:border-primary"
+                  className="text-foreground hover:text-primary hover:bg-card block px-3 py-3 rounded-md text-base font-medium transition-all duration-200 border-l-2 border-transparent hover:border-primary"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}

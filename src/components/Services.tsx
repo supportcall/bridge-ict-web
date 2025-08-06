@@ -299,16 +299,18 @@ const Services = () => {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className="text-center p-4 bg-background rounded-lg">
-                  <h4 className="font-semibold text-foreground mb-2">Basic Support</h4>
-                  <div className="text-2xl font-bold text-primary mb-2">
-                    {formatPrice(25)}/month
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="text-center p-4 bg-card rounded-lg">
+                  <h4 className="font-semibold text-foreground mb-2">Service Rates</h4>
+                  <div className="text-lg font-bold text-primary mb-2">
+                    {selectedCurrency === 'ZAR' ? 'R400 - R1,500/hr' : 
+                     selectedCurrency === 'AUD' ? 'A$35 - A$250/hr' : 
+                     '$22 - $82/hr'}
                   </div>
-                  <p className="text-sm text-muted-foreground">Essential ICT support and monitoring</p>
+                  <p className="text-sm text-muted-foreground">Billed in 30-min increments, 1hr minimum</p>
                 </div>
                 
-                <div className="text-center p-4 bg-background rounded-lg">
+                <div className="text-center p-4 bg-card rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">RMM Services</h4>
                   <div className="text-2xl font-bold text-primary mb-2">
                     {formatPrice(50)}/month
@@ -316,15 +318,7 @@ const Services = () => {
                   <p className="text-sm text-muted-foreground">Remote monitoring and management</p>
                 </div>
                 
-                <div className="text-center p-4 bg-background rounded-lg">
-                  <h4 className="font-semibold text-foreground mb-2">Enterprise Solutions</h4>
-                  <div className="text-2xl font-bold text-primary mb-2">
-                    {formatPrice(200)}+/month
-                  </div>
-                  <p className="text-sm text-muted-foreground">Comprehensive enterprise packages</p>
-                </div>
-                
-                <div className="text-center p-4 bg-background rounded-lg">
+                <div className="text-center p-4 bg-card rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">Custom Projects</h4>
                   <div className="text-2xl font-bold text-primary mb-2">
                     Quote
