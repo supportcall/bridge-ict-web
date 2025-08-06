@@ -141,7 +141,7 @@ const Seniors = () => {
               <Button variant="premium" size="lg">
                 Call for Free Consultation
               </Button>
-              <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-primary">
+              <Button variant="outline" size="lg" className="text-white border-white hover:bg-primary hover:text-white">
                 Learn More
               </Button>
             </div>
@@ -332,7 +332,7 @@ const Seniors = () => {
             <Button variant="premium" size="lg">
               Call Now: (555) 123-4567
             </Button>
-            <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-primary">
+            <Button variant="outline" size="lg" className="text-white border-white hover:bg-primary hover:text-white">
               Schedule Home Visit
             </Button>
           </div>

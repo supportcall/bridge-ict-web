@@ -106,7 +106,7 @@ const WSystem = () => {
               <Button variant="premium" size="lg">
                 Request Demo
               </Button>
-              <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-primary">
+              <Button variant="outline" size="lg" className="text-white border-white hover:bg-primary hover:text-white">
                 View Features
               </Button>
             </div>
@@ -270,7 +270,7 @@ const WSystem = () => {
             <Button variant="premium" size="lg">
               Get Started Today
             </Button>
-            <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-primary">
+            <Button variant="outline" size="lg" className="text-white border-white hover:bg-primary hover:text-white">
               Download Brochure
             </Button>
           </div>

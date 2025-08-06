@@ -180,7 +180,7 @@ const RMM = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="text-white border-white hover:bg-white hover:text-primary"
+                className="text-white border-white hover:bg-primary hover:text-white"
                 onClick={() => window.open('https://www.supportcall.co.za/store/forms/SC-RegForm.pdf', '_blank')}
               >
                 <Download className="w-5 h-5 mr-2" />
@@ -468,7 +468,7 @@ const RMM = () => {
           </div>
 
           <div className="mt-12 text-center">
-            <Card className="bg-blue-50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-800">
+            <Card className="bg-primary/10 border-primary/20">
               <CardContent className="p-6">
                 <p className="text-blue-800 dark:text-blue-200 font-semibold">
                   We want to partner with you, our MSP, to win more business. If price is a barrier with a potential client, let's talk. We're committed to finding a win-win solution that works for everyone. A deal rather than no deal.
@@ -510,7 +510,7 @@ const RMM = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="text-white border-white hover:bg-white hover:text-primary"
+              className="text-white border-white hover:bg-primary hover:text-white"
               onClick={() => window.open('https://www.supportcall.co.za/store/forms/SC-RegForm.pdf', '_blank')}
             >
               <Download className="w-5 h-5 mr-2" />
