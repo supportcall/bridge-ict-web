@@ -17,8 +17,12 @@ import {
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelector";
 
 const HireUs = () => {
+  const { currency, setCurrency, getHourlyRate } = useCurrencyPricing();
+  const hourlyRate = getHourlyRate();
+
   const services = [
     {
       icon: <Code className="w-6 h-6" />,
@@ -185,9 +189,37 @@ const HireUs = () => {
         </div>
       </section>
 
-      {/* Engagement Types */}
-      <section className="py-20 bg-muted/30">
+        {/* Pricing Section */}
+      <section className="py-20 bg-card border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Service Pricing
+            </h2>
+            <div className="flex justify-center mb-6">
+              <CurrencySelector onCurrencyChange={setCurrency} selectedCurrency={currency} />
+            </div>
+            <div className="max-w-2xl mx-auto">
+              <Card className="bg-card border-border p-8">
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-foreground mb-4">Professional IT Services</h3>
+                  <div className="text-4xl font-bold text-primary mb-4">
+                    {hourlyRate.min} - {hourlyRate.max}
+                  </div>
+                  <p className="text-lg text-muted-foreground mb-4">per hour</p>
+                  <div className="space-y-2 text-sm text-muted-foreground">
+                    <p>• Billed in 30-minute increments</p>
+                    <p>• 1-hour minimum purchase required</p>
+                  </div>
+                </div>
+              </Card>
+              <p className="text-xs text-muted-foreground mt-4 italic">
+                * Pricing serves as a guide and actual pricing may differ based on project complexity and requirements
+              </p>
+            </div>
+          </div>
+
+          {/* Engagement Types */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               Flexible Engagement Options
@@ -277,7 +309,7 @@ const HireUs = () => {
       </section>
 
       {/* Industries Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-card border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">

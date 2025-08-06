@@ -17,8 +17,11 @@ import {
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelector";
 
 const Seniors = () => {
+  const { currency, setCurrency, formatPrice } = useCurrencyPricing();
+
   const services = [
     {
       icon: <Phone className="w-6 h-6" />,
@@ -55,7 +58,7 @@ const Seniors = () => {
   const packages = [
     {
       name: "Essential Care",
-      price: "$49/month",
+      price: formatPrice(49),
       description: "Basic support for everyday needs",
       features: [
         "Monthly phone check-ins",
@@ -68,7 +71,7 @@ const Seniors = () => {
     },
     {
       name: "Comfort Care",
-      price: "$89/month", 
+      price: formatPrice(89), 
       description: "Comprehensive support with personal touch",
       features: [
         "Weekly phone support",
@@ -82,7 +85,7 @@ const Seniors = () => {
     },
     {
       name: "Premium Care",
-      price: "$149/month",
+      price: formatPrice(149),
       description: "Complete technology care and management",
       features: [
         "Unlimited phone support",
@@ -182,7 +185,7 @@ const Seniors = () => {
       </section>
 
       {/* Common Needs Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-card border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -273,14 +276,20 @@ const Seniors = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-card border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               Affordable Care Plans
             </h2>
+            <div className="flex justify-center mb-6">
+              <CurrencySelector onCurrencyChange={setCurrency} selectedCurrency={currency} />
+            </div>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Choose the level of support that's right for you and your budget
+            </p>
+            <p className="text-xs text-muted-foreground mt-4 italic">
+              * Pricing serves as a guide and actual pricing may differ based on individual needs
             </p>
           </div>
 
@@ -294,7 +303,7 @@ const Seniors = () => {
                 )}
                 <CardHeader className="text-center pb-8">
                   <CardTitle className="text-2xl font-bold">{pkg.name}</CardTitle>
-                  <div className="text-3xl font-bold text-primary mt-4">{pkg.price}</div>
+                  <div className="text-3xl font-bold text-primary mt-4">{pkg.price}/month</div>
                   <p className="text-muted-foreground mt-2">{pkg.description}</p>
                 </CardHeader>
                 <CardContent>

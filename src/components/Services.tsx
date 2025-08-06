@@ -176,7 +176,7 @@ const Services = () => {
         </div>
 
         {/* Service Levels */}
-        <Card className="bg-gradient-subtle">
+        <Card className="bg-card border-border">
           <CardContent className="p-8">
             <div className="text-center mb-8">
               <h3 className="text-2xl font-semibold text-foreground mb-4">

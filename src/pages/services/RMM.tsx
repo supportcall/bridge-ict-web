@@ -16,8 +16,11 @@ import {
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelector";
 
 const RMM = () => {
+  const { currency, setCurrency, formatPrice } = useCurrencyPricing();
+
   const features = [
     {
       icon: <Monitor className="w-6 h-6" />,
@@ -63,7 +66,7 @@ const RMM = () => {
   const packages = [
     {
       name: "Essential",
-      price: "From $99/month",
+      price: formatPrice(99),
       description: "Perfect for small businesses",
       features: [
         "Up to 10 devices",
@@ -75,7 +78,7 @@ const RMM = () => {
     },
     {
       name: "Professional",
-      price: "From $199/month",
+      price: formatPrice(199),
       description: "Ideal for growing companies",
       features: [
         "Up to 50 devices",
@@ -164,7 +167,7 @@ const RMM = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-card border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -213,8 +216,14 @@ const RMM = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               Choose Your RMM Package
             </h2>
+            <div className="flex justify-center mb-6">
+              <CurrencySelector onCurrencyChange={setCurrency} selectedCurrency={currency} />
+            </div>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Flexible pricing options to match your business needs and budget
+            </p>
+            <p className="text-xs text-muted-foreground mt-4 italic">
+              * Pricing serves as a guide and actual pricing may differ based on service requirements
             </p>
           </div>
 
@@ -228,7 +237,7 @@ const RMM = () => {
                 )}
                 <CardHeader className="text-center pb-8">
                   <CardTitle className="text-2xl font-bold">{pkg.name}</CardTitle>
-                  <div className="text-3xl font-bold text-primary mt-4">{pkg.price}</div>
+                  <div className="text-3xl font-bold text-primary mt-4">{pkg.name === "Essential" ? `From ${pkg.price}/month` : pkg.name === "Professional" ? `From ${pkg.price}/month` : pkg.price}</div>
                   <p className="text-muted-foreground mt-2">{pkg.description}</p>
                 </CardHeader>
                 <CardContent>
