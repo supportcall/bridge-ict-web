@@ -97,6 +97,23 @@ const HireUs = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <DollarSign className="w-5 h-5" />
+                    Service Pricing
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <span>Service rates: <strong>{currency === "ZAR" ? "ZAR 400.00" : currency === "AUD" ? "AUD 35.00" : "$22.00"}</strong> to <strong>{currency === "ZAR" ? "±1500" : currency === "AUD" ? "±250" : "±82"}</strong> per hour, billed in 30-minute increments, with a 1-hour minimum purchase required.</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <DollarSign className="w-5 h-5" />
                     Rate and Billing
                   </CardTitle>
                 </CardHeader>
