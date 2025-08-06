@@ -6,11 +6,13 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", href: "#home" },
+    { name: "Home", href: "/" },
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Locations", href: "#locations" },
+    { name: "RMM", href: "/services/rmm" },
+    { name: "WSystem", href: "/services/wsystem" },
+    { name: "Seniors", href: "/services/seniors" },
+    { name: "Hire Us", href: "/services/hire-us" },
     { name: "Contact", href: "#contact" },
   ];
 
