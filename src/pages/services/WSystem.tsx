@@ -389,11 +389,7 @@ const WSystem = () => {
             Ready to Secure Your Organization?
           </h2>
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-            Join thousands of organizations worldwide who trust W.system for their cybersecurity needs. 
-            Start with a free trial or schedule a personalized demo today.
-          </p>
-          <p className="text-sm text-white/70 mt-6">
-            Available in Australia and South Africa • 24/7 Expert Support • Enterprise-Grade Security
+            Join other businesses that trust SupportCALL W.System for their IT security and compliance.
           </p>
         </div>
       </section>
