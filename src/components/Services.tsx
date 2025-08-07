@@ -88,7 +88,7 @@ const Services = () => {
             Our Services
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            💼 Comprehensive ICT Solutions That Drive Results
+            Comprehensive ICT Solutions That Drive Results
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             <strong>Don't let IT problems cost you money.</strong> From SupportCALL TacticalRMM monitoring and SupportCALL W.System security to local tech sourcing for remote locations, 
@@ -224,7 +224,7 @@ const Services = () => {
         {/* CTA Section */}
         <div className="text-center mt-16">
           <h3 className="text-2xl font-semibold text-foreground mb-4">
-            🚀 Ready to Stop IT Problems Before They Cost You Money?
+            Ready to Stop IT Problems Before They Cost You Money?
           </h3>
           <p className="text-muted-foreground mb-8">
             <strong>FREE consultation</strong> with our experts - discover exactly how we can solve your IT challenges and save you money
@@ -236,7 +236,7 @@ const Services = () => {
               onClick={() => openBooking()}
               className="animate-pulse hover:animate-none"
             >
-              📞 Book FREE Consultation Now
+              Book FREE Consultation Now
             </Button>
             <Button 
               variant="outline" 
@@ -250,7 +250,7 @@ const Services = () => {
                 }
               }}
             >
-              💰 Get Instant Quote
+              Get Instant Quote
             </Button>
           </div>
         </div>

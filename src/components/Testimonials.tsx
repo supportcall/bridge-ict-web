@@ -62,7 +62,7 @@ const Testimonials = () => {
             Client Testimonials
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            🌟 What 20+ Years of Happy Clients Say About Us
+            What 20+ Years of Happy Clients Say About Us
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             <strong>Results speak louder than promises!</strong> Many clients have trusted us for over two decades 

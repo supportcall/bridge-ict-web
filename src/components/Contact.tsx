@@ -174,7 +174,7 @@ This message was sent from the SupportCALL website contact form.
             Get In Touch
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            🎯 Stop Losing Money to IT Problems - Get FREE Expert Help
+            Stop Losing Money to IT Problems - Get FREE Expert Help
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             <strong>Don't wait for IT disasters to cost you thousands!</strong> Get immediate access to 20+ years of ICT expertise. 
@@ -188,7 +188,7 @@ This message was sent from the SupportCALL website contact form.
           <div className="lg:col-span-1 space-y-8">
             <div>
               <h3 className="text-2xl font-semibold text-foreground mb-6">
-                💬 Let's Connect - It's FREE!
+                Let's Connect - It's FREE!
               </h3>
               <p className="text-muted-foreground mb-8">
                 <strong>Zero-risk, maximum value!</strong> Whether you're facing urgent IT issues or planning upgrades, 
@@ -234,7 +234,7 @@ This message was sent from the SupportCALL website contact form.
                 onClick={() => openBooking()}
               >
                 <Calendar className="w-4 h-4 mr-2" />
-                📞 Book FREE Consultation NOW
+                Book FREE Consultation NOW
               </Button>
             </div>
           </div>
@@ -243,7 +243,7 @@ This message was sent from the SupportCALL website contact form.
           <div className="lg:col-span-2">
             <Card className="shadow-elegant">
               <CardHeader>
-                <CardTitle className="text-2xl">💰 Get Instant FREE Quote</CardTitle>
+                <CardTitle className="text-2xl">Get Instant FREE Quote</CardTitle>
                 <p className="text-muted-foreground">
                   <strong>Fast response guaranteed!</strong> Fill out the form below and get your personalized quote within 24 hours. 
                   No hidden fees, no surprises - just honest pricing from ICT experts.
@@ -380,7 +380,7 @@ This message was sent from the SupportCALL website contact form.
                     disabled={isSubmitting}
                   >
                     <Send className="w-4 h-4 mr-2 transition-transform group-hover:translate-x-1" />
-                    {isSubmitting ? "Sending..." : "🚀 Send My FREE Quote Request"}
+                    {isSubmitting ? "Sending..." : "Send My FREE Quote Request"}
                   </Button>
                 </form>
               </CardContent>

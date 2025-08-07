@@ -62,21 +62,21 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <Button variant="premium" size="lg" className="group animate-pulse hover:animate-none" asChild>
               <a href="#contact">
-                📞 Book FREE Consultation
+                Book FREE Consultation
                 <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href="#testimonials">💼 See Client Results</a>
+              <a href="#testimonials">See Client Results</a>
             </Button>
           </div>
 
           {/* Trust indicators */}
           <div className="pt-8">
-            <p className="text-sm text-muted-foreground mb-4">🏆 Trusted by industry leaders for 20+ years | 🌍 Serving SA & AU</p>
+            <p className="text-sm text-muted-foreground mb-4">Trusted by industry leaders for 20+ years | Serving SA & AU</p>
             <div className="flex justify-center items-center space-x-8 opacity-60">
-              <div className="text-xs font-medium bg-destructive/10 text-destructive px-3 py-1 rounded-full">🚨 24/7 Emergency Support</div>
-              <div className="text-xs font-medium bg-primary/10 text-primary px-3 py-1 rounded-full">✅ FREE Initial Assessment</div>
+              <div className="text-xs font-medium bg-destructive/10 text-destructive px-3 py-1 rounded-full">24/7 Emergency Support</div>
+              <div className="text-xs font-medium bg-primary/10 text-primary px-3 py-1 rounded-full">FREE Initial Assessment</div>
             </div>
           </div>
         </div>
