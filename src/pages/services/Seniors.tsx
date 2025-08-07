@@ -324,13 +324,10 @@ const Seniors = () => {
       <section className="py-20 bg-gradient-dark">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Get Started?
+            Ready to stop worrying about your parents' tech issues?
           </h2>
           <p className="text-xl text-white/80 mb-8">
-            Call us today for a friendly conversation about how we can help you with technology
-          </p>
-          <p className="text-white/70 text-lg">
-            Call Now: (555) 123-4567
+            Join other and let SupportCALL Tech Angels help your patient, with trusted, reliable support.
           </p>
         </div>
       </section>
