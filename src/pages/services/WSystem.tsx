@@ -18,8 +18,11 @@ import {
 import Navigation from "@/components/Navigation";
 import Acknowledgement from "@/components/Acknowledgement";
 import Footer from "@/components/Footer";
+import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelector";
 
 const WSystem = () => {
+  const { currency, setCurrency, formatPrice } = useCurrencyPricing();
+
   const features = [
     {
       icon: <FileText className="w-6 h-6" />,
@@ -82,6 +85,47 @@ const WSystem = () => {
       step: "4",
       title: "Claims Processing",
       description: "Streamlined warranty claim submission and tracking"
+    }
+  ];
+
+  const packages = [
+    {
+      name: "Starter",
+      price: formatPrice(199),
+      description: "Perfect for small businesses",
+      features: [
+        "Up to 100 assets",
+        "Basic warranty tracking",
+        "Email notifications",
+        "Standard reporting",
+        "Email support"
+      ]
+    },
+    {
+      name: "Professional",
+      price: formatPrice(399),
+      description: "Ideal for growing companies",
+      features: [
+        "Up to 1,000 assets",
+        "Advanced workflow automation",
+        "Multi-channel alerts",
+        "Custom reporting",
+        "Priority support",
+        "Vendor integrations"
+      ]
+    },
+    {
+      name: "Enterprise",
+      price: "Custom pricing",
+      description: "For large organizations",
+      features: [
+        "Unlimited assets",
+        "Full automation suite",
+        "Real-time monitoring",
+        "Advanced analytics",
+        "Dedicated account manager",
+        "Custom integrations"
+      ]
     }
   ];
 
@@ -252,6 +296,61 @@ const WSystem = () => {
                   <Database className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground">{integration}</h3>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Choose Your WSystem Package
+            </h2>
+            <div className="flex justify-center mb-6">
+              <CurrencySelector onCurrencyChange={setCurrency} selectedCurrency={currency} />
+            </div>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Flexible pricing options to match your warranty management needs
+            </p>
+            <p className="text-xs text-muted-foreground mt-4 italic">
+              * Pricing serves as a guide and actual pricing may differ based on service requirements
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {packages.map((pkg, index) => (
+              <Card key={index} className={`relative ${index === 1 ? 'border-primary shadow-elegant' : ''}`}>
+                {index === 1 && (
+                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary">
+                    Most Popular
+                  </Badge>
+                )}
+                <CardHeader className="text-center pb-8">
+                  <CardTitle className="text-2xl font-bold">{pkg.name}</CardTitle>
+                  <div className="text-3xl font-bold text-primary mt-4">
+                    {pkg.name === "Enterprise" ? pkg.price : `From ${pkg.price}/month`}
+                  </div>
+                  <p className="text-muted-foreground mt-2">{pkg.description}</p>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3 mb-8">
+                    {pkg.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center">
+                        <CheckCircle2 className="w-4 h-4 text-primary mr-3 flex-shrink-0" />
+                        <span className="text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button 
+                    variant={index === 1 ? "premium" : "outline"} 
+                    className="w-full"
+                  >
+                    Get Started
+                  </Button>
+                </CardContent>
               </Card>
             ))}
           </div>
