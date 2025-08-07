@@ -128,10 +128,10 @@ const RMM = () => {
               SupportCALL's TacticalRMM
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              TacticalRMM - Confidence in Your IT Systems
+              SupportCALL TacticalRMM - Confidence in Your IT Systems
             </h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
-              SupportCALL's TacticalRMM offers extensive Remote Monitoring and Management services, 
+              SupportCALL's TRMM offers extensive Remote Monitoring and Management services, 
               designed to ensure your IT systems run at peak performance while we handle the technical 
               details—maintaining security, reliability, and efficiency.
             </p>
@@ -157,7 +157,7 @@ const RMM = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Key Features of SupportCALL's TacticalRMM
+              Key Features of SupportCALL's TRMM
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Proactive monitoring and management tools to keep your business systems running smoothly
@@ -190,7 +190,7 @@ const RMM = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Why Choose SupportCALL's TacticalRMM?
+                Why Choose SupportCALL's TRMM?
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
                 We don't just monitor; we act. Our proactive approach identifies and resolves potential 
@@ -215,7 +215,7 @@ const RMM = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              TacticalRMM Service Packages
+              SC-TRMM Service Packages
             </h2>
             <div className="flex justify-center mb-6">
               <CurrencySelector onCurrencyChange={setCurrency} selectedCurrency={currency} />
@@ -270,7 +270,7 @@ const RMM = () => {
             Ready to Transform Your IT Management?
           </h2>
           <p className="text-xl text-white/80 mb-8">
-            Join hundreds of businesses that trust SupportCALL's TRMM for their IT infrastructure
+            Join hundreds of businesses that trust SupportCALL TRMM for their IT infrastructure
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="premium" size="lg">
