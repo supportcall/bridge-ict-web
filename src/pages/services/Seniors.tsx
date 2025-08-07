@@ -26,76 +26,79 @@ const Seniors = () => {
 
   const services = [
     {
-      icon: <Phone className="w-6 h-6" />,
-      title: "Patient Tech Support",
-      description: "Dedicated phone support with extra patience and clear explanations for all technology questions"
-    },
-    {
-      icon: <Home className="w-6 h-6" />,
-      title: "In-Home Setup",
-      description: "Personal visits to set up devices, internet, and software in the comfort of your home"
+      icon: <Headphones className="w-6 h-6" />,
+      title: "Remote Support",
+      description: "Friendly technicians connect to your computer remotely to troubleshoot problems during business hours"
     },
     {
       icon: <Monitor className="w-6 h-6" />,
-      title: "Computer Training",
-      description: "One-on-one training sessions to help you feel confident using computers and the internet"
+      title: "Software Support",
+      description: "Installation, configuration, updates, and troubleshooting for email, web browsers, and productivity programs"
     },
     {
-      icon: <Tablet className="w-6 h-6" />,
-      title: "Device Simplification",
-      description: "Customizing devices to be easier to use with larger icons and simplified interfaces"
+      icon: <Phone className="w-6 h-6" />,
+      title: "Internet Connectivity",
+      description: "Troubleshooting basic internet connection problems to keep you connected"
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "Security & Safety",
-      description: "Protecting you from online scams and setting up secure access to important services"
+      title: "Virus & Malware Removal",
+      description: "Scanning and removal of basic threats to keep your computer safe and secure"
+    },
+    {
+      icon: <Laptop className="w-6 h-6" />,
+      title: "Hardware Troubleshooting",
+      description: "Diagnosing basic hardware issues and recommending solutions"
     },
     {
       icon: <Heart className="w-6 h-6" />,
-      title: "Family Connections",
-      description: "Help you stay connected with family through video calls, messaging, and social media"
+      title: "System Optimization",
+      description: "Optimizing system settings for improved performance and better user experience"
     }
   ];
 
   const packages = [
     {
-      name: "Essential Care",
-      price: formatPrice(49),
-      description: "Basic support for everyday needs",
+      name: "Monthly Remote Support",
+      price: formatPrice(35),
+      description: "Reduced-cost monthly remote support for verified pensioners and retirees",
       features: [
-        "Monthly phone check-ins",
-        "Email & messaging support",
-        "Basic troubleshooting",
-        "Simple device guidance",
-        "Family update calls"
-      ],
-      popular: false
-    },
-    {
-      name: "Comfort Care",
-      price: formatPrice(89), 
-      description: "Comprehensive support with personal touch",
-      features: [
-        "Weekly phone support",
-        "Quarterly home visits",
-        "Priority response",
-        "Device optimization",
-        "Training sessions",
-        "Family coordination"
+        "Low monthly fee for peace of mind",
+        "Pay-as-you-go monthly billing",
+        "Verified pensioner/retiree exclusive",
+        "Remote computer troubleshooting",
+        "Patient, friendly support",
+        "Business hours availability",
+        "Software issue resolution",
+        "Basic email and internet help"
       ],
       popular: true
     },
     {
-      name: "Premium Care",
-      price: formatPrice(149),
-      description: "Complete technology care and management",
+      name: "One-Time Support",
+      price: formatPrice(65),
+      description: "Single session support for specific issues",
       features: [
-        "Unlimited phone support",
-        "Monthly home visits",
-        "24/7 emergency line",
-        "Full device management",
-        "Personal tech assistant",
-        "Health tech integration"
+        "One-time remote session",
+        "Specific problem resolution",
+        "No monthly commitment",
+        "Perfect for occasional issues",
+        "Same patient support approach",
+        "Up to 2 hours of assistance"
+      ],
+      popular: false
+    },
+    {
+      name: "On-Site Support",
+      price: "Quote on request",
+      description: "Physical on-site support when remote assistance isn't sufficient",
+      features: [
+        "In-person technical assistance",
+        "Hardware setup and installation",
+        "Physical device troubleshooting",
+        "Training on your own equipment",
+        "Custom pricing based on location",
+        "Available when remote support can't resolve the issue"
       ],
       popular: false
     }
@@ -133,14 +136,15 @@ const Seniors = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Badge variant="secondary" className="mb-4">
-              Technology Support for Seniors
+              Peace of Mind for Seniors
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Patient, Personal Technology Help
+              Stay Connected with Confidence
             </h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
-              We understand that technology can be overwhelming. Our specialized senior support 
-              provides patient, friendly help to keep you connected and confident with technology.
+              SupportCALL understands the challenges that seniors can face with technology. 
+              Our reduced-cost monthly remote support service is designed specifically for 
+              verified pensioners and retired desktop and laptop users.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -168,10 +172,11 @@ const Seniors = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Services Designed for You
+              What's Included in Our Support
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Our team specializes in providing technology support with the patience and understanding that seniors deserve
+              Remote support limited to services that can be actioned remotely. For complex issues 
+              requiring physical access, on-site support may be necessary at additional cost.
             </p>
           </div>
 
@@ -291,7 +296,7 @@ const Seniors = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Affordable Care Plans
+              Simple and Affordable Plans
             </h2>
             <div className="flex justify-center mb-6">
               <CurrencySelector onCurrencyChange={setCurrency} selectedCurrency={currency} />

@@ -26,53 +26,53 @@ const RMM = () => {
   const features = [
     {
       icon: <Monitor className="w-6 h-6" />,
-      title: "Remote Desktop Control",
-      description: "TeamViewer-like remote desktop control for complete system access"
-    },
-    {
-      icon: <Server className="w-6 h-6" />,
-      title: "Real-time Remote Shell",
-      description: "Execute commands and scripts remotely with real-time shell access"
-    },
-    {
-      icon: <Settings className="w-6 h-6" />,
-      title: "Remote File Browser",
-      description: "Download and upload files with integrated remote file management"
+      title: "Proactive Monitoring",
+      description: "Constantly tracks critical metrics like CPU and memory usage, disk space, and SMART status with real-time alerts"
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "Windows Patch Management",
-      description: "Automated Windows updates and patch management for security"
+      title: "Patch Management",
+      description: "Automated system updates and patches to reduce vulnerabilities and improve system reliability"
+    },
+    {
+      icon: <AlertTriangle className="w-6 h-6" />,
+      title: "Security Checks",
+      description: "Continuous security monitoring to safeguard your data and infrastructure from potential threats"
+    },
+    {
+      icon: <Settings className="w-6 h-6" />,
+      title: "Remote Management",
+      description: "Full remote access and control capabilities for quick issue resolution and system management"
     },
     {
       icon: <Bell className="w-6 h-6" />,
-      title: "Automated Alerting",
-      description: "Email/SMS/Webhook alerts for CPU, disk, memory, services and events"
+      title: "Custom Alerts",
+      description: "Personalized notifications for critical events to keep you informed about your system's health"
     },
     {
       icon: <Clock className="w-6 h-6" />,
-      title: "Automated Task Runner",
-      description: "Schedule and run scripts automatically with task automation"
+      title: "Automated Maintenance",
+      description: "Scheduled system maintenance tasks to prevent issues before they affect your business"
     },
     {
       icon: <BarChart3 className="w-6 h-6" />,
-      title: "Software & Hardware Inventory",
-      description: "Complete inventory tracking of software and hardware assets"
+      title: "Backup Solutions (Optional)",
+      description: "Optional backup services to ensure critical data is regularly backed up and quickly restored if needed"
     },
     {
-      icon: <Users className="w-6 h-6" />,
-      title: "Services Management",
-      description: "Monitor and manage Windows services across all endpoints"
+      icon: <CheckCircle className="w-6 h-6" />,
+      title: "Proactive Issue Resolution",
+      description: "Identify and resolve potential problems before they affect your business operations"
     }
   ];
 
   const benefits = [
-    "Reduced downtime and system failures",
-    "Lower IT operational costs",
-    "Improved system performance",
-    "Enhanced security posture",
-    "Proactive issue resolution",
-    "Comprehensive reporting and compliance"
+    "Proactive issue resolution before business impact",
+    "Enhanced security with continuous monitoring",
+    "Cost efficiency through early problem detection",
+    "Reduced need for on-site IT callouts",
+    "Peace of mind with expert system management",
+    "Minimized downtime and business disruptions"
   ];
 
   const packages = [
@@ -125,14 +125,15 @@ const RMM = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Badge variant="secondary" className="mb-4">
-              SupportCALL's Tactical RMM
+              SupportCALL's TacticalRMM
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              SupportCALL's TRMM - Tactical Remote Monitoring & Management
+              TacticalRMM - Confidence in Your IT Systems
             </h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
-              Built on Tactical RMM open-source platform, our SC-TRMM solution provides comprehensive 
-              remote monitoring, automated maintenance, and complete endpoint management for your business.
+              SupportCALL's TacticalRMM offers extensive Remote Monitoring and Management services, 
+              designed to ensure your IT systems run at peak performance while we handle the technical 
+              details—maintaining security, reliability, and efficiency.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="premium" size="lg">
@@ -156,10 +157,10 @@ const RMM = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              SupportCALL's TRMM Features
+              Key Features of SupportCALL's TacticalRMM
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Powered by Tactical RMM's proven open-source platform with enterprise-grade support
+              Proactive monitoring and management tools to keep your business systems running smoothly
             </p>
           </div>
 
@@ -189,11 +190,12 @@ const RMM = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Why Choose SupportCALL's TRMM?
+                Why Choose SupportCALL's TacticalRMM?
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Built on the robust Tactical RMM platform, our SC-TRMM delivers enterprise-grade 
-                remote monitoring with professional support and custom configurations.
+                We don't just monitor; we act. Our proactive approach identifies and resolves potential 
+                problems before they affect your business operations, providing peace of mind and 
+                reduced operational costs.
               </p>
               <div className="space-y-4">
                 {benefits.map((benefit, index) => (
@@ -213,7 +215,7 @@ const RMM = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Choose Your SC-TRMM Package
+              TacticalRMM Service Packages
             </h2>
             <div className="flex justify-center mb-6">
               <CurrencySelector onCurrencyChange={setCurrency} selectedCurrency={currency} />

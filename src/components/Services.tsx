@@ -22,60 +22,60 @@ const Services = () => {
   const primaryServices = [
     {
       icon: <Server className="w-8 h-8" />,
-      title: "Enterprise ICT Solutions",
-      description: "Comprehensive ICT infrastructure design, implementation, and management for large enterprises.",
-      features: ["Server Management", "Network Infrastructure", "System Integration", "Performance Optimization"]
+      title: "TacticalRMM - Remote Management & Monitoring",
+      description: "Proactive system monitoring with real-time alerts, automated patch management, security checks, and remote issue resolution to keep your IT infrastructure running at peak performance.",
+      features: ["Proactive Monitoring", "Patch Management", "Security Checks", "Remote Issue Resolution", "Automated Maintenance"]
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: "Security & Compliance",
-      description: "Advanced cybersecurity solutions to protect your business from modern digital threats.",
-      features: ["Threat Assessment", "Security Audits", "Compliance Management", "Incident Response"]
+      title: "W.System - Security & Compliance",
+      description: "Comprehensive XDR and SIEM protection with unified endpoint security, threat intelligence, vulnerability detection, and regulatory compliance for SME, corporate, and individual users.",
+      features: ["Unified XDR & SIEM", "Endpoint Security", "Threat Intelligence", "Compliance Management", "Vulnerability Detection"]
     },
     {
-      icon: <Cloud className="w-8 h-8" />,
-      title: "Cloud Services",
-      description: "Seamless cloud migration, management, and optimization for scalable business operations.",
-      features: ["Cloud Migration", "Hybrid Solutions", "Backup & Recovery", "Cost Optimization"]
+      icon: <Phone className="w-8 h-8" />,
+      title: "Local Tech Field Support",
+      description: "Our unique local best tech sourcing service provides on-site technical support for clients in remote locations where no local tech support is available. We coordinate qualified local technicians to provide hands-on assistance.",
+      features: ["Remote Location Coverage", "Local Tech Sourcing", "On-site Support", "Emergency Response", "Field Reporting"]
     },
     {
-      icon: <Headphones className="w-8 h-8" />,
-      title: "Proactive Support & Monitoring",
-      description: "Continuous monitoring, automation, patching, and preventive systems operate 24/7 to maintain system integrity and uptime. After-hours technical support, emergency response, and help desk services are available based on operational coverage and client requirements.",
-      features: ["Remote Monitoring", "Help Desk", "Emergency Response", "Preventive Maintenance"]
+      icon: <Users className="w-8 h-8" />,
+      title: "Peace of Mind for Seniors",
+      description: "Specialized reduced-cost monthly remote support service for verified pensioners and retired users, providing patient and comprehensive tech assistance for desktop and laptop users.",
+      features: ["Reduced Monthly Fee", "Senior-Friendly Support", "Remote Assistance", "Verified Eligibility", "Patient Guidance"]
     }
   ];
 
   const specializedServices = [
     {
+      icon: <Headphones className="w-6 h-6" />,
+      title: "Emergency Response",
+      description: "Prompt and effective emergency response to mitigate risks and minimize downtime during critical incidents."
+    },
+    {
       icon: <Monitor className="w-6 h-6" />,
-      title: "Remote Management & Monitoring",
-      description: "Proactive system monitoring and remote management services."
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: "Support for Seniors",
-      description: "Specialized ICT support tailored for senior users and accessibility needs."
-    },
-    {
-      icon: <Settings className="w-6 h-6" />,
-      title: "Consulting & Rates",
-      description: "Expert ICT consulting and competitive service rates."
+      title: "Onsite & Remote Support",
+      description: "Timely support both onsite and remotely to resolve issues quickly and minimize business disruptions."
     },
     {
       icon: <Wifi className="w-6 h-6" />,
-      title: "Network Solutions",
-      description: "Complete networking solutions from design to implementation."
+      title: "Connectivity Solutions",
+      description: "Reliable high-speed connectivity solutions for communication, collaboration, and online resource access."
     },
     {
       icon: <Database className="w-6 h-6" />,
-      title: "Data Management",
-      description: "Comprehensive data backup, recovery, and management solutions."
+      title: "Data Storage & Backup",
+      description: "Secure data storage and backup solutions to ensure business continuity and protect against data loss."
     },
     {
-      icon: <Lock className="w-6 h-6" />,
-      title: "Cybersecurity",
-      description: "Advanced security measures to protect your digital assets."
+      icon: <Settings className="w-6 h-6" />,
+      title: "Hardware & Software Supply",
+      description: "Reliable hardware and software solutions to support business operations and enable productivity."
+    },
+    {
+      icon: <Cloud className="w-6 h-6" />,
+      title: "Consulting & Asset Management",
+      description: "Professional IT consulting and asset management to optimize resource utilization and control costs."
     }
   ];
 
@@ -91,8 +91,9 @@ const Services = () => {
             Comprehensive ICT Solutions
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            From enterprise infrastructure to specialized support, we provide the complete 
-            range of ICT services your business needs to thrive in the digital age.
+            From TacticalRMM monitoring and W.System security to local tech sourcing for remote locations, 
+            we provide genuine ICT services your business needs including specialized support where no local 
+            technical assistance is available.
           </p>
         </div>
 
@@ -108,10 +109,10 @@ const Services = () => {
               <div className="absolute inset-0 bg-black/70 flex items-center justify-center">
                 <div className="text-center text-white">
                   <h3 className="text-2xl md:text-3xl font-bold mb-4 drop-shadow-lg">
-                    Complete ICT Ecosystem
+                    Complete ICT Solutions & Local Tech Support
                   </h3>
                   <p className="text-white max-w-2xl mx-auto text-lg font-medium drop-shadow-md">
-                    Integrated solutions covering every aspect of your technology infrastructure
+                    From remote monitoring to on-site local tech sourcing for areas without technical support
                   </p>
                 </div>
               </div>
