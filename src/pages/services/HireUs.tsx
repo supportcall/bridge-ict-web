@@ -151,12 +151,13 @@ const HireUs = () => {
               Scale your team quickly with our experienced IT professionals. From short-term projects 
               to long-term partnerships, we provide the talent you need to succeed.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="premium" size="lg">
-                Discuss Your Needs
-              </Button>
-              <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-primary">
-                View Our Talent
+            <div className="flex justify-center">
+              <Button 
+                variant="premium" 
+                size="lg"
+                onClick={() => openBooking()}
+              >
+                Book a Consultant
               </Button>
             </div>
           </div>
@@ -389,17 +390,13 @@ const HireUs = () => {
           <p className="text-xl text-white/80 mb-8">
             Let's discuss your staffing needs and find the perfect IT professionals for your project
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="premium" size="lg">
-              Start Your Project
-            </Button>
+          <div className="flex justify-center">
             <Button 
-              variant="outline" 
-              size="lg" 
-              className="text-white border-white hover:bg-white hover:text-primary"
+              variant="premium" 
+              size="lg"
               onClick={() => openBooking()}
             >
-              Request Consultation
+              Book a Consultant
             </Button>
           </div>
         </div>
