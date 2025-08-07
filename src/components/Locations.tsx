@@ -1,156 +1,112 @@
-import { Card, CardContent } from "@/components/ui/card";
+import React, { Suspense } from 'react';
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Mail, Clock, Users, ArrowRight } from "lucide-react";
-import GlobalMap from "./GlobalMap";
+import { Skeleton } from "@/components/ui/skeleton";
+
+// Lazy load heavy components
+const GlobalMap = React.lazy(() => import("@/components/GlobalMap"));
+const AnimatedWorldMap = React.lazy(() => import("@/components/AnimatedWorldMap"));
+
+// Loading skeleton for map components
+const MapSkeleton = () => (
+  <div className="w-full h-96 bg-muted rounded-lg flex items-center justify-center">
+    <div className="space-y-4 w-full max-w-sm">
+      <Skeleton className="h-4 w-3/4 mx-auto" />
+      <Skeleton className="h-32 w-full" />
+      <Skeleton className="h-4 w-1/2 mx-auto" />
+    </div>
+  </div>
+);
 
 const Locations = () => {
   const locations = [
     {
-      country: "Australia", 
-      city: "Sydney",
-      region: "New South Wales",
-      description: "Expanding our reach across the Asia-Pacific region",
-      phone: "+61 (0)4 7822 2380",
-      whatsapp: "+61 488 123 456",
-      email: "info@supportcall.com.au",
-      hours: "Mon - Fri: 09H00 - 15H00 AEST",
-      services: ["Remote Management", "Cloud Services", "Security Solutions", "Consulting", "Enterprise Solutions", "SME Solutions", "Home Solutions", "Emergency Response", "On-site Support", "Cabling", "Wireless", "ISP", "Hosting"],
-      coverage: "Australia & New Zealand"
+      country: "South Africa",
+      city: "Durban",
+      region: "KwaZulu-Natal",
+      timezone: "SAST (UTC+2)",
+      contact: "+27 (0)87 822 2380",
+      email: "info@supportcall.co.za",
+      description: "Southern Africa Regional HQ",
+      coordinates: { lat: -29.8587, lng: 31.0218 }
     },
     {
-      country: "South Africa",
-      city: "Johannesburg",
-      region: "Gauteng",
-      description: "Our primary hub serving the African continent",
-      phone: "+27 87 822 2380",
-      whatsapp: "+27 78 862 0716",
-      email: "info@supportcall.co.za",
-      hours: "Mon - Fri: 09H00 - 15H00 SAST",
-      services: ["Remote Management", "Cloud Services", "Security Solutions", "Consulting", "Enterprise Solutions", "SME Solutions", "Home Solutions", "Emergency Response", "On-site Support", "Cabling", "Wireless", "ISP", "Hosting"],
-      coverage: "Nationwide Coverage"
+      country: "Australia", 
+      city: "Launceston",
+      region: "Tasmania",
+      timezone: "AEST (UTC+10)",
+      contact: "+61 (0)4 7822 2380",
+      email: "info@supportcall.com.au", 
+      description: "Australia & Pacific Regional HQ",
+      coordinates: { lat: -41.4332, lng: 147.1441 }
     }
   ];
 
   return (
-    <section id="locations" className="py-20 bg-gradient-subtle">
+    <section id="locations" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-4">
-            Our Global Presence
+            Global Presence
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            No Location Left Behind
+            Supporting Two Continents
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            We understand the importance of local and remote support. Even if we don't have a 
-            technician in your area immediately, we'll move quickly to secure one within two weeks. 
-            Your needs are our priority.
+            With strategic locations in South Africa and Australia, we provide 
+            comprehensive ICT services across multiple time zones and regions.
           </p>
         </div>
 
-
-        {/* Location Cards */}
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           {locations.map((location, index) => (
-            <Card key={index} className="hover:shadow-elegant transition-all duration-300">
-              <CardContent className="p-8">
-                <div className="flex items-start justify-between mb-6">
-                  <div>
-                    <div className="flex items-center space-x-2 mb-2">
-                      <MapPin className="w-5 h-5 text-supportcall-orange" />
-                      <h3 className="text-2xl font-bold text-foreground">
-                        {location.country}
-                      </h3>
-                    </div>
-                    <p className="text-lg text-supportcall-blue font-medium">
-                      {location.city}, {location.region}
-                    </p>
-                    <p className="text-muted-foreground mt-2">
-                      {location.description}
-                    </p>
-                  </div>
-                  <Badge variant="outline" className="text-xs">
-                    {location.coverage}
-                  </Badge>
+            <div key={index} className="bg-background rounded-xl shadow-elegant p-8 border">
+              <div className="flex items-start justify-between mb-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">
+                    {location.city}, {location.country}
+                  </h3>
+                  <p className="text-primary font-medium">{location.description}</p>
+                  <p className="text-sm text-muted-foreground">{location.region}</p>
                 </div>
+                <Badge variant="outline" className="ml-4">
+                  {location.timezone}
+                </Badge>
+              </div>
 
-                {/* Contact Information */}
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-4 h-4 text-supportcall-green" />
-                    <div>
-                      <a href={`tel:${location.phone}`} className="text-sm hover:text-primary">
-                        {location.phone}
-                      </a>
-                      <br />
-                      <a href={`tel:${location.whatsapp}`} className="text-xs text-muted-foreground hover:text-primary">
-                        {location.whatsapp} (WhatsApp)
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Mail className="w-4 h-4 text-supportcall-green" />
-                    <a href={`mailto:${location.email}`} className="text-sm hover:text-primary">
-                      {location.email}
-                    </a>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Clock className="w-4 h-4 text-supportcall-green" />
-                    <span className="text-sm text-muted-foreground">
-                      {location.hours}
-                    </span>
-                  </div>
+              <div className="space-y-4">
+                <div>
+                  <p className="text-sm font-medium text-foreground mb-1">Phone</p>
+                  <p className="text-primary">{location.contact}</p>
                 </div>
-
-                {/* Services */}
-                <div className="mb-6">
-                  <div className="flex items-center space-x-2 mb-3">
-                    <Users className="w-4 h-4 text-supportcall-blue" />
-                    <h4 className="font-semibold text-foreground">Key Services</h4>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {location.services.map((service, serviceIndex) => (
-                      <Badge key={serviceIndex} variant="secondary" className="text-xs">
-                        {service}
-                      </Badge>
-                    ))}
-                  </div>
+                <div>
+                  <p className="text-sm font-medium text-foreground mb-1">Email</p>
+                  <p className="text-primary">{location.email}</p>
                 </div>
-
-                {/* Action Button */}
-                <Button variant="outline" className="w-full group">
-                  Contact {location.city} Office
-                  <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
 
-        {/* Expansion Notice */}
-        <Card className="border-l-4 border-l-supportcall-orange bg-supportcall-orange/5">
-          <CardContent className="p-6">
-            <div className="flex items-start space-x-3">
-              <MapPin className="w-6 h-6 text-supportcall-orange mt-1" />
-              <div>
-                <h4 className="font-semibold text-foreground mb-2">
-                  Expanding Our Network
-                </h4>
-                <p className="text-sm text-muted-foreground mb-4">
-                  We're actively expanding our technician network across all serviced regions. 
-                  Where permanent on-site coverage isn't immediately available, we deploy a temporary 
-                  support solution as soon as possible and commit to securing local support within two weeks. 
-                  Remote support is available immediately.
-                </p>
-                <Button variant="premium" size="sm">
-                  Request Coverage Assessment
-                </Button>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        {/* Interactive World Map */}
+        <div className="bg-background rounded-xl shadow-elegant p-8 border mb-8">
+          <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
+            Our Global Reach
+          </h3>
+          <Suspense fallback={<MapSkeleton />}>
+            <GlobalMap />
+          </Suspense>
+        </div>
+
+        {/* Animated SVG World Map Alternative */}
+        <div className="bg-background rounded-xl shadow-elegant p-8 border">
+          <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
+            Connected Across Continents
+          </h3>
+          <Suspense fallback={<MapSkeleton />}>
+            <AnimatedWorldMap />
+          </Suspense>
+        </div>
       </div>
     </section>
   );
