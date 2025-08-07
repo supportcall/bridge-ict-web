@@ -173,26 +173,24 @@ const RMM = () => {
 
       {/* Benefits Section */}
       <section className="py-20 bg-card border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Why Choose SupportCALL's TRMM?
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                We don't just monitor; we act. Our proactive approach identifies and resolves potential 
-                problems before they affect your business operations, providing peace of mind and 
-                reduced operational costs.
-              </p>
-              <div className="space-y-4">
-                {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                    <span className="text-foreground">{benefit}</span>
-                  </div>
-                ))}
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Why Choose SupportCALL's TRMM?
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              We don't just monitor; we act. Our proactive approach identifies and resolves potential 
+              problems before they affect your business operations, providing peace of mind and 
+              reduced operational costs.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="flex items-center p-4 bg-background rounded-lg border border-border">
+                <CheckCircle className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                <span className="text-foreground">{benefit}</span>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
