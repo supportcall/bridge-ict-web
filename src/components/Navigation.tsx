@@ -16,6 +16,13 @@ const Navigation = () => {
     { name: "Contact", href: "#contact" },
   ];
 
+  const handleNavClick = (item: { name: string; href: string }) => {
+    if (item.name === "Home") {
+      window.location.href = "/";
+      setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+    }
+  };
+
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/98 backdrop-blur-md border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,6 +40,12 @@ const Navigation = () => {
                   key={item.name}
                   href={item.href}
                   className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  onClick={(e) => {
+                    if (item.name === "Home") {
+                      e.preventDefault();
+                      handleNavClick(item);
+                    }
+                  }}
                 >
                   {item.name}
                 </a>
@@ -71,7 +84,13 @@ const Navigation = () => {
                   key={item.name}
                   href={item.href}
                   className="text-foreground hover:text-primary hover:bg-muted/50 block px-3 py-3 rounded-md text-base font-medium transition-all duration-200 border-l-2 border-transparent hover:border-primary"
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    if (item.name === "Home") {
+                      e.preventDefault();
+                      handleNavClick(item);
+                    }
+                    setIsOpen(false);
+                  }}
                 >
                   {item.name}
                 </a>
