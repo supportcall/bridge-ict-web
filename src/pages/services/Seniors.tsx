@@ -265,28 +265,7 @@ const Seniors = () => {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-6">
-              <Card className="text-center p-6 bg-gradient-subtle">
-                <Users className="w-8 h-8 text-primary mx-auto mb-3" />
-                <div className="text-2xl font-bold text-foreground mb-2">1000+</div>
-                <div className="text-sm text-muted-foreground">Seniors Helped</div>
-              </Card>
-              <Card className="text-center p-6 bg-gradient-subtle">
-                <Clock className="w-8 h-8 text-primary mx-auto mb-3" />
-                <div className="text-2xl font-bold text-foreground mb-2">15+</div>
-                <div className="text-sm text-muted-foreground">Years Experience</div>
-              </Card>
-              <Card className="text-center p-6 bg-gradient-subtle">
-                <Heart className="w-8 h-8 text-primary mx-auto mb-3" />
-                <div className="text-2xl font-bold text-foreground mb-2">98%</div>
-                <div className="text-sm text-muted-foreground">Satisfaction Rate</div>
-              </Card>
-              <Card className="text-center p-6 bg-gradient-subtle">
-                <Headphones className="w-8 h-8 text-primary mx-auto mb-3" />
-                <div className="text-2xl font-bold text-foreground mb-2">24/7</div>
-                <div className="text-sm text-muted-foreground">Support Available</div>
-              </Card>
-            </div>
+            {/* Statistics section removed as requested */}
           </div>
         </div>
       </section>
