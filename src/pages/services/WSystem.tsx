@@ -357,7 +357,7 @@ const WSystem = () => {
                   <p className="text-muted-foreground mt-2">{pkg.description}</p>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-3 mb-8">
+                  <ul className="space-y-3">
                     {pkg.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center">
                         <CheckCircle2 className="w-4 h-4 text-primary mr-3 flex-shrink-0" />
