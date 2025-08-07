@@ -19,6 +19,7 @@ import Navigation from "@/components/Navigation";
 import Acknowledgement from "@/components/Acknowledgement";
 import Footer from "@/components/Footer";
 import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelector";
+import { openBooking } from "@/utils/booking";
 
 const Seniors = () => {
   const { currency, setCurrency, formatPrice } = useCurrencyPricing();
@@ -142,10 +143,19 @@ const Seniors = () => {
               provides patient, friendly help to keep you connected and confident with technology.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="premium" size="lg">
+              <Button 
+                variant="premium" 
+                size="lg"
+                onClick={() => openBooking()}
+              >
                 Call for Free Consultation
               </Button>
-              <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-primary">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="text-white border-white hover:bg-white hover:text-primary"
+                onClick={() => openBooking()}
+              >
                 Learn More
               </Button>
             </div>
@@ -342,7 +352,12 @@ const Seniors = () => {
             <Button variant="premium" size="lg">
               Call Now: (555) 123-4567
             </Button>
-            <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-primary">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="text-white border-white hover:bg-white hover:text-primary"
+              onClick={() => openBooking()}
+            >
               Schedule Home Visit
             </Button>
           </div>

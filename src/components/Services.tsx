@@ -16,6 +16,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import servicesIcon from "@/assets/services-icon.jpg";
+import { openBooking } from "@/utils/booking";
 
 const Services = () => {
   const primaryServices = [
@@ -231,7 +232,7 @@ const Services = () => {
             <Button 
               variant="premium" 
               size="lg"
-              onClick={() => window.open('https://calendar.google.com/calendar/appointments/AcZssZ080B_PhEBAKSwXoxQoRe5UoUNhjEfq07OIxgo=?gv=true', '_blank')}
+              onClick={() => openBooking()}
             >
               Book Consultation
             </Button>

@@ -27,6 +27,7 @@ import Navigation from "@/components/Navigation";
 import Acknowledgement from "@/components/Acknowledgement";
 import Footer from "@/components/Footer";
 import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelector";
+import { openBooking } from "@/utils/booking";
 
 const WSystem = () => {
   const { currency, setCurrency, formatPrice } = useCurrencyPricing();
@@ -174,7 +175,12 @@ const WSystem = () => {
               <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
                 Start Free Trial
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-white text-white hover:bg-white/10"
+                onClick={() => openBooking()}
+              >
                 Schedule Demo
               </Button>
             </div>
@@ -439,7 +445,12 @@ const WSystem = () => {
               <Shield className="w-5 h-5 mr-2" />
               Start Free Trial
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-white text-white hover:bg-white/10"
+              onClick={() => openBooking()}
+            >
               <Users className="w-5 h-5 mr-2" />
               Schedule Demo
             </Button>

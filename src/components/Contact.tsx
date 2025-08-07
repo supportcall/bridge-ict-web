@@ -15,6 +15,7 @@ import {
   Calendar
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { openBooking } from "@/utils/booking";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -148,7 +149,12 @@ const Contact = () => {
 
             {/* Quick Actions */}
             <div className="space-y-4">
-              <Button variant="premium" className="w-full" size="lg">
+              <Button 
+                variant="premium" 
+                className="w-full" 
+                size="lg"
+                onClick={() => openBooking()}
+              >
                 <Calendar className="w-4 h-4 mr-2" />
                 Schedule Consultation
               </Button>

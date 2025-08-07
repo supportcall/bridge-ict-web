@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { openBooking } from "@/utils/booking";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,7 +55,7 @@ const Navigation = () => {
                 variant="premium" 
                 size="sm" 
                 className="ml-4"
-                onClick={() => window.open('https://calendar.google.com/calendar/appointments/AcZssZ080B_PhEBAKSwXoxQoRe5UoUNhjEfq07OIxgo=?gv=true', '_blank')}
+                onClick={() => openBooking()}
               >
                 Book Consultation
               </Button>
@@ -100,7 +101,7 @@ const Navigation = () => {
                   variant="premium" 
                   className="w-full h-12 text-base"
                   onClick={() => {
-                    window.open('https://calendar.google.com/calendar/appointments/AcZssZ080B_PhEBAKSwXoxQoRe5UoUNhjEfq07OIxgo=?gv=true', '_blank');
+                    openBooking();
                     setIsOpen(false);
                   }}
                 >

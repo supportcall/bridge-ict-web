@@ -19,6 +19,7 @@ import Navigation from "@/components/Navigation";
 import Acknowledgement from "@/components/Acknowledgement";
 import Footer from "@/components/Footer";
 import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelector";
+import { openBooking } from "@/utils/booking";
 
 const HireUs = () => {
   const { currency, setCurrency, getHourlyRate } = useCurrencyPricing();
@@ -378,7 +379,12 @@ const HireUs = () => {
             <Button variant="premium" size="lg">
               Start Your Project
             </Button>
-            <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-primary">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="text-white border-white hover:bg-white hover:text-primary"
+              onClick={() => openBooking()}
+            >
               Request Consultation
             </Button>
           </div>
