@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { openBooking } from "@/utils/booking";
+import { sendContactEmail } from "@/lib/supabase";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -27,23 +28,36 @@ const Contact = () => {
     service: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    toast({
-      title: "Message Sent Successfully!",
-      description: "We'll get back to you within 24 hours.",
-    });
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      company: "",
-      phone: "",
-      service: "",
-      message: ""
-    });
+    setIsSubmitting(true);
+    
+    try {
+      const result = await sendContactEmail(formData);
+      toast({
+        title: "Message Sent Successfully!",
+        description: `We'll get back to you within 24 hours. Sent to ${result.recipientEmail}`,
+      });
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        phone: "",
+        service: "",
+        message: ""
+      });
+    } catch (error) {
+      toast({
+        title: "Error Sending Message",
+        description: "Please try again or contact us directly via email.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -217,40 +231,42 @@ const Contact = () => {
                         placeholder="Your company name"
                       />
                     </div>
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                        Phone Number
-                      </label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="+27 or +61 phone number"
-                      />
-                    </div>
+                     <div>
+                       <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                         Phone Number *
+                       </label>
+                       <Input
+                         id="phone"
+                         name="phone"
+                         type="tel"
+                         required
+                         value={formData.phone}
+                         onChange={handleChange}
+                         placeholder="+27 or +61 phone number"
+                       />
+                     </div>
                   </div>
 
-                  <div>
-                    <label htmlFor="service" className="block text-sm font-medium text-foreground mb-2">
-                      Service of Interest
-                    </label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      className="w-full p-3 border border-input rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                    >
-                      <option value="">Select a service</option>
-                      {services.map((service, index) => (
-                        <option key={index} value={service}>
-                          {service}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
+                   <div>
+                     <label htmlFor="service" className="block text-sm font-medium text-foreground mb-2">
+                       Service of Interest *
+                     </label>
+                     <select
+                       id="service"
+                       name="service"
+                       required
+                       value={formData.service}
+                       onChange={handleChange}
+                       className="w-full p-3 border border-input rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                     >
+                       <option value="">Select a service</option>
+                       {services.map((service, index) => (
+                         <option key={index} value={service}>
+                           {service}
+                         </option>
+                       ))}
+                     </select>
+                   </div>
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
@@ -267,15 +283,16 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    variant="premium" 
-                    size="lg" 
-                    className="w-full group"
-                  >
-                    <Send className="w-4 h-4 mr-2 transition-transform group-hover:translate-x-1" />
-                    Send Message
-                  </Button>
+                   <Button 
+                     type="submit" 
+                     variant="premium" 
+                     size="lg" 
+                     className="w-full group"
+                     disabled={isSubmitting}
+                   >
+                     <Send className="w-4 h-4 mr-2 transition-transform group-hover:translate-x-1" />
+                     {isSubmitting ? "Sending..." : "Send Message"}
+                   </Button>
                 </form>
               </CardContent>
             </Card>
