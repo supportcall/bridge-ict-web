@@ -169,19 +169,6 @@ const WSystem = () => {
               The unified security platform providing XDR and SIEM protection for endpoints and cloud workloads. 
               Comprehensive threat detection, response, and compliance in one powerful solution.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" onClick={() => openBooking()}>
-                Start Free Trial
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-white text-white hover:bg-white/10"
-                onClick={() => openBooking()}
-              >
-                Schedule Demo
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -378,13 +365,6 @@ const WSystem = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button 
-                    variant={index === 1 ? "default" : "outline"} 
-                    className="w-full"
-                    onClick={() => openBooking()}
-                  >
-                    Get Started
-                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -439,21 +419,6 @@ const WSystem = () => {
             Join thousands of organizations worldwide who trust W.system for their cybersecurity needs. 
             Start with a free trial or schedule a personalized demo today.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" onClick={() => openBooking()}>
-              <Shield className="w-5 h-5 mr-2" />
-              Start Free Trial
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-white text-white hover:bg-white/10"
-              onClick={() => openBooking()}
-            >
-              <Users className="w-5 h-5 mr-2" />
-              Schedule Demo
-            </Button>
-          </div>
           <p className="text-sm text-white/70 mt-6">
             Available in Australia and South Africa • 24/7 Expert Support • Enterprise-Grade Security
           </p>

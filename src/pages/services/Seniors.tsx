@@ -353,19 +353,9 @@ const Seniors = () => {
           <p className="text-xl text-white/80 mb-8">
             Call us today for a friendly conversation about how we can help you with technology
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="premium" size="lg">
-              Call Now: (555) 123-4567
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="text-white border-white hover:bg-white hover:text-primary"
-              onClick={() => openBooking()}
-            >
-              Schedule Home Visit
-            </Button>
-          </div>
+          <p className="text-white/70 text-lg">
+            Call Now: (555) 123-4567
+          </p>
         </div>
       </section>
 

@@ -135,19 +135,6 @@ const RMM = () => {
               designed to ensure your IT systems run at peak performance while we handle the technical 
               details—maintaining security, reliability, and efficiency.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="premium" size="lg">
-                Start Free Trial
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="text-white border-white hover:bg-white hover:text-primary"
-                onClick={() => openBooking()}
-              >
-                Schedule Demo
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -250,12 +237,6 @@ const RMM = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button 
-                    variant={index === 1 ? "premium" : "outline"} 
-                    className="w-full"
-                  >
-                    Get Started
-                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -272,14 +253,6 @@ const RMM = () => {
           <p className="text-xl text-white/80 mb-8">
             Join hundreds of businesses that trust SupportCALL TRMM for their IT infrastructure
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="premium" size="lg">
-              Start Free 30-Day Trial
-            </Button>
-            <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-primary">
-              Contact Sales Team
-            </Button>
-          </div>
         </div>
       </section>
 
