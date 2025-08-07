@@ -16,9 +16,13 @@ import {
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { openBooking } from "@/utils/booking";
+import { validateFormData, sanitizeInput, RateLimiter } from "@/utils/validation";
 
 const Contact = () => {
   const { toast } = useToast();
+  const [rateLimiter] = useState(() => new RateLimiter(3, 60000)); // 3 attempts per minute
+  const [formErrors, setFormErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,6 +34,33 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setFormErrors({});
+
+    // Rate limiting check
+    if (!rateLimiter.canAttempt()) {
+      const timeUntilReset = Math.ceil(rateLimiter.getTimeUntilReset() / 1000);
+      toast({
+        title: "Too Many Attempts",
+        description: `Please wait ${timeUntilReset} seconds before trying again.`,
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Validate form data
+    const validation = validateFormData(formData);
+    if (!validation.isValid) {
+      setFormErrors(validation.errors);
+      toast({
+        title: "Form Validation Error",
+        description: "Please correct the highlighted fields and try again.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
     
     // Determine email based on phone number
     let targetEmail = "info@supportcall.com.au"; // default
@@ -75,13 +106,26 @@ This message was sent from the SupportCALL website contact form.
       service: "",
       message: ""
     });
+    setFormErrors({});
+    setIsSubmitting(false);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    const sanitizedValue = sanitizeInput(value);
+    
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: sanitizedValue
     });
+    
+    // Clear error when user starts typing
+    if (formErrors[name]) {
+      setFormErrors({
+        ...formErrors,
+        [name]: ""
+      });
+    }
   };
 
   const contactInfo = [
@@ -217,7 +261,13 @@ This message was sent from the SupportCALL website contact form.
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="Your full name"
+                        aria-describedby="name-help"
+                        className={formErrors.name ? "border-destructive" : ""}
                       />
+                      {formErrors.name && (
+                        <p className="text-sm text-destructive mt-1">{formErrors.name}</p>
+                      )}
+                      <p id="name-help" className="sr-only">Enter your full name for contact purposes</p>
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
@@ -231,7 +281,11 @@ This message was sent from the SupportCALL website contact form.
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="your.email@company.com"
+                        className={formErrors.email ? "border-destructive" : ""}
                       />
+                      {formErrors.email && (
+                        <p className="text-sm text-destructive mt-1">{formErrors.email}</p>
+                      )}
                     </div>
                   </div>
 
@@ -261,7 +315,11 @@ This message was sent from the SupportCALL website contact form.
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder="+27 or +61 phone number"
+                        className={formErrors.phone ? "border-destructive" : ""}
                       />
+                      {formErrors.phone && (
+                        <p className="text-sm text-destructive mt-1">{formErrors.phone}</p>
+                      )}
                     </div>
                   </div>
 
@@ -275,7 +333,8 @@ This message was sent from the SupportCALL website contact form.
                       required
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full p-3 border border-input rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                      className={`w-full p-3 border border-input rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring ${formErrors.service ? "border-destructive" : ""}`}
+                      aria-describedby="service-help"
                     >
                       <option value="">Select a service</option>
                       {services.map((service, index) => (
@@ -284,6 +343,10 @@ This message was sent from the SupportCALL website contact form.
                         </option>
                       ))}
                     </select>
+                    {formErrors.service && (
+                      <p className="text-sm text-destructive mt-1">{formErrors.service}</p>
+                    )}
+                    <p id="service-help" className="sr-only">Select the service you're interested in from the dropdown menu</p>
                   </div>
 
                   <div>
@@ -298,7 +361,11 @@ This message was sent from the SupportCALL website contact form.
                       onChange={handleChange}
                       placeholder="Tell us about your ICT requirements, challenges, or questions..."
                       rows={6}
+                      className={formErrors.message ? "border-destructive" : ""}
                     />
+                    {formErrors.message && (
+                      <p className="text-sm text-destructive mt-1">{formErrors.message}</p>
+                    )}
                   </div>
 
                   <Button 
@@ -306,9 +373,10 @@ This message was sent from the SupportCALL website contact form.
                     variant="premium" 
                     size="lg" 
                     className="w-full group"
+                    disabled={isSubmitting}
                   >
                     <Send className="w-4 h-4 mr-2 transition-transform group-hover:translate-x-1" />
-                    Send Message
+                    {isSubmitting ? "Validating..." : "Send Message"}
                   </Button>
                 </form>
               </CardContent>
