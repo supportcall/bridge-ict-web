@@ -372,42 +372,6 @@ const WSystem = () => {
         </div>
       </section>
 
-      {/* Security Statistics */}
-      <section className="py-20 bg-card border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Proven Security Performance
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              W.system delivers measurable security improvements for organizations worldwide
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="text-center p-6 bg-card border-border">
-              <Monitor className="w-8 h-8 text-primary mx-auto mb-3" />
-              <div className="text-2xl font-bold text-foreground mb-2">100,000+</div>
-              <div className="text-sm text-muted-foreground">Endpoints Protected</div>
-            </Card>
-            <Card className="text-center p-6 bg-card border-border">
-              <Zap className="w-8 h-8 text-primary mx-auto mb-3" />
-              <div className="text-2xl font-bold text-foreground mb-2">90%</div>
-              <div className="text-sm text-muted-foreground">Faster Threat Detection</div>
-            </Card>
-            <Card className="text-center p-6 bg-card border-border">
-              <Shield className="w-8 h-8 text-primary mx-auto mb-3" />
-              <div className="text-2xl font-bold text-foreground mb-2">99.9%</div>
-              <div className="text-sm text-muted-foreground">Uptime Guarantee</div>
-            </Card>
-            <Card className="text-center p-6 bg-card border-border">
-              <Target className="w-8 h-8 text-primary mx-auto mb-3" />
-              <div className="text-2xl font-bold text-foreground mb-2">0.1%</div>
-              <div className="text-sm text-muted-foreground">False Positive Rate</div>
-            </Card>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-dark">
