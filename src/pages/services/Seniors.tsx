@@ -139,11 +139,11 @@ const Seniors = () => {
               Peace of Mind for Seniors
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Stay Connected with Confidence
+              SupportCALL Tech Angels
             </h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
-              SupportCALL understands the challenges that seniors can face with technology. 
-              Our reduced-cost monthly remote support service is designed specifically for 
+              Stay connected with confidence! SupportCALL understands the challenges that seniors can face with technology. 
+              That's why we offer a reduced-cost monthly remote support service designed specifically for 
               verified pensioners and retired desktop and laptop users.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
