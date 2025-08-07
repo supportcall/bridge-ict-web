@@ -265,9 +265,6 @@ const HireUs = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button variant="outline" className="w-full mt-6">
-                    Learn More
-                  </Button>
                 </CardContent>
               </Card>
             ))}
