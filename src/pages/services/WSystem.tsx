@@ -169,6 +169,13 @@ const WSystem = () => {
               The unified security platform providing XDR and SIEM protection for endpoints and cloud workloads. 
               Comprehensive threat detection, response, and compliance in one powerful solution.
             </p>
+            <Button 
+              onClick={() => openBooking()}
+              size="lg"
+              className="bg-white text-primary hover:bg-white/90 shadow-lg"
+            >
+              Book a Consultation
+            </Button>
           </div>
         </div>
       </section>
