@@ -88,12 +88,10 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold text-white mb-4">Services</h4>
               <ul className="space-y-2">
-                <li><a href="#services" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Enterprise Solutions</a></li>
-                <li><a href="#services" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Security & Compliance</a></li>
-                <li><a href="#services" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Cloud Services</a></li>
-                <li><a href="#services" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">24/7 Support</a></li>
-                <li><a href="/services/rmm" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Remote Monitoring</a></li>
-                <li><a href="/services/hire-us" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Consulting</a></li>
+                <li><a href="#services" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Services</a></li>
+                <li><a href="/services/rmm" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Remote Services</a></li>
+                <li><a href="/services/wsystem" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Security & Compliance</a></li>
+                <li><a href="/services/seniors" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Senior Care</a></li>
               </ul>
             </div>
 
