@@ -32,7 +32,7 @@ const Hero = () => {
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Delivering cutting-edge ICT services, management, and products to enterprises across South Africa, Australia and the world. Your trusted partner for digital transformation.
+            Delivering cutting-edge ICT services, management, and products to enterprises across Australia, South Africa and the world. Your trusted partner for digital transformation.
           </p>
 
           {/* Feature highlights */}

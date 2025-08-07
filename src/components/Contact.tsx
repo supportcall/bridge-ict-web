@@ -68,7 +68,7 @@ const Contact = () => {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Offices",
-      details: ["Regional HQ Offices in Durban, South Africa and Launceston, Australia"],
+      details: ["Regional HQ Offices in Launceston, Australia and Durban, South Africa"],
       description: "Serving both continents"
     },
     {
@@ -285,7 +285,7 @@ const Contact = () => {
                 Global Reach, Local Expertise
               </h3>
               <p className="text-white/80 max-w-2xl mx-auto mb-6">
-                With offices in South Africa and Australia, we provide world-class ICT 
+                With offices in Australia and South Africa, we provide world-class ICT 
                 solutions with the personal touch of local service. Our team understands 
                 the unique challenges of both markets.
               </p>

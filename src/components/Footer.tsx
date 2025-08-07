@@ -65,7 +65,7 @@ const Footer = () => {
                 </h3>
                 <p className="text-white/80 mb-6 leading-relaxed">
                   Delivering cutting-edge ICT services, management, and products to 
-                  enterprises across South Africa, Australia and the world. Your trusted partner 
+                  enterprises across Australia, South Africa and the world. Your trusted partner 
                   for digital transformation.
                 </p>
               </div>

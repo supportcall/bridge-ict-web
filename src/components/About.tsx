@@ -139,7 +139,7 @@ const About = () => {
               <h3 className="text-2xl font-semibold">Global Presence</h3>
             </div>
             <p className="text-center text-white/80 max-w-2xl mx-auto">
-              We operate across South Africa, Australia, and other international markets, 
+              We operate across Australia, South Africa, and other international markets, 
               with ongoing expansion into new regions. Our global reach, combined with local 
               expertise, ensures world-class ICT solutions tailored to the specific needs of each market.
             </p>
