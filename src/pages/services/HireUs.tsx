@@ -300,24 +300,6 @@ const HireUs = () => {
                 ))}
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-6">
-              <Card className="text-center p-6 bg-gradient-subtle">
-                <div className="text-2xl font-bold text-primary mb-2">500+</div>
-                <div className="text-sm text-muted-foreground">Projects Completed</div>
-              </Card>
-              <Card className="text-center p-6 bg-gradient-subtle">
-                <div className="text-2xl font-bold text-primary mb-2">98%</div>
-                <div className="text-sm text-muted-foreground">Client Satisfaction</div>
-              </Card>
-              <Card className="text-center p-6 bg-gradient-subtle">
-                <div className="text-2xl font-bold text-primary mb-2">15+</div>
-                <div className="text-sm text-muted-foreground">Years Experience</div>
-              </Card>
-              <Card className="text-center p-6 bg-gradient-subtle">
-                <div className="text-2xl font-bold text-primary mb-2">50+</div>
-                <div className="text-sm text-muted-foreground">Expert Consultants</div>
-              </Card>
-            </div>
           </div>
         </div>
       </section>
