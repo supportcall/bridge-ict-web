@@ -55,8 +55,8 @@ const About = () => {
             </h3>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                SupportCALL delivers comprehensive ICT services to clients across both South Africa 
-                and Australia, as well as internationally. We provide tailored solutions that align 
+                SupportCALL delivers comprehensive ICT services to clients across both Australia 
+                and South Africa, as well as internationally. We provide tailored solutions that align
                 with our clients' needs and budgets, regardless of location. Our consistent delivery, 
                 grounded in clear, proven principles, has earned us genuine trust-based relationships with our clients.
               </p>

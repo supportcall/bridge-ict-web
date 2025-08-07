@@ -7,18 +7,6 @@ import GlobalMap from "./GlobalMap";
 const Locations = () => {
   const locations = [
     {
-      country: "South Africa",
-      city: "Johannesburg",
-      region: "Gauteng",
-      description: "Our primary hub serving the African continent",
-      phone: "+27 87 822 2380",
-      whatsapp: "+27 78 862 0716",
-      email: "info@supportcall.co.za",
-      hours: "Mon - Fri: 09H00 - 15H00 SAST",
-      services: ["Remote Management", "Cloud Services", "Security Solutions", "Consulting", "Enterprise Solutions", "SME Solutions", "Home Solutions", "Emergency Response", "On-site Support", "Cabling", "Wireless", "ISP", "Hosting"],
-      coverage: "Nationwide Coverage"
-    },
-    {
       country: "Australia", 
       city: "Sydney",
       region: "New South Wales",
@@ -29,6 +17,18 @@ const Locations = () => {
       hours: "Mon - Fri: 09H00 - 15H00 AEST",
       services: ["Remote Management", "Cloud Services", "Security Solutions", "Consulting", "Enterprise Solutions", "SME Solutions", "Home Solutions", "Emergency Response", "On-site Support", "Cabling", "Wireless", "ISP", "Hosting"],
       coverage: "Australia & New Zealand"
+    },
+    {
+      country: "South Africa",
+      city: "Johannesburg",
+      region: "Gauteng",
+      description: "Our primary hub serving the African continent",
+      phone: "+27 87 822 2380",
+      whatsapp: "+27 78 862 0716",
+      email: "info@supportcall.co.za",
+      hours: "Mon - Fri: 09H00 - 15H00 SAST",
+      services: ["Remote Management", "Cloud Services", "Security Solutions", "Consulting", "Enterprise Solutions", "SME Solutions", "Home Solutions", "Emergency Response", "On-site Support", "Cabling", "Wireless", "ISP", "Hosting"],
+      coverage: "Nationwide Coverage"
     }
   ];
 
