@@ -11,6 +11,9 @@ import RMM from "./pages/services/RMM";
 import WSystem from "./pages/services/WSystem";
 import Seniors from "./pages/services/Seniors";
 import HireUs from "./pages/services/HireUs";
+import FeedbackInsights from "./pages/FeedbackInsights";
+import PointOfPresence from "./pages/PointOfPresence";
+import RemoteSupport from "./pages/RemoteSupport";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +31,9 @@ const App = () => (
             <Route path="/services/wsystem" element={<WSystem />} />
             <Route path="/services/seniors" element={<Seniors />} />
             <Route path="/services/hire-us" element={<HireUs />} />
+            <Route path="/feedback-insights" element={<FeedbackInsights />} />
+            <Route path="/point-of-presence" element={<PointOfPresence />} />
+            <Route path="/remote-support" element={<RemoteSupport />} />
             <Route path="/IndustryLeadersChooseSupportCALL" element={<Index />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

@@ -19,7 +19,7 @@ const Footer = () => {
   const footerLinks = {
     services: [
       "Enterprise Solutions",
-      "Security & Compliance",
+      "Security & Compliance", 
       "Cloud Services",
       "24/7 Support",
       "Remote Monitoring",
@@ -28,7 +28,7 @@ const Footer = () => {
     company: [
       "About Us",
       "Our Team",
-      "Careers",
+      "Careers", 
       "News & Updates",
       "Case Studies",
       "Contact"
@@ -40,14 +40,6 @@ const Footer = () => {
       "Emergency Support",
       "Training",
       "Community"
-    ],
-    legal: [
-      "Privacy Policy",
-      "Terms of Service",
-      "Data Protection",
-      "Cookie Policy",
-      "Compliance",
-      "Security"
     ]
   };
 
@@ -96,16 +88,12 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold text-white mb-4">Services</h4>
               <ul className="space-y-2">
-                {footerLinks.services.map((link, index) => (
-                  <li key={index}>
-                    <a 
-                      href="#services" 
-                      className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                <li><a href="#services" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Enterprise Solutions</a></li>
+                <li><a href="#services" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Security & Compliance</a></li>
+                <li><a href="#services" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Cloud Services</a></li>
+                <li><a href="#services" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">24/7 Support</a></li>
+                <li><a href="/services/rmm" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Remote Monitoring</a></li>
+                <li><a href="/services/hire-us" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Consulting</a></li>
               </ul>
             </div>
 
@@ -113,16 +101,12 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold text-white mb-4">Company</h4>
               <ul className="space-y-2">
-                {footerLinks.company.map((link, index) => (
-                  <li key={index}>
-                    <a 
-                      href="#about" 
-                      className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                <li><a href="#about" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">About Us</a></li>
+                <li><a href="#about" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Our Team</a></li>
+                <li><a href="https://wiki.supportcall.co.za/doku.php?id=supportcall_sa_company_profile" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Careers</a></li>
+                <li><a href="#contact" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">News & Updates</a></li>
+                <li><a href="#testimonials" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Case Studies</a></li>
+                <li><a href="#contact" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Contact</a></li>
               </ul>
             </div>
 
@@ -130,16 +114,12 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold text-white mb-4">Support</h4>
               <ul className="space-y-2">
-                {footerLinks.support.map((link, index) => (
-                  <li key={index}>
-                    <a 
-                      href="#contact" 
-                      className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                <li><a href="https://wiki.supportcall.co.za/doku.php" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Help Center</a></li>
+                <li><a href="https://wiki.supportcall.co.za/doku.php" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Documentation</a></li>
+                <li><a href="#services" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">System Status</a></li>
+                <li><a href="/services/hire-us" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Emergency Support</a></li>
+                <li><a href="#services" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Training</a></li>
+                <li><a href="/feedback-insights" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Community</a></li>
               </ul>
             </div>
           </div>
@@ -153,8 +133,8 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-white/60 mb-4 md:mb-0">
               © {new Date().getFullYear()} SupportCALL. All rights reserved. | 
-              <a href="#" className="hover:text-primary-glow ml-1">Privacy Policy</a> | 
-              <a href="#" className="hover:text-primary-glow ml-1">Terms of Service</a>
+              <a href="https://wiki.supportcall.co.za/doku.php?id=policy_-_privacy_policy" target="_blank" rel="noopener noreferrer" className="hover:text-primary-glow ml-1">Privacy Policy</a> | 
+              <a href="https://wiki.supportcall.co.za/doku.php?id=terms_of_enduser_ticket_system_usage" target="_blank" rel="noopener noreferrer" className="hover:text-primary-glow ml-1">Terms of Service</a>
             </div>
             
             <div className="flex items-center space-x-4">
