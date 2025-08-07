@@ -39,16 +39,10 @@ export default defineConfig(({ mode }) => ({
     sourcemap: false,
     // Optimize chunk size
     chunkSizeWarningLimit: 1000,
-    // Enable minification
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: mode === 'production',
-        drop_debugger: mode === 'production'
-      }
-    }
+    // Enable minification (using default esbuild instead of terser)
+    minify: true
   },
-  // Optimize dependencies
+  // Optimize dependencies  
   optimizeDeps: {
     include: [
       'react',
@@ -57,6 +51,10 @@ export default defineConfig(({ mode }) => ({
       '@tanstack/react-query',
       'lucide-react'
     ],
-    exclude: ['mapbox-gl'] // Large dependency - let it load separately
+    exclude: ['mapbox-gl']
+  },
+  // Handle mapbox-gl ESM issues
+  define: {
+    global: 'globalThis'
   }
 }));
