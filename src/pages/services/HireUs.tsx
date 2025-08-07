@@ -175,6 +175,9 @@ const HireUs = () => {
             <div className="flex justify-center mb-6">
               <CurrencySelector onCurrencyChange={setCurrency} selectedCurrency={currency} />
             </div>
+            <p className="text-xs text-muted-foreground mb-8 italic text-center">
+              * Pricing serves as a guide and actual pricing may differ based on individual needs and requirements
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
