@@ -236,7 +236,11 @@ const Services = () => {
             >
               Book Consultation
             </Button>
-            <Button variant="outline" size="lg">
+            <Button 
+              variant="outline" 
+              size="lg"
+              onClick={() => window.location.href = '#contact'}
+            >
               Request Quote
             </Button>
           </div>
