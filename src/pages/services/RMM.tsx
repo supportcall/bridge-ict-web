@@ -26,33 +26,43 @@ const RMM = () => {
   const features = [
     {
       icon: <Monitor className="w-6 h-6" />,
-      title: "Real-time Monitoring",
-      description: "24/7 monitoring of all your systems, networks, and applications"
+      title: "Remote Desktop Control",
+      description: "TeamViewer-like remote desktop control for complete system access"
     },
     {
-      icon: <Bell className="w-6 h-6" />,
-      title: "Proactive Alerts",
-      description: "Instant notifications when issues are detected before they impact your business"
+      icon: <Server className="w-6 h-6" />,
+      title: "Real-time Remote Shell",
+      description: "Execute commands and scripts remotely with real-time shell access"
     },
     {
       icon: <Settings className="w-6 h-6" />,
-      title: "Remote Management",
-      description: "Complete remote control and management of your IT infrastructure"
-    },
-    {
-      icon: <BarChart3 className="w-6 h-6" />,
-      title: "Performance Analytics",
-      description: "Detailed reports and analytics on system performance and health"
+      title: "Remote File Browser",
+      description: "Download and upload files with integrated remote file management"
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "Security Monitoring",
-      description: "Continuous security monitoring and threat detection"
+      title: "Windows Patch Management",
+      description: "Automated Windows updates and patch management for security"
+    },
+    {
+      icon: <Bell className="w-6 h-6" />,
+      title: "Automated Alerting",
+      description: "Email/SMS/Webhook alerts for CPU, disk, memory, services and events"
     },
     {
       icon: <Clock className="w-6 h-6" />,
-      title: "Automated Maintenance",
-      description: "Scheduled updates, patches, and maintenance tasks"
+      title: "Automated Task Runner",
+      description: "Schedule and run scripts automatically with task automation"
+    },
+    {
+      icon: <BarChart3 className="w-6 h-6" />,
+      title: "Software & Hardware Inventory",
+      description: "Complete inventory tracking of software and hardware assets"
+    },
+    {
+      icon: <Users className="w-6 h-6" />,
+      title: "Services Management",
+      description: "Monitor and manage Windows services across all endpoints"
     }
   ];
 
@@ -115,14 +125,14 @@ const RMM = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Badge variant="secondary" className="mb-4">
-              Remote Monitoring & Management
+              SupportCALL's Tactical RMM
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Proactive IT Management for Your Business
+              SupportCALL's TRMM - Tactical Remote Monitoring & Management
             </h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
-              Our RMM solutions provide 24/7 monitoring, proactive maintenance, and remote management 
-              to keep your IT infrastructure running at peak performance.
+              Built on Tactical RMM open-source platform, our SC-TRMM solution provides comprehensive 
+              remote monitoring, automated maintenance, and complete endpoint management for your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="premium" size="lg">
@@ -146,10 +156,10 @@ const RMM = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Comprehensive RMM Features
+              SupportCALL's TRMM Features
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Everything you need to monitor, manage, and maintain your IT infrastructure
+              Powered by Tactical RMM's proven open-source platform with enterprise-grade support
             </p>
           </div>
 
@@ -179,11 +189,11 @@ const RMM = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Why Choose Our RMM Solution?
+                Why Choose SupportCALL's TRMM?
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Our Remote Monitoring & Management service delivers measurable business value 
-                through proactive IT management and continuous optimization.
+                Built on the robust Tactical RMM platform, our SC-TRMM delivers enterprise-grade 
+                remote monitoring with professional support and custom configurations.
               </p>
               <div className="space-y-4">
                 {benefits.map((benefit, index) => (
@@ -203,7 +213,7 @@ const RMM = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Choose Your RMM Package
+              Choose Your SC-TRMM Package
             </h2>
             <div className="flex justify-center mb-6">
               <CurrencySelector onCurrencyChange={setCurrency} selectedCurrency={currency} />
@@ -258,7 +268,7 @@ const RMM = () => {
             Ready to Transform Your IT Management?
           </h2>
           <p className="text-xl text-white/80 mb-8">
-            Join hundreds of businesses that trust our RMM solutions for their IT infrastructure
+            Join hundreds of businesses that trust SupportCALL's TRMM for their IT infrastructure
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="premium" size="lg">
