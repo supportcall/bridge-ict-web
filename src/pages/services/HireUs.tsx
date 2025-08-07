@@ -29,108 +29,69 @@ const HireUs = () => {
 
   const services = [
     {
-      icon: <Code className="w-6 h-6" />,
-      title: "Software Development",
-      description: "Custom software solutions, web development, and application maintenance",
-      skills: ["React", "Node.js", "Python", "Database Design", "API Development"]
-    },
-    {
-      icon: <Server className="w-6 h-6" />,
-      title: "Infrastructure Management",
-      description: "Server administration, cloud migration, and system optimization",
-      skills: ["AWS/Azure", "Linux Administration", "Docker", "Network Security", "Performance Tuning"]
-    },
-    {
-      icon: <Shield className="w-6 h-6" />,
-      title: "Cybersecurity Services",
-      description: "Security audits, penetration testing, and compliance management",
-      skills: ["Security Auditing", "Threat Assessment", "Compliance", "Incident Response", "Risk Management"]
-    },
-    {
       icon: <Headphones className="w-6 h-6" />,
-      title: "Technical Support",
-      description: "Help desk services, user training, and ongoing technical assistance",
-      skills: ["Customer Service", "Troubleshooting", "Training", "Documentation", "Remote Support"]
-    },
-    {
-      icon: <Database className="w-6 h-6" />,
-      title: "Data Analytics",
-      description: "Business intelligence, reporting, and data visualization solutions",
-      skills: ["SQL", "Power BI", "Data Modeling", "ETL Processes", "Analytics"]
-    },
-    {
-      icon: <Monitor className="w-6 h-6" />,
-      title: "Project Management",
-      description: "IT project coordination, implementation, and delivery management",
-      skills: ["Agile/Scrum", "Risk Management", "Stakeholder Communication", "Budget Management", "Timeline Control"]
-    },
-    {
-      icon: <Network className="w-6 h-6" />,
-      title: "Network Cabling",
-      description: "Professional network infrastructure installation and maintenance",
-      skills: ["Structured Cabling", "Fiber Optics", "Cat6/Cat6a Installation", "Cable Management", "Network Testing"]
-    },
-    {
-      icon: <Wifi className="w-6 h-6" />,
-      title: "Wireless Point to Point, Mesh and AP",
-      description: "Advanced wireless network design and implementation solutions",
-      skills: ["Point-to-Point Links", "Mesh Networks", "Access Points", "Wireless Site Surveys", "RF Planning"]
-    }
-  ];
-
-  const engagementTypes = [
-    {
-      type: "Contract Staffing",
-      duration: "3-12 months",
-      description: "Skilled professionals for specific projects with defined timelines",
-      benefits: ["Quick deployment", "Specialized skills", "Project-focused", "Cost-effective"]
-    },
-    {
-      type: "Staff Augmentation",
-      duration: "6-24 months",
-      description: "Extend your team with our experts for ongoing projects",
-      benefits: ["Seamless integration", "Long-term commitment", "Knowledge transfer", "Flexible scaling"]
-    },
-    {
-      type: "Dedicated Teams",
-      duration: "12+ months",
-      description: "Complete teams working exclusively on your initiatives",
-      benefits: ["Full ownership", "Deep expertise", "Consistent delivery", "Strategic partnership"]
-    }
-  ];
-
-  const industries = [
-    "Healthcare & Medical",
-    "Financial Services",
-    "Manufacturing",
-    "Retail & E-commerce",
-    "Education",
-    "Government",
-    "Non-profit Organizations",
-    "Technology Startups"
-  ];
-
-  const whyChooseUs = [
-    {
-      icon: <Target className="w-6 h-6" />,
-      title: "Proven Track Record",
-      description: "15+ years delivering successful IT projects across diverse industries"
+      title: "Remote Support",
+      description: "Comprehensive remote IT support and troubleshooting via secure connections",
+      features: ["Screenconnect remote access", "Teams/Skype meetings", "Real-time problem solving", "System configuration"]
     },
     {
       icon: <Users className="w-6 h-6" />,
-      title: "Skilled Professionals",
-      description: "Certified experts with deep technical knowledge and business acumen"
+      title: "Onsite Support",
+      description: "Professional technicians available for on-location IT support and installations",
+      features: ["Hardware installation", "Network setup", "System maintenance", "Equipment upgrades"]
     },
+    {
+      icon: <Monitor className="w-6 h-6" />,
+      title: "Consulting Services",
+      description: "Expert IT consulting for strategic planning and technical guidance",
+      features: ["System architecture", "Technology planning", "Project management", "Technical audits"]
+    }
+  ];
+
+  const rateStructure = [
+    {
+      service: "Consulting",
+      zarRate: "ZAR 550.00",
+      audRate: "AUD 200.00", 
+      description: "Per hour, billed in 30-minute increments, 1-hour minimum"
+    },
+    {
+      service: "Onsite Callouts",
+      zarRate: "ZAR 400 - 1,500",
+      audRate: "AUD 35 - 250",
+      description: "Per hour, varies by complexity and location"
+    },
+    {
+      service: "Advanced Products",
+      zarRate: "Premium rates apply",
+      audRate: "Premium rates apply",
+      description: "XCP-ng, HAProxy, TrueNAS and specialized systems"
+    }
+  ];
+
+  const policies = [
     {
       icon: <Clock className="w-6 h-6" />,
-      title: "Fast Deployment",
-      description: "Get your project team up and running within 1-2 weeks"
+      title: "Business Hours",
+      description: "Monday - Friday 09H00 - 15H00 (after-hours available at premium rates)"
     },
     {
-      icon: <Star className="w-6 h-6" />,
-      title: "Quality Assurance",
-      description: "Rigorous vetting process ensures only top-tier talent joins your team"
+      icon: <Shield className="w-6 h-6" />,
+      title: "Warranty Policy",
+      description: "Hourly work is billable regardless of outcome. No warranty on time-based services."
+    },
+    {
+      icon: <Target className="w-6 h-6" />,
+      title: "Pre-Purchase Hours",
+      description: "Hours can be pre-purchased and expire 1 year from purchase date"
     }
+  ];
+
+  const meetingTools = [
+    "Teams and Skype for communication",
+    "Screenconnect for remote access",
+    "Phone backup if microphone unavailable",
+    "Webcams optional for meetings"
   ];
 
   return (
@@ -142,14 +103,14 @@ const HireUs = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Badge variant="secondary" className="mb-4">
-              Professional IT Staffing
+              Professional IT Services
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Hire Our Expert IT Professionals
+              Consulting, Onsite & Remote Support
             </h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
-              Scale your team quickly with our experienced IT professionals. From short-term projects 
-              to long-term partnerships, we provide the talent you need to succeed.
+              Expert IT consulting and support services tailored to your business needs. 
+              From strategic planning to hands-on technical support, we're here to help.
             </p>
             <div className="flex justify-center">
               <Button 
@@ -169,14 +130,14 @@ const HireUs = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Our Expertise Areas
+              Our Service Areas
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Our professionals bring deep expertise across all areas of information technology
+              Comprehensive IT support across remote, onsite, and consulting services
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Card key={index} className="hover:shadow-elegant transition-all duration-300">
                 <CardHeader>
@@ -189,79 +150,11 @@ const HireUs = () => {
                   <p className="text-muted-foreground">{service.description}</p>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-2">
-                    <h4 className="font-semibold text-sm text-foreground">Key Skills:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {service.skills.map((skill, skillIndex) => (
-                        <Badge key={skillIndex} variant="secondary" className="text-xs">
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-        {/* Pricing Section */}
-      <section className="py-20 bg-card border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Service Pricing
-            </h2>
-            <div className="flex justify-center mb-6">
-              <CurrencySelector onCurrencyChange={setCurrency} selectedCurrency={currency} />
-            </div>
-            <div className="max-w-2xl mx-auto">
-              <Card className="bg-card border-border p-8">
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold text-foreground mb-4">Professional IT Services</h3>
-                  <div className="text-4xl font-bold text-primary mb-4">
-                    {hourlyRate.min} - {hourlyRate.max}
-                  </div>
-                  <p className="text-lg text-muted-foreground mb-4">per hour</p>
-                  <div className="space-y-2 text-sm text-muted-foreground">
-                    <p>• Billed in 30-minute increments</p>
-                    <p>• 1-hour minimum purchase required</p>
-                  </div>
-                </div>
-              </Card>
-              <p className="text-xs text-muted-foreground mt-4 italic">
-                * Pricing serves as a guide and actual pricing may differ based on individual needs and requirements
-              </p>
-            </div>
-          </div>
-
-          {/* Engagement Types */}
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Flexible Engagement Options
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Choose the staffing model that best fits your project needs and timeline
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {engagementTypes.map((engagement, index) => (
-              <Card key={index} className="hover:shadow-elegant transition-all duration-300">
-                <CardHeader className="text-center">
-                  <Badge variant="outline" className="mb-4 mx-auto">
-                    {engagement.duration}
-                  </Badge>
-                  <CardTitle className="text-2xl">{engagement.type}</CardTitle>
-                  <p className="text-muted-foreground">{engagement.description}</p>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {engagement.benefits.map((benefit, benefitIndex) => (
-                      <li key={benefitIndex} className="flex items-center">
+                  <ul className="space-y-2">
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center">
                         <CheckCircle className="w-4 h-4 text-primary mr-3 flex-shrink-0" />
-                        <span className="text-sm">{benefit}</span>
+                        <span className="text-sm">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -272,86 +165,189 @@ const HireUs = () => {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-20 bg-background">
+      {/* Rate and Billing Section */}
+      <section className="py-20 bg-card border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Why Choose Our IT Professionals?
+              Rate and Billing Structure
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12">
-              When you hire our team, you get more than just technical skills. You get partners 
-              committed to your success with a proven methodology for delivering results.
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {whyChooseUs.map((reason, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <div className="text-primary">
-                      {reason.icon}
-                    </div>
-                  </div>
-                  <h3 className="font-semibold text-foreground mb-2">{reason.title}</h3>
-                  <p className="text-muted-foreground">{reason.description}</p>
+            <div className="flex justify-center mb-6">
+              <CurrencySelector onCurrencyChange={setCurrency} selectedCurrency={currency} />
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {rateStructure.map((rate, index) => (
+              <Card key={index} className="text-center p-6">
+                <h3 className="text-xl font-bold text-foreground mb-3">{rate.service}</h3>
+                <div className="text-2xl font-bold text-primary mb-2">
+                  {currency === 'ZAR' ? rate.zarRate : rate.audRate}
                 </div>
-              ))}
+                <p className="text-sm text-muted-foreground">{rate.description}</p>
+              </Card>
+            ))}
+          </div>
+
+          <div className="bg-card border border-border rounded-lg p-6">
+            <h3 className="text-xl font-bold text-foreground mb-4">Billing Terms & Conditions</h3>
+            <div className="grid md:grid-cols-2 gap-6 text-sm text-muted-foreground">
+              <ul className="space-y-2">
+                <li>• Billed in 30-minute increments</li>
+                <li>• 1-hour minimum purchase required</li>
+                <li>• Retirement home rates available (subject to verification)</li>
+                <li>• Higher rates for after-hours and holidays</li>
+                <li>• Premium rates for David Maree consultations</li>
+              </ul>
+              <ul className="space-y-2">
+                <li>• Hours can be pre-purchased upon request</li>
+                <li>• Account setup required for pre-purchase</li>
+                <li>• Invoices due immediately</li>
+                <li>• Unused hours expire 1 year from purchase</li>
+                <li>• Estimates available with defined scope</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Industries Section */}
+      {/* Meeting Tools & Process */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Meeting Tools & Process
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                We use industry-standard tools to ensure seamless communication and efficient problem resolution.
+              </p>
+              <div className="space-y-4">
+                {meetingTools.map((tool, index) => (
+                  <div key={index} className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                    <span className="text-muted-foreground">{tool}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg border border-yellow-200 dark:border-yellow-800">
+                <h4 className="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">Security Notice</h4>
+                <p className="text-sm text-yellow-700 dark:text-yellow-300">
+                  DO NOT send passwords or sensitive information via email. Our technician will coordinate secure information transfer during your meeting.
+                </p>
+              </div>
+            </div>
+            <div className="space-y-6">
+              <Card className="p-6">
+                <h3 className="font-semibold text-foreground mb-3">Ticket System Available</h3>
+                <p className="text-sm text-muted-foreground">
+                  Registered clients receive ticket system access for streamlined support requests and callout coordination.
+                </p>
+              </Card>
+              <Card className="p-6">
+                <h3 className="font-semibold text-foreground mb-3">Documentation Policy</h3>
+                <p className="text-sm text-muted-foreground">
+                  Send documentation after booking confirmation. Pre-meeting review is at technician's discretion and considered billable time.
+                </p>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Policies Section */}
       <section className="py-20 bg-card border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Industries We Serve
+              Service Policies
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Our professionals have experience across diverse industries and understand sector-specific challenges
-            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {industries.map((industry, index) => (
-              <Card key={index} className="text-center p-6 hover:shadow-lg transition-all duration-300">
+          <div className="grid md:grid-cols-3 gap-8">
+            {policies.map((policy, index) => (
+              <div key={index} className="text-center">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Briefcase className="w-6 h-6 text-primary" />
+                  <div className="text-primary">
+                    {policy.icon}
+                  </div>
                 </div>
-                <h3 className="font-semibold text-foreground">{industry}</h3>
-              </Card>
+                <h3 className="font-semibold text-foreground mb-2">{policy.title}</h3>
+                <p className="text-muted-foreground">{policy.description}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Network Coverage */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Our Hiring Process
+              No Location Left Behind
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              From initial consultation to team deployment, we make hiring IT talent simple and efficient
+              We actively expand our network of technicians across both South Africa and Australia. 
+              Even if we don't have a technician in your area immediately, we'll move quickly to secure one within two weeks.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 bg-card border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Contact SupportCALL
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              We value every client and would love to hear from you.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              { step: "1", title: "Requirements Analysis", description: "We understand your project needs, timeline, and team requirements" },
-              { step: "2", title: "Talent Matching", description: "Our team identifies the best-fit professionals from our network" },
-              { step: "3", title: "Interview Process", description: "You interview and select the candidates that meet your criteria" },
-              { step: "4", title: "Team Deployment", description: "Your new team members start working on your project within days" }
-            ].map((process, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-white">{process.step}</span>
+          <div className="grid md:grid-cols-2 gap-12">
+            <Card className="p-8">
+              <h3 className="text-2xl font-bold text-foreground mb-6 text-center">South Africa</h3>
+              <div className="space-y-4">
+                <div className="flex items-center justify-center">
+                  <span className="text-muted-foreground">Phone: </span>
+                  <a href="tel:+27878222380" className="text-primary hover:underline ml-2">+27 87 822 2380</a>
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">{process.title}</h3>
-                <p className="text-muted-foreground">{process.description}</p>
+                <div className="flex items-center justify-center">
+                  <span className="text-muted-foreground">WhatsApp: </span>
+                  <a href="tel:+27788620716" className="text-primary hover:underline ml-2">+27 78 862 0716</a>
+                </div>
+                <div className="flex items-center justify-center">
+                  <span className="text-muted-foreground">Email: </span>
+                  <a href="mailto:info@supportcall.co.za" className="text-primary hover:underline ml-2">info@supportcall.co.za</a>
+                </div>
               </div>
-            ))}
+            </Card>
+
+            <Card className="p-8">
+              <h3 className="text-2xl font-bold text-foreground mb-6 text-center">Australia</h3>
+              <div className="space-y-4">
+                <div className="flex items-center justify-center">
+                  <span className="text-muted-foreground">Phone: </span>
+                  <a href="tel:+61878222380" className="text-primary hover:underline ml-2">+61 87 822 2380</a>
+                </div>
+                <div className="flex items-center justify-center">
+                  <span className="text-muted-foreground">Alt: </span>
+                  <a href="tel:+61788620716" className="text-primary hover:underline ml-2">+61 78 862 0716</a>
+                </div>
+                <div className="flex items-center justify-center">
+                  <span className="text-muted-foreground">Email: </span>
+                  <a href="mailto:info@supportcall.com.au" className="text-primary hover:underline ml-2">info@supportcall.com.au</a>
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          <div className="text-center mt-8">
+            <p className="text-muted-foreground mb-2">Signal: @SupportCALL.01</p>
+            <p className="text-sm text-muted-foreground">Mon - Fri 09H00 - 15H00 (after-hours standby available)</p>
           </div>
         </div>
       </section>
@@ -360,10 +356,10 @@ const HireUs = () => {
       <section className="py-20 bg-gradient-dark">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Scale Your IT Team?
+            Ready to Get Expert IT Support?
           </h2>
           <p className="text-xl text-white/80 mb-8">
-            Let's discuss your staffing needs and find the perfect IT professionals for your project
+            Book your consultation today and let our experienced technicians solve your IT challenges.
           </p>
           <div className="flex justify-center">
             <Button 
