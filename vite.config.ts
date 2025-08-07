@@ -30,8 +30,7 @@ export default defineConfig(({ mode }) => ({
           'utils-vendor': ['clsx', 'tailwind-merge', 'class-variance-authority'],
           'icons-vendor': ['lucide-react'],
           'router-vendor': ['react-router-dom'],
-          'query-vendor': ['@tanstack/react-query'],
-          'mapbox-vendor': ['mapbox-gl']
+          'query-vendor': ['@tanstack/react-query']
         }
       }
     },
@@ -50,11 +49,6 @@ export default defineConfig(({ mode }) => ({
       'react-router-dom',
       '@tanstack/react-query',
       'lucide-react'
-    ],
-    exclude: ['mapbox-gl']
-  },
-  // Handle mapbox-gl ESM issues
-  define: {
-    global: 'globalThis'
+    ]
   }
 }));

@@ -1,157 +1,82 @@
-import React, { useEffect, useRef, useState } from 'react';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import React from 'react';
+import { MapPin, Globe, ExternalLink } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin } from "lucide-react";
-
+import { Button } from "@/components/ui/button";
 
 const GlobalMap = () => {
-  const mapContainer = useRef<HTMLDivElement>(null);
-  const map = useRef<mapboxgl.Map | null>(null);
-  const [apiKey, setApiKey] = useState(localStorage.getItem('mapbox-token') || '');
-  const [showKeyInput, setShowKeyInput] = useState(!apiKey);
-
-  const saveApiKey = () => {
-    if (apiKey.trim()) {
-      localStorage.setItem('mapbox-token', apiKey.trim());
-      setShowKeyInput(false);
-      initializeMap();
-    }
-  };
-
-  const initializeMap = () => {
-    if (!mapContainer.current || !apiKey) return;
-
-    mapboxgl.accessToken = apiKey;
-    
-    try {
-      map.current = new mapboxgl.Map({
-        container: mapContainer.current,
-        style: 'mapbox://styles/mapbox/satellite-streets-v12',
-        projection: 'globe',
-        zoom: 1.8,
-        center: [25, -15], // Between SA and AU
-        pitch: 0,
-      });
-
-      // Add navigation controls
-      map.current.addControl(
-        new mapboxgl.NavigationControl({
-          visualizePitch: true,
-        }),
-        'top-right'
-      );
-
-      // Atmosphere and fog effects
-      map.current.on('style.load', () => {
-        map.current?.setFog({
-          color: 'rgb(30, 30, 50)',
-          'high-color': 'rgb(50, 80, 120)',
-          'horizon-blend': 0.1,
-        });
-      });
-
-      // South Africa marker
-      new mapboxgl.Marker({ color: '#FF6B35' })
-        .setLngLat([24.7461, -28.2292]) // Johannesburg
-        .setPopup(new mapboxgl.Popup().setHTML('<h3>South Africa Office</h3><p>Johannesburg, SA</p>'))
-        .addTo(map.current);
-
-      // Australia marker
-      new mapboxgl.Marker({ color: '#FF6B35' })
-        .setLngLat([151.2093, -33.8688]) // Sydney
-        .setPopup(new mapboxgl.Popup().setHTML('<h3>Australia Office</h3><p>Sydney, AU</p>'))
-        .addTo(map.current);
-
-      // Animation between locations
-      const locations = [
-        { center: [20, 0], zoom: 3.5 }, // Africa (Central view)
-        { center: [140, -25], zoom: 3.5 }, // Oceania (Australia/Pacific)
-        { center: [80, -12], zoom: 2.2 }, // Wide view showing both continents
-      ];
-
-      let currentLocation = 0;
-      const animateToLocation = () => {
-        if (!map.current) return;
-        
-        const location = locations[currentLocation];
-        map.current.easeTo({
-          center: location.center as [number, number],
-          zoom: location.zoom,
-          duration: 8000,
-          essential: true
-        });
-        
-        currentLocation = (currentLocation + 1) % locations.length;
-      };
-
-      // Start animation after map loads
-      map.current.on('load', () => {
-        animateToLocation();
-        setInterval(animateToLocation, 12000);
-      });
-
-    } catch (error) {
-      console.error('Map initialization failed:', error);
-      setShowKeyInput(true);
-    }
-  };
-
-  useEffect(() => {
-    if (apiKey && !showKeyInput) {
-      initializeMap();
-    }
-
-    return () => {
-      map.current?.remove();
-    };
-  }, [apiKey, showKeyInput]);
-
-  if (showKeyInput) {
-    return (
-      <div className="relative w-full h-96 bg-gradient-dark flex items-center justify-center">
-        <Card className="w-full max-w-md mx-4">
-          <CardContent className="p-6">
-            <div className="flex items-center space-x-2 mb-4">
-              <MapPin className="w-5 h-5 text-primary" />
-              <h3 className="font-semibold">Map Configuration</h3>
-            </div>
-            <p className="text-sm text-muted-foreground mb-4">
-              Enter your Mapbox public token to view our global presence map.
-              Get yours at{" "}
-              <a 
-                href="https://mapbox.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                mapbox.com
-              </a>
-            </p>
-            <div className="space-y-3">
-              <Input
-                type="text"
-                placeholder="pk.eyJ1IjoieW91cnVzZXJuYW1lIi..."
-                value={apiKey}
-                onChange={(e) => setApiKey(e.target.value)}
-                className="w-full"
-              />
-              <Button onClick={saveApiKey} className="w-full" disabled={!apiKey.trim()}>
-                Initialize Map
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  }
-
   return (
-    <div className="relative w-full h-96 rounded-lg overflow-hidden">
-      <div ref={mapContainer} className="absolute inset-0" />
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-transparent to-background/20" />
+    <div className="relative w-full h-96 bg-gradient-dark rounded-lg overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20"></div>
+      
+      {/* Map placeholder with connection lines */}
+      <div className="relative h-full flex items-center justify-center">
+        <div className="absolute inset-0">
+          {/* Connection line between locations */}
+          <svg className="w-full h-full" viewBox="0 0 400 200">
+            <defs>
+              <linearGradient id="connectionLine" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.6" />
+                <stop offset="50%" stopColor="hsl(var(--accent))" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.6" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M 80 120 Q 200 60 320 140"
+              stroke="url(#connectionLine)"
+              strokeWidth="2"
+              fill="none"
+              className="animate-pulse"
+            />
+            {/* Data flow animation */}
+            <circle r="3" fill="hsl(var(--primary-glow))">
+              <animateMotion dur="3s" repeatCount="indefinite">
+                <path d="M 80 120 Q 200 60 320 140" />
+              </animateMotion>
+            </circle>
+          </svg>
+        </div>
+        
+        {/* Location markers */}
+        <div className="absolute left-20 top-1/2 transform -translate-y-1/2">
+          <div className="relative">
+            <div className="w-4 h-4 bg-accent rounded-full animate-pulse"></div>
+            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+              <div className="bg-background/90 rounded px-2 py-1 text-xs font-medium whitespace-nowrap">
+                South Africa
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="absolute right-20 bottom-1/3">
+          <div className="relative">
+            <div className="w-4 h-4 bg-primary-glow rounded-full animate-pulse"></div>
+            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+              <div className="bg-background/90 rounded px-2 py-1 text-xs font-medium whitespace-nowrap">
+                Australia
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Center content */}
+        <div className="text-center text-white z-10">
+          <Globe className="w-12 h-12 mx-auto mb-3 text-primary-glow" />
+          <h4 className="text-lg font-semibold mb-2">Global Infrastructure</h4>
+          <p className="text-sm text-white/80 mb-4 max-w-xs">
+            High-speed connections linking our regional offices
+          </p>
+          <Button 
+            variant="outline" 
+            size="sm" 
+            className="text-white border-white/30 hover:bg-white/10"
+            onClick={() => window.open('https://mapbox.com', '_blank')}
+          >
+            <ExternalLink className="w-3 h-3 mr-1" />
+            View Interactive Map
+          </Button>
+        </div>
+      </div>
     </div>
   );
 };

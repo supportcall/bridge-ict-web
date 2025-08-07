@@ -1,21 +1,6 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { Badge } from "@/components/ui/badge";
-import { Skeleton } from "@/components/ui/skeleton";
-
-// Lazy load heavy components
-const GlobalMap = React.lazy(() => import("@/components/GlobalMap"));
-const AnimatedWorldMap = React.lazy(() => import("@/components/AnimatedWorldMap"));
-
-// Loading skeleton for map components
-const MapSkeleton = () => (
-  <div className="w-full h-96 bg-muted rounded-lg flex items-center justify-center">
-    <div className="space-y-4 w-full max-w-sm">
-      <Skeleton className="h-4 w-3/4 mx-auto" />
-      <Skeleton className="h-32 w-full" />
-      <Skeleton className="h-4 w-1/2 mx-auto" />
-    </div>
-  </div>
-);
+import { MapPin, Globe, Phone, Mail } from "lucide-react";
 
 const Locations = () => {
   const locations = [
@@ -75,37 +60,50 @@ const Locations = () => {
               </div>
 
               <div className="space-y-4">
-                <div>
-                  <p className="text-sm font-medium text-foreground mb-1">Phone</p>
-                  <p className="text-primary">{location.contact}</p>
+                <div className="flex items-center space-x-3">
+                  <Phone className="w-4 h-4 text-primary" />
+                  <div>
+                    <p className="text-sm font-medium text-foreground mb-1">Phone</p>
+                    <p className="text-primary">{location.contact}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm font-medium text-foreground mb-1">Email</p>
-                  <p className="text-primary">{location.email}</p>
+                <div className="flex items-center space-x-3">
+                  <Mail className="w-4 h-4 text-primary" />
+                  <div>
+                    <p className="text-sm font-medium text-foreground mb-1">Email</p>
+                    <p className="text-primary">{location.email}</p>
+                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Interactive World Map */}
-        <div className="bg-background rounded-xl shadow-elegant p-8 border mb-8">
+        {/* Simple World Map Placeholder */}
+        <div className="bg-background rounded-xl shadow-elegant p-8 border">
           <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
             Our Global Reach
           </h3>
-          <Suspense fallback={<MapSkeleton />}>
-            <GlobalMap />
-          </Suspense>
-        </div>
-
-        {/* Animated SVG World Map Alternative */}
-        <div className="bg-background rounded-xl shadow-elegant p-8 border">
-          <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
-            Connected Across Continents
-          </h3>
-          <Suspense fallback={<MapSkeleton />}>
-            <AnimatedWorldMap />
-          </Suspense>
+          <div className="relative w-full h-96 bg-gradient-dark rounded-lg flex items-center justify-center overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20"></div>
+            <div className="relative z-10 text-center text-white">
+              <Globe className="w-16 h-16 mx-auto mb-4 text-primary-glow" />
+              <h4 className="text-xl font-semibold mb-2">Connecting Two Continents</h4>
+              <p className="text-white/80 max-w-md">
+                Serving clients across South Africa and Australia with world-class ICT solutions
+              </p>
+              <div className="flex justify-center space-x-8 mt-6">
+                <div className="text-center">
+                  <div className="w-3 h-3 bg-accent rounded-full mx-auto mb-2"></div>
+                  <p className="text-sm">South Africa</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-3 h-3 bg-primary-glow rounded-full mx-auto mb-2"></div>
+                  <p className="text-sm">Australia</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
