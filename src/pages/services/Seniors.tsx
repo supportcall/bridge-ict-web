@@ -229,43 +229,44 @@ const Seniors = () => {
       {/* Why Choose Us */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Why Seniors Choose Our Support
-              </h2>
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <CheckCircle className="w-6 h-6 text-primary mr-4 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-2">Patient & Understanding</h3>
-                    <p className="text-muted-foreground">We take the time to explain things clearly, never rushing or using confusing technical terms.</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="w-6 h-6 text-primary mr-4 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-2">Personal Service</h3>
-                    <p className="text-muted-foreground">You'll work with the same friendly technician who gets to know you and your needs.</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="w-6 h-6 text-primary mr-4 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-2">Family Involvement</h3>
-                    <p className="text-muted-foreground">We work with your family to ensure everyone stays connected and informed.</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="w-6 h-6 text-primary mr-4 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-2">Flexible Scheduling</h3>
-                    <p className="text-muted-foreground">We work around your schedule with convenient appointment times.</p>
-                  </div>
-                </div>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Why Seniors Choose Our Support
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="text-center p-6 hover:shadow-elegant transition-all duration-300">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Heart className="w-8 h-8 text-primary" />
               </div>
-            </div>
-            {/* Statistics section removed as requested */}
+              <h3 className="text-lg font-semibold text-foreground mb-3">Patient & Understanding</h3>
+              <p className="text-sm text-muted-foreground">We take the time to explain things clearly, never rushing or using confusing technical terms.</p>
+            </Card>
+            
+            <Card className="text-center p-6 hover:shadow-elegant transition-all duration-300">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold text-foreground mb-3">Personal Service</h3>
+              <p className="text-sm text-muted-foreground">You'll work with the same friendly technician who gets to know you and your needs.</p>
+            </Card>
+            
+            <Card className="text-center p-6 hover:shadow-elegant transition-all duration-300">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Home className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold text-foreground mb-3">Family Involvement</h3>
+              <p className="text-sm text-muted-foreground">We work with your family to ensure everyone stays connected and informed.</p>
+            </Card>
+            
+            <Card className="text-center p-6 hover:shadow-elegant transition-all duration-300">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold text-foreground mb-3">Flexible Scheduling</h3>
+              <p className="text-sm text-muted-foreground">We work around your schedule with convenient appointment times.</p>
+            </Card>
           </div>
         </div>
       </section>
