@@ -101,7 +101,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li><a href="#about" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">About Us</a></li>
                 <li><a href="https://wiki.supportcall.co.za/doku.php?id=supportcall_sa_company_profile" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Company Profile</a></li>
-                <li><a href="https://supportcall.co.za/store/forms/SC-RegForm.pdf" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">SIGN UP FORM</a></li>
+                <li><a href="https://supportcall.co.za/store/forms/SC-RegForm.pdf" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">SIgn Up Forn</a></li>
               </ul>
             </div>
 
