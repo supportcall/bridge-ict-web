@@ -13,7 +13,7 @@ const Navigation = () => {
     { name: "About", href: "#about", type: "anchor" },
     { name: "Services", href: "#services", type: "anchor" },
     { name: "RMM", href: "/services/rmm", type: "route" },
-    { name: "WSystem", href: "/services/wsystem", type: "route" },
+    { name: "Security & Compliance", href: "/services/wsystem", type: "route" },
     { name: "Seniors", href: "/services/seniors", type: "route" },
     { name: "Hire Us", href: "/services/hire-us", type: "route" },
     { name: "Contact", href: "#contact", type: "anchor" },
