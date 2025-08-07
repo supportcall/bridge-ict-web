@@ -333,8 +333,9 @@ This message was sent from the SupportCALL website contact form.
                       required
                       value={formData.service}
                       onChange={handleChange}
-                      className={`w-full p-3 border border-input rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring ${formErrors.service ? "border-destructive" : ""}`}
+                      className={`w-full p-3 border border-input rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring relative z-10 ${formErrors.service ? "border-destructive" : ""}`}
                       aria-describedby="service-help"
+                      style={{ backgroundColor: 'hsl(var(--background))', position: 'relative', zIndex: 10 }}
                     >
                       <option value="">Select a service</option>
                       {services.map((service, index) => (

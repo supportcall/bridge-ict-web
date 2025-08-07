@@ -239,7 +239,14 @@ const Services = () => {
             <Button 
               variant="outline" 
               size="lg"
-              onClick={() => window.location.href = '#contact'}
+              onClick={() => {
+                const contactSection = document.querySelector('#contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/#contact';
+                }
+              }}
             >
               Request Quote
             </Button>
