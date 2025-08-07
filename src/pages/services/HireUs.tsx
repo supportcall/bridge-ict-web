@@ -52,19 +52,22 @@ const HireUs = () => {
     {
       service: "Consulting",
       zarRate: "ZAR 550.00",
-      audRate: "AUD 200.00", 
+      audRate: "AUD 200.00",
+      usdRate: "USD 140.00", 
       description: "Per hour, billed in 30-minute increments, 1-hour minimum"
     },
     {
       service: "Onsite Callouts",
       zarRate: "ZAR 400 - 1,500",
       audRate: "AUD 35 - 250",
+      usdRate: "USD 25 - 175",
       description: "Per hour, varies by complexity and location"
     },
     {
       service: "Advanced Products",
       zarRate: "Premium rates apply",
       audRate: "Premium rates apply",
+      usdRate: "Premium rates apply",
       description: "XCP-ng, HAProxy, TrueNAS and specialized systems"
     }
   ];
@@ -185,7 +188,7 @@ const HireUs = () => {
               <Card key={index} className="text-center p-6">
                 <h3 className="text-xl font-bold text-foreground mb-3">{rate.service}</h3>
                 <div className="text-2xl font-bold text-primary mb-2">
-                  {currency === 'ZAR' ? rate.zarRate : rate.audRate}
+                  {currency === 'ZAR' ? rate.zarRate : currency === 'AUD' ? rate.audRate : rate.usdRate}
                 </div>
                 <p className="text-sm text-muted-foreground">{rate.description}</p>
               </Card>
