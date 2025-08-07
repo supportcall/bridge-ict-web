@@ -144,25 +144,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Newsletter Signup */}
-          <div className="mt-12 pt-8 border-t border-white/10">
-            <div className="max-w-md">
-              <h4 className="font-semibold text-white mb-2">Stay Updated</h4>
-              <p className="text-white/60 text-sm mb-4">
-                Get the latest ICT insights and industry updates delivered to your inbox.
-              </p>
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-3 py-2 text-sm bg-white/10 border border-white/20 rounded-md text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-primary-glow"
-                />
-                <Button variant="premium" size="sm">
-                  Subscribe
-                </Button>
-              </div>
-            </div>
-          </div>
         </div>
 
         <Separator className="bg-white/10" />
