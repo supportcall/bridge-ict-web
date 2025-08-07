@@ -152,16 +152,14 @@ const WSystem = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-dark">
+    <div className="min-h-screen dark">
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-20 bg-gradient-primary relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <section className="pt-20 pb-16 bg-gradient-dark">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <Badge variant="secondary" className="mb-6 bg-white/10 text-white border-white/20">
-              <Shield className="w-4 h-4 mr-2" />
+            <Badge variant="secondary" className="mb-4">
               Unified XDR & SIEM Protection
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
