@@ -337,7 +337,7 @@ const WSystem = () => {
               Flexible pricing options to match your security needs and organization size
             </p>
             <p className="text-xs text-muted-foreground mt-4 italic">
-              * Pricing serves as a guide and actual pricing may differ based on specific requirements and deployment model
+              * Pricing serves as a guide and actual pricing may differ based on individual needs and requirements
             </p>
           </div>
 

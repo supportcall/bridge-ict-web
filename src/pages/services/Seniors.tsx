@@ -277,7 +277,7 @@ const Seniors = () => {
               Choose the level of support that's right for you and your budget
             </p>
             <p className="text-xs text-muted-foreground mt-4 italic">
-              * Pricing serves as a guide and actual pricing may differ based on individual needs
+              * Pricing serves as a guide and actual pricing may differ based on individual needs and requirements
             </p>
           </div>
 

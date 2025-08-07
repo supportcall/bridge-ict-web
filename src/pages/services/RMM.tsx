@@ -211,7 +211,7 @@ const RMM = () => {
               Flexible pricing options to match your business needs and budget
             </p>
             <p className="text-xs text-muted-foreground mt-4 italic">
-              * Pricing serves as a guide and actual pricing may differ based on service requirements
+              * Pricing serves as a guide and actual pricing may differ based on individual needs and requirements
             </p>
           </div>
 

@@ -230,7 +230,7 @@ const HireUs = () => {
                 </div>
               </Card>
               <p className="text-xs text-muted-foreground mt-4 italic">
-                * Pricing serves as a guide and actual pricing may differ based on project complexity and requirements
+                * Pricing serves as a guide and actual pricing may differ based on individual needs and requirements
               </p>
             </div>
           </div>
