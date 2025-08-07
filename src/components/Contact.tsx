@@ -144,7 +144,7 @@ This message was sent from the SupportCALL website contact form.
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Offices",
-      details: ["Regional coordination centres : Launceston, AU | Durban, ZA"],
+      details: ["Coordination centres : Launceston, AU | Durban, ZA"],
       description: "Serving both continents"
     },
     {
