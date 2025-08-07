@@ -128,7 +128,7 @@ const Testimonials = () => {
                   </div>
                   <h4 className="font-semibold mb-2">Enterprise Security</h4>
                   <p className="text-white/80 text-sm">
-                    Bank-level security protocols and compliance standards
+                    Bank-level security protocols, ethical compliance standards, and rather high levels of security
                   </p>
                 </div>
                 <div className="text-center">
