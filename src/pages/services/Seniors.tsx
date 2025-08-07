@@ -146,21 +146,13 @@ const Seniors = () => {
               That's why we offer a reduced-cost monthly remote support service designed specifically for 
               verified pensioners and retired desktop and laptop users.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Button 
                 variant="premium" 
                 size="lg"
                 onClick={() => openBooking()}
               >
-                Call for Free Consultation
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="text-white border-white hover:bg-white hover:text-primary"
-                onClick={() => openBooking()}
-              >
-                Learn More
+                Book a Consultation
               </Button>
             </div>
           </div>
