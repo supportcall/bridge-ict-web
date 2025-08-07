@@ -30,11 +30,42 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
+    
+    // Determine email based on phone number
+    let targetEmail = "info@supportcall.com.au"; // default
+    if (formData.phone.startsWith("+27")) {
+      targetEmail = "info@supportcall.co.za";
+    } else if (formData.phone.startsWith("+61")) {
+      targetEmail = "info@supportcall.com.au";
+    }
+    
+    // Create email content
+    const subject = `Contact Form Submission - ${formData.service || 'General Enquiry'}`;
+    const body = `
+Name: ${formData.name}
+Email: ${formData.email}
+Company: ${formData.company || 'Not provided'}
+Phone: ${formData.phone}
+Service of Interest: ${formData.service}
+
+Message:
+${formData.message}
+
+---
+This message was sent from the SupportCALL website contact form.
+    `.trim();
+    
+    // Create mailto link
+    const mailtoLink = `mailto:${targetEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
     toast({
-      title: "Message Sent Successfully!",
-      description: "We'll get back to you within 24 hours.",
+      title: "Email Client Opened",
+      description: "Your email client should now open with the pre-filled message. Please send the email to complete your inquiry.",
     });
+    
     // Reset form
     setFormData({
       name: "",
