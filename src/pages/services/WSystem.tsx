@@ -323,6 +323,54 @@ const WSystem = () => {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Choose Your W.system Package
+            </h2>
+            <div className="flex justify-center mb-6">
+              <CurrencySelector onCurrencyChange={setCurrency} selectedCurrency={currency} />
+            </div>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Flexible pricing options to match your security needs and organization size
+            </p>
+            <p className="text-xs text-muted-foreground mt-4 italic">
+              * Pricing serves as a guide and actual pricing may differ based on specific requirements and deployment model
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {packages.map((pkg, index) => (
+              <Card key={index} className={`relative ${index === 1 ? 'border-primary shadow-elegant' : 'border-border bg-card'}`}>
+                {index === 1 && (
+                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary">
+                    Most Popular
+                  </Badge>
+                )}
+                <CardHeader className="text-center pb-8">
+                  <CardTitle className="text-2xl font-bold text-foreground">{pkg.name}</CardTitle>
+                  <div className="text-3xl font-bold text-primary mt-4">
+                    {pkg.name === "Enterprise" ? pkg.price : `From ${pkg.price}/month`}
+                  </div>
+                  <p className="text-muted-foreground mt-2">{pkg.description}</p>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3">
+                    {pkg.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center">
+                        <CheckCircle2 className="w-4 h-4 text-primary mr-3 flex-shrink-0" />
+                        <span className="text-sm text-foreground">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Security Statistics */}
       <section className="py-20 bg-card border-border">
