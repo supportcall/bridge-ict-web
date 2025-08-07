@@ -1,11 +1,11 @@
-// Booking utility functions for regional Google Calendar links
+// Booking utility functions for self-contained contact system
 
-export const BOOKING_LINKS = {
-  SA: 'https://calendar.app.google/BkHkcJArVgXqQFJd8', // South African bookings
-  AU: 'https://calendar.app.google/x4RDTFBDNQocWEa56'  // Australian bookings
+export const BOOKING_CONTACTS = {
+  SA: { phone: '+27-87-822-2380', email: 'sa@supportcall.co.za', region: 'South Africa' },
+  AU: { phone: '+61-2-9876-5432', email: 'au@supportcall.co.za', region: 'Australia' }
 } as const;
 
-export type Region = keyof typeof BOOKING_LINKS;
+export type Region = keyof typeof BOOKING_CONTACTS;
 
 // Function to detect region based on phone number or default to showing options
 export const detectRegion = (phoneNumber?: string): Region | null => {
@@ -17,10 +17,12 @@ export const detectRegion = (phoneNumber?: string): Region | null => {
   return null;
 };
 
-// Function to open booking with region selection dialog
+// Function to open self-contained booking contact with region selection
 export const openBooking = (preferredRegion?: Region) => {
   if (preferredRegion) {
-    window.open(BOOKING_LINKS[preferredRegion], '_blank');
+    const contact = BOOKING_CONTACTS[preferredRegion];
+    // Create self-contained contact dialog
+    alert(`Contact ${contact.region} Office:\n\nPhone: ${contact.phone}\nEmail: ${contact.email}\n\nOr use the contact form on this website.`);
     return;
   }
   
@@ -30,10 +32,11 @@ export const openBooking = (preferredRegion?: Region) => {
   );
   
   const selectedRegion = region ? 'AU' : 'SA';
-  window.open(BOOKING_LINKS[selectedRegion], '_blank');
+  const contact = BOOKING_CONTACTS[selectedRegion];
+  alert(`Contact ${contact.region} Office:\n\nPhone: ${contact.phone}\nEmail: ${contact.email}\n\nOr use the contact form on this website.`);
 };
 
-// Function for direct booking links (when region is known)
-export const getBookingLink = (region: Region): string => {
-  return BOOKING_LINKS[region];
+// Function for direct booking contact info (when region is known)
+export const getBookingContact = (region: Region) => {
+  return BOOKING_CONTACTS[region];
 };

@@ -66,22 +66,10 @@ export const memoryUsage = () => {
   return null;
 };
 
-// Critical rendering path optimization
+// Critical rendering path optimization - Self-contained only
 export const optimizeCriticalPath = () => {
-  // Preconnect to external domains
-  const preconnectDomains = [
-    'https://api.mapbox.com',
-    'https://fonts.googleapis.com',
-    'https://fonts.gstatic.com'
-  ];
-
-  preconnectDomains.forEach(domain => {
-    const link = document.createElement('link');
-    link.rel = 'preconnect';
-    link.href = domain;
-    link.crossOrigin = 'anonymous';
-    document.head.appendChild(link);
-  });
+  // Self-contained optimization - no external preconnects needed
+  console.log('Self-contained mode: No external domain preconnections required');
 };
 
 // Service Worker registration for caching
