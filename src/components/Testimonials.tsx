@@ -50,18 +50,6 @@ const Testimonials = () => {
       number: "99%",
       label: "Happy Clients",
       description: "Client satisfaction rate"
-    },
-    {
-      icon: <Clock className="w-8 h-8" />,
-      number: "1.2",
-      label: "Avg Time Onsite",
-      description: "Hours to resolution"
-    },
-    {
-      icon: <Shield className="w-8 h-8" />,
-      number: "0",
-      label: "Injuries on Duty",
-      description: "Perfect safety record"
     }
   ];
 

@@ -26,10 +26,7 @@ const About = () => {
     }
   ];
 
-  const achievements = [
-    { number: "1.2", label: "Avg Time Onsite - HRS" },
-    { number: "0", label: "Injuries on Duty" }
-  ];
+  const achievements = [];
 
   return (
     <section id="about" className="py-20 bg-gradient-subtle">

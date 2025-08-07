@@ -66,8 +66,6 @@ const Hero = () => {
           <div className="pt-8">
             <p className="text-sm text-muted-foreground mb-4">Trusted by industry leaders for 20+ years</p>
             <div className="flex justify-center items-center space-x-8 opacity-60">
-              <div className="text-xs font-medium">1.2 Avg Time Onsite - HRS</div>
-              <div className="w-px h-4 bg-border"></div>
               <div className="text-xs font-medium">Emergency Support</div>
             </div>
           </div>
