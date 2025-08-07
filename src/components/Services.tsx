@@ -35,7 +35,7 @@ const Services = () => {
     {
       icon: <Phone className="w-8 h-8" />,
       title: "Local Tech Field Support",
-      description: "Our unique local best tech sourcing service provides on-site technical support for clients in remote locations where no local tech support is available. We coordinate qualified local technicians to provide hands-on assistance.",
+      description: "Our unique local best tech sourcing service provides on-site local technical support for clients in remote locations where they have no local in-house tech support available. We coordinate qualified local technicians to provide hands-on assistance.",
       features: ["Remote Location Coverage", "Local Tech Sourcing", "On-site Support", "Emergency Response", "Field Reporting"]
     },
     {
