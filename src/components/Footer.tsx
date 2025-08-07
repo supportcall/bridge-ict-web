@@ -82,7 +82,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center">
                   <MapPin className="w-4 h-4 mr-3 text-primary-glow" />
-                  <span className="text-sm">Regional HQ Offices in Durban, SA and Launceston, AU</span>
+                  <span className="text-sm">Regional coordination centres : Launceston, AU | Durban, ZA</span>
                 </div>
                 <div className="flex items-center">
                   <Globe className="w-4 h-4 mr-3 text-primary-glow" />
