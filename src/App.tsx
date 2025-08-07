@@ -26,6 +26,7 @@ const App = () => (
             <Route path="/services/wsystem" element={<WSystem />} />
             <Route path="/services/seniors" element={<Seniors />} />
             <Route path="/services/hire-us" element={<HireUs />} />
+            <Route path="/IndustryLeadersChooseSupportCALL" element={<Index />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
