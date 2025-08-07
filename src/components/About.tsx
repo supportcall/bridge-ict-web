@@ -131,20 +131,6 @@ const About = () => {
           ))}
         </div>
 
-        {/* Global Presence */}
-        <Card className="mt-16 bg-gradient-dark text-white">
-          <CardContent className="p-8">
-            <div className="flex items-center justify-center space-x-3 mb-6">
-              <Globe2 className="w-8 h-8 text-primary-glow" />
-              <h3 className="text-2xl font-semibold">Global Presence</h3>
-            </div>
-            <p className="text-center text-white/80 max-w-2xl mx-auto">
-              We operate across Australia, South Africa, and other international markets, 
-              with ongoing expansion into new regions. Our global reach, combined with local 
-              expertise, ensures world-class ICT solutions tailored to the specific needs of each market.
-            </p>
-          </CardContent>
-        </Card>
       </div>
     </section>
   );
