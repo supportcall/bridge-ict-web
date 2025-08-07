@@ -174,11 +174,12 @@ This message was sent from the SupportCALL website contact form.
             Get In Touch
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Are You Looking For Someone To Take Care Of All Your ICT Needs?
+            🎯 Stop Losing Money to IT Problems - Get FREE Expert Help
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            We value every client and would love to hear from you. Contact us today for expert 
-            ICT solutions tailored to your business needs.
+            <strong>Don't wait for IT disasters to cost you thousands!</strong> Get immediate access to 20+ years of ICT expertise. 
+            Our free consultation will identify your risks and show you exactly how to protect your business. 
+            <span className="text-primary font-semibold">Thousands of businesses trust us - you should too!</span>
           </p>
         </div>
 
@@ -187,11 +188,12 @@ This message was sent from the SupportCALL website contact form.
           <div className="lg:col-span-1 space-y-8">
             <div>
               <h3 className="text-2xl font-semibold text-foreground mb-6">
-                Let's Connect
+                💬 Let's Connect - It's FREE!
               </h3>
               <p className="text-muted-foreground mb-8">
-                Whether you're looking to upgrade your current ICT infrastructure or 
-                starting from scratch, our team is ready to help you succeed.
+                <strong>Zero-risk, maximum value!</strong> Whether you're facing urgent IT issues or planning upgrades, 
+                our experts are standing by with 20+ years of proven solutions. 
+                <span className="text-primary font-semibold">Get the help you need today!</span>
               </p>
             </div>
 
@@ -227,12 +229,12 @@ This message was sent from the SupportCALL website contact form.
             <div className="space-y-4">
               <Button 
                 variant="premium" 
-                className="w-full" 
+                className="w-full animate-pulse hover:animate-none" 
                 size="lg"
                 onClick={() => openBooking()}
               >
                 <Calendar className="w-4 h-4 mr-2" />
-                Schedule Consultation
+                📞 Book FREE Consultation NOW
               </Button>
             </div>
           </div>
@@ -241,9 +243,10 @@ This message was sent from the SupportCALL website contact form.
           <div className="lg:col-span-2">
             <Card className="shadow-elegant">
               <CardHeader>
-                <CardTitle className="text-2xl">Send Us a Message</CardTitle>
+                <CardTitle className="text-2xl">💰 Get Instant FREE Quote</CardTitle>
                 <p className="text-muted-foreground">
-                  Fill out the form below and we'll get back to you within 24 hours.
+                  <strong>Fast response guaranteed!</strong> Fill out the form below and get your personalized quote within 24 hours. 
+                  No hidden fees, no surprises - just honest pricing from ICT experts.
                 </p>
               </CardHeader>
               <CardContent>
@@ -377,7 +380,7 @@ This message was sent from the SupportCALL website contact form.
                     disabled={isSubmitting}
                   >
                     <Send className="w-4 h-4 mr-2 transition-transform group-hover:translate-x-1" />
-                    {isSubmitting ? "Validating..." : "Send Message"}
+                    {isSubmitting ? "Sending..." : "🚀 Send My FREE Quote Request"}
                   </Button>
                 </form>
               </CardContent>

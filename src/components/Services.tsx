@@ -88,12 +88,12 @@ const Services = () => {
             Our Services
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Comprehensive ICT Solutions
+            💼 Comprehensive ICT Solutions That Drive Results
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            From SupportCALL TacticalRMM monitoring and SupportCALL W.System security to local tech sourcing for remote locations, 
-            we provide genuine ICT services your business needs including specialized support where no local 
-            technical assistance is available.
+            <strong>Don't let IT problems cost you money.</strong> From SupportCALL TacticalRMM monitoring and SupportCALL W.System security to local tech sourcing for remote locations, 
+            we provide <span className="text-primary font-semibold">genuine ICT services that work</span> - including specialized support where no local 
+            technical assistance is available. <strong>Get your FREE consultation today!</strong>
           </p>
         </div>
 
@@ -224,18 +224,19 @@ const Services = () => {
         {/* CTA Section */}
         <div className="text-center mt-16">
           <h3 className="text-2xl font-semibold text-foreground mb-4">
-            Ready to Transform Your ICT Infrastructure?
+            🚀 Ready to Stop IT Problems Before They Cost You Money?
           </h3>
           <p className="text-muted-foreground mb-8">
-            Get in touch with our experts to discuss your specific requirements
+            <strong>FREE consultation</strong> with our experts - discover exactly how we can solve your IT challenges and save you money
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               variant="premium" 
               size="lg"
               onClick={() => openBooking()}
+              className="animate-pulse hover:animate-none"
             >
-              Book Consultation
+              📞 Book FREE Consultation Now
             </Button>
             <Button 
               variant="outline" 
@@ -249,7 +250,7 @@ const Services = () => {
                 }
               }}
             >
-              Request Quote
+              💰 Get Instant Quote
             </Button>
           </div>
         </div>

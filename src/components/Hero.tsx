@@ -28,15 +28,18 @@ const Hero = () => {
 
           {/* Main Headline */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
-            We do{" "}
+            Get{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
-              ICT & iSP.
-            </span>
+              FREE ICT
+            </span>{" "}
+            Consultation
           </h1>
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Delivering cutting-edge ICT services, management, and products to enterprises across Australia, South Africa and the world. Your trusted partner for digital transformation.
+            <strong>20+ years</strong> delivering cutting-edge ICT services across Australia & South Africa. 
+            <span className="text-primary font-semibold"> Book your free consultation today</span> and discover why 
+            industry leaders trust us with their digital transformation.
           </p>
 
           {/* Feature highlights */}
@@ -57,22 +60,23 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button variant="premium" size="lg" className="group" asChild>
+            <Button variant="premium" size="lg" className="group animate-pulse hover:animate-none" asChild>
               <a href="#contact">
-                Get Started Today
+                📞 Book FREE Consultation
                 <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href="#testimonials">View Testimonials</a>
+              <a href="#testimonials">💼 See Client Results</a>
             </Button>
           </div>
 
           {/* Trust indicators */}
           <div className="pt-8">
-            <p className="text-sm text-muted-foreground mb-4">Trusted by industry leaders for 20+ years</p>
+            <p className="text-sm text-muted-foreground mb-4">🏆 Trusted by industry leaders for 20+ years | 🌍 Serving SA & AU</p>
             <div className="flex justify-center items-center space-x-8 opacity-60">
-              <div className="text-xs font-medium">Emergency Support</div>
+              <div className="text-xs font-medium bg-destructive/10 text-destructive px-3 py-1 rounded-full">🚨 24/7 Emergency Support</div>
+              <div className="text-xs font-medium bg-primary/10 text-primary px-3 py-1 rounded-full">✅ FREE Initial Assessment</div>
             </div>
           </div>
         </div>

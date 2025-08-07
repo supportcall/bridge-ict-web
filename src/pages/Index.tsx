@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
+import ConversionBanner from "@/components/ConversionBanner";
 import Footer from "@/components/Footer";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -64,6 +65,9 @@ const AcknowledgementLoading = () => (
 const Index = () => {
   return (
     <div className="min-h-screen dark">
+      {/* Conversion banner for immediate attention */}
+      <ConversionBanner />
+      
       {/* Critical above-the-fold content loads immediately */}
       <Navigation />
       <Hero />
