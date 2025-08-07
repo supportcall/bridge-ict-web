@@ -142,9 +142,9 @@ const Seniors = () => {
               SupportCALL Tech Angels
             </h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
-              Stay connected with confidence! SupportCALL understands the challenges that seniors can face with technology. 
+              SupportCALL understands the challenges that seniors can face with technology. 
               That's why we offer a reduced-cost monthly remote support service designed specifically for 
-              verified pensioners and retired desktop and laptop users.
+              verified pensioners and retired desktop and laptop users. Ensure your parents' tech needs are looked after.
             </p>
             <div className="flex justify-center">
               <Button 
