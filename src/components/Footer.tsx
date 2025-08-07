@@ -100,11 +100,8 @@ const Footer = () => {
               <h4 className="font-semibold text-white mb-4">Company</h4>
               <ul className="space-y-2">
                 <li><a href="#about" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">About Us</a></li>
-                <li><a href="#about" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Our Team</a></li>
-                <li><a href="https://wiki.supportcall.co.za/doku.php?id=supportcall_sa_company_profile" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Careers</a></li>
-                <li><a href="#contact" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">News & Updates</a></li>
-                <li><a href="#testimonials" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Case Studies</a></li>
-                <li><a href="#contact" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Contact</a></li>
+                <li><a href="https://wiki.supportcall.co.za/doku.php?id=supportcall_sa_company_profile" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">COMPANY PROFILE</a></li>
+                <li><a href="https://supportcall.co.za/store/forms/SC-RegForm.pdf" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">SIGN UP FORM</a></li>
               </ul>
             </div>
 
