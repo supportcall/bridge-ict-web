@@ -31,9 +31,9 @@ export const useCurrencyPricing = () => {
 
   const formatPrice = (usdPrice: number): string => {
     const rates = {
-      USD: { symbol: '$', rate: 1 },
-      AUD: { symbol: 'A$', rate: 1.5 },
-      ZAR: { symbol: 'R', rate: 18 }
+      USD: { symbol: '$', rate: 0.7 }, // USD converted from AUD base
+      AUD: { symbol: 'A$', rate: 1 },   // AUD as base rate
+      ZAR: { symbol: 'R', rate: 5.5 }   // ZAR rate relative to AUD
     };
 
     const convertedPrice = Math.round(usdPrice * rates[currency].rate);
@@ -42,7 +42,7 @@ export const useCurrencyPricing = () => {
 
   const getHourlyRate = (): { min: string; max: string } => {
     const rates = {
-      USD: { min: 26, max: 98, symbol: '$' },
+      USD: { min: 25, max: 180, symbol: '$' }, // Converted from AUD rates
       AUD: { min: 35, max: 250, symbol: 'A$' },
       ZAR: { min: 400, max: 1500, symbol: 'R' }
     };
