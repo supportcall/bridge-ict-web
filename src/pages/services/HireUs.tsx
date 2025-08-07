@@ -13,7 +13,9 @@ import {
   Shield,
   Headphones,
   Database,
-  Monitor
+  Monitor,
+  Network,
+  Wifi
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Acknowledgement from "@/components/Acknowledgement";
@@ -61,6 +63,18 @@ const HireUs = () => {
       title: "Project Management",
       description: "IT project coordination, implementation, and delivery management",
       skills: ["Agile/Scrum", "Risk Management", "Stakeholder Communication", "Budget Management", "Timeline Control"]
+    },
+    {
+      icon: <Network className="w-6 h-6" />,
+      title: "Network Cabling",
+      description: "Professional network infrastructure installation and maintenance",
+      skills: ["Structured Cabling", "Fiber Optics", "Cat6/Cat6a Installation", "Cable Management", "Network Testing"]
+    },
+    {
+      icon: <Wifi className="w-6 h-6" />,
+      title: "Wireless Point to Point, Mesh and AP",
+      description: "Advanced wireless network design and implementation solutions",
+      skills: ["Point-to-Point Links", "Mesh Networks", "Access Points", "Wireless Site Surveys", "RF Planning"]
     }
   ];
 
