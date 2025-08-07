@@ -1,12 +1,15 @@
-// Simple Service Worker for caching static assets
-const CACHE_NAME = 'supportcall-v1';
+// Service Worker for Self-Contained Operation
+const CACHE_NAME = 'supportcall-v2';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
+  '/offline.html',
   '/src/main.tsx',
   '/src/index.css',
   '/assets/hero-tech.jpg',
-  '/assets/services-icon.jpg'
+  '/assets/services-icon.jpg',
+  '/logo.png',
+  '/og-image.jpg'
 ];
 
 // Install event - cache static assets

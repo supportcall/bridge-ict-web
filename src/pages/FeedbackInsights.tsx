@@ -9,6 +9,7 @@ import {
   ExternalLink,
   ClipboardCheck
 } from "lucide-react";
+import { safeExternalLink } from "@/utils/errorHandling";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -100,7 +101,10 @@ const FeedbackInsights = () => {
                 <CardContent>
                   <Button 
                     className="w-full" 
-                    onClick={() => window.open(survey.url, '_blank')}
+                    onClick={() => safeExternalLink(survey.url, () => {
+                      // Fallback: show contact info
+                      alert(`Survey temporarily unavailable. Please contact us directly:\n\nSA: +27 (0)87 822 2380\nAU: +61 (0)4 7822 2380\n\nEmail: info@supportcall.co.za | info@supportcall.com.au`);
+                    })}
                   >
                     Take Survey
                     <ExternalLink className="w-4 h-4 ml-2" />

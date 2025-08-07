@@ -13,9 +13,11 @@ import {
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { safeExternalLink } from "@/utils/errorHandling";
 
 const PointOfPresence = () => {
   const [selectedCountry, setSelectedCountry] = useState("ZA");
+  const [mapError, setMapError] = useState(false);
 
   const popData = {
     ZA: {
@@ -134,15 +136,32 @@ const PointOfPresence = () => {
               </CardHeader>
               <CardContent>
                 <div className="aspect-video w-full">
-                  <iframe 
-                    src={currentPop.mapEmbed}
-                    width="100%" 
-                    height="100%"
-                    className="border-0 rounded-lg"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title={`${currentPop.title} Map`}
-                  />
+                  {mapError ? (
+                    <div className="w-full h-full bg-muted rounded-lg flex items-center justify-center">
+                      <div className="text-center p-8">
+                        <MapPin className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+                        <h4 className="font-semibold text-foreground mb-2">Map Temporarily Unavailable</h4>
+                        <p className="text-muted-foreground mb-4">
+                          Please contact us directly for location details:
+                        </p>
+                        <div className="text-sm">
+                          <p><strong>SA:</strong> +27 (0)87 822 2380</p>
+                          <p><strong>AU:</strong> +61 (0)4 7822 2380</p>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <iframe 
+                      src={currentPop.mapEmbed}
+                      width="100%" 
+                      height="100%"
+                      className="border-0 rounded-lg"
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title={`${currentPop.title} Map`}
+                      onError={() => setMapError(true)}
+                    />
+                  )}
                 </div>
               </CardContent>
             </Card>

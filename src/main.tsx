@@ -3,8 +3,10 @@ import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import { performanceObserver, optimizeCriticalPath, registerServiceWorker } from "./utils/performance";
+import { initializeErrorHandling } from "./utils/errorHandling";
 
-// Initialize performance optimizations
+// Initialize performance optimizations and error handling
+initializeErrorHandling();
 performanceObserver.observeWebVitals();
 optimizeCriticalPath();
 performanceObserver.preloadCriticalResources();
