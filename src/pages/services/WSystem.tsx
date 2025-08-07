@@ -170,7 +170,7 @@ const WSystem = () => {
               Comprehensive threat detection, response, and compliance in one powerful solution.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary">
+              <Button size="lg" variant="secondary" onClick={() => openBooking()}>
                 Start Free Trial
               </Button>
               <Button 
@@ -381,6 +381,7 @@ const WSystem = () => {
                   <Button 
                     variant={index === 1 ? "default" : "outline"} 
                     className="w-full"
+                    onClick={() => openBooking()}
                   >
                     Get Started
                   </Button>
@@ -439,7 +440,7 @@ const WSystem = () => {
             Start with a free trial or schedule a personalized demo today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary">
+            <Button size="lg" variant="secondary" onClick={() => openBooking()}>
               <Shield className="w-5 h-5 mr-2" />
               Start Free Trial
             </Button>
