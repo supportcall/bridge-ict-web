@@ -268,8 +268,8 @@ const WSystem = () => {
             Let us show you how WSystem can save time, reduce costs, and improve your warranty processes
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="premium" size="lg">
-              Get Started Today
+            <Button variant="premium" size="lg" asChild>
+              <a href="#contact">Get Started Today</a>
             </Button>
             <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-primary">
               Download Brochure
