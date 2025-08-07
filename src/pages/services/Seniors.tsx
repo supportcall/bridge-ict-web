@@ -303,15 +303,19 @@ const Seniors = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button 
-                    variant={pkg.popular ? "premium" : "outline"} 
-                    className="w-full"
-                  >
-                    Choose Plan
-                  </Button>
                 </CardContent>
               </Card>
             ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Button 
+              variant="premium" 
+              size="lg"
+              onClick={() => openBooking()}
+            >
+              Book a Consultation
+            </Button>
           </div>
         </div>
       </section>
