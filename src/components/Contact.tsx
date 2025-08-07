@@ -219,12 +219,13 @@ const Contact = () => {
                     </div>
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                        Phone Number
+                        Phone Number *
                       </label>
                       <Input
                         id="phone"
                         name="phone"
                         type="tel"
+                        required
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder="+27 or +61 phone number"
@@ -234,11 +235,12 @@ const Contact = () => {
 
                   <div>
                     <label htmlFor="service" className="block text-sm font-medium text-foreground mb-2">
-                      Service of Interest
+                      Service of Interest *
                     </label>
                     <select
                       id="service"
                       name="service"
+                      required
                       value={formData.service}
                       onChange={handleChange}
                       className="w-full p-3 border border-input rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
