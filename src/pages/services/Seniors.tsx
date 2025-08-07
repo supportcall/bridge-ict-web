@@ -64,7 +64,7 @@ const Seniors = () => {
       description: "Reduced-cost monthly remote support for verified pensioners and retirees",
       features: [
         "Low monthly fee for peace of mind",
-        "Pay-as-you-go monthly billing",
+        "Pay-as-you-go pre-monthly billing",
         "Verified pensioner/retiree exclusive",
         "Remote computer troubleshooting",
         "Patient, friendly support",
