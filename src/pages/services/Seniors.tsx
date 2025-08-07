@@ -123,7 +123,7 @@ const Seniors = () => {
     {
       icon: <Shield className="w-8 h-8" />,
       title: "Online Safety",
-      description: "Learning to spot scams and browse the internet safely"
+      description: "Help with identifying scammers and learning to spot scams and browse the internet safely"
     }
   ];
 
