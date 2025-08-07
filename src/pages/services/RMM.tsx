@@ -258,7 +258,7 @@ const RMM = () => {
             Ready to Transform Your IT Management?
           </h2>
           <p className="text-xl text-white/80 mb-8">
-            Join hundreds of businesses that trust SupportCALL TRMM for their IT infrastructure
+            Join other businesses that trust SupportCALL TRMM for their IT infrastructure.
           </p>
         </div>
       </section>
