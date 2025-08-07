@@ -135,6 +135,15 @@ const RMM = () => {
               designed to ensure your IT systems run at peak performance while we handle the technical 
               details—maintaining security, reliability, and efficiency.
             </p>
+            <div className="flex justify-center">
+              <Button 
+                variant="premium" 
+                size="lg"
+                onClick={() => openBooking()}
+              >
+                Book a Consultation
+              </Button>
+            </div>
           </div>
         </div>
       </section>
