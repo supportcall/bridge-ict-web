@@ -55,7 +55,7 @@ const Hero = () => {
             </div>
             <div className="flex items-center">
               <Globe className="w-4 h-4 mr-2 text-accent" />
-              Global Reach
+              Global Reach Capable
             </div>
           </div>
 
