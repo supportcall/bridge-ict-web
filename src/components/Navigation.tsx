@@ -79,6 +79,9 @@ const Navigation = () => {
                   <DropdownMenuItem asChild>
                     <Link to="/remote-support">Home User</Link>
                   </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/services/seniors">Seniors</Link>
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
               <Button 
@@ -112,15 +115,18 @@ const Navigation = () => {
             <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3 bg-background border-t border-border shadow-lg">
               <div className="px-1 pb-2">
                 <div className="text-xs font-medium text-muted-foreground mb-2">Quick access</div>
-                <div className="flex gap-2">
-                  <Button asChild variant="secondary" size="sm" className="flex-1">
+                <div className="grid grid-cols-2 gap-2">
+                  <Button asChild variant="secondary" size="sm">
                     <Link to="/services/rmm" onClick={() => setIsOpen(false)}>Enterprise</Link>
                   </Button>
-                  <Button asChild variant="secondary" size="sm" className="flex-1">
+                  <Button asChild variant="secondary" size="sm">
                     <Link to="/services/wsystem" onClick={() => setIsOpen(false)}>SME</Link>
                   </Button>
-                  <Button asChild variant="secondary" size="sm" className="flex-1">
+                  <Button asChild variant="secondary" size="sm">
                     <Link to="/remote-support" onClick={() => setIsOpen(false)}>Home</Link>
+                  </Button>
+                  <Button asChild variant="secondary" size="sm">
+                    <Link to="/services/seniors" onClick={() => setIsOpen(false)}>Seniors</Link>
                   </Button>
                 </div>
               </div>

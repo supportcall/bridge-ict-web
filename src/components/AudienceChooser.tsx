@@ -23,6 +23,12 @@ const audiences = [
     Icon: HomeIcon,
     points: ["On‑demand remote fixes", "Device tune‑ups", "Friendly guidance"],
   },
+  {
+    name: "Seniors",
+    to: "/services/seniors",
+    Icon: Headphones,
+    points: ["Friendly remote help", "Scam & safety checks", "Device setup & support"],
+  },
 ] as const;
 
 const AudienceChooser: React.FC = () => {
@@ -38,7 +44,7 @@ const AudienceChooser: React.FC = () => {
           </p>
         </header>
 
-        <div className="grid gap-4 sm:gap-6 md:grid-cols-3">
+        <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {audiences.map(({ name, to, Icon, points }) => (
             <Card key={name} className="hover:shadow-lg transition-shadow">
               <CardHeader>
