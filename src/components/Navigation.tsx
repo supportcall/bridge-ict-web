@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { openBooking } from "@/utils/booking";
@@ -64,6 +65,22 @@ const Navigation = () => {
                   </button>
                 )
               ))}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" size="sm" className="ml-2">I'm an…</Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start" className="z-50">
+                  <DropdownMenuItem asChild>
+                    <Link to="/services/rmm">Enterprise</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/services/wsystem">SME</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/remote-support">Home User</Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
               <Button 
                 variant="premium" 
                 size="sm" 
@@ -93,6 +110,20 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden animate-fade-in">
             <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3 bg-background border-t border-border shadow-lg">
+              <div className="px-1 pb-2">
+                <div className="text-xs font-medium text-muted-foreground mb-2">Quick access</div>
+                <div className="flex gap-2">
+                  <Button asChild variant="secondary" size="sm" className="flex-1">
+                    <Link to="/services/rmm" onClick={() => setIsOpen(false)}>Enterprise</Link>
+                  </Button>
+                  <Button asChild variant="secondary" size="sm" className="flex-1">
+                    <Link to="/services/wsystem" onClick={() => setIsOpen(false)}>SME</Link>
+                  </Button>
+                  <Button asChild variant="secondary" size="sm" className="flex-1">
+                    <Link to="/remote-support" onClick={() => setIsOpen(false)}>Home</Link>
+                  </Button>
+                </div>
+              </div>
               {navItems.map((item) => (
                 item.type === "route" ? (
                   <Link

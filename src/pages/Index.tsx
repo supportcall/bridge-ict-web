@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
+import AudienceChooser from "@/components/AudienceChooser";
 import ConversionBanner from "@/components/ConversionBanner";
 import Footer from "@/components/Footer";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -71,9 +72,9 @@ const Index = () => {
       {/* Critical above-the-fold content loads immediately */}
       <Navigation />
       <Hero />
+      <AudienceChooser />
       <About />
       <Services />
-      
       
       <Suspense fallback={<TestimonialsLoading />}>
         <Testimonials />
