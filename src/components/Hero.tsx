@@ -37,7 +37,8 @@ const Hero = () => {
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            <strong>20+ years</strong> delivering cutting-edge ICT services across Australia & South Africa. 
+            <strong>20+ years</strong> delivering cutting-edge ICT services across<br />
+            Australia & South Africa. 
             <span className="text-primary font-semibold"> Book your free consultation today</span> and discover why 
             industry leaders trust us with their digital transformation.
           </p>
@@ -74,10 +75,6 @@ const Hero = () => {
           {/* Trust indicators */}
           <div className="pt-8">
             <p className="text-sm text-muted-foreground mb-4">Trusted by industry leaders for 20+ years | Serving SA & AU</p>
-            <div className="flex justify-center items-center space-x-8 opacity-60">
-              <div className="text-xs font-medium bg-destructive/10 text-destructive px-3 py-1 rounded-full">24/7 Emergency Support</div>
-              <div className="text-xs font-medium bg-primary/10 text-primary px-3 py-1 rounded-full">FREE Initial Assessment</div>
-            </div>
           </div>
         </div>
       </div>
