@@ -56,9 +56,8 @@ const Footer = () => {
                   SupportCALL
                 </h3>
                 <p className="text-white/80 mb-6 leading-relaxed">
-                  Delivering cutting-edge ICT services, management, and products to 
-                  enterprises across Australia, South Africa and the world. Your trusted partner
-                  for digital transformation.
+                  Delivering ICT services, management, and products to enterprises, SME and home users across 
+                  Australia, South Africa and the world. Your trusted partner for digital transformation.
                 </p>
               </div>
 
