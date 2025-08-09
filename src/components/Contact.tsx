@@ -178,7 +178,7 @@ This message was sent from the SupportCALL website contact form.
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             <strong>Don't wait for IT disasters to cost you thousands!</strong> Get immediate access to 20+ years of ICT expertise. 
-            Our free consultation will identify your risks and show you exactly how to protect your business. 
+            Our free first consultation will identify your risks and show you exactly how to protect your business. 
             <span className="text-primary font-semibold">Thousands of businesses trust us - you should too!</span>
           </p>
         </div>
