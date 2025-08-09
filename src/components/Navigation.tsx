@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { openBooking } from "@/utils/booking";
@@ -65,25 +65,6 @@ const Navigation = () => {
                   </button>
                 )
               ))}
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="outline" size="sm" className="ml-2">I'm an…</Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="start" className="z-50">
-                  <DropdownMenuItem asChild>
-                    <Link to="/services/rmm">Enterprise</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/services/wsystem">SME</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/remote-support">Home User</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/services/seniors">Seniors</Link>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
               <Button 
                 variant="premium" 
                 size="sm" 
