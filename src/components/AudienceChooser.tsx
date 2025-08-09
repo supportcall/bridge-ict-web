@@ -250,7 +250,7 @@ const AudienceChooser: React.FC = () => {
                 </div>
               </CardHeader>
               <CardContent className="space-y-3 text-sm text-muted-foreground">
-                <p>All ICT services are available, but primary focus services in this sector are:</p>
+                <p><em>All ICT services are available, but primary focus services in this sector are:</em></p>
                 <details className="group">
                   <summary className="cursor-pointer text-primary underline underline-offset-4">
                     View focus services
