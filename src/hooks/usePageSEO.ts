@@ -7,6 +7,7 @@ export type PageMeta = {
   keywords?: string;
   canonical?: string;
   noindex?: boolean;
+  structuredData?: any | any[];
 };
 
 // Ensure a meta tag exists or create it
@@ -53,5 +54,18 @@ export const usePageSEO = (meta: PageMeta) => {
       const robots = ensureMeta("robots");
       robots.setAttribute("content", "noindex, nofollow");
     }
-  }, [location.pathname, meta.title, meta.description, meta.keywords, meta.canonical, meta.noindex]);
+
+    // Remove previously injected JSON-LD by this hook
+    document.querySelectorAll('script[data-seo-ld="true"]').forEach((el) => el.remove());
+
+    // Inject JSON-LD structured data if provided
+    const jsonLds = Array.isArray(meta.structuredData) ? meta.structuredData : meta.structuredData ? [meta.structuredData] : [];
+    jsonLds.forEach((data) => {
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.setAttribute('data-seo-ld', 'true');
+      script.text = JSON.stringify(data);
+      document.head.appendChild(script);
+    });
+  }, [location.pathname, meta.title, meta.description, meta.keywords, meta.canonical, meta.noindex, JSON.stringify(meta.structuredData)]);
 };

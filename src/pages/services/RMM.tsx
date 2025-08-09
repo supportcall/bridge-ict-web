@@ -20,11 +20,11 @@ import Footer from "@/components/Footer";
 import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelector";
 import { openBooking } from "@/utils/booking";
 import { usePageSEO } from "@/hooks/usePageSEO";
-import { generateMarketingMeta } from "@/utils/seo";
+import { generateMarketingMeta, generateServiceSchema } from "@/utils/seo";
 
 const RMM = () => {
   const { currency, setCurrency, formatPrice } = useCurrencyPricing();
-  usePageSEO(generateMarketingMeta('rmm'));
+  usePageSEO({ ...generateMarketingMeta('rmm'), structuredData: generateServiceSchema('SupportCALL TacticalRMM', 'Remote monitoring & management with proactive alerts, patching, asset tracking, and automation.') });
 
   const features = [
     {

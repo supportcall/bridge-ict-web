@@ -88,7 +88,7 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold text-white mb-4">Services</h4>
               <ul className="space-y-2">
-                <li><a href="#services" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Services</a></li>
+                <li><Link to="/#services" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Services</Link></li>
                 <li><Link to="/services/rmm" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Remote Services</Link></li>
                 <li><Link to="/services/wsystem" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Security & Compliance</Link></li>
                 <li><Link to="/services/seniors" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Senior Care</Link></li>
@@ -99,7 +99,7 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold text-white mb-4">Company</h4>
               <ul className="space-y-2">
-                <li><a href="#about" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">About Us</a></li>
+                <li><Link to="/#about" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">About Us</Link></li>
                 <li><a href="https://wiki.supportcall.co.za/doku.php?id=supportcall_sa_company_profile" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Company Profile</a></li>
                 <li><a href="https://supportcall.co.za/store/forms/SC-RegForm.pdf" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">SIgn Up Forn</a></li>
               </ul>
@@ -111,9 +111,9 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li><a href="https://wiki.supportcall.co.za/doku.php" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Help Center</a></li>
                 <li><a href="https://wiki.supportcall.co.za/doku.php" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Documentation</a></li>
-                <li><a href="#services" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">System Status</a></li>
+                <li><Link to="/#services" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">System Status</Link></li>
                 <li><Link to="/services/hire-us" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Emergency Support</Link></li>
-                <li><a href="#services" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Training</a></li>
+                <li><Link to="/#services" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Training</Link></li>
                 <li><Link to="/feedback-insights" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Community</Link></li>
               </ul>
             </div>

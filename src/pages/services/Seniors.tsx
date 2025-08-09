@@ -21,11 +21,11 @@ import Footer from "@/components/Footer";
 import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelector";
 import { openBooking } from "@/utils/booking";
 import { usePageSEO } from "@/hooks/usePageSEO";
-import { generateMarketingMeta } from "@/utils/seo";
+import { generateMarketingMeta, generateServiceSchema } from "@/utils/seo";
 
 const Seniors = () => {
   const { currency, setCurrency, formatPrice } = useCurrencyPricing();
-  usePageSEO(generateMarketingMeta('seniors'));
+  usePageSEO({ ...generateMarketingMeta('seniors'), structuredData: generateServiceSchema('SupportCALL Tech Angels (Seniors)', 'Senior-friendly monthly remote support, safety checks, and patient guidance.') });
 
   const services = [
     {

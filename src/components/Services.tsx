@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import servicesIcon from "@/assets/services-icon.jpg";
 import { openBooking } from "@/utils/booking";
+import { useNavigate } from "react-router-dom";
 
 const Services = () => {
   const primaryServices = [
@@ -79,6 +80,7 @@ const Services = () => {
     }
   ];
 
+  const navigate = useNavigate();
   return (
     <section id="services" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -249,7 +251,7 @@ const Services = () => {
                 if (contactSection) {
                   contactSection.scrollIntoView({ behavior: 'smooth' });
                 } else {
-                  window.location.href = '/#contact';
+                  navigate('/#contact');
                 }
               }}
             >

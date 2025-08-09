@@ -29,11 +29,11 @@ import Footer from "@/components/Footer";
 import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelector";
 import { openBooking } from "@/utils/booking";
 import { usePageSEO } from "@/hooks/usePageSEO";
-import { generateMarketingMeta } from "@/utils/seo";
+import { generateMarketingMeta, generateServiceSchema } from "@/utils/seo";
 
 const WSystem = () => {
   const { currency, setCurrency, formatPrice } = useCurrencyPricing();
-  usePageSEO(generateMarketingMeta('wsystem'));
+  usePageSEO({ ...generateMarketingMeta('wsystem'), structuredData: generateServiceSchema('SupportCALL W.system', 'Unified XDR & SIEM platform with analytics, compliance, and incident response.') });
 
   const features = [
     {

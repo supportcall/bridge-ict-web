@@ -17,12 +17,14 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { openBooking } from "@/utils/booking";
 import { usePageSEO } from "@/hooks/usePageSEO";
+import { generateServiceSchema } from "@/utils/seo";
 
 const RemoteSupport = () => {
   usePageSEO({
     title: "Remote Support Services | SupportCALL",
     description: "Instant, secure remote IT support for Windows, macOS, Linux, servers and cloud instances. ScreenConnect-based sessions with enterprise-grade encryption.",
-    keywords: "remote IT support, ScreenConnect, secure remote help, instant tech support"
+    keywords: "remote IT support, ScreenConnect, secure remote help, instant tech support",
+    structuredData: generateServiceSchema('SupportCALL Remote Support', 'Secure, instant remote IT support over ScreenConnect with enterprise encryption.')
   });
   const features = [
     {

@@ -2,12 +2,13 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 import { Menu, X } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { openBooking } from "@/utils/booking";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const navItems = [
     { name: "Home", href: "/", type: "route" },
@@ -22,10 +23,8 @@ const Navigation = () => {
 
   const handleAnchorClick = (href: string) => {
     if (location.pathname !== '/') {
-      // If not on home page, navigate to home first then scroll
-      window.location.href = `/${href}`;
+      navigate(`/${href}`);
     } else {
-      // If on home page, just scroll to section
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });

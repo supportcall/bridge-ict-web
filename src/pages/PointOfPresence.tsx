@@ -15,6 +15,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { safeExternalLink } from "@/utils/errorHandling";
 import { usePageSEO } from "@/hooks/usePageSEO";
+import { Link, useNavigate } from "react-router-dom";
 
 const PointOfPresence = () => {
   const [selectedCountry, setSelectedCountry] = useState("ZA");
@@ -66,6 +67,7 @@ const PointOfPresence = () => {
   ];
 
   const currentPop = popData[selectedCountry as keyof typeof popData];
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen dark">
@@ -200,7 +202,7 @@ const PointOfPresence = () => {
             We're continuously growing our point of presence to better serve our clients. 
             If we don't have a technician in your area, we'll work to establish one within two weeks.
           </p>
-          <Button variant="premium" size="lg" onClick={() => window.location.href = '/services/hire-us'}>
+          <Button variant="premium" size="lg" onClick={() => navigate('/services/hire-us')}>
             Request Local Support
           </Button>
         </div>
