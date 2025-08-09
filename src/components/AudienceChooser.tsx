@@ -1,8 +1,8 @@
 import React from "react";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
 import { Building2, Briefcase, Home as HomeIcon, ShieldCheck, Headphones } from "lucide-react";
-import { Link } from "react-router-dom";
+
 
 const audiences = [
   {
@@ -238,7 +238,7 @@ const AudienceChooser: React.FC = () => {
         </header>
 
         <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-          {audiences.map(({ name, to, Icon, categories }) => (
+          {audiences.map(({ name, Icon, categories }) => (
             <Card key={name} className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="flex items-center gap-3">
@@ -271,21 +271,14 @@ const AudienceChooser: React.FC = () => {
                   </div>
                 </details>
               </CardContent>
-              <CardFooter>
-                <Button variant="secondary" className="w-full" asChild>
-                  <Link to={to} aria-label={`Explore ${name} solutions`}>
-                    View {name} solutions
-                  </Link>
-                </Button>
-              </CardFooter>
             </Card>
           ))}
         </div>
 
         <div className="mt-6 text-center text-xs text-muted-foreground">
-          Not sure? <Link to="#contact" onClick={(e) => { e.preventDefault(); const el = document.querySelector('#contact'); el?.scrollIntoView({ behavior: 'smooth' }); }} className="underline underline-offset-4">
+          Not sure? <a href="#contact" onClick={(e) => { e.preventDefault(); const el = document.querySelector('#contact'); el?.scrollIntoView({ behavior: 'smooth' }); }} className="underline underline-offset-4">
             Talk to an expert
-          </Link>
+          </a>
         </div>
       </div>
     </section>
