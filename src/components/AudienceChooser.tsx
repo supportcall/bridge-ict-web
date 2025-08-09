@@ -58,6 +58,7 @@ const audiences = [
         title: "Cabling",
         items: [
           "Structured cable installation",
+          "Cable installation",
           "Cable testing",
           "Rack cabinet management",
           "Data cabling",
