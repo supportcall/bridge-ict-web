@@ -13,7 +13,7 @@ const ConversionBanner = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-center">
         <div className="flex items-center space-x-4 text-center">
           <span className="text-sm md:text-base font-medium">
-            <strong className="text-destructive">LIMITED TIME:</strong> Ask about our 2 months FREE ICT Security Assessment + Emergency Support Plan - Book Today!
+            <strong className="text-destructive">LIMITED TIME:</strong> 2 months FREE ICT tacticalRMM + Emergency Remote Support Plan - Book Today!
           </span>
           <Button
             variant="outline"
