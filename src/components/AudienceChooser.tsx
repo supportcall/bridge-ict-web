@@ -9,25 +9,218 @@ const audiences = [
     name: "Enterprise",
     to: "/services/rmm",
     Icon: Building2,
-    points: ["Global-scale support", "Security & compliance", "Proactive monitoring"],
+    categories: [
+      {
+        title: "TacticalRMM (Remote Monitoring & Managment)",
+        items: [
+          "Remote system monitoring",
+          "Automated patch management",
+          "Asset inventory tracking",
+          "Scripted task automation",
+          "Real-time alerting",
+        ],
+      },
+      {
+        title: "W.system (Unified XDR and SIEM)",
+        items: [
+          "Intrusion detection alerts",
+          "Log data analysis",
+          "Compliance reporting tools",
+          "Threat intelligence feeds",
+          "File integrity monitoring",
+        ],
+      },
+      {
+        title: "ICT Technical Support",
+        items: [
+          "Consoltation",
+          "Hardware diagnostics repair",
+          "Software installation updates",
+          "Virus malware removal",
+          "Network troubleshooting support",
+          "Data backup recovery",
+          "ICT trouble shooting",
+        ],
+      },
+      {
+        title: "Wireless",
+        items: [
+          "Wi-Fi network design",
+          "Wi-Fi network setup",
+          "Wi-Fi Point to Point",
+          "Wi-Fi Mesh",
+          "Signal coverage optimization",
+          "Wireless device integration",
+          "Guest network management",
+        ],
+      },
+      {
+        title: "Cabling",
+        items: [
+          "Structured cable installation",
+          "Cable testing",
+          "Rack cabinet management",
+          "Data cabling",
+        ],
+      },
+    ],
   },
   {
     name: "SME",
     to: "/services/wsystem",
     Icon: Briefcase,
-    points: ["Cost‑effective packages", "Fast remote help", "Simple onboarding"],
+    categories: [
+      {
+        title: "TacticalRMM (Remote Monitoring & Managment)",
+        items: [
+          "Remote system monitoring",
+          "Automated patch management",
+          "Asset inventory tracking",
+          "Scripted task automation",
+          "Real-time alerting",
+        ],
+      },
+      {
+        title: "W.system (Unified XDR and SIEM)",
+        items: [
+          "Intrusion detection alerts",
+          "Log data analysis",
+          "Compliance reporting tools",
+          "Threat intelligence feeds",
+          "File integrity monitoring",
+        ],
+      },
+      {
+        title: "ICT Technical Support",
+        items: [
+          "Consoltation",
+          "Hardware diagnostics repair",
+          "Software installation updates",
+          "Virus malware removal",
+          "Network troubleshooting support",
+          "Data backup recovery",
+          "ICT trouble shooting",
+        ],
+      },
+      {
+        title: "Wireless",
+        items: [
+          "Wi-Fi network design",
+          "Wi-Fi network setup",
+          "Wi-Fi Point to Point",
+          "Wi-Fi Mesh",
+          "Signal coverage optimization",
+          "Wireless device integration",
+          "Guest network management",
+        ],
+      },
+      {
+        title: "Cabling",
+        items: [
+          "Structured cable installation",
+          "Cable installation",
+          "Cable testing",
+          "Rack cabinet management",
+          "Data cabling",
+        ],
+      },
+    ],
   },
   {
     name: "Home User",
     to: "/remote-support",
     Icon: HomeIcon,
-    points: ["On‑demand remote fixes", "Device tune‑ups", "Friendly guidance"],
+    categories: [
+      {
+        title: "TacticalRMM (Remote Monitoring & Managment)",
+        items: [
+          "Remote system monitoring",
+          "Automated patch management",
+          "Asset inventory tracking",
+          "Scripted task automation",
+          "Real-time alerting",
+        ],
+      },
+      {
+        title: "W.system (Unified XDR and SIEM)",
+        items: [
+          "Intrusion detection alerts",
+          "Log data analysis",
+          "Compliance reporting tools",
+          "Threat intelligence feeds",
+          "File integrity monitoring",
+        ],
+      },
+      {
+        title: "ICT Technical Support",
+        items: [
+          "Consoltation",
+          "Hardware diagnostics repair",
+          "Software installation updates",
+          "Virus malware removal",
+          "Network troubleshooting support",
+          "Data backup recovery",
+          "ICT trouble shooting",
+        ],
+      },
+      {
+        title: "Wireless",
+        items: [
+          "Wi-Fi network design",
+          "Wi-Fi network setup",
+          "Wi-Fi Point to Point",
+          "Wi-Fi Mesh",
+          "Signal coverage optimization",
+          "Wireless device integration",
+          "Guest network management",
+        ],
+      },
+      {
+        title: "Cabling",
+        items: [
+          "Cable installation",
+          "Cable testing",
+          "Data cabling",
+        ],
+      },
+    ],
   },
   {
     name: "Seniors",
     to: "/services/seniors",
     Icon: Headphones,
-    points: ["Friendly remote help", "Scam & safety checks", "Device setup & support"],
+    categories: [
+      {
+        title: "TacticalRMM (Remote Monitoring & Managment)",
+        items: [
+          "Remote system monitoring",
+          "Automated patch management",
+          "Asset inventory tracking",
+          "Scripted task automation",
+          "Real-time alerting",
+        ],
+      },
+      {
+        title: "ICT Technical Support",
+        items: [
+          "Hardware diagnostics",
+          "Software installation updates",
+          "Virus malware protection",
+          "Virus malware removal",
+          "Scammer analises and guidance",
+          "Data backup recovery",
+          "ICT trouble shooting",
+        ],
+      },
+      {
+        title: "Wireless",
+        items: [
+          "Wi-Fi consoltation",
+          "Wi-Fi network connection assistance",
+          "Wireless device integration",
+        ],
+      },
+    ],
   },
 ] as const;
 
@@ -45,7 +238,7 @@ const AudienceChooser: React.FC = () => {
         </header>
 
         <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-          {audiences.map(({ name, to, Icon, points }) => (
+          {audiences.map(({ name, to, Icon, categories }) => (
             <Card key={name} className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="flex items-center gap-3">
@@ -55,13 +248,28 @@ const AudienceChooser: React.FC = () => {
                   <CardTitle className="text-lg">{name}</CardTitle>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-2 text-sm text-muted-foreground">
-                {points.map((p) => (
-                  <div key={p} className="flex items-center gap-2">
-                    <ShieldCheck className="h-4 w-4 text-primary" aria-hidden="true" />
-                    <span>{p}</span>
+              <CardContent className="space-y-3 text-sm text-muted-foreground">
+                <p>All ICT services are available, but primary focus services in this sector are:</p>
+                <details className="group">
+                  <summary className="cursor-pointer text-primary underline underline-offset-4">
+                    View focus services
+                  </summary>
+                  <div className="mt-3 space-y-4">
+                    {categories.map((cat) => (
+                      <article key={cat.title}>
+                        <h3 className="font-medium text-foreground">{cat.title}</h3>
+                        <ul className="mt-1 space-y-1">
+                          {cat.items.map((item) => (
+                            <li key={item} className="flex items-start gap-2">
+                              <ShieldCheck className="h-4 w-4 text-primary mt-0.5" aria-hidden="true" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </article>
+                    ))}
                   </div>
-                ))}
+                </details>
               </CardContent>
               <CardFooter>
                 <Button variant="secondary" className="w-full" asChild>
