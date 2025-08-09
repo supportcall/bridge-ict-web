@@ -34,7 +34,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-sm">
+    <nav className="sticky top-0 w-full z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -93,23 +93,6 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden animate-fade-in">
             <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3 bg-background border-t border-border shadow-lg">
-              <div className="px-1 pb-2">
-                <div className="text-xs font-medium text-muted-foreground mb-2">Quick access</div>
-                <div className="grid grid-cols-2 gap-2">
-                  <Button asChild variant="secondary" size="sm">
-                    <Link to="/services/rmm" onClick={() => setIsOpen(false)}>Enterprise</Link>
-                  </Button>
-                  <Button asChild variant="secondary" size="sm">
-                    <Link to="/services/wsystem" onClick={() => setIsOpen(false)}>SME</Link>
-                  </Button>
-                  <Button asChild variant="secondary" size="sm">
-                    <Link to="/remote-support" onClick={() => setIsOpen(false)}>Home</Link>
-                  </Button>
-                  <Button asChild variant="secondary" size="sm">
-                    <Link to="/services/seniors" onClick={() => setIsOpen(false)}>Seniors</Link>
-                  </Button>
-                </div>
-              </div>
               {navItems.map((item) => (
                 item.type === "route" ? (
                   <Link
