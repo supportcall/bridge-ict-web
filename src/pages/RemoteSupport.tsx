@@ -16,8 +16,14 @@ import {
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { openBooking } from "@/utils/booking";
+import { usePageSEO } from "@/hooks/usePageSEO";
 
 const RemoteSupport = () => {
+  usePageSEO({
+    title: "Remote Support Services | SupportCALL",
+    description: "Instant, secure remote IT support for Windows, macOS, Linux, servers and cloud instances. ScreenConnect-based sessions with enterprise-grade encryption.",
+    keywords: "remote IT support, ScreenConnect, secure remote help, instant tech support"
+  });
   const features = [
     {
       icon: <Monitor className="w-6 h-6" />,

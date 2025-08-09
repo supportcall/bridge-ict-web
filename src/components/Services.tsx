@@ -103,8 +103,11 @@ const Services = () => {
             <div className="relative h-64 md:h-80">
               <img 
                 src={servicesIcon} 
-                alt="ICT Services" 
+                alt="ICT services montage highlighting SupportCALL offerings" 
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
               />
               <div className="absolute inset-0 bg-black/70 flex items-center justify-center">
                 <div className="text-center text-white">

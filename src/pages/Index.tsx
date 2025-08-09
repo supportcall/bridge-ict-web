@@ -7,6 +7,8 @@ import AudienceChooser from "@/components/AudienceChooser";
 import ConversionBanner from "@/components/ConversionBanner";
 import Footer from "@/components/Footer";
 import { Skeleton } from "@/components/ui/skeleton";
+import { usePageSEO } from "@/hooks/usePageSEO";
+import { generateMarketingMeta } from "@/utils/seo";
 
 // Lazy load non-critical components for better initial load performance
 const Testimonials = React.lazy(() => import("@/components/Testimonials"));
@@ -64,6 +66,7 @@ const AcknowledgementLoading = () => (
 );
 
 const Index = () => {
+  usePageSEO(generateMarketingMeta('home'));
   return (
     <div className="min-h-screen dark">
       {/* Conversion banner for immediate attention */}

@@ -20,9 +20,12 @@ import Acknowledgement from "@/components/Acknowledgement";
 import Footer from "@/components/Footer";
 import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelector";
 import { openBooking } from "@/utils/booking";
+import { usePageSEO } from "@/hooks/usePageSEO";
+import { generateMarketingMeta } from "@/utils/seo";
 
 const Seniors = () => {
   const { currency, setCurrency, formatPrice } = useCurrencyPricing();
+  usePageSEO(generateMarketingMeta('seniors'));
 
   const services = [
     {

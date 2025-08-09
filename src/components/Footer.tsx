@@ -10,6 +10,7 @@ import {
   Facebook,
   ArrowUp
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -88,9 +89,9 @@ const Footer = () => {
               <h4 className="font-semibold text-white mb-4">Services</h4>
               <ul className="space-y-2">
                 <li><a href="#services" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Services</a></li>
-                <li><a href="/services/rmm" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Remote Services</a></li>
-                <li><a href="/services/wsystem" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Security & Compliance</a></li>
-                <li><a href="/services/seniors" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Senior Care</a></li>
+                <li><Link to="/services/rmm" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Remote Services</Link></li>
+                <li><Link to="/services/wsystem" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Security & Compliance</Link></li>
+                <li><Link to="/services/seniors" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Senior Care</Link></li>
               </ul>
             </div>
 
@@ -111,9 +112,9 @@ const Footer = () => {
                 <li><a href="https://wiki.supportcall.co.za/doku.php" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Help Center</a></li>
                 <li><a href="https://wiki.supportcall.co.za/doku.php" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Documentation</a></li>
                 <li><a href="#services" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">System Status</a></li>
-                <li><a href="/services/hire-us" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Emergency Support</a></li>
+                <li><Link to="/services/hire-us" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Emergency Support</Link></li>
                 <li><a href="#services" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Training</a></li>
-                <li><a href="/feedback-insights" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Community</a></li>
+                <li><Link to="/feedback-insights" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Community</Link></li>
               </ul>
             </div>
           </div>

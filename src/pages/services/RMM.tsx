@@ -19,9 +19,12 @@ import Acknowledgement from "@/components/Acknowledgement";
 import Footer from "@/components/Footer";
 import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelector";
 import { openBooking } from "@/utils/booking";
+import { usePageSEO } from "@/hooks/usePageSEO";
+import { generateMarketingMeta } from "@/utils/seo";
 
 const RMM = () => {
   const { currency, setCurrency, formatPrice } = useCurrencyPricing();
+  usePageSEO(generateMarketingMeta('rmm'));
 
   const features = [
     {

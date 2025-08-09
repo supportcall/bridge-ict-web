@@ -12,8 +12,14 @@ import {
 import { safeExternalLink } from "@/utils/errorHandling";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { usePageSEO } from "@/hooks/usePageSEO";
 
 const FeedbackInsights = () => {
+  usePageSEO({
+    title: "Feedback & Insights | SupportCALL",
+    description: "Share your experience and help us improve. Take quick surveys and see how feedback shapes our services.",
+    keywords: "feedback, customer survey, insights, client satisfaction"
+  });
   const surveys = [
     {
       title: "Customer Satisfaction Survey",

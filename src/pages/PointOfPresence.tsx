@@ -14,10 +14,16 @@ import {
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { safeExternalLink } from "@/utils/errorHandling";
+import { usePageSEO } from "@/hooks/usePageSEO";
 
 const PointOfPresence = () => {
   const [selectedCountry, setSelectedCountry] = useState("ZA");
   const [mapError, setMapError] = useState(false);
+  usePageSEO({
+    title: "SupportCALL Point of Presence | Global Coverage",
+    description: "Strategic locations across South Africa and Australia for rapid, local ICT support and coordination.",
+    keywords: "point of presence, POP, local technicians, ICT coverage"
+  });
 
   const popData = {
     ZA: {

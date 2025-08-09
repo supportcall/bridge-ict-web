@@ -28,9 +28,12 @@ import Acknowledgement from "@/components/Acknowledgement";
 import Footer from "@/components/Footer";
 import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelector";
 import { openBooking } from "@/utils/booking";
+import { usePageSEO } from "@/hooks/usePageSEO";
+import { generateMarketingMeta } from "@/utils/seo";
 
 const WSystem = () => {
   const { currency, setCurrency, formatPrice } = useCurrencyPricing();
+  usePageSEO(generateMarketingMeta('wsystem'));
 
   const features = [
     {

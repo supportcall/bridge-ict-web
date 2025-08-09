@@ -22,10 +22,13 @@ import Acknowledgement from "@/components/Acknowledgement";
 import Footer from "@/components/Footer";
 import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelector";
 import { openBooking } from "@/utils/booking";
+import { usePageSEO } from "@/hooks/usePageSEO";
+import { generateMarketingMeta } from "@/utils/seo";
 
 const HireUs = () => {
   const { currency, setCurrency, getHourlyRate } = useCurrencyPricing();
   const hourlyRate = getHourlyRate();
+  usePageSEO(generateMarketingMeta('hireUs'));
 
   const services = [
     {
