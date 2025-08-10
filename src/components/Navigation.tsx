@@ -51,6 +51,13 @@ const Navigation = () => {
                     key={item.name}
                     to={item.href}
                     className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                    onClick={(e) => {
+                      if (item.href === "/" && location.pathname === "/") {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }
+                      setIsOpen(false);
+                    }}
                   >
                     {item.name}
                   </Link>
@@ -99,7 +106,13 @@ const Navigation = () => {
                     key={item.name}
                     to={item.href}
                     className="text-foreground hover:text-primary hover:bg-muted/50 block px-3 py-3 rounded-md text-base font-medium transition-all duration-200 border-l-2 border-transparent hover:border-primary"
-                    onClick={() => setIsOpen(false)}
+                    onClick={(e) => {
+                      if (item.href === "/" && location.pathname === "/") {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }
+                      setIsOpen(false);
+                    }}
                   >
                     {item.name}
                   </Link>
