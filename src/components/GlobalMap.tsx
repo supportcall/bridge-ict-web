@@ -10,12 +10,12 @@ const GlobalMap = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20"></div>
       
       {/* Company logo background */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none select-none z-0" aria-hidden="true">
+      <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none select-none" aria-hidden="true">
         <img
           src={COMPANY_LOGO_URL}
           alt="SupportCALL company logo background"
           loading="lazy"
-          className="w-2/3 max-w-[420px] object-contain mix-blend-lighten dark:mix-blend-screen"
+          className="w-2/3 max-w-[420px] object-contain mix-blend-overlay dark:mix-blend-screen"
         />
       </div>
 
