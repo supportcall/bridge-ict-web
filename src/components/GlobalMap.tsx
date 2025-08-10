@@ -2,12 +2,23 @@ import React from 'react';
 import { MapPin, Globe, ExternalLink } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+const COMPANY_LOGO_URL = "/lovable-uploads/a84e9f8f-93ab-49b9-9f77-1034f28fc11d.png";
 
 const GlobalMap = () => {
   return (
     <div className="relative w-full h-96 bg-gradient-dark rounded-lg overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20"></div>
       
+      {/* Company logo background */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none select-none z-0" aria-hidden="true">
+        <img
+          src={COMPANY_LOGO_URL}
+          alt="SupportCALL company logo background"
+          loading="lazy"
+          className="w-2/3 max-w-[420px] object-contain mix-blend-lighten dark:mix-blend-screen"
+        />
+      </div>
+
       {/* Map placeholder with connection lines */}
       <div className="relative h-full flex items-center justify-center">
         <div className="absolute inset-0">
