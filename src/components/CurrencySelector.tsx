@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-export type Currency = 'USD' | 'AUD' | 'ZAR';
+export type Currency = 'USD' | 'AUD' | 'ZAR' | 'GBP';
 
 interface CurrencySelectorProps {
   onCurrencyChange: (currency: Currency) => void;
@@ -19,6 +19,7 @@ const CurrencySelector = ({ onCurrencyChange, selectedCurrency }: CurrencySelect
         <SelectContent className="bg-card border-border z-50">
           <SelectItem value="USD">USD</SelectItem>
           <SelectItem value="AUD">AUD</SelectItem>
+          <SelectItem value="GBP">GBP</SelectItem>
           <SelectItem value="ZAR">ZAR</SelectItem>
         </SelectContent>
       </Select>
@@ -33,6 +34,7 @@ export const useCurrencyPricing = () => {
     const rates = {
       USD: { symbol: '$', rate: 0.7 }, // USD converted from AUD base
       AUD: { symbol: 'A$', rate: 1 },   // AUD as base rate
+      GBP: { symbol: '£', rate: 0.55 }, // GBP rate relative to AUD
       ZAR: { symbol: 'R', rate: 5.5 }   // ZAR rate relative to AUD
     };
 
@@ -44,6 +46,7 @@ export const useCurrencyPricing = () => {
     const rates = {
       USD: { min: 25, max: 180, symbol: '$' }, // Converted from AUD rates
       AUD: { min: 35, max: 250, symbol: 'A$' },
+      GBP: { min: 18, max: 130, symbol: '£' },
       ZAR: { min: 400, max: 1500, symbol: 'R' }
     };
 
