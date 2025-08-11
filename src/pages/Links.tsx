@@ -43,7 +43,8 @@ const categories: Category[] = [
       { name: "ESET Online Installer [DL]", url: "https://download.eset.com/com/eset/tools/installers/live_eav/latest/eset_nod32_antivirus_live_installer.exe" },
       { name: "ESET v18.x Offline Installers [site]", url: "https://help.eset.com/esu/18/en-US/?installation_offline.html" },
       { name: "ESET Free Online Scanner [site]", url: "https://www.eset.com/za/home/online-scanner/" },
-      { name: "ESET Tools & Utilities [site]", url: "https://www.eset.com/au/download-utilities/" }
+      { name: "ESET Tools & Utilities [site]", url: "https://www.eset.com/au/download-utilities/" },
+      { name: "SC-USCS (SupportCALL - Ultimate Secure Clean Script) [site]", url: "https://www.supportcall.co.za/store/index_sc-uscs.html" }
     ]
   },
   {
