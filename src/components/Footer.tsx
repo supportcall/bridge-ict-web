@@ -10,11 +10,24 @@ import {
   Facebook,
   ArrowUp
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  const handleAnchorClick = (href: string) => {
+    if (location.pathname !== '/') {
+      navigate(`/${href}`);
+    } else {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   const footerLinks = {
@@ -88,7 +101,7 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold text-white mb-4">Services</h4>
               <ul className="space-y-2">
-                <li><Link to="/#services" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Services</Link></li>
+                <li><button type="button" onClick={() => handleAnchorClick("#services")} className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Services</button></li>
                 <li><Link to="/remote-support" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Remote Services</Link></li>
                 <li><Link to="/services/wsystem" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Security & Compliance</Link></li>
                 <li><Link to="/services/seniors" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Senior Care</Link></li>
