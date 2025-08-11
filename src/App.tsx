@@ -14,6 +14,7 @@ import HireUs from "./pages/services/HireUs";
 import FeedbackInsights from "./pages/FeedbackInsights";
 import PointOfPresence from "./pages/PointOfPresence";
 import RemoteSupport from "./pages/RemoteSupport";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
+          <GoogleAnalytics measurementId="G-604F9HYTTP" />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/services/rmm" element={<RMM />} />

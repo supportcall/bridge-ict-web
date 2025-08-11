@@ -16,7 +16,7 @@
     <link rel="canonical" href="https://www.supportcall.co.za/" />
     
     <!-- Security Headers - Allow Google Calendar and Google Maps only; tightened for production -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; font-src 'self'; frame-src 'self' https://www.google.com https://calendar.app.google; form-action 'self' mailto:; base-uri 'self';" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self'; frame-src 'self' https://www.google.com https://calendar.app.google; form-action 'self' mailto:; base-uri 'self';" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="X-Frame-Options" content="DENY" />
     <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
@@ -172,6 +172,14 @@
         }
       ]
     }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-604F9HYTTP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} // eslint-disable-line
+      gtag('js', new Date());
+      gtag('config', 'G-604F9HYTTP');
     </script>
     
     <title>FREE ICT Consultation Worth $500 | Expert IT Support SA & AU | SupportCALL</title>
