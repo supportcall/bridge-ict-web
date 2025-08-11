@@ -128,8 +128,6 @@ const Footer = () => {
                 <li><Link to="/services/hire-us" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Emergency Support</Link></li>
                 <li><Link to="/#services" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Training</Link></li>
                 <li><Link to="/feedback-insights" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Feedback & Insights</Link></li>
-                <li><Link to="/surveys/customer-satisfaction" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Survey - Customer Satisfaction</Link></li>
-                <li><Link to="/surveys/client-service-interest-pricing" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Survey - Client Service Interest & Pricing</Link></li>
                 <li><Link to="/feedback-insights" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Community</Link></li>
                 <li><Link to="/links" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">SupportCALL Links</Link></li>
               </ul>
