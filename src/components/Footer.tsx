@@ -125,7 +125,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li><a href="https://tickets.supportcall-isp.co.za/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Ticket System</a></li>
                 <li><a href="https://wiki.supportcall.co.za/doku.php" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Our Docuwiki</a></li>
-                <li><Link to="/links" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">SupportCALL Links</Link></li>
+                <li><Link to="/links" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Links</Link></li>
                 <li><Link to="/feedback-insights" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Feedback & Insights</Link></li>
               </ul>
             </div>

@@ -86,7 +86,7 @@ const allItemsForSchema: LinkItem[] = categories.flatMap((c) => c.items);
 
 const Links = () => {
   usePageSEO({
-    title: "SupportCALL Links & Resources",
+    title: "Links & Resources",
     description: "Curated SupportCALL links: tools, downloads, status dashboards, and trusted third‑party resources.",
     keywords: "SupportCALL links, IT tools, ESET downloads, malware removal, threat maps, ticket system",
     structuredData: buildItemListSchema(allItemsForSchema)
@@ -101,7 +101,7 @@ const Links = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Badge variant="secondary" className="mb-4">Resources</Badge>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">SupportCALL Links</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Links</h1>
             <p className="text-white/80 text-lg max-w-3xl mx-auto">
               Quick access to SupportCALL tools, downloads, status pages and reference resources.
             </p>
