@@ -205,7 +205,7 @@ const CustomerSatisfactionSurvey = () => {
 
                   <div>
                     <Label htmlFor="improvement">What could we do to improve your experience?</Label>
-                    <Textarea id="improvement" name="improvement" placeholder="Your feedback..." maxLength={200} />
+                    <Textarea id="improvement" name="improvement" placeholder="Type your customer service experience feedback here..." maxLength={200} />
                   </div>
 
                   <Card className="border-border">
@@ -219,7 +219,8 @@ const CustomerSatisfactionSurvey = () => {
                       </div>
                       <div>
                         <Label htmlFor="suggested_companies">Suggested companies for us to connect to</Label>
-                        <Textarea id="suggested_companies" name="suggested_companies" placeholder="Names of companies..." maxLength={300} />
+                        <p className="text-sm text-muted-foreground mt-1">Refer a client who becomes a long-term customer (min 6 months) and enjoy a 6-month discounted callout rate or a small gift as a thank you.</p>
+                        <Textarea id="suggested_companies" name="suggested_companies" placeholder="Name companies that could benefit from our services..." maxLength={300} />
                       </div>
                       <div>
                         <Label>Would you recommend our services to others?</Label>

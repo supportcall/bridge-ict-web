@@ -9,7 +9,7 @@ import {
   ExternalLink,
   ClipboardCheck
 } from "lucide-react";
-import { safeExternalLink } from "@/utils/errorHandling";
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { usePageSEO } from "@/hooks/usePageSEO";
@@ -25,14 +25,14 @@ const FeedbackInsights = () => {
       title: "Customer Satisfaction Survey",
       description: "Help us understand your experience with our services and identify areas for improvement",
       icon: <Star className="w-6 h-6" />,
-      url: "https://www.supportcall.co.za/store/xsurvey-customer-satisfaction.html",
+      url: "/surveys/customer-satisfaction",
       type: "Satisfaction"
     },
     {
       title: "Client Service Interest & Pricing Feedback",
       description: "Share your thoughts on our service offerings and pricing structure to help us better serve you",
       icon: <TrendingUp className="w-6 h-6" />,
-      url: "https://supportcall.co.za/store/xsurvey-client_interest_&_pricing.html",
+      url: "/surveys/client-service-interest-pricing",
       type: "Pricing"
     }
   ];
@@ -107,13 +107,12 @@ const FeedbackInsights = () => {
                 <CardContent>
                   <Button 
                     className="w-full" 
-                    onClick={() => safeExternalLink(survey.url, () => {
-                      // Fallback: show contact info
-                      alert(`Survey temporarily unavailable. Please contact us directly:\n\nSA: +27 (0)87 822 2380\nAU: +61 (0)4 7822 2380\n\nEmail: info@supportcall.co.za | info@supportcall.com.au`);
-                    })}
+                    asChild
                   >
-                    Take Survey
-                    <ExternalLink className="w-4 h-4 ml-2" />
+                    <Link to={survey.url}>
+                      Take Survey
+                      <ExternalLink className="w-4 h-4 ml-2" />
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
