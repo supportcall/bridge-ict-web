@@ -267,9 +267,9 @@ const AudienceChooser: React.FC<AudienceChooserProps> = ({ extraNote }) => {
                           {cat.items.map((item) => (
                           <li key={item} className="flex items-start gap-2">
                             {item === "Resolution ASAP" ? (
-                              <span className="inline-block w-4 h-4" aria-hidden="true" />
+                              <span className="inline-block w-4 h-4 mt-0.5 flex-shrink-0" aria-hidden="true" />
                             ) : (
-                              <ShieldCheck className="h-4 w-4 text-primary mt-0.5" aria-hidden="true" />
+                              <ShieldCheck className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                             )}
                             <span>{item}</span>
                           </li>
