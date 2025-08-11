@@ -15,6 +15,8 @@ import FeedbackInsights from "./pages/FeedbackInsights";
 import PointOfPresence from "./pages/PointOfPresence";
 import RemoteSupport from "./pages/RemoteSupport";
 import Links from "./pages/Links";
+import CustomerSatisfactionSurvey from "./pages/surveys/CustomerSatisfactionSurvey";
+import ClientServiceInterestPricing from "./pages/surveys/ClientServiceInterestPricing";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const queryClient = new QueryClient();
@@ -38,6 +40,8 @@ const App = () => (
             <Route path="/point-of-presence" element={<PointOfPresence />} />
             <Route path="/remote-support" element={<RemoteSupport />} />
             <Route path="/links" element={<Links />} />
+            <Route path="/surveys/customer-satisfaction" element={<CustomerSatisfactionSurvey />} />
+            <Route path="/surveys/client-service-interest-pricing" element={<ClientServiceInterestPricing />} />
             <Route path="/IndustryLeadersChooseSupportCALL" element={<Index />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
