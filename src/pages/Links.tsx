@@ -70,9 +70,7 @@ const categories: Category[] = [
   {
     title: "Network & Status",
     items: [
-      { name: "Submarine Cable Map [site]", url: "https://www.submarinecablemap.com/" },
-      { name: "SAIX Notice Board [site]", url: "http://www.noticeboard.saix.net/" },
-      { name: "Metro Fibre Status [site]", url: "https://metrofibre.co.za/networkstatus/" }
+      { name: "Submarine Cable Map [site]", url: "https://www.submarinecablemap.com/" }
     ]
   },
   {
