@@ -18,7 +18,7 @@ const audiences = [
           "Asset inventory",
           "Scripted task automation",
           "Real-time alerting",
-          "Issue Imitiation or Resolution ASAP",
+          "Issue resolution immediately or ASAP",
         ],
       },
       {
