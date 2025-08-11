@@ -75,7 +75,7 @@ const Index = () => {
       {/* Critical above-the-fold content loads immediately */}
       <Navigation />
       <Hero />
-      <AudienceChooser />
+      <AudienceChooser extraNote="We also offer Microsoft Windows & Office, Linux alternative solutions for Enterprise, SME, Home User and Seniors" />
       <About />
       <Services />
       

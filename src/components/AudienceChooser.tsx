@@ -224,7 +224,8 @@ const audiences = [
   },
 ] as const;
 
-const AudienceChooser: React.FC = () => {
+interface AudienceChooserProps { extraNote?: React.ReactNode; }
+const AudienceChooser: React.FC<AudienceChooserProps> = ({ extraNote }) => {
   return (
     <section aria-labelledby="audience-heading" className="bg-background border-y border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -279,6 +280,7 @@ const AudienceChooser: React.FC = () => {
           Not sure? <a href="#contact" onClick={(e) => { e.preventDefault(); const el = document.querySelector('#contact'); el?.scrollIntoView({ behavior: 'smooth' }); }} className="underline underline-offset-4">
             Talk to an expert
           </a>
+          {extraNote && <p className="mt-1">{extraNote}</p>}
         </div>
       </div>
     </section>
