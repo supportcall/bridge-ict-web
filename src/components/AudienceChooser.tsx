@@ -80,7 +80,7 @@ const audiences = [
           "Asset inventory",
           "Scripted task automation",
           "Real-time alerting",
-          "Issue Resolution ASAP",
+          "Issue resolution ASAP",
         ],
       },
       {
@@ -141,7 +141,7 @@ const audiences = [
           "Automated patch management",
           "Scripted task automation",
           "Real-time alerting",
-          "Issue Resolution ASAP (Client Availability)",
+          "Issue resolution ASAP (Client Availability)",
         ],
       },
       {
@@ -201,7 +201,7 @@ const audiences = [
           
           "Scripted task automation",
           "Real-time alerting",
-          "Issue Resolution ASAP (Client Availability)",
+          "Issue resolution ASAP (Client Availability)",
         ],
       },
       {
