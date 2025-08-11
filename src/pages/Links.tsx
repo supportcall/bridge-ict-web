@@ -116,7 +116,7 @@ const Links = () => {
             {categories.map((cat) => (
               <Card key={cat.title} className="p-6">
                 <h2 className="text-xl font-semibold mb-4 text-foreground">{cat.title}</h2>
-                <ul className="space-y-3">
+                <ul className="space-y-3 list-none pl-0">
                   {cat.items.map((item) => (
                     <li key={item.url}>
                       <a
@@ -126,7 +126,7 @@ const Links = () => {
                         className="inline-flex items-center gap-2 text-primary hover:underline"
                         aria-label={`${item.name} (opens in a new tab)`}
                       >
-                        <ExternalLink className="w-4 h-4" />
+                        <ExternalLink className="w-4 h-4 shrink-0" />
                         <span className="text-sm">{item.name}</span>
                       </a>
                     </li>
