@@ -124,6 +124,7 @@ const Footer = () => {
               <h4 className="font-semibold text-white mb-4">Support</h4>
               <ul className="space-y-2">
                 <li><a href="https://wiki.supportcall.co.za/doku.php" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Help Center</a></li>
+                <li><a href="https://tickets.supportcall-isp.co.za/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Ticket System</a></li>
                 <li><Link to="/feedback-insights" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Feedback & Insights</Link></li>
                 <li><Link to="/feedback-insights" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Community</Link></li>
                 <li><Link to="/links" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">SupportCALL Links</Link></li>
