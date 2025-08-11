@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Separator } from "@/components/ui/separator";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { generateServiceSchema } from "@/utils/seo";
 import { useState } from "react";
@@ -185,8 +186,8 @@ const ClientServiceInterestPricing = () => {
                   <CardTitle>Services Interest and Ratings</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  {serviceGroups.map((group) => (
-                    <div key={group.title}>
+                  {serviceGroups.map((group, idx) => (
+                    <div key={group.title} className={idx > 0 ? "pt-6 mt-6 border-t border-border" : undefined}>
                       <h3 className="font-semibold mb-3">{group.title}</h3>
                       <ul className="space-y-2">
                         {group.items.map((item) => (
@@ -240,6 +241,7 @@ const ClientServiceInterestPricing = () => {
                       <span>ICT Technician Callout - Cheap/Good Value</span>
                       <Input type="number" name="price_tech_good_value" min={0} step={5} placeholder="R" />
                     </li>
+                    <Separator className="my-4" />
 
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Engineer Callout - Too expensive</span>
@@ -257,6 +259,7 @@ const ClientServiceInterestPricing = () => {
                       <span>ICT Engineer Callout - Cheap/Good Value</span>
                       <Input type="number" name="price_engineer_good_value" min={0} step={5} placeholder="R" />
                     </li>
+                    <Separator className="my-4" />
 
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Ethernet Cabling Technician Callout - Too expensive</span>
@@ -274,6 +277,7 @@ const ClientServiceInterestPricing = () => {
                       <span>ICT Ethernet Cabling Technician Callout - Cheap/Good Value</span>
                       <Input type="number" name="price_ethernet_good_value" min={0} step={5} placeholder="R" />
                     </li>
+                    <Separator className="my-4" />
 
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Wireless Technician Callout - Too expensive</span>
@@ -291,6 +295,7 @@ const ClientServiceInterestPricing = () => {
                       <span>ICT Wireless Technician Callout - Cheap/Good Value</span>
                       <Input type="number" name="price_wireless_good_value" min={0} step={5} placeholder="R" />
                     </li>
+                    <Separator className="my-4" />
 
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Consultant Callout - Too expensive</span>
