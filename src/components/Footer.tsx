@@ -141,7 +141,7 @@ const Footer = () => {
               © {new Date().getFullYear()} SupportCALL. All rights reserved. | 
               <a href="https://wiki.supportcall.co.za/doku.php?id=policy_-_privacy_policy" target="_blank" rel="noopener noreferrer" className="hover:text-primary-glow ml-1">Privacy Policy</a> | 
               <a href="https://wiki.supportcall.co.za/doku.php?id=terms_of_enduser_ticket_system_usage" target="_blank" rel="noopener noreferrer" className="hover:text-primary-glow ml-1">Terms of Service</a> | 
-              <a href="https://wiki.supportcall.co.za/doku.php?id=terms_of_enduser_signup_debitorder" target="_blank" rel="noopener noreferrer" className="hover:text-primary-glow ml-1">Terms & Conditions (Service Application and Debit Order) & Service Application Authorization and Terms</a>
+              <a href="https://wiki.supportcall.co.za/doku.php?id=terms_of_enduser_signup_debitorder" target="_blank" rel="noopener noreferrer" className="hover:text-primary-glow ml-1">Service Application & Debit Order Terms</a>
             </div>
             
             <div className="flex items-center space-x-4">
