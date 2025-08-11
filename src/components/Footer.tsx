@@ -113,7 +113,7 @@ const Footer = () => {
               <h4 className="font-semibold text-white mb-4">Company</h4>
               <ul className="space-y-2">
                 <li><button type="button" onClick={() => handleAnchorClick("#about")} className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">About Us</button></li>
-                <li><a href="https://wiki.supportcall.co.za/doku.php?id=supportcall_sa_company_profile" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Company Profile</a></li>
+                <li><a href="https://wiki.supportcall.co.za/doku.php?id=supportcall_ausa_company_profile#company_information" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Company Profile</a></li>
                 <li><a href="https://supportcall.co.za/store/forms/SC-RegForm.pdf" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">SIgn Up Forn</a></li>
               </ul>
             </div>
