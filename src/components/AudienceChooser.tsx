@@ -29,6 +29,7 @@ const audiences = [
           "Compliance reporting tools",
           "Threat intelligence feeds",
           "File integrity monitoring",
+          "Issue resolution immediately or ASAP",
         ],
       },
       {
