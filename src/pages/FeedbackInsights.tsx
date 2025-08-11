@@ -158,8 +158,8 @@ const FeedbackInsights = () => {
           <p className="text-lg text-muted-foreground mb-8">
             We're always open to hearing from you. Reach out directly if you have specific suggestions or concerns.
           </p>
-          <Button variant="premium" size="lg" onClick={() => window.location.href = '#contact'}>
-            Contact Us Directly
+          <Button variant="premium" size="lg" asChild>
+            <Link to="/#contact">Contact Us Directly</Link>
           </Button>
         </div>
       </section>
