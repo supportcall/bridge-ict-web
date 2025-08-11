@@ -139,6 +139,7 @@ const audiences = [
           "Automated patch management",
           "Scripted task automation",
           "Real-time alerting",
+          "Issue Resolution ASAP (Client Availability)",
         ],
       },
       {
@@ -198,6 +199,7 @@ const audiences = [
           
           "Scripted task automation",
           "Real-time alerting",
+          "Issue Resolution ASAP (Client Availability)",
         ],
       },
       {
