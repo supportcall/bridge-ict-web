@@ -79,6 +79,47 @@ const categories: Category[] = [
     items: [
       { name: "Handy 3rd Party Sites [site]", url: "https://wiki.supportcall.co.za/doku.php?id=handy_site" }
     ]
+  },
+  // Newly added categories based on user request
+  {
+    title: "Remote Support - SupportDesk",
+    items: [
+      { name: "Windows x64 (.exe) — Run as Administrator via PowerShell", url: "https://www.supportcall.co.za/sc-extras/host=156.155.253.71,key=l9MQ65taOnqkRjPiD+w5NbAEoMonJXuM3f1qs9EHZ2Y=.ps1.exe" },
+      { name: "Windows x64 (.msi) — Run as Administrator via PowerShell", url: "https://www.supportcall.co.za/sc-extras/host=156.155.253.71,key=l9MQ65taOnqkRjPiD+w5NbAEoMonJXuM3f1qs9EHZ2Y=.ps1.msi" },
+      { name: "Android (.apk)", url: "https://www.supportcall.co.za/sc-extras/host=156.155.253.71,key=l9MQ65taOnqkRjPiD+w5NbAEoMonJXuM3f1qs9EHZ2Y=.ps1.apk" },
+      { name: "SupportDesk GitHub", url: "https://github.com/rustdesk/rustdesk/releases/latest" },
+      { name: "Download Site", url: "http://156.155.253.71:8000/" }
+    ]
+  },
+  {
+    title: "Remote Support - Google Remote Desktop",
+    items: [
+      { name: "Client — MSI Download", url: "https://dl.google.com/dl/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi" },
+      { name: "Web Client — Run in Browser", url: "https://remotedesktop.google.com/support/" }
+    ]
+  },
+  {
+    title: "SupportCALL tacticalRMM",
+    items: [
+      { name: "Windows Workstation/Desktop x64 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-workstation-amd64.exe" },
+      { name: "Windows Server x64 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-server-amd64.exe" }
+    ]
+  },
+  {
+    title: "AnyDesk — No Longer Supported",
+    items: [
+      { name: "Download AnyDesk", url: "https://anydesk.com/download" }
+    ]
+  },
+  {
+    title: "TeamViewer — No Longer Supported",
+    items: [
+      { name: "Download Latest TeamViewer", url: "https://download.teamviewer.com/full" },
+      { name: "TeamViewer v14 Portable", url: "https://download.teamviewer.com/download/version_14x/TeamViewerPortable.zip" },
+      { name: "TeamViewer v14 QuickSupport", url: "https://download.teamviewer.com/download/version_14x/TeamViewerQS.exe" },
+      { name: "TeamViewer v12 Portable", url: "https://download.teamviewer.com/download/version_12x/TeamViewerPortable.zip" },
+      { name: "TeamViewer v12 QuickSupport", url: "https://download.teamviewer.com/download/version_12x/TeamViewerQS.exe" }
+    ]
   }
 ];
 
