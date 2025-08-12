@@ -134,7 +134,13 @@ This message was sent from the SupportCALL website contact form.
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    const sanitizedValue = sanitizeInput(value);
+    let sanitizedValue: string;
+    if (name === "message") {
+      // Preserve spaces and new lines for message, only strip angle brackets and limit length
+      sanitizedValue = value.replace(/[<>]/g, "").slice(0, 2000);
+    } else {
+      sanitizedValue = sanitizeInput(value);
+    }
     
     setFormData({
       ...formData,
