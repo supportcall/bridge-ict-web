@@ -32,6 +32,12 @@ const Contact = () => {
     message: ""
   });
 
+  // Simple human verification (math challenge)
+  const [humanA] = useState(() => Math.floor(Math.random() * 9) + 1);
+  const [humanB] = useState(() => Math.floor(Math.random() * 9) + 1);
+  const [humanAnswer, setHumanAnswer] = useState("");
+  const [humanError, setHumanError] = useState("");
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -47,6 +53,22 @@ const Contact = () => {
       });
       setIsSubmitting(false);
       return;
+    }
+
+    // Simple human verification
+    if (parseInt(humanAnswer, 10) !== humanA + humanB) {
+      setHumanError("Please solve the verification correctly.");
+      toast({
+        title: "Verification failed",
+        description: "Please answer the human verification question.",
+        variant: "destructive",
+      });
+      const hv = (e.currentTarget as HTMLFormElement).querySelector<HTMLInputElement>("#human_verification");
+      hv?.focus();
+      setIsSubmitting(false);
+      return;
+    } else {
+      setHumanError("");
     }
 
     // Validate form data
@@ -370,6 +392,26 @@ This message was sent from the SupportCALL website contact form.
                     {formErrors.message && (
                       <p className="text-sm text-destructive mt-1">{formErrors.message}</p>
                     )}
+                  </div>
+
+                  <div>
+                    <label htmlFor="human_verification" className="block text-sm font-medium text-foreground mb-2">
+                      Human verification: What is {humanA} + {humanB}? *
+                    </label>
+                    <Input
+                      id="human_verification"
+                      name="human_verification"
+                      type="number"
+                      inputMode="numeric"
+                      required
+                      value={humanAnswer}
+                      onChange={(e) => {
+                        setHumanAnswer(e.target.value);
+                        if (humanError) setHumanError("");
+                      }}
+                      className={humanError ? "border-destructive" : ""}
+                    />
+                    {humanError && <p className="text-sm text-destructive mt-1">{humanError}</p>}
                   </div>
 
                   <Button 

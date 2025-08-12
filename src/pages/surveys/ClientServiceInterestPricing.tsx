@@ -24,6 +24,11 @@ const ClientServiceInterestPricing = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  // Simple human verification (math challenge)
+  const [humanA] = useState(() => Math.floor(Math.random() * 9) + 1);
+  const [humanB] = useState(() => Math.floor(Math.random() * 9) + 1);
+  const [humanAnswer, setHumanAnswer] = useState("");
+  const [humanError, setHumanError] = useState("");
 
   const serviceGroups: { title: string; items: string[] }[] = [
     {
@@ -95,6 +100,14 @@ const ClientServiceInterestPricing = () => {
         input.focus();
         return;
       }
+    }
+    if (parseInt(humanAnswer, 10) !== humanA + humanB) {
+      setHumanError("Incorrect answer. Please try again.");
+      const hv = form.querySelector<HTMLInputElement>("#human_verification");
+      hv?.focus();
+      return;
+    } else {
+      setHumanError("");
     }
     setSubmitted(true);
   };
@@ -316,6 +329,23 @@ const ClientServiceInterestPricing = () => {
                   </ul>
                 </CardContent>
               </Card>
+
+              <div>
+                <Label htmlFor="human_verification">Human verification: What is {humanA} + {humanB}?</Label>
+                <Input
+                  id="human_verification"
+                  name="human_verification"
+                  type="number"
+                  inputMode="numeric"
+                  required
+                  value={humanAnswer}
+                  onChange={(e) => {
+                    setHumanAnswer(e.target.value);
+                    if (humanError) setHumanError("");
+                  }}
+                />
+                {humanError && <p className="text-destructive text-sm mt-1">{humanError}</p>}
+              </div>
 
               <div className="flex justify-end">
                 <Button type="submit" variant="premium" size="lg">Submit Survey</Button>
