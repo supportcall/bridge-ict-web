@@ -53,8 +53,8 @@ const categories: Category[] = [
       { name: "XnConvert [site]", url: "https://www.xnview.com/en/xnconvert/" },
       { name: "XnConvert 32-bit [DL]", url: "https://download.xnview.com/XnConvert-win.exe" },
       { name: "XnConvert 64-bit [DL]", url: "https://download.xnview.com/XnConvert-win-x64.exe" },
-      { name: "XnConvert profile ZIP [DL]", url: "http://www.supportcall.co.za/store/sc-extras/sc-resize-aspectfit-50%-jpg.zip" },
-      { name: "XnConvert profile XBS [DL]", url: "http://www.supportcall.co.za/store/sc-extras/sc-resize-aspectfit-50%-jpg.xbs" }
+      { name: "XnConvert profile ZIP [DL]", url: "http://www.supportcall.co.za/sc-resize-aspectfit-50%-jpg.zip" },
+      { name: "XnConvert profile XBS [DL]", url: "http://www.supportcall.co.za/sc-resize-aspectfit-50%-jpg.xbs" }
     ]
   },
   {
@@ -84,10 +84,10 @@ const categories: Category[] = [
   {
     title: "Remote Support - SupportDesk",
     items: [
-      { name: "Windows x64 (.exe) — Run as Administrator via PowerShell", url: "https://www.supportcall.co.za/sc-extras/host=156.155.253.71,key=l9MQ65taOnqkRjPiD+w5NbAEoMonJXuM3f1qs9EHZ2Y=.ps1.exe" },
-      { name: "Windows x64 (.msi) — Run as Administrator via PowerShell", url: "https://www.supportcall.co.za/sc-extras/host=156.155.253.71,key=l9MQ65taOnqkRjPiD+w5NbAEoMonJXuM3f1qs9EHZ2Y=.ps1.msi" },
-      { name: "Android (.apk)", url: "https://www.supportcall.co.za/sc-extras/host=156.155.253.71,key=l9MQ65taOnqkRjPiD+w5NbAEoMonJXuM3f1qs9EHZ2Y=.ps1.apk" },
-      { name: "Archive (.zip)", url: "https://www.supportcall.co.za/sc-extras/host=156.155.253.71,key=l9MQ65taOnqkRjPiD+w5NbAEoMonJXuM3f1qs9EHZ2Y=.ps1.zip" },
+      { name: "Windows x64 (.exe) — Run as Administrator via PowerShell", url: "https://www.supportcall.co.za/host=156.155.253.71,key=l9MQ65taOnqkRjPiD+w5NbAEoMonJXuM3f1qs9EHZ2Y=.ps1.exe" },
+      { name: "Windows x64 (.msi) — Run as Administrator via PowerShell", url: "https://www.supportcall.co.za/host=156.155.253.71,key=l9MQ65taOnqkRjPiD+w5NbAEoMonJXuM3f1qs9EHZ2Y=.ps1.msi" },
+      { name: "Android (.apk)", url: "https://www.supportcall.co.za/host=156.155.253.71,key=l9MQ65taOnqkRjPiD+w5NbAEoMonJXuM3f1qs9EHZ2Y=.ps1.apk" },
+      { name: "Archive (.zip)", url: "https://www.supportcall.co.za/host=156.155.253.71,key=l9MQ65taOnqkRjPiD+w5NbAEoMonJXuM3f1qs9EHZ2Y=.ps1.zip" },
       { name: "SupportDesk GitHub", url: "https://github.com/rustdesk/rustdesk/releases/latest" },
       { name: "Download Site", url: "http://156.155.253.71:8000/" }
     ]
@@ -102,10 +102,10 @@ const categories: Category[] = [
   {
     title: "SupportCALL tacticalRMM",
     items: [
-      { name: "Windows Workstation/Desktop x64 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-workstation-amd64.exe" },
-      { name: "Windows Workstation/Desktop x86 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-workstation-386.exe" },
-      { name: "Windows Server x64 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-server-amd64.exe" },
-      { name: "Windows Server x86 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-server-386.exe" }
+      { name: "Windows Workstation/Desktop x64 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/trmm-sc-newclients-workstation-amd64.exe" },
+      { name: "Windows Workstation/Desktop x86 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/trmm-sc-newclients-workstation-386.exe" },
+      { name: "Windows Server x64 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/trmm-sc-newclients-server-amd64.exe" },
+      { name: "Windows Server x86 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/trmm-sc-newclients-server-386.exe" }
     ]
   },
   {
