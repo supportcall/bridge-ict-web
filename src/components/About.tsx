@@ -17,7 +17,7 @@ const About = () => {
     {
       icon: <Clock className="w-6 h-6" />,
       title: "20+ Years Experience",
-      description: "Two decades of proven expertise in client focused ICT solutions."
+      description: "Two decades of proven expertise in client-focused ICT solutions."
     },
     {
       icon: <Heart className="w-6 h-6" />,
@@ -37,7 +37,7 @@ const About = () => {
             About SupportCALL
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Your Trusted ICT & iSP Partner
+            Your Trusted ICT & ISP Partner
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             SupportCALL delivers comprehensive ICT services, management, and products to clients across 
@@ -67,7 +67,7 @@ const About = () => {
               </p>
               <p>
                 Building long-standing relationships with our clients is very important to us, 
-                building on trust relationships. We employ right and empower our team to be the 
+                building on trust relationships. We employ people right and empower our team to be the 
                 best that they could be. We even have clients in the industry themselves calling 
                 for guidance, making us an essential part of their team and business.
               </p>

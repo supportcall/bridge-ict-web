@@ -126,7 +126,7 @@ const Seniors = () => {
     {
       icon: <Shield className="w-8 h-8" />,
       title: "Online Safety",
-      description: "We help your parents recognise and screen out scammers - whether they appear in emails, browsers, or online messages."
+      description: "We help your parents recognize and screen out scammers - whether they appear in emails, browsers, or online messages."
     }
   ];
 
@@ -330,7 +330,7 @@ const Seniors = () => {
             Ready to stop worrying about your parents' tech issues?
           </h2>
           <p className="text-xl text-white/80 mb-8">
-            Join other and let SupportCALL Tech Angels help your patient, with trusted, reliable support.
+            Join others and let SupportCALL Tech Angels help you with trusted, reliable support.
           </p>
         </div>
       </section>
