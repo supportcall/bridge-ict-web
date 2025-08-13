@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, Star } from "lucide-react";
+
+import { Menu, X } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { openBooking } from "@/utils/booking";
 
 const Navigation = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -13,14 +14,14 @@ const Navigation = () => {
     { name: "Home", href: "/", type: "route" },
     { name: "About", href: "#about", type: "anchor" },
     { name: "Services", href: "#services", type: "anchor" },
+    { name: "Remote Services", href: "/services/rmm", type: "route" },
+    { name: "Security & Compliance", href: "/services/wsystem", type: "route" },
+    { name: "Senior Care", href: "/services/seniors", type: "route" },
+    { name: "Hire Us", href: "/services/hire-us", type: "route" },
     { name: "Contact", href: "#contact", type: "anchor" },
-    { name: "Remote Support", href: "/remote-support", type: "route" },
-    { name: "Links & Resources", href: "/links", type: "route" }
   ];
 
   const handleAnchorClick = (href: string) => {
-    setIsMobileMenuOpen(false);
-    
     if (location.pathname !== '/') {
       navigate(`/${href}`);
     } else {
@@ -29,100 +30,34 @@ const Navigation = () => {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
+    setIsOpen(false);
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-b border-gray-200/20 dark:border-gray-800/20">
+    <nav className="sticky top-0 w-full z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link 
-            to="/" 
-            className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
-            aria-label="SupportCALL - Return to homepage"
-          >
-            <img 
-              src="/logo.png" 
-              alt="SupportCALL Logo" 
-              className="h-8 w-8"
-              loading="eager"
-              decoding="async"
-            />
-            <div>
-              <span className="text-xl font-bold text-primary">SupportCALL</span>
-              <div className="flex items-center space-x-1">
-                <span className="text-xs text-muted-foreground">20+ Years Trusted</span>
-                <div className="flex space-x-0.5">
-                  {[1,2,3,4,5].map(i => (
-                    <Star key={i} className="w-2.5 h-2.5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              item.type === "route" ? (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
-                >
-                  {item.name}
-                </Link>
-              ) : (
-                <button
-                  key={item.name}
-                  onClick={() => handleAnchorClick(item.href)}
-                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
-                >
-                  {item.name}
-                </button>
-              )
-            ))}
-            
-            {/* Emergency Phone Number */}
-            <div className="hidden lg:flex items-center text-sm text-muted-foreground">
-              <Phone className="w-4 h-4 mr-1 text-red-500" />
-              <span className="font-mono">+27-87-822-2380</span>
-            </div>
-
-            {/* Primary CTA */}
-            <Button 
-              variant="premium" 
-              onClick={() => openBooking()}
-              className="shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-              aria-label="Book your FREE ICT consultation"
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              <span className="font-semibold">Book FREE Consultation</span>
-            </Button>
+          <div className="flex-shrink-0">
+            <h1 className="text-xl font-bold text-primary">SupportCALL</h1>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 rounded-md text-foreground hover:text-primary hover:bg-muted transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle mobile menu"
-            aria-expanded={isMobileMenuOpen}
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
-
-        {/* Mobile Navigation Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200/20 dark:border-gray-800/20 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md">
-            <div className="space-y-3">
+          {/* Desktop Navigation */}
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-baseline space-x-4">
               {navItems.map((item) => (
                 item.type === "route" ? (
                   <Link
                     key={item.name}
                     to={item.href}
-                    className="block px-4 py-2 text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors font-medium"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                    onClick={(e) => {
+                      if (item.href === "/" && location.pathname === "/") {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }
+                      setIsOpen(false);
+                    }}
                   >
                     {item.name}
                   </Link>
@@ -130,33 +65,77 @@ const Navigation = () => {
                   <button
                     key={item.name}
                     onClick={() => handleAnchorClick(item.href)}
-                    className="block w-full text-left px-4 py-2 text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors font-medium"
+                    className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
                   >
                     {item.name}
                   </button>
                 )
               ))}
-              
-              {/* Mobile Emergency Contact */}
-              <div className="px-4 py-2 text-sm text-muted-foreground border-t border-gray-200/20 dark:border-gray-800/20">
-                <div className="flex items-center">
-                  <Phone className="w-4 h-4 mr-2 text-red-500" />
-                  <span>Emergency: +27-87-822-2380</span>
-                </div>
-              </div>
-              
-              {/* Mobile CTA */}
-              <div className="px-4 pt-2">
+              <Button 
+                variant="premium" 
+                size="sm" 
+                className="ml-4"
+                onClick={() => openBooking()}
+              >
+                Book Consultation
+              </Button>
+            </div>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-foreground hover:text-primary hover:bg-muted/50 relative z-10"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
+          </div>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="md:hidden animate-fade-in">
+            <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3 bg-background border-t border-border shadow-lg">
+              {navItems.map((item) => (
+                item.type === "route" ? (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="text-foreground hover:text-primary hover:bg-muted/50 block px-3 py-3 rounded-md text-base font-medium transition-all duration-200 border-l-2 border-transparent hover:border-primary"
+                    onClick={(e) => {
+                      if (item.href === "/" && location.pathname === "/") {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }
+                      setIsOpen(false);
+                    }}
+                  >
+                    {item.name}
+                  </Link>
+                ) : (
+                  <button
+                    key={item.name}
+                    onClick={() => handleAnchorClick(item.href)}
+                    className="text-foreground hover:text-primary hover:bg-muted/50 block px-3 py-3 rounded-md text-base font-medium transition-all duration-200 border-l-2 border-transparent hover:border-primary w-full text-left"
+                  >
+                    {item.name}
+                  </button>
+                )
+              ))}
+              <div className="pt-3 px-3">
                 <Button 
                   variant="premium" 
-                  className="w-full justify-center shadow-lg"
+                  className="w-full h-12 text-base"
                   onClick={() => {
-                    setIsMobileMenuOpen(false);
                     openBooking();
+                    setIsOpen(false);
                   }}
                 >
-                  <Phone className="w-4 h-4 mr-2" />
-                  Book FREE Consultation
+                  Book Consultation
                 </Button>
               </div>
             </div>
