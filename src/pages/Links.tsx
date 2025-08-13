@@ -87,6 +87,7 @@ const categories: Category[] = [
       { name: "Windows x64 (.exe) — Run as Administrator via PowerShell", url: "https://www.supportcall.co.za/sc-extras/host=156.155.253.71,key=l9MQ65taOnqkRjPiD+w5NbAEoMonJXuM3f1qs9EHZ2Y=.ps1.exe" },
       { name: "Windows x64 (.msi) — Run as Administrator via PowerShell", url: "https://www.supportcall.co.za/sc-extras/host=156.155.253.71,key=l9MQ65taOnqkRjPiD+w5NbAEoMonJXuM3f1qs9EHZ2Y=.ps1.msi" },
       { name: "Android (.apk)", url: "https://www.supportcall.co.za/sc-extras/host=156.155.253.71,key=l9MQ65taOnqkRjPiD+w5NbAEoMonJXuM3f1qs9EHZ2Y=.ps1.apk" },
+      { name: "Archive (.zip)", url: "https://www.supportcall.co.za/sc-extras/host=156.155.253.71,key=l9MQ65taOnqkRjPiD+w5NbAEoMonJXuM3f1qs9EHZ2Y=.ps1.zip" },
       { name: "SupportDesk GitHub", url: "https://github.com/rustdesk/rustdesk/releases/latest" },
       { name: "Download Site", url: "http://156.155.253.71:8000/" }
     ]
@@ -102,7 +103,9 @@ const categories: Category[] = [
     title: "SupportCALL tacticalRMM",
     items: [
       { name: "Windows Workstation/Desktop x64 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-workstation-amd64.exe" },
-      { name: "Windows Server x64 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-server-amd64.exe" }
+      { name: "Windows Workstation/Desktop x86 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-workstation-386.exe" },
+      { name: "Windows Server x64 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-server-amd64.exe" },
+      { name: "Windows Server x86 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-server-386.exe" }
     ]
   },
   {
