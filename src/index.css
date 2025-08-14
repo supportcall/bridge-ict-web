@@ -46,19 +46,12 @@ All colors MUST be HSL for consistency.
 
     --radius: 0.75rem;
 
-    /* SupportCALL brand colors - Professional ICT palette + Logo-inspired colors */
+    /* SupportCALL brand colors - Professional ICT palette */
     --supportcall-blue: 210 100% 45%;
     --supportcall-green: 142 76% 35%;
     --supportcall-navy: 210 50% 12%;
     --supportcall-gray: 220 15% 88%;
     --supportcall-orange: 25 95% 53%;
-    
-    /* Logo-inspired accent colors for subtle branding */
-    --logo-green: 88 61% 52%;    /* From logo green element */
-    --logo-blue: 197 100% 48%;   /* From logo blue screen */
-    --logo-purple: 250 84% 38%;  /* From logo purple elements */
-    --logo-orange: 25 95% 53%;   /* From logo orange element */
-    --logo-red: 0 84% 60%;       /* From logo red element */
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));

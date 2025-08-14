@@ -195,29 +195,29 @@ const Services = () => {
             </div>
             <div className="grid md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="w-12 h-12 bg-logo-blue/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Server className="w-6 h-6 text-logo-blue" />
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <Server className="w-6 h-6 text-primary" />
                 </div>
                 <h4 className="font-semibold text-foreground mb-2">Enterprise</h4>
                 <p className="text-sm text-muted-foreground">Large-scale solutions for major corporations</p>
               </div>
               <div className="text-center">
-                <div className="w-12 h-12 bg-logo-green/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Users className="w-6 h-6 text-logo-green" />
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <Users className="w-6 h-6 text-primary" />
                 </div>
                 <h4 className="font-semibold text-foreground mb-2">Corporate</h4>
                 <p className="text-sm text-muted-foreground">Mid-size business ICT infrastructure</p>
               </div>
               <div className="text-center">
-                <div className="w-12 h-12 bg-logo-orange/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Settings className="w-6 h-6 text-logo-orange" />
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <Settings className="w-6 h-6 text-primary" />
                 </div>
                 <h4 className="font-semibold text-foreground mb-2">SME</h4>
                 <p className="text-sm text-muted-foreground">Small to medium enterprise solutions</p>
               </div>
               <div className="text-center">
-                <div className="w-12 h-12 bg-logo-red/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Phone className="w-6 h-6 text-logo-red" />
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <Phone className="w-6 h-6 text-primary" />
                 </div>
                 <h4 className="font-semibold text-foreground mb-2">Home Users</h4>
                 <p className="text-sm text-muted-foreground">Personal and home office support</p>
