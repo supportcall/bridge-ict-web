@@ -330,22 +330,26 @@ const ClientServiceInterestPricing = () => {
                 </CardContent>
               </Card>
 
-              <div>
-                <Label htmlFor="human_verification">Human verification: What is {humanA} + {humanB}?</Label>
-                <Input
-                  id="human_verification"
-                  name="human_verification"
-                  type="number"
-                  inputMode="numeric"
-                  required
-                  value={humanAnswer}
-                  onChange={(e) => {
-                    setHumanAnswer(e.target.value);
-                    if (humanError) setHumanError("");
-                  }}
-                />
-                {humanError && <p className="text-destructive text-sm mt-1">{humanError}</p>}
-              </div>
+              <Card>
+                <CardContent className="pt-6">
+                  <div>
+                    <Label htmlFor="human_verification" className="text-foreground">Human verification: What is {humanA} + {humanB}?</Label>
+                    <Input
+                      id="human_verification"
+                      name="human_verification"
+                      type="number"
+                      inputMode="numeric"
+                      required
+                      value={humanAnswer}
+                      onChange={(e) => {
+                        setHumanAnswer(e.target.value);
+                        if (humanError) setHumanError("");
+                      }}
+                    />
+                    {humanError && <p className="text-destructive text-sm mt-1">{humanError}</p>}
+                  </div>
+                </CardContent>
+              </Card>
 
               <div className="flex justify-end">
                 <Button type="submit" variant="premium" size="lg">Submit Survey</Button>
