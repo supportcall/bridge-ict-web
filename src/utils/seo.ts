@@ -5,8 +5,8 @@
 // Dynamic meta tags for different pages
 export const PAGE_SEO = {
   home: {
-    title: "FREE ICT Consultation Worth $500 | Expert IT Support SA & AU | SupportCALL",
-    description: "Get FREE ICT consultation! Enterprise cybersecurity, 24/7 emergency IT support, remote monitoring. Trusted by 500+ businesses across SA & AU for 20+ years.",
+    title: "FREE FIRST ICT Consultation | Expert IT Support SA & AU | SupportCALL",
+    description: "Get FREE FIRST ICT consultation! Enterprise cybersecurity, 24/7 emergency IT support, remote monitoring. Trusted by 500+ businesses across SA & AU for 20+ years.",
     keywords: "free ICT consultation, IT support South Africa Australia, cybersecurity services, emergency IT response, enterprise IT solutions"
   },
   rmm: {
@@ -100,8 +100,8 @@ export const trackConversion = (eventName: string, value?: number) => {
 export const MARKETING_OPTIMIZATIONS = {
   // Critical above-the-fold content
   aboveTheFold: [
-    'FREE ICT Consultation',
-    'Worth $500',
+    'FREE FIRST ICT Consultation',
+    'No Cost Assessment',
     'Emergency Support',
     'Book Today',
     '20+ Years Trusted'
@@ -109,9 +109,9 @@ export const MARKETING_OPTIMIZATIONS = {
   
   // High-converting call-to-action phrases
   ctaPhrases: [
-    'Book FREE Consultation NOW',
+    'Book FREE FIRST Consultation NOW',
     'Get Instant Quote',
-    'Claim Your $500 Assessment',
+    'Claim Your FREE FIRST Assessment',
     'Emergency Support Available',
     'Talk to Expert Today'
   ],
