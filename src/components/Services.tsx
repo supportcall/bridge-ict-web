@@ -95,7 +95,8 @@ const Services = () => {
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             <strong>Don't let IT problems cost you money.</strong> From SupportCALL TacticalRMM monitoring and SupportCALL W.System security to local tech sourcing for remote locations, 
             we provide <span className="text-primary font-semibold">genuine ICT services that work</span> - including specialized support where no local 
-            technical assistance is available. <strong>Get your FREE consultation today!</strong>
+            technical assistance is available. <strong>Plus, get access to 20+ years of ICT expertise for a low monthly fee - like having your own in-house CTO, IT Manager or Senior Tech!</strong> 
+            <strong>Get your FREE consultation today!</strong>
           </p>
         </div>
 
