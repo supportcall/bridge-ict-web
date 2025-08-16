@@ -42,8 +42,7 @@ const About = () => {
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             SupportCALL delivers comprehensive ICT services, management, and products to clients across 
             Enterprise, Corporate, SME, and home user levels. With clients in Australia, South Africa and internationally, 
-            we prioritize building true trust relationships by putting our clients' needs, interests, and budgets first. 
-            <strong>Get 20+ years of ICT expertise for a low monthly fee - like having your own in-house CTO, IT Manager or Senior Tech!</strong>
+            we prioritize building true trust relationships by putting our clients' needs, interests, and budgets first.
           </p>
         </div>
 

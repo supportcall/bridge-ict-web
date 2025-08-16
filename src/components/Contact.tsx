@@ -204,9 +204,9 @@ This message was sent from the SupportCALL website contact form.
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
             Stop Losing Money to IT Problems, Book Your FREE FIRST Consultation
           </h2>
-           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            <strong>Don't wait for IT disasters to cost you thousands!</strong> Get immediate access to 20+ years of ICT expertise for a low monthly fee - 
-            like having your own in-house CTO, IT Manager or Senior Tech! Our free first consultation will identify your risks and show you exactly how to protect your business. 
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <strong>Don't wait for IT disasters to cost you thousands!</strong> Get immediate access to 20+ years of ICT expertise. 
+            Our free first consultation will identify your risks and show you exactly how to protect your business. 
             <span className="text-primary font-semibold">We've helped businesses slash IT downtime and cut costs – now we can do the same for you.</span>
           </p>
         </div>
