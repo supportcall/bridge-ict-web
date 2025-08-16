@@ -209,6 +209,10 @@ This message was sent from the SupportCALL website contact form.
             Our free first consultation will identify your risks and show you exactly how to protect your business. 
             <span className="text-primary font-semibold">We've helped businesses slash IT downtime and cut costs – now we can do the same for you.</span>
           </p>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-4 p-4 bg-primary/10 rounded-lg">
+            <strong>🎯 Monthly Expert Access:</strong> Skip the call-out fees! For a low monthly fee, get unlimited access to our 20+ years 
+            of ICT expertise - like having your own in-house CTO, IT Manager, or Senior Tech. Pick up the phone anytime without worrying about consultation billing.
+          </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-12">

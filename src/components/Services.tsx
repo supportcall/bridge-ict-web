@@ -226,6 +226,22 @@ const Services = () => {
           </CardContent>
         </Card>
 
+        {/* Monthly Expert Access */}
+        <Card className="mb-16 bg-gradient-primary text-white">
+          <CardContent className="p-8">
+            <div className="text-center">
+              <h3 className="text-2xl font-semibold mb-4">
+                Monthly ICT Expertise Access
+              </h3>
+              <p className="text-white/90 max-w-3xl mx-auto mb-6">
+                <strong>Stop worrying about call-out fees!</strong> For a low monthly fee, get unlimited access to 20+ years of ICT expertise - 
+                like having your own in-house CTO, IT Manager, or Senior Tech. Pick up the phone anytime for guidance, 
+                advice, or planning without the fear of consultation billing. <span className="text-primary-glow font-semibold">Just expert help when you need it.</span>
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* CTA Section */}
         <div className="text-center mt-16">
           <h3 className="text-2xl font-semibold text-foreground mb-4">
