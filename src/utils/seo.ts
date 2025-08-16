@@ -6,7 +6,7 @@
 export const PAGE_SEO = {
   home: {
     title: "FREE FIRST ICT Consultation | Expert IT Support SA & AU | SupportCALL",
-    description: "Get FREE FIRST ICT consultation! Enterprise cybersecurity, 24/7 emergency IT support, remote monitoring. Trusted by 500+ businesses across SA & AU for 20+ years.",
+    description: "Get FREE FIRST ICT consultation! Enterprise cybersecurity, 24/7 emergency IT support, remote monitoring. We've helped businesses slash IT downtime and cut costs across SA & AU for 20+ years.",
     keywords: "free ICT consultation, IT support South Africa Australia, cybersecurity services, emergency IT response, enterprise IT solutions"
   },
   rmm: {

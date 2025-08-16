@@ -207,7 +207,7 @@ This message was sent from the SupportCALL website contact form.
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             <strong>Don't wait for IT disasters to cost you thousands!</strong> Get immediate access to 20+ years of ICT expertise. 
             Our free first consultation will identify your risks and show you exactly how to protect your business. 
-            <span className="text-primary font-semibold">Thousands of businesses trust us - you should too!</span>
+            <span className="text-primary font-semibold">We've helped businesses slash IT downtime and cut costs – now we can do the same for you.</span>
           </p>
         </div>
 
