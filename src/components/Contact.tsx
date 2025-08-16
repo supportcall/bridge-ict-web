@@ -202,7 +202,7 @@ This message was sent from the SupportCALL website contact form.
             Get In Touch
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Get FREE FIRST Consultation - Stop Losing Money to IT Problems
+            Stop Losing Money to IT Problems, Book Your FREE FIRST Consultation
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             <strong>Don't wait for IT disasters to cost you thousands!</strong> Get immediate access to 20+ years of ICT expertise. 
