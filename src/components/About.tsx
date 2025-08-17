@@ -92,24 +92,6 @@ const About = () => {
               </CardContent>
             </Card>
 
-            {/* Monthly Expert Access */}
-            <Card className="border-l-4 border-l-primary bg-primary/5 mt-6">
-              <CardContent className="p-6">
-                <div className="flex items-start space-x-3">
-                  <Globe2 className="w-6 h-6 text-primary mt-1" />
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">
-                      Monthly ICT Expertise Access
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Our unique monthly service gives you unlimited access to 20+ years of ICT expertise 
-                      for a low monthly fee. Like having your own in-house CTO, IT Manager, or Senior Tech - 
-                      call anytime for guidance without worrying about consultation fees.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </div>
 
           {/* Right Column - Values */}
@@ -135,6 +117,22 @@ const About = () => {
             ))}
           </div>
         </div>
+
+        {/* Monthly Expert Access */}
+        <Card className="mb-16 bg-gradient-primary text-white">
+          <CardContent className="p-8">
+            <div className="text-center">
+              <h3 className="text-2xl font-semibold mb-4">
+                Monthly ICT Expertise Access
+              </h3>
+              <p className="text-white/90 max-w-3xl mx-auto mb-6">
+                <strong>Stop worrying about call-out fees!</strong> For a low monthly fee, get unlimited access to 20+ years of ICT expertise - 
+                like having your own in-house CTO, IT Manager, or Senior Tech. Pick up the phone anytime for guidance, 
+                advice, or planning without the fear of consultation billing. <span className="text-primary-glow font-semibold">Just expert help when you need it.</span>
+              </p>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Achievements */}
         <div className="grid grid-cols-2 gap-8">
