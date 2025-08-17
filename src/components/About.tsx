@@ -118,24 +118,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Monthly Expert Access */}
-        <Card className="border-l-4 border-l-primary bg-primary/5 mb-16">
-          <CardContent className="p-6">
-            <div className="flex items-start space-x-3">
-              <Globe2 className="w-6 h-6 text-primary mt-1" />
-              <div>
-                <h4 className="font-semibold text-foreground mb-2">
-                  Monthly ICT Expertise Access
-                </h4>
-                <p className="text-sm text-muted-foreground">
-                  Stop worrying about call-out fees! For a low monthly fee, get unlimited access to 20+ years of ICT expertise - 
-                  like having your own in-house CTO, IT Manager, or Senior Tech. Pick up the phone anytime for guidance, 
-                  advice, or planning without the fear of consultation billing. Just expert help when you need it.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
 
         {/* Achievements */}
         <div className="grid grid-cols-2 gap-8">
