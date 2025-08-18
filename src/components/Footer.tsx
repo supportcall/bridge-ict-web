@@ -66,9 +66,16 @@ const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-2">
               <div className="mb-6">
-                <h3 className="text-2xl font-bold text-primary-glow mb-4">
-                  SupportCALL
-                </h3>
+                <div className="flex items-center mb-4">
+                  <img 
+                    src="/lovable-uploads/bc9dcfce-d292-4a2c-9a46-cba5e88f2e9d.png" 
+                    alt="SupportCALL Logo" 
+                    className="h-10 w-10 mr-3"
+                  />
+                  <h3 className="text-2xl font-bold text-primary-glow">
+                    SupportCALL
+                  </h3>
+                </div>
                 <p className="text-white/80 mb-6 leading-relaxed">
                   Delivering ICT services, management, and products to enterprises, SME and home users across 
                   Australia, South Africa and the world. Your trusted partner for digital transformation.
@@ -146,18 +153,8 @@ const Footer = () => {
               <a href="https://wiki.supportcall.co.za/doku.php?id=terms_of_enduser_signup_debitorder" target="_blank" rel="noopener noreferrer" className="hover:text-primary-glow ml-1">Service Application & Debit Order Terms</a>
             </div>
             
-            <div className="flex items-center space-x-4">
-                <div className="text-xs text-white/40">
-                  Australian - South African - Global | Expertise - Operations - Standards
-                </div>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={scrollToTop}
-                className="text-white/60 hover:text-primary-glow"
-              >
-                <ArrowUp className="w-4 h-4" />
-              </Button>
+            <div className="text-xs text-white/40">
+              Australian - South African - Global | Expertise - Operations - Standards
             </div>
           </div>
         </div>

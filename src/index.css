@@ -59,7 +59,7 @@ All colors MUST be HSL for consistency.
     --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
 
     /* Shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(var(--tech-navy) / 0.3);
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--supportcall-navy) / 0.3);
     --shadow-glow: 0 0 40px hsl(var(--primary) / 0.2);
 
     /* Animations */
