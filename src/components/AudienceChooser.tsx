@@ -35,7 +35,7 @@ const audiences = [
       {
         title: "ICT Technical Support",
         items: [
-          "Consoltation",
+          "Consultation",
           "Hardware diagnostics repair",
           "Software installation updates",
           "Virus malware removal",
@@ -98,7 +98,7 @@ const audiences = [
       {
         title: "ICT Technical Support",
         items: [
-          "Consoltation",
+          "Consultation",
           "Hardware diagnostics repair",
           "Software installation updates",
           "Virus malware removal",
@@ -160,7 +160,7 @@ const audiences = [
       {
         title: "ICT Technical Support",
         items: [
-          "Consoltation",
+          "Consultation",
           "Hardware diagnostics repair",
           "Software installation updates",
           "Virus malware removal",
@@ -222,7 +222,7 @@ const audiences = [
       {
         title: "Wireless",
         items: [
-          "Wi-Fi consoltation",
+          "Wi-Fi consultation",
           "Wi-Fi network connection assistance",
           "Wireless device integration",
         ],
