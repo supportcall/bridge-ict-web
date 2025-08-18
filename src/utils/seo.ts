@@ -5,9 +5,9 @@
 // Dynamic meta tags for different pages
 export const PAGE_SEO = {
   home: {
-    title: "FREE FIRST ICT Consultation | Expert IT Support SA & AU | SupportCALL",
-    description: "Get FREE FIRST ICT consultation! Enterprise cybersecurity, 24/7 emergency IT support, remote monitoring. We've helped businesses slash IT downtime and cut costs across SA & AU for 20+ years.",
-    keywords: "free ICT consultation, IT support South Africa Australia, cybersecurity services, emergency IT response, enterprise IT solutions"
+    title: "SupportCALL: Complete ICT Solutions Home to Enterprise | IT Support SA & AU",
+    description: "SupportCALL: Complete ICT solutions from home users to enterprise. IT support, cybersecurity, emergency response across South Africa & Australia. 20+ years expertise. FREE consultation - call +27-87-822-2380!",
+    keywords: "SupportCALL, IT support, ICT support, ICT services, computer support, cyber security, managed IT services, emergency IT response, enterprise IT solutions, home computer help, business IT support, network security, remote monitoring, technical support South Africa Australia"
   },
   rmm: {
     title: "TacticalRMM - Remote Monitoring & Management | SupportCALL",
