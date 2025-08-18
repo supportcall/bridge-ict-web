@@ -392,7 +392,7 @@ const WSystem = () => {
             Ready to Secure Your Organization?
           </h2>
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-            Join other businesses that trust SupportCALL W.System for their IT security and compliance.
+            Join other businesses that trust SupportCALL W.system for their IT security and compliance.
           </p>
         </div>
       </section>

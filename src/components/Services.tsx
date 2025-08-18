@@ -23,7 +23,7 @@ const Services = () => {
   const primaryServices = [
     {
       icon: <Server className="w-8 h-8" />,
-      title: "SupportCALL TacticalRMM - Remote Management & Monitoring",
+      title: "TacticalRMM - Remote Management & Monitoring",
       description: "Proactive system monitoring with real-time alerts, automated patch management, security checks, and remote issue resolution to keep your IT infrastructure running at peak performance.",
       features: ["Proactive Monitoring", "Patch Management", "Security Checks", "Remote Issue Resolution", "Automated Maintenance"]
     },
@@ -93,7 +93,7 @@ const Services = () => {
             Comprehensive ICT Solutions That Drive Results
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            <strong>Don't let IT problems cost you money.</strong> From SupportCALL TacticalRMM monitoring and SupportCALL W.System security to local tech sourcing for remote locations, 
+            <strong>Don't let IT problems cost you money.</strong> From TacticalRMM monitoring and W.system security to local tech sourcing for remote locations, 
             we provide <span className="text-primary font-semibold">genuine ICT services that work</span> - including specialized support where no local 
             technical assistance is available. <strong>Get your FREE consultation today!</strong>
           </p>

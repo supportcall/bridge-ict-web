@@ -100,7 +100,7 @@ const categories: Category[] = [
     ]
   },
   {
-    title: "SupportCALL tacticalRMM",
+    title: "TacticalRMM",
     items: [
       { name: "Windows Workstation/Desktop x64 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-workstation-amd64.exe" },
       { name: "Windows Workstation/Desktop x86 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-workstation-386.exe" },
