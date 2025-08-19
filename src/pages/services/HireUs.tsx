@@ -79,7 +79,7 @@ const HireUs = () => {
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Business Hours",
-      description: "Monday - Friday 09H00 - 15H00 (after-hours available at premium rates)"
+      description: "Monday - Friday 09:00 - 15:00 (after-hours available at premium rates)"
     },
     {
       icon: <Shield className="w-6 h-6" />,

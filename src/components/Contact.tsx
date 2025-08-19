@@ -178,7 +178,7 @@ This message was sent from the SupportCALL website contact form.
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Business Hours",
-      details: ["SA: Mon - Fri: 09H00 - 15H00 SAST", "AU: Mon - Fri: 09H00 - 15H00 AEST"],
+      details: ["SA: Mon - Fri: 09:00 - 15:00 SAST", "AU: Mon - Fri: 09:00 - 15:00 AEST"],
       description: "Regular support hours"
     }
   ];
