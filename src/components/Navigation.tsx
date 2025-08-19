@@ -14,7 +14,7 @@ const Navigation = () => {
     { name: "Home", href: "/", type: "route" },
     { name: "About", href: "#about", type: "anchor" },
     { name: "Services", href: "#services", type: "anchor" },
-    { name: "Remote Services", href: "/services/rmm", type: "route" },
+    { name: "Remote Monitoring & Mgmt", href: "/services/rmm", type: "route" },
     { name: "Security & Compliance", href: "/services/wsystem", type: "route" },
     { name: "Senior Care", href: "/services/seniors", type: "route" },
     { name: "Hire Us", href: "/services/hire-us", type: "route" },

@@ -110,6 +110,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li><button type="button" onClick={() => handleAnchorClick("#services")} className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Services</button></li>
                 <li><Link to="/remote-support" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Remote Services</Link></li>
+                <li><Link to="/services/rmm" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Remote Monitoring & Mgmt</Link></li>
                 <li><Link to="/services/wsystem" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Security & Compliance</Link></li>
                 <li><Link to="/services/seniors" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Senior Care</Link></li>
               </ul>
