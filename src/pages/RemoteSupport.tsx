@@ -154,7 +154,7 @@ const RemoteSupport = () => {
                 size="lg"
                 onClick={() => openBooking()}
               >
-                Start Remote Session
+                Book Remote Session
               </Button>
             </div>
           </div>
@@ -307,7 +307,7 @@ const RemoteSupport = () => {
             size="lg"
             onClick={() => openBooking()}
           >
-            Start Remote Session Now
+            Book Remote Session Now
           </Button>
         </div>
       </section>

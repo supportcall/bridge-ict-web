@@ -36,7 +36,7 @@ const Services = () => {
     {
       icon: <Phone className="w-8 h-8" />,
       title: "Local Tech Field Support",
-      description: "Our unique local best tech sourcing service provides on-site local technical support for clients in remote locations where they have no local in-house tech support available. We coordinate qualified local technicians to provide hands-on assistance.",
+      description: "Our Local Best Tech Sourcing Service connects clients with/in remote locations with local technical support available on-site. Where in-house resources aren't available, we coordinate trusted local technicians to deliver reliable, hands-on assistance, ensuring seamless continuity and minimal disruption to operations.",
       features: ["Remote Location Coverage", "Local Tech Sourcing", "On-site Support", "Emergency Response", "Field Reporting"]
     },
     {
@@ -93,9 +93,11 @@ const Services = () => {
             Comprehensive ICT Solutions That Drive Results
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            <strong>Don't let IT problems cost you money.</strong> From TacticalRMM monitoring and W.system security to local tech sourcing for remote locations, 
+            <strong>Don't let IT problems cost you money.</strong><br />
+            From TacticalRMM monitoring and W.system security to local tech sourcing for remote locations, 
             we provide <span className="text-primary font-semibold">genuine ICT services that work</span> - including specialized support where no local 
-            technical assistance is available. <strong>Get your FREE consultation today!</strong>
+            technical assistance is available.<br />
+            <strong>Get your FREE consultation today!</strong>
           </p>
         </div>
 
@@ -187,7 +189,7 @@ const Services = () => {
           <CardContent className="p-8">
             <div className="text-center mb-8">
               <h3 className="text-2xl font-semibold text-foreground mb-4">
-                Service Levels We Support
+                We Support
               </h3>
               <p className="text-muted-foreground">
                 Tailored solutions for every business size and requirement

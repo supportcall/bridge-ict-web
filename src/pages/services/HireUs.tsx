@@ -18,7 +18,7 @@ import {
   Wifi
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
-import Acknowledgement from "@/components/Acknowledgement";
+
 import Footer from "@/components/Footer";
 import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelector";
 import { openBooking } from "@/utils/booking";
@@ -305,7 +305,7 @@ const HireUs = () => {
       </section>
 
 
-      <Acknowledgement />
+      
       <Footer />
     </div>
   );

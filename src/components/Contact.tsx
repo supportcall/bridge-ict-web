@@ -160,7 +160,7 @@ This message was sent from the SupportCALL website contact form.
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us",
-      details: ["+27 (0)87 822 2380", "+61 (0)4 7822 2380"],
+      details: ["+27 (0)87 822 2380", "+61 (0)4 7822 2380", "+27 (0)78 862 0716 (Emergency)"],
       description: "Available with after-hours standby"
     },
     {
@@ -184,13 +184,19 @@ This message was sent from the SupportCALL website contact form.
   ];
 
   const services = [
-    "SupportCALL Site - General Enquiry",
-    "SupportCALL Site - Request Quote",
-    "SupportCALL Site - Web Development", 
-    "SupportCALL Site - Managed or Unmanaged Services",
-    "SupportCALL Site - ISP & Connectivity",
-    "SupportCALL Site - Join our Team",
-    "SupportCALL Site - Other"
+    "Remote Management",
+    "Cloud Services", 
+    "Security Solutions",
+    "Consulting",
+    "Enterprise Solutions",
+    "SME Solutions",
+    "Home Solutions",
+    "Emergency Response",
+    "On-site Support",
+    "Cabling",
+    "Wireless",
+    "ISP",
+    "Hosting"
   ];
 
   return (
@@ -205,8 +211,8 @@ This message was sent from the SupportCALL website contact form.
             Stop Losing Money to IT Problems, Book Your FREE FIRST Consultation
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            <strong>Don't wait for IT disasters to cost you thousands!</strong> Get immediate access to 20+ years of ICT expertise. 
-            Our free first consultation will identify your risks and show you exactly how to protect your business. 
+            <strong>Don't wait for IT disasters to cost you thousands!</strong><br />
+            Get immediate access to 20+ years of ICT expertise. Our free first consultation will identify your risks and show you exactly how to protect your business.<br />
             <span className="text-primary font-semibold">We've helped businesses slash IT downtime and cut costs – now we can do the same for you.</span>
           </p>
         </div>
@@ -224,7 +230,7 @@ This message was sent from the SupportCALL website contact form.
               </h3>
               <p className="text-muted-foreground mb-8">
                 <strong>Zero-risk, maximum value!</strong> Whether you're facing urgent IT issues or planning upgrades, 
-                our experts are standing by with 20+ years of proven solutions. 
+                our experts are standing by with 20+ years of proven solutions.<br />
                 <span className="text-primary font-semibold">Get the help you need today!</span>
               </p>
             </div>

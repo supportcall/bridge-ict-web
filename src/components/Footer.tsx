@@ -35,7 +35,7 @@ const Footer = () => {
       "Enterprise Solutions",
       "Security & Compliance", 
       "Cloud Services",
-      "24/7 Support",
+      "Proactive Support & Monitoring",
       "Remote Monitoring",
       "Consulting"
     ],
@@ -155,6 +155,21 @@ const Footer = () => {
             
             <div className="text-xs text-white/40">
               Australian - South African - Global | Expertise - Operations - Standards
+            </div>
+          </div>
+          
+          {/* Acknowledgement */}
+          <div className="text-center mt-8 pt-6 border-t border-white/10">
+            <div className="text-xs text-white/60 max-w-4xl mx-auto">
+              <div className="font-medium text-white/80 mb-2 uppercase tracking-wide">
+                Acknowledgement of Humanity & Country
+              </div>
+              <p className="leading-relaxed">
+                We honour all people, from all cultures, lands, and histories - past and present. 
+                Across Australia, Oceania, and the world, we stand for unity, respect, and shared humanity. 
+                This includes acknowledging the enduring cultural connections of First Nations peoples, 
+                while affirming dignity and equality for all.
+              </p>
             </div>
           </div>
         </div>

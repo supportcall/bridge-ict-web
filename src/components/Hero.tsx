@@ -40,7 +40,7 @@ const Hero = () => {
             <strong>20+ years</strong> delivering cutting-edge ICT services across<br />
             Australia & South Africa. 
             <span className="text-primary font-semibold"> Book your free consultation today</span> and discover why 
-            industry leaders trust us with their digital transformation.
+            clients trust us with their digital transformation.
           </p>
 
           {/* Feature highlights */}
@@ -74,7 +74,7 @@ const Hero = () => {
 
           {/* Trust indicators */}
           <div className="pt-8">
-            <p className="text-sm text-muted-foreground mb-4">Trusted by industry leaders for 20+ years | Serving SA & AU</p>
+            <p className="text-sm text-muted-foreground mb-4">Trusted by clients for 20+ years | Serving SA & AU</p>
           </div>
         </div>
       </div>

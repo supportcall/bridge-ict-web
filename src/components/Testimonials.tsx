@@ -38,20 +38,7 @@ const Testimonials = () => {
     }
   ];
 
-  const stats = [
-    {
-      icon: <Users className="w-8 h-8" />,
-      number: "18",
-      label: "Locations",
-      description: "Service points across regions"
-    },
-    {
-      icon: <Award className="w-8 h-8" />,
-      number: "99%",
-      label: "Happy Clients",
-      description: "Client satisfaction rate"
-    }
-  ];
+  const stats = [];
 
   return (
     <section id="testimonials" className="py-20 bg-gradient-subtle">
@@ -120,7 +107,7 @@ const Testimonials = () => {
           <CardContent className="p-8">
             <div className="text-center">
               <h3 className="text-2xl font-semibold mb-4">
-                Why Industry Leaders Choose SupportCALL
+                Why Industry and Clients Choose SupportCALL
               </h3>
               <div className="grid md:grid-cols-4 gap-8 mt-8">
                 <div className="text-center">

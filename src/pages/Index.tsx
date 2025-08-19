@@ -13,7 +13,7 @@ import { generateMarketingMeta } from "@/utils/seo";
 // Lazy load non-critical components for better initial load performance
 const Testimonials = React.lazy(() => import("@/components/Testimonials"));
 const Contact = React.lazy(() => import("@/components/Contact"));
-const Acknowledgement = React.lazy(() => import("@/components/Acknowledgement"));
+
 
 
 // Loading skeletons for lazy components
@@ -57,13 +57,6 @@ const ContactLoading = () => (
 );
 
 
-const AcknowledgementLoading = () => (
-  <section className="py-20 bg-background">
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <Skeleton className="h-32 w-full" />
-    </div>
-  </section>
-);
 
 const Index = () => {
   usePageSEO(generateMarketingMeta('home'));
@@ -87,9 +80,6 @@ const Index = () => {
         <Contact />
       </Suspense>
       
-      <Suspense fallback={<AcknowledgementLoading />}>
-        <Acknowledgement />
-      </Suspense>
       
       {/* Footer is critical for SEO and always loads */}
       <Footer />

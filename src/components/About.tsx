@@ -17,7 +17,7 @@ const About = () => {
     {
       icon: <Clock className="w-6 h-6" />,
       title: "20+ Years Experience",
-      description: "Two decades of proven expertise in client-focused ICT solutions."
+      description: "Two decades of proven expertise in client focused ICT solutions."
     },
     {
       icon: <Heart className="w-6 h-6" />,
