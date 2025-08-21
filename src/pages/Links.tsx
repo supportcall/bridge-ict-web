@@ -84,10 +84,10 @@ const categories: Category[] = [
   {
     title: "Remote Support - SupportDesk",
     items: [
-      { name: "Windows x64 (.exe) — Run as Administrator via PowerShell", url: "https://www.supportcall.co.za/sc-extras/host=156.155.253.71,key=l9MQ65taOnqkRjPiD+w5NbAEoMonJXuM3f1qs9EHZ2Y=.ps1.exe" },
-      { name: "Windows x64 (.msi) — Run as Administrator via PowerShell", url: "https://www.supportcall.co.za/sc-extras/host=156.155.253.71,key=l9MQ65taOnqkRjPiD+w5NbAEoMonJXuM3f1qs9EHZ2Y=.ps1.msi" },
-      { name: "Android (.apk)", url: "https://www.supportcall.co.za/sc-extras/host=156.155.253.71,key=l9MQ65taOnqkRjPiD+w5NbAEoMonJXuM3f1qs9EHZ2Y=.ps1.apk" },
-      { name: "Archive (.zip)", url: "https://www.supportcall.co.za/sc-extras/host=156.155.253.71,key=l9MQ65taOnqkRjPiD+w5NbAEoMonJXuM3f1qs9EHZ2Y=.ps1.zip" },
+      { name: "Windows x64 (.exe) — Run as Administrator via PowerShell", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.exe" },
+      { name: "Windows x64 (.msi) — Run as Administrator via PowerShell", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.msi" },
+      { name: "Android (.apk)", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.apk" },
+      { name: "Archive (.zip)", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.zip" },
       { name: "SupportDesk GitHub", url: "https://github.com/rustdesk/rustdesk/releases/latest" },
       { name: "Download Site", url: "http://156.155.253.71:8000/" }
     ]
