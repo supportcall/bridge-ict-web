@@ -67,10 +67,10 @@ const Footer = () => {
             <div className="lg:col-span-2">
               <div className="mb-6">
                 <div className="flex items-center mb-4">
-                  <img 
-                    src="/lovable-uploads/bc9dcfce-d292-4a2c-9a46-cba5e88f2e9d.png" 
-                    alt="SupportCALL Logo" 
-                    className="h-10 w-10 mr-3"
+                    <img 
+                      src="/lovable-uploads/84165b4e-46a6-4065-8ddd-eb8da8017502.png" 
+                      alt="SupportCALL Logo" 
+                      className="h-10 w-10 mr-3"
                   />
                   <h3 className="text-2xl font-bold text-primary-glow">
                     SupportCALL

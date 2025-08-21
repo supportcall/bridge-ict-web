@@ -2,7 +2,7 @@ import React from 'react';
 import { MapPin, Globe, ExternalLink } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-const COMPANY_LOGO_URL = "/lovable-uploads/a84e9f8f-93ab-49b9-9f77-1034f28fc11d.png";
+const COMPANY_LOGO_URL = "/lovable-uploads/84165b4e-46a6-4065-8ddd-eb8da8017502.png";
 
 const GlobalMap = () => {
   return (

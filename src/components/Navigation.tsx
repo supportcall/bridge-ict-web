@@ -47,7 +47,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <img 
-              src="/lovable-uploads/bc9dcfce-d292-4a2c-9a46-cba5e88f2e9d.png" 
+              src="/lovable-uploads/84165b4e-46a6-4065-8ddd-eb8da8017502.png" 
               alt="SupportCALL Logo" 
               className="h-10 w-10 mr-3"
             />
