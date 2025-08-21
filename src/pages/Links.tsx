@@ -3,7 +3,9 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { usePageSEO } from "@/hooks/usePageSEO";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Copy } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { Toaster } from "@/components/ui/toaster";
 
 // Simple item list schema generator
 const buildItemListSchema = (items: { name: string; url: string }[]) => ({
@@ -17,7 +19,7 @@ const buildItemListSchema = (items: { name: string; url: string }[]) => ({
   }))
 });
 
-type LinkItem = { name: string; url: string };
+type LinkItem = { name: string; url: string; type?: 'copy' };
 type Category = { title: string; items: LinkItem[] };
 
 const categories: Category[] = [
@@ -89,7 +91,8 @@ const categories: Category[] = [
       { name: "Android (.apk)", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.apk" },
       { name: "Archive (.zip)", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.zip" },
       { name: "SupportDesk GitHub", url: "https://github.com/rustdesk/rustdesk/releases/latest" },
-      { name: "Download Site", url: "http://156.155.253.71:8000/" }
+      { name: "Download Site", url: "http://156.155.253.71:8000/" },
+      { name: "Relay Server (Copy Information)", url: "host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=", type: "copy" }
     ]
   },
   {
@@ -129,6 +132,24 @@ const categories: Category[] = [
 const allItemsForSchema: LinkItem[] = categories.flatMap((c) => c.items);
 
 const Links = () => {
+  const { toast } = useToast();
+
+  const handleCopyToClipboard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      toast({
+        title: "Copied to clipboard",
+        description: "Relay server information has been copied successfully."
+      });
+    } catch (err) {
+      toast({
+        title: "Copy failed",
+        description: "Failed to copy to clipboard. Please copy manually.",
+        variant: "destructive"
+      });
+    }
+  };
+
   usePageSEO({
     title: "Links & Resources",
     description: "Curated SupportCALL links: tools, downloads, status dashboards, and trusted third‑party resources.",
@@ -163,16 +184,27 @@ const Links = () => {
                 <ul className="space-y-3 list-none pl-0">
                   {cat.items.map((item) => (
                     <li key={item.url}>
-                      <a
-                        href={item.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-primary hover:underline"
-                        aria-label={`${item.name} (opens in a new tab)`}
-                      >
-                        <ExternalLink className="w-4 h-4 shrink-0" />
-                        <span className="text-sm">{item.name}</span>
-                      </a>
+                      {item.type === 'copy' ? (
+                        <button
+                          onClick={() => handleCopyToClipboard(item.url)}
+                          className="inline-flex items-center gap-2 text-primary hover:underline cursor-pointer"
+                          aria-label={`Copy ${item.name} to clipboard`}
+                        >
+                          <Copy className="w-4 h-4 shrink-0" />
+                          <span className="text-sm">{item.name}</span>
+                        </button>
+                      ) : (
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-primary hover:underline"
+                          aria-label={`${item.name} (opens in a new tab)`}
+                        >
+                          <ExternalLink className="w-4 h-4 shrink-0" />
+                          <span className="text-sm">{item.name}</span>
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -183,6 +215,7 @@ const Links = () => {
       </section>
 
       <Footer />
+      <Toaster />
     </div>
   );
 };
