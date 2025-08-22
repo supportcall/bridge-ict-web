@@ -160,12 +160,12 @@ const Footer = () => {
           </div>
           
           {/* Acknowledgement */}
-          <div className="text-center mt-8 pt-6 border-t border-white/10">
-            <div className="text-xs text-white/60 max-w-4xl mx-auto">
-              <div className="font-medium text-white/80 mb-2 uppercase tracking-wide">
+          <div className="text-center mt-6 pt-6 border-t border-white/10">
+            <div className="text-xs text-white/60 max-w-4xl mx-auto px-4">
+              <div className="font-medium text-white/80 mb-2 uppercase tracking-wide text-center">
                 Acknowledgement of Humanity & Country
               </div>
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-center">
                 We honour all people, from all cultures, lands, and histories - past and present. 
                 Across Australia, Oceania, and the world, we stand for unity, respect, and shared humanity. 
                 This includes acknowledging the enduring cultural connections of First Nations peoples, 
