@@ -84,32 +84,43 @@ const Contact = () => {
       return;
     }
     
-    // Determine email based on phone number
-    let targetEmail = "info@supportcall.com.au"; // default
-    if (formData.phone.startsWith("+27")) {
-      targetEmail = "info@supportcall.co.za";
-    } else if (formData.phone.startsWith("+61")) {
-      targetEmail = "info@supportcall.com.au";
-    }
+    // Send to all three email addresses
+    const targetEmails = [
+      "info@supportcall.co.za",
+      "info@supportcall.com.au", 
+      "scmyhelp@gmail.com"
+    ];
     
-    // Create email content
-    const subject = `Contact Form Submission - ${formData.service || 'General Enquiry'}`;
+    // Create email content with new format
+    const subject = `SupportCALL Web Contact Form: ${formData.service || 'General'} | ${formData.email}`;
     const body = `
-Name: ${formData.name}
-Email: ${formData.email}
-Company: ${formData.company || 'Not provided'}
-Phone: ${formData.phone}
-Service of Interest: ${formData.service}
+═══════════════════════════════════════════════════════════════
+                    SUPPORTCALL WEB CONTACT FORM
+═══════════════════════════════════════════════════════════════
 
-Message:
+📋 CONTACT DETAILS:
+──────────────────────────────────────────────────────────────
+👤 Full Name:           ${formData.name}
+📧 Email Address:       ${formData.email}
+🏢 Company:             ${formData.company || 'Not provided'}
+📞 Phone Number:        ${formData.phone}
+
+🔧 SERVICE INFORMATION:
+──────────────────────────────────────────────────────────────
+🎯 Service of Interest: ${formData.service}
+
+💬 MESSAGE:
+──────────────────────────────────────────────────────────────
 ${formData.message}
 
----
-This message was sent from the SupportCALL website contact form.
+═══════════════════════════════════════════════════════════════
+📅 Submitted: ${new Date().toLocaleString()}
+🌐 Source: SupportCALL Website Contact Form
+═══════════════════════════════════════════════════════════════
     `.trim();
     
-    // Create mailto link
-    const mailtoLink = `mailto:${targetEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    // Create mailto link with all recipients
+    const mailtoLink = `mailto:${targetEmails.join(',')}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     
     // Open email client
     window.location.href = mailtoLink;
