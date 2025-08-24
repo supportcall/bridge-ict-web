@@ -97,7 +97,7 @@ const Services = () => {
             From TacticalRMM monitoring and W.system security to local tech sourcing for remote locations, 
             we provide <span className="text-primary font-semibold">genuine ICT services that work</span> - including specialized support where no local 
             technical assistance is available.<br />
-            <strong>Get your FREE consultation today!</strong>
+            <strong className="text-primary font-semibold">Get your FREE consultation today!</strong>
           </p>
         </div>
 
