@@ -184,19 +184,14 @@ This message was sent from the SupportCALL website contact form.
   ];
 
   const services = [
-    "Remote Management",
-    "Cloud Services", 
-    "Security Solutions",
-    "Consulting",
-    "Enterprise Solutions",
-    "SME Solutions",
-    "Home Solutions",
-    "Emergency Response",
-    "On-site Support",
-    "Cabling",
-    "Wireless",
-    "ISP",
-    "Hosting"
+    "Special Offer",
+    "General",
+    "Remote Monitoring & Management",
+    "Security & Compliance",
+    "Senior Care",
+    "Consultation",
+    "Join our Team",
+    "MSP Partnering"
   ];
 
   return (
