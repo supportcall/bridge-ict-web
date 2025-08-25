@@ -2,32 +2,47 @@
  * SEO optimization utilities for maximum search visibility and client acquisition
  */
 
-// Dynamic meta tags for different pages
+// Dynamic meta tags for different pages - optimized for current website content
 export const PAGE_SEO = {
   home: {
     title: "SupportCALL: Complete ICT Solutions Home to Enterprise | IT Support SA & AU",
-    description: "SupportCALL: Complete ICT solutions from home users to enterprise. IT support, cybersecurity, emergency response across South Africa & Australia. 20+ years expertise. FREE consultation - call +27-87-822-2380!",
-    keywords: "SupportCALL, IT support, ICT support, ICT services, computer support, cyber security, managed IT services, emergency IT response, enterprise IT solutions, home computer help, business IT support, network security, remote monitoring, technical support South Africa Australia"
+    description: "SupportCALL delivers genuine ICT services that work. Home to enterprise IT support, cybersecurity, emergency response across South Africa & Australia. 20+ years expertise. FREE FIRST consultation - call +27-87-822-2380!",
+    keywords: "SupportCALL, IT support, ICT support, ICT services, computer support, cyber security, managed IT services, emergency IT response, enterprise IT solutions, home computer help, business IT support, network security, remote monitoring, technical support, FREE consultation, South Africa, Australia"
   },
   rmm: {
     title: "TacticalRMM - Remote Monitoring & Management | SupportCALL",
-    description: "Advanced remote monitoring and management services. Proactive IT support, automated patching, security monitoring. Confidence in your IT systems 24/7.",
-    keywords: "remote monitoring, managed IT services, TacticalRMM, proactive IT support, automated patching"
+    description: "Proactive remote monitoring and management with TacticalRMM. 24/7 system monitoring, automated patching, security alerts. Enterprise-grade RMM solutions. FREE FIRST consultation available.",
+    keywords: "TacticalRMM, remote monitoring, managed IT services, proactive IT support, automated patching, system monitoring, RMM solutions, SupportCALL"
   },
   wsystem: {
     title: "W.system XDR & SIEM Security Platform | SupportCALL",
-    description: "Unified XDR and SIEM protection for endpoints and cloud workloads. Enterprise-grade cybersecurity with real-time threat detection and response.",
-    keywords: "XDR security, SIEM platform, endpoint protection, cloud security, threat detection"
+    description: "Advanced XDR and SIEM cybersecurity platform by W.system. Unified endpoint protection, cloud workload security, real-time threat detection. Enterprise cybersecurity solutions.",
+    keywords: "W.system, XDR security, SIEM platform, endpoint protection, cloud security, threat detection, cybersecurity platform, enterprise security"
   },
   seniors: {
     title: "Tech Angels - Senior Technology Support | SupportCALL", 
-    description: "Specialized technology support for seniors. Patient, understanding tech help designed specifically for older adults. Peace of mind technology assistance.",
-    keywords: "senior tech support, elderly technology help, patient IT assistance, senior-friendly tech support"
+    description: "Compassionate technology support for seniors aged 65+. Patient, understanding tech help designed for older adults. Peace of mind technology assistance. FREE FIRST consultation.",
+    keywords: "Tech Angels, senior tech support, elderly technology help, patient IT assistance, senior-friendly tech support, technology for seniors"
   },
   hireUs: {
     title: "Hire ICT Consultants - Expert IT Services | SupportCALL",
-    description: "Professional ICT consulting, onsite and remote support services. Expert technicians for your business IT needs. Flexible engagement models available.",
-    keywords: "ICT consultants, IT consulting services, onsite support, remote IT assistance, business technology services"
+    description: "Professional ICT consulting with 20+ years experience. Onsite and remote support services. Expert technicians for business IT needs. Flexible engagement models available.",
+    keywords: "hire ICT consultants, IT consulting services, onsite support, remote IT assistance, business technology services, professional IT consultants"
+  },
+  remoteSupport: {
+    title: "Remote IT Support Services | Instant Secure Connection | SupportCALL",
+    description: "Instant remote IT support for Windows, macOS, Linux. Secure remote desktop assistance, troubleshooting, system maintenance. Available 24/7 across SA & AU. Book session now.",
+    keywords: "remote IT support, remote desktop, instant support, secure remote connection, troubleshooting, system maintenance, Windows support, macOS support, Linux support"
+  },
+  links: {
+    title: "Useful IT Resources & Tools | Downloads & Links | SupportCALL",
+    description: "Essential IT tools, downloads, and resources curated by SupportCALL experts. Security utilities, remote support tools, system diagnostics, and professional IT resources.",
+    keywords: "IT resources, IT tools, downloads, remote support tools, security utilities, system diagnostics, technical resources"
+  },
+  notFound: {
+    title: "404 - Page Not Found | SupportCALL",
+    description: "The page you're looking for could not be found. Return to SupportCALL homepage for complete ICT solutions and expert IT support services.",
+    keywords: "404 error, page not found, SupportCALL"
   }
 };
 
