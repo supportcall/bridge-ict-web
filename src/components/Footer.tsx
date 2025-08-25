@@ -62,9 +62,9 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-16">
-          <div className="grid lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8">
             {/* Company Info */}
-            <div className="lg:col-span-2">
+            <div className="sm:col-span-2 lg:col-span-2">
               <div className="mb-6">
                 <div className="flex items-center mb-4">
                     <img 

@@ -47,7 +47,7 @@ const About = () => {
         </div>
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16">
           {/* Left Column - Story */}
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-foreground">
@@ -95,7 +95,7 @@ const About = () => {
           </div>
 
           {/* Right Column - Values */}
-          <div className="grid gap-6">
+          <div className="grid grid-cols-1 gap-4 sm:gap-6">
             {values.map((value, index) => (
               <Card key={index} className="hover:shadow-elegant transition-all duration-300">
                 <CardContent className="p-6">

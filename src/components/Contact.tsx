@@ -227,7 +227,7 @@ ${formData.message}
         <div className="text-center mb-16">
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Contact Information */}
           <div className="lg:col-span-1 space-y-8">
             <div>
@@ -295,7 +295,7 @@ ${formData.message}
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                         Full Name *
@@ -336,7 +336,7 @@ ${formData.message}
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <div>
                       <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
                         Company Name
