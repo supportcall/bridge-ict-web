@@ -10,8 +10,12 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { generateServiceSchema } from "@/utils/seo";
 import { useState } from "react";
+import { submitFormWithFallback } from "@/utils/formSubmission";
+import { useToast } from "@/hooks/use-toast";
 
 const CustomerSatisfactionSurvey = () => {
+  const { toast } = useToast();
+  
   usePageSEO({
     title: "Survey - Customer Satisfaction | SupportCALL",
     description: "Share your SupportCALL experience to help us improve our customer service.",
@@ -29,9 +33,13 @@ const CustomerSatisfactionSurvey = () => {
   const [humanAnswer, setHumanAnswer] = useState("");
   const [humanError, setHumanError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    
+    // Validate required fields
     const inputs = Array.from(form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>("input[required], textarea[required]"));
     for (const input of inputs) {
       if (input.value.trim() === "") {
@@ -39,6 +47,8 @@ const CustomerSatisfactionSurvey = () => {
         return;
       }
     }
+    
+    // Human verification
     if (parseInt(humanAnswer, 10) !== humanA + humanB) {
       setHumanError("Incorrect answer. Please try again.");
       const hv = form.querySelector<HTMLInputElement>("#human_verification");
@@ -47,6 +57,54 @@ const CustomerSatisfactionSurvey = () => {
     } else {
       setHumanError("");
     }
+
+    // Prepare CSV data
+    const csvData = [{
+      'Survey Type': 'Customer Satisfaction',
+      'Submission Date': new Date().toLocaleString(),
+      'Name': `${data.name} ${data.surname}`,
+      'Email': data.email as string,
+      'Contact': data.contact as string,
+      'Company': data.company as string || 'Not provided',
+      'Website': data.website as string || 'Not provided',
+      'Location': data.location as string,
+      'Overall Satisfaction': data.satisfaction as string,
+      'Response Time': data.response_time as string,
+      'Knowledgeable': data.knowledgeable as string,
+      'Issue Resolution': data.issue_resolution as string,
+      'Recommendation (1-3)': data.recommendation as string,
+      'Ease of Reaching': data.ease_of_reaching as string,
+      'Communication Clarity': data.communication_clarity as string,
+      'Professionalism': data.professionalism as string,
+      'Contact Preference': data.contact_preference as string,
+      'Improvement Feedback': data.improvement as string || 'None provided',
+      'Reference': data.reference as string || 'None provided',
+      'Suggested Companies': data.suggested_companies as string || 'None provided',
+      'Recommend to Others': data.recommendation_to_others as string
+    }];
+
+    // Submit form with enhanced email handling
+    const submissionData = {
+      formTitle: "Customer Satisfaction Survey",
+      userEmail: data.email as string,
+      formData: data,
+      recipients: [
+        "info@supportcall.co.za",
+        "info@supportcall.com.au",
+        "feedback@supportcall.co.za",
+        "feedback@supportcall.com.au",
+        "scmyhelp@gmail.com"
+      ],
+      csvData
+    };
+
+    await submitFormWithFallback(submissionData);
+    
+    toast({
+      title: "Survey Submitted",
+      description: "Your feedback has been submitted. Thank you for your time!",
+    });
+    
     setSubmitted(true);
   };
 

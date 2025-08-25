@@ -11,8 +11,12 @@ import { Separator } from "@/components/ui/separator";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { generateServiceSchema } from "@/utils/seo";
 import { useState } from "react";
+import { submitFormWithFallback } from "@/utils/formSubmission";
+import { useToast } from "@/hooks/use-toast";
 
 const ClientServiceInterestPricing = () => {
+  const { toast } = useToast();
+  
   usePageSEO({
     title: "Survey - Client Service Interest & Pricing | SupportCALL",
     description: "Tell us which services you need and your price expectations to help us serve you better.",
@@ -91,9 +95,13 @@ const ClientServiceInterestPricing = () => {
     },
   ];
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    
+    // Validate required fields
     const inputs = Array.from(form.querySelectorAll<HTMLInputElement>("input[required]"));
     for (const input of inputs) {
       if (input.value.trim() === "") {
@@ -101,6 +109,8 @@ const ClientServiceInterestPricing = () => {
         return;
       }
     }
+    
+    // Human verification
     if (parseInt(humanAnswer, 10) !== humanA + humanB) {
       setHumanError("Incorrect answer. Please try again.");
       const hv = form.querySelector<HTMLInputElement>("#human_verification");
@@ -109,6 +119,56 @@ const ClientServiceInterestPricing = () => {
     } else {
       setHumanError("");
     }
+
+    // Prepare CSV data with all form fields
+    const csvData = [{
+      'Survey Type': 'Client Service Interest & Pricing',
+      'Submission Date': new Date().toLocaleString(),
+      'Name': `${data.name} ${data.surname}`,
+      'Email': data.email as string,
+      'Contact': data.contact as string,
+      'Company': data.company as string || 'Not provided',
+      'Website': data.website as string || 'Not provided', 
+      'Location': data.location as string,
+      'Anonymous': data.anonymous ? 'Yes' : 'No',
+      'Contact Me': data.contact_me ? 'Yes' : 'No',
+      'Local Technician': data.local_technician as string || 'No',
+      
+      // Service selections and ratings
+      ...Object.fromEntries(
+        Object.entries(data).filter(([key]) => key.startsWith('services[') || key.startsWith('ratings['))
+      ),
+      
+      // Pricing data
+      ...Object.fromEntries(
+        Object.entries(data).filter(([key]) => key.startsWith('price_'))
+      ),
+      
+      'Other Service': data.other_service as string || 'None specified'
+    }];
+
+    // Submit form with enhanced email handling
+    const submissionData = {
+      formTitle: "Client Service Interest & Pricing Survey",
+      userEmail: data.email as string,
+      formData: data,
+      recipients: [
+        "info@supportcall.co.za",
+        "info@supportcall.com.au",
+        "feedback@supportcall.co.za", 
+        "feedback@supportcall.com.au",
+        "scmyhelp@gmail.com"
+      ],
+      csvData
+    };
+
+    await submitFormWithFallback(submissionData);
+    
+    toast({
+      title: "Survey Submitted",
+      description: "Your service interest and pricing feedback has been submitted. Thank you!",
+    });
+    
     setSubmitted(true);
   };
 

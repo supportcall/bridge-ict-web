@@ -17,6 +17,7 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { openBooking } from "@/utils/booking";
 import { validateFormData, sanitizeInput, RateLimiter } from "@/utils/validation";
+import { submitFormWithFallback } from "@/utils/formSubmission";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -38,7 +39,7 @@ const Contact = () => {
   const [humanAnswer, setHumanAnswer] = useState("");
   const [humanError, setHumanError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setFormErrors({});
@@ -84,50 +85,26 @@ const Contact = () => {
       return;
     }
     
-    // Send to all three email addresses
-    const targetEmails = [
-      "info@supportcall.co.za",
-      "info@supportcall.com.au", 
-      "scmyhelp@gmail.com"
-    ];
+    // Submit form with fallback handling
+    const submissionData = {
+      formTitle: "Contact Form",
+      userEmail: formData.email,
+      formData: {
+        ...formData,
+        service: formData.service || 'General'
+      },
+      recipients: [
+        "info@supportcall.co.za",
+        "info@supportcall.com.au", 
+        "scmyhelp@gmail.com"
+      ]
+    };
     
-    // Create email content with new format
-    const subject = `SupportCALL Web Contact Form: ${formData.service || 'General'} | ${formData.email}`;
-    const body = `
-═══════════════════════════════════════════════════════════════
-                    SUPPORTCALL WEB CONTACT FORM
-═══════════════════════════════════════════════════════════════
-
-📋 CONTACT DETAILS:
-──────────────────────────────────────────────────────────────
-👤 Full Name:           ${formData.name}
-📧 Email Address:       ${formData.email}
-🏢 Company:             ${formData.company || 'Not provided'}
-📞 Phone Number:        ${formData.phone}
-
-🔧 SERVICE INFORMATION:
-──────────────────────────────────────────────────────────────
-🎯 Service of Interest: ${formData.service}
-
-💬 MESSAGE:
-──────────────────────────────────────────────────────────────
-${formData.message}
-
-═══════════════════════════════════════════════════════════════
-📅 Submitted: ${new Date().toLocaleString()}
-🌐 Source: SupportCALL Website Contact Form
-═══════════════════════════════════════════════════════════════
-    `.trim();
-    
-    // Create mailto link with all recipients
-    const mailtoLink = `mailto:${targetEmails.join(',')}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    // Open email client
-    window.location.href = mailtoLink;
+    await submitFormWithFallback(submissionData);
     
     toast({
-      title: "Email Client Opened",
-      description: "Your email client should now open with the pre-filled message. Please send the email to complete your inquiry.",
+      title: "Form Submitted",
+      description: "Your email client should open with the pre-filled message. If not, a backup option will appear.",
     });
     
     // Reset form
