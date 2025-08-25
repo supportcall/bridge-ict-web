@@ -8,7 +8,7 @@ const FloatingScrollToTop = () => {
 
   // Show button when page is scrolled down
   const toggleVisibility = () => {
-    if (window.scrollY > 300) {
+    if (window.scrollY > 200) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
@@ -30,10 +30,11 @@ const FloatingScrollToTop = () => {
   return (
     <Button
       onClick={scrollToTop}
-      variant="premium"
+      variant="default"
       size="icon"
       className={cn(
-        "fixed bottom-8 right-8 z-50 rounded-full shadow-elegant transition-all duration-300 transform",
+        "fixed bottom-8 right-8 z-[9999] rounded-full shadow-elegant transition-all duration-300 transform",
+        "bg-primary hover:bg-primary/90 text-primary-foreground",
         "hover:scale-110 hover:shadow-glow",
         "focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
         isVisible
