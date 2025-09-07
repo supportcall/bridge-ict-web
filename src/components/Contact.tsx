@@ -148,7 +148,7 @@ const Contact = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us",
-      details: ["+27 (0)87 822 2380", "+61 (0)4 7822 2380", "+27 (0)78 862 0716 (Emergency)"],
+      details: ["+27 (0)87 822 2380", "+61 (0)4 9933 5679", "+27 (0)78 862 0716 (Emergency)"],
       description: "Available with after-hours standby"
     },
     {
