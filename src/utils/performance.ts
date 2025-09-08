@@ -70,6 +70,27 @@ export const memoryUsage = () => {
 export const optimizeCriticalPath = () => {
   // Self-contained optimization - no external preconnects needed
   console.log('Self-contained mode: No external domain preconnections required');
+  
+  // Ensure all images have loading="lazy" except above-the-fold
+  document.querySelectorAll('img').forEach((img, index) => {
+    if (index > 2 && !img.hasAttribute('loading')) {
+      img.setAttribute('loading', 'lazy');
+    }
+  });
+  
+  // Add rel="preload" to critical resources
+  const criticalResources = [
+    '/assets/hero-tech.jpg',
+    '/assets/services-icon.jpg'
+  ];
+  
+  criticalResources.forEach(resource => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.href = resource;
+    link.as = 'image';
+    document.head.appendChild(link);
+  });
 };
 
 // Service Worker registration for caching
