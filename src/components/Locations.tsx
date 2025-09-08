@@ -19,7 +19,7 @@ const Locations = () => {
       city: "Launceston",
       region: "Tasmania",
       timezone: "AEST (UTC+10)",
-      contact: "+61 (0)4 7822 2380",
+      contact: "+61 (0)4 9933 5679",
       email: "info@supportcall.com.au", 
       description: "Australia & Pacific Regional HQ",
       coordinates: { lat: -41.4332, lng: 147.1441 }

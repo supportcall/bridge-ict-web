@@ -154,7 +154,7 @@ const PointOfPresence = () => {
                         </p>
                         <div className="text-sm">
                           <p><strong>SA:</strong> +27 (0)87 822 2380</p>
-                          <p><strong>AU:</strong> +61 (0)4 7822 2380</p>
+                          <p><strong>AU:</strong> +61 (0)4 9933 5679</p>
                         </div>
                       </div>
                     </div>

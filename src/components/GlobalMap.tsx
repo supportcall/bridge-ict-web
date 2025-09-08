@@ -81,7 +81,7 @@ const GlobalMap = () => {
             variant="outline" 
             size="sm" 
             className="text-white border-white/30 hover:bg-white/10"
-            onClick={() => alert('Contact us for detailed network infrastructure information:\n\nSA: +27-87-822-2380\nAU: +61-2-9876-5432')}
+            onClick={() => alert('Contact us for detailed network infrastructure information:\n\nSA: +27-87-822-2380\nAU: +61-4-9933-5679')}
           >
             <Globe className="w-3 h-3 mr-1" />
             Network Details

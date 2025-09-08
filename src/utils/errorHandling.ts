@@ -10,7 +10,7 @@ export const FALLBACK_CONTACT = {
     address: 'Coordination Centre: Durban, South Africa'
   },
   AU: {
-    phone: '+61 (0)4 7822 2380', 
+    phone: '+61 (0)4 9933 5679', 
     email: 'info@supportcall.com.au',
     address: 'Coordination Centre: Launceston, Australia'
   }
