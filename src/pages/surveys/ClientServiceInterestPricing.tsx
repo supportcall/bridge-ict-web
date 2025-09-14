@@ -13,9 +13,17 @@ import { generateServiceSchema } from "@/utils/seo";
 import { useState } from "react";
 import { submitFormWithFallback } from "@/utils/formSubmission";
 import { useToast } from "@/hooks/use-toast";
+import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelector";
 
 const ClientServiceInterestPricing = () => {
   const { toast } = useToast();
+  const { currency, setCurrency } = useCurrencyPricing();
+  
+  // Get currency symbol for placeholders
+  const getCurrencySymbol = () => {
+    const symbols = { USD: '$', AUD: 'A$', GBP: '£', ZAR: 'R' };
+    return symbols[currency];
+  };
   
   usePageSEO({
     title: "Survey - Client Service Interest & Pricing | SupportCALL",
@@ -124,6 +132,7 @@ const ClientServiceInterestPricing = () => {
     const csvData = [{
       'Survey Type': 'Client Service Interest & Pricing',
       'Submission Date': new Date().toLocaleString(),
+      'Selected Currency': currency,
       'Name': `${data.name} ${data.surname}`,
       'Email': data.email as string,
       'Contact': data.contact as string,
@@ -295,96 +304,102 @@ const ClientServiceInterestPricing = () => {
               <Card>
                 <CardHeader>
                   <CardTitle>Price Point Survey</CardTitle>
+                  <div className="mt-4">
+                    <CurrencySelector 
+                      onCurrencyChange={setCurrency} 
+                      selectedCurrency={currency}
+                    />
+                  </div>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Technician Callout - Too expensive</span>
-                      <Input type="number" name="price_tech_expensive" min={0} step={5} placeholder="R" />
+                      <Input type="number" name="price_tech_expensive" min={0} step={5} placeholder={getCurrencySymbol()} />
                     </li>
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Technician Callout - Too cheap</span>
-                      <Input type="number" name="price_tech_cheap" min={0} step={5} placeholder="R" />
+                      <Input type="number" name="price_tech_cheap" min={0} step={5} placeholder={getCurrencySymbol()} />
                     </li>
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Technician Callout - Could Justify/High Side</span>
-                      <Input type="number" name="price_tech_justify" min={0} step={5} placeholder="R" />
+                      <Input type="number" name="price_tech_justify" min={0} step={5} placeholder={getCurrencySymbol()} />
                     </li>
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Technician Callout - Cheap/Good Value</span>
-                      <Input type="number" name="price_tech_good_value" min={0} step={5} placeholder="R" />
+                      <Input type="number" name="price_tech_good_value" min={0} step={5} placeholder={getCurrencySymbol()} />
                     </li>
                     <Separator className="my-4" />
 
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Engineer Callout - Too expensive</span>
-                      <Input type="number" name="price_engineer_expensive" min={0} step={5} placeholder="R" />
+                      <Input type="number" name="price_engineer_expensive" min={0} step={5} placeholder={getCurrencySymbol()} />
                     </li>
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Engineer Callout - Too cheap</span>
-                      <Input type="number" name="price_engineer_cheap" min={0} step={5} placeholder="R" />
+                      <Input type="number" name="price_engineer_cheap" min={0} step={5} placeholder={getCurrencySymbol()} />
                     </li>
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Engineer Callout - Could Justify/High Side</span>
-                      <Input type="number" name="price_engineer_justify" min={0} step={5} placeholder="R" />
+                      <Input type="number" name="price_engineer_justify" min={0} step={5} placeholder={getCurrencySymbol()} />
                     </li>
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Engineer Callout - Cheap/Good Value</span>
-                      <Input type="number" name="price_engineer_good_value" min={0} step={5} placeholder="R" />
+                      <Input type="number" name="price_engineer_good_value" min={0} step={5} placeholder={getCurrencySymbol()} />
                     </li>
                     <Separator className="my-4" />
 
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Ethernet Cabling Technician Callout - Too expensive</span>
-                      <Input type="number" name="price_ethernet_expensive" min={0} step={5} placeholder="R" />
+                      <Input type="number" name="price_ethernet_expensive" min={0} step={5} placeholder={getCurrencySymbol()} />
                     </li>
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Ethernet Cabling Technician Callout - Too cheap</span>
-                      <Input type="number" name="price_ethernet_cheap" min={0} step={5} placeholder="R" />
+                      <Input type="number" name="price_ethernet_cheap" min={0} step={5} placeholder={getCurrencySymbol()} />
                     </li>
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Ethernet Cabling Technician Callout - Could Justify/High Side</span>
-                      <Input type="number" name="price_ethernet_justify" min={0} step={5} placeholder="R" />
+                      <Input type="number" name="price_ethernet_justify" min={0} step={5} placeholder={getCurrencySymbol()} />
                     </li>
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Ethernet Cabling Technician Callout - Cheap/Good Value</span>
-                      <Input type="number" name="price_ethernet_good_value" min={0} step={5} placeholder="R" />
+                      <Input type="number" name="price_ethernet_good_value" min={0} step={5} placeholder={getCurrencySymbol()} />
                     </li>
                     <Separator className="my-4" />
 
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Wireless Technician Callout - Too expensive</span>
-                      <Input type="number" name="price_wireless_expensive" min={0} step={5} placeholder="R" />
+                      <Input type="number" name="price_wireless_expensive" min={0} step={5} placeholder={getCurrencySymbol()} />
                     </li>
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Wireless Technician Callout - Too cheap</span>
-                      <Input type="number" name="price_wireless_cheap" min={0} step={5} placeholder="R" />
+                      <Input type="number" name="price_wireless_cheap" min={0} step={5} placeholder={getCurrencySymbol()} />
                     </li>
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Wireless Technician Callout - Could Justify/High Side</span>
-                      <Input type="number" name="price_wireless_justify" min={0} step={5} placeholder="R" />
+                      <Input type="number" name="price_wireless_justify" min={0} step={5} placeholder={getCurrencySymbol()} />
                     </li>
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Wireless Technician Callout - Cheap/Good Value</span>
-                      <Input type="number" name="price_wireless_good_value" min={0} step={5} placeholder="R" />
+                      <Input type="number" name="price_wireless_good_value" min={0} step={5} placeholder={getCurrencySymbol()} />
                     </li>
                     <Separator className="my-4" />
 
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Consultant Callout - Too expensive</span>
-                      <Input type="number" name="price_consultant_expensive" min={0} step={5} placeholder="R" />
+                      <Input type="number" name="price_consultant_expensive" min={0} step={5} placeholder={getCurrencySymbol()} />
                     </li>
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Consultant Callout - Too cheap</span>
-                      <Input type="number" name="price_consultant_cheap" min={0} step={5} placeholder="R" />
+                      <Input type="number" name="price_consultant_cheap" min={0} step={5} placeholder={getCurrencySymbol()} />
                     </li>
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Consultant Callout - Could Justify/High Side</span>
-                      <Input type="number" name="price_consultant_justify" min={0} step={5} placeholder="R" />
+                      <Input type="number" name="price_consultant_justify" min={0} step={5} placeholder={getCurrencySymbol()} />
                     </li>
                     <li className="grid md:grid-cols-2 gap-3 items-center">
                       <span>ICT Consultant Callout - Cheap/Good Value</span>
-                      <Input type="number" name="price_consultant_good_value" min={0} step={5} placeholder="R" />
+                      <Input type="number" name="price_consultant_good_value" min={0} step={5} placeholder={getCurrencySymbol()} />
                     </li>
                   </ul>
                 </CardContent>
