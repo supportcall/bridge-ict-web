@@ -31,7 +31,7 @@ const App = () => (
         <BrowserRouter>
           <ScrollToTop />
           <FloatingScrollToTop />
-          <GoogleAnalytics measurementId="G-604F9HYTTP" />
+          <GoogleAnalytics measurementId="G-GNYHGV5NNM" />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/services/rmm" element={<RMM />} />
