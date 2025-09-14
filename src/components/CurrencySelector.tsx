@@ -10,17 +10,17 @@ interface CurrencySelectorProps {
 
 const CurrencySelector = ({ onCurrencyChange, selectedCurrency }: CurrencySelectorProps) => {
   return (
-    <div className="flex items-center gap-2">
-      <span className="text-sm text-muted-foreground">Currency:</span>
+    <div className="flex items-center gap-3 p-3 bg-primary/10 rounded-lg border border-primary/20 shadow-sm">
+      <span className="text-sm font-medium text-foreground">Select Currency:</span>
       <Select value={selectedCurrency} onValueChange={(value: Currency) => onCurrencyChange(value)}>
-        <SelectTrigger className="w-24 bg-card border-border text-foreground">
+        <SelectTrigger className="w-28 bg-background border-primary/30 text-foreground shadow-sm hover:border-primary/50 transition-colors">
           <SelectValue />
         </SelectTrigger>
-        <SelectContent className="bg-card border-border z-50">
-          <SelectItem value="USD">USD</SelectItem>
-          <SelectItem value="AUD">AUD</SelectItem>
-          <SelectItem value="GBP">GBP</SelectItem>
-          <SelectItem value="ZAR">ZAR</SelectItem>
+        <SelectContent className="bg-popover border-border shadow-lg z-50">
+          <SelectItem value="USD" className="hover:bg-accent hover:text-accent-foreground">USD ($)</SelectItem>
+          <SelectItem value="AUD" className="hover:bg-accent hover:text-accent-foreground">AUD (A$)</SelectItem>
+          <SelectItem value="GBP" className="hover:bg-accent hover:text-accent-foreground">GBP (£)</SelectItem>
+          <SelectItem value="ZAR" className="hover:bg-accent hover:text-accent-foreground">ZAR (R)</SelectItem>
         </SelectContent>
       </Select>
     </div>
