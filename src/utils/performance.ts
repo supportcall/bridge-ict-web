@@ -66,15 +66,19 @@ export const memoryUsage = () => {
   return null;
 };
 
-// Critical rendering path optimization - Self-contained only
+// Critical rendering path optimization - Self-contained with maximum performance
 export const optimizeCriticalPath = () => {
   // Self-contained optimization - no external preconnects needed
-  console.log('Self-contained mode: No external domain preconnections required');
+  console.log('Self-contained mode: Maximum performance optimizations enabled');
   
   // Ensure all images have loading="lazy" except above-the-fold
   document.querySelectorAll('img').forEach((img, index) => {
     if (index > 2 && !img.hasAttribute('loading')) {
       img.setAttribute('loading', 'lazy');
+    }
+    // Add content-visibility for performance
+    if (index > 3) {
+      img.style.contentVisibility = 'auto';
     }
   });
   
@@ -89,8 +93,38 @@ export const optimizeCriticalPath = () => {
     link.rel = 'preload';
     link.href = resource;
     link.as = 'image';
+    link.crossOrigin = 'anonymous';
     document.head.appendChild(link);
   });
+
+  // Optimize viewport meta for mobile responsiveness
+  const viewport = document.querySelector('meta[name="viewport"]');
+  if (viewport) {
+    viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover');
+  }
+
+  // Add resource hints for performance
+  const dnsPreconnect = document.createElement('link');
+  dnsPreconnect.rel = 'dns-prefetch';
+  dnsPreconnect.href = '//www.google-analytics.com';
+  document.head.appendChild(dnsPreconnect);
+
+  // Enable passive event listeners for better scrolling performance
+  if ('addEventListener' in window) {
+    const originalAddEventListener = window.addEventListener;
+    window.addEventListener = function(type, listener, options) {
+      if (type === 'scroll' || type === 'wheel' || type === 'touchstart' || type === 'touchmove') {
+        if (typeof options === 'boolean') {
+          options = { passive: true, capture: options };
+        } else if (typeof options === 'object' && options !== null) {
+          options.passive = true;
+        } else {
+          options = { passive: true };
+        }
+      }
+      return originalAddEventListener.call(this, type, listener, options);
+    };
+  }
 };
 
 // Service Worker registration for caching

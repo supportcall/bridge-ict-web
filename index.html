@@ -15,13 +15,16 @@
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <link rel="canonical" href="https://www.supportcall.co.za/" />
     
-    <!-- Security Headers - Allow Google Calendar and Google Maps only; tightened for production -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self'; frame-src 'self' https://www.google.com https://calendar.app.google; form-action 'self' mailto:; base-uri 'self';" />
+    <!-- Security Headers - Hardened for production self-contained operation -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self'; frame-src 'self' https://www.google.com https://calendar.app.google; form-action 'self' mailto:; base-uri 'self'; object-src 'none'; worker-src 'self';" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="X-Frame-Options" content="DENY" />
     <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), bluetooth=(), serial=(), midi=(), notifications=(), push=(), speaker-selection=()" />
+    <meta http-equiv="Cross-Origin-Embedder-Policy" content="credentialless" />
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin" />
+    <meta http-equiv="Cross-Origin-Resource-Policy" content="same-origin" />
     <meta name="theme-color" content="#0080CC" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0099FF" media="(prefers-color-scheme: dark)" />
     

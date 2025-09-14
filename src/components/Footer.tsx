@@ -21,7 +21,14 @@ const Footer = () => {
   const navigate = useNavigate();
   const handleAnchorClick = (href: string) => {
     if (location.pathname !== '/') {
-      navigate(`/${href}`);
+      navigate('/');
+      // Scroll to anchor after navigation completes
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
     } else {
       const element = document.querySelector(href);
       if (element) {
