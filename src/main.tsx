@@ -6,10 +6,19 @@ import { performanceObserver, optimizeCriticalPath, registerServiceWorker } from
 import { initializeErrorHandling } from "./utils/errorHandling";
 import { initializeSecurity } from "./utils/security";
 import { optimizeForLeadGeneration } from "./utils/seo";
+import { initializeCrossPlatformOptimizations } from "./utils/crossPlatformOptimization";
+import { initializeMarketingOptimizations } from "./utils/marketingOptimization";
+import { initializeResponsiveOptimizations } from "./utils/responsiveOptimization";
+import { initializeEnhancedSEO } from "./utils/seoEnhanced";
+import { initializeNavigationOptimizations } from "./utils/navigationOptimization";
 
-// Initialize all optimizations: security, performance, error handling, marketing
+// Initialize all optimizations: security, performance, error handling, marketing, cross-platform, responsive, SEO, navigation
 initializeSecurity();
 initializeErrorHandling();
+initializeCrossPlatformOptimizations();
+initializeResponsiveOptimizations();
+initializeEnhancedSEO();
+initializeNavigationOptimizations();
 performanceObserver.observeWebVitals();
 optimizeCriticalPath();
 performanceObserver.preloadCriticalResources();
@@ -17,6 +26,7 @@ performanceObserver.preloadCriticalResources();
 // Marketing and lead generation optimization
 setTimeout(() => {
   optimizeForLeadGeneration();
+  initializeMarketingOptimizations();
 }, 1000);
 
 const container = document.getElementById("root");
