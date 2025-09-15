@@ -155,7 +155,13 @@ const ClientServiceInterestPricing = () => {
 
     const validation = validateFormData(basicFormData);
     if (!validation.isValid) {
-      setFormErrors(validation.errors);
+      // Map phone errors to contact field since that's the actual field name
+      const mappedErrors = { ...validation.errors };
+      if (mappedErrors.phone) {
+        mappedErrors.contact = mappedErrors.phone;
+        delete mappedErrors.phone;
+      }
+      setFormErrors(mappedErrors);
       toast({
         title: "Form Validation Error",
         description: "Please correct the highlighted fields and try again.",
@@ -288,34 +294,49 @@ const ClientServiceInterestPricing = () => {
                          <p className="text-sm text-destructive mt-1">{formErrors.email}</p>
                        )}
                      </div>
+                      <div>
+                        <Label htmlFor="contact">Direct contact number</Label>
+                        <Input 
+                          id="contact" 
+                          name="contact" 
+                          required 
+                          placeholder="+27 or +61 phone number"
+                          className={formErrors.contact ? "border-destructive" : ""}
+                        />
+                        {formErrors.contact && (
+                          <p className="text-sm text-destructive mt-1">{formErrors.contact}</p>
+                        )}
+                      </div>
+                  </div>
+                   <div className="grid md:grid-cols-2 gap-4">
                      <div>
-                       <Label htmlFor="contact">Direct contact number</Label>
+                       <Label htmlFor="company">Company Name (optional)</Label>
                        <Input 
-                         id="contact" 
-                         name="contact" 
-                         required 
-                         placeholder="+27 or +61 phone number"
-                         className={formErrors.phone ? "border-destructive" : ""}
+                         id="company" 
+                         name="company" 
+                         className={formErrors.company ? "border-destructive" : ""}
                        />
-                       {formErrors.phone && (
-                         <p className="text-sm text-destructive mt-1">{formErrors.phone}</p>
+                       {formErrors.company && (
+                         <p className="text-sm text-destructive mt-1">{formErrors.company}</p>
                        )}
                      </div>
-                  </div>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <Label htmlFor="company">Company Name (optional)</Label>
-                      <Input id="company" name="company" />
-                    </div>
-                    <div>
-                      <Label htmlFor="website">Your website (optional)</Label>
-                      <Input id="website" name="website" />
-                    </div>
-                  </div>
-                  <div>
-                    <Label htmlFor="location">Where are you from</Label>
-                    <Input id="location" name="location" required />
-                  </div>
+                     <div>
+                       <Label htmlFor="website">Your website (optional)</Label>
+                       <Input id="website" name="website" />
+                     </div>
+                   </div>
+                   <div>
+                     <Label htmlFor="location">Where are you from</Label>
+                     <Input 
+                       id="location" 
+                       name="location" 
+                       required 
+                       className={formErrors.location ? "border-destructive" : ""}
+                     />
+                     {formErrors.location && (
+                       <p className="text-sm text-destructive mt-1">{formErrors.location}</p>
+                     )}
+                   </div>
                   <div className="flex items-center gap-2">
                     <input id="anonymous" name="anonymous" type="checkbox" className="h-4 w-4" />
                     <Label htmlFor="anonymous">Remain Anonymous (personal information will not be shared with 3rd-parties)</Label>
