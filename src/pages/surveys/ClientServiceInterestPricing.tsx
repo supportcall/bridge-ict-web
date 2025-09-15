@@ -13,11 +13,15 @@ import { generateServiceSchema } from "@/utils/seo";
 import { useState } from "react";
 import { submitFormWithFallback } from "@/utils/formSubmission";
 import { useToast } from "@/hooks/use-toast";
+import { validateFormData, sanitizeInput, RateLimiter } from "@/utils/validation";
 import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelector";
 
 const ClientServiceInterestPricing = () => {
   const { toast } = useToast();
   const { currency, setCurrency } = useCurrencyPricing();
+  const [rateLimiter] = useState(() => new RateLimiter(2, 300000)); // 2 attempts per 5 minutes for surveys
+  const [formErrors, setFormErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   // Get currency symbol for placeholders
   const getCurrencySymbol = () => {
@@ -105,24 +109,73 @@ const ClientServiceInterestPricing = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setFormErrors({});
+
+    // Rate limiting check
+    if (!rateLimiter.canAttempt()) {
+      const timeUntilReset = Math.ceil(rateLimiter.getTimeUntilReset() / 1000);
+      toast({
+        title: "Too Many Attempts",
+        description: `Please wait ${timeUntilReset} seconds before trying again.`,
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
+    const rawData = Object.fromEntries(formData.entries());
     
-    // Validate required fields
-    const inputs = Array.from(form.querySelectorAll<HTMLInputElement>("input[required]"));
-    for (const input of inputs) {
-      if (input.value.trim() === "") {
-        input.focus();
-        return;
+    // Sanitize all text inputs
+    const sanitizedData: Record<string, any> = {};
+    Object.entries(rawData).forEach(([key, value]) => {
+      if (typeof value === 'string') {
+        if (key === 'other_service') {
+          // Preserve spaces for longer text fields but limit length
+          sanitizedData[key] = value.replace(/[<>]/g, "").slice(0, 500);
+        } else {
+          sanitizedData[key] = sanitizeInput(value);
+        }
+      } else {
+        sanitizedData[key] = value;
       }
+    });
+
+    // Comprehensive validation
+    const basicFormData = {
+      name: sanitizedData.name as string,
+      email: sanitizedData.email as string,
+      phone: sanitizedData.contact as string,
+      company: sanitizedData.company as string,
+      service: 'Survey', // surveys don't have service field
+      message: sanitizedData.other_service as string || 'Survey submission'
+    };
+
+    const validation = validateFormData(basicFormData);
+    if (!validation.isValid) {
+      setFormErrors(validation.errors);
+      toast({
+        title: "Form Validation Error",
+        description: "Please correct the highlighted fields and try again.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
     }
-    
+
     // Human verification
     if (parseInt(humanAnswer, 10) !== humanA + humanB) {
       setHumanError("Incorrect answer. Please try again.");
       const hv = form.querySelector<HTMLInputElement>("#human_verification");
       hv?.focus();
+      toast({
+        title: "Verification failed",
+        description: "Please answer the human verification question correctly.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
       return;
     } else {
       setHumanError("");
@@ -133,34 +186,34 @@ const ClientServiceInterestPricing = () => {
       'Survey Type': 'Client Service Interest & Pricing',
       'Submission Date': new Date().toLocaleString(),
       'Selected Currency': currency,
-      'Name': `${data.name} ${data.surname}`,
-      'Email': data.email as string,
-      'Contact': data.contact as string,
-      'Company': data.company as string || 'Not provided',
-      'Website': data.website as string || 'Not provided', 
-      'Location': data.location as string,
-      'Anonymous': data.anonymous ? 'Yes' : 'No',
-      'Contact Me': data.contact_me ? 'Yes' : 'No',
-      'Local Technician': data.local_technician as string || 'No',
+      'Name': `${sanitizedData.name} ${sanitizedData.surname}`,
+      'Email': sanitizedData.email as string,
+      'Contact': sanitizedData.contact as string,
+      'Company': sanitizedData.company as string || 'Not provided',
+      'Website': sanitizedData.website as string || 'Not provided', 
+      'Location': sanitizedData.location as string,
+      'Anonymous': sanitizedData.anonymous ? 'Yes' : 'No',
+      'Contact Me': sanitizedData.contact_me ? 'Yes' : 'No',
+      'Local Technician': sanitizedData.local_technician as string || 'No',
       
       // Service selections and ratings
       ...Object.fromEntries(
-        Object.entries(data).filter(([key]) => key.startsWith('services[') || key.startsWith('ratings['))
+        Object.entries(sanitizedData).filter(([key]) => key.startsWith('services[') || key.startsWith('ratings['))
       ),
       
       // Pricing data
       ...Object.fromEntries(
-        Object.entries(data).filter(([key]) => key.startsWith('price_'))
+        Object.entries(sanitizedData).filter(([key]) => key.startsWith('price_'))
       ),
       
-      'Other Service': data.other_service as string || 'None specified'
+      'Other Service': sanitizedData.other_service as string || 'None specified'
     }];
 
     // Submit form with enhanced email handling
     const submissionData = {
       formTitle: "Client Service Interest & Pricing Survey",
-      userEmail: data.email as string,
-      formData: data,
+      userEmail: sanitizedData.email as string,
+      formData: sanitizedData,
       recipients: [
         "info@supportcall.co.za",
         "info@supportcall.com.au",
@@ -179,6 +232,7 @@ const ClientServiceInterestPricing = () => {
     });
     
     setSubmitted(true);
+    setIsSubmitting(false);
   };
 
   return (
@@ -203,24 +257,50 @@ const ClientServiceInterestPricing = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <Label htmlFor="name">Your name</Label>
-                      <Input id="name" name="name" required />
-                    </div>
-                    <div>
-                      <Label htmlFor="surname">Your surname</Label>
-                      <Input id="surname" name="surname" required />
-                    </div>
+                     <div>
+                       <Label htmlFor="name">Your name</Label>
+                       <Input 
+                         id="name" 
+                         name="name" 
+                         required 
+                         className={formErrors.name ? "border-destructive" : ""}
+                       />
+                       {formErrors.name && (
+                         <p className="text-sm text-destructive mt-1">{formErrors.name}</p>
+                       )}
+                     </div>
+                     <div>
+                       <Label htmlFor="surname">Your surname</Label>
+                       <Input id="surname" name="surname" required />
+                     </div>
                   </div>
                   <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <Label htmlFor="email">Your email</Label>
-                      <Input id="email" name="email" type="email" required />
-                    </div>
-                    <div>
-                      <Label htmlFor="contact">Direct contact number</Label>
-                      <Input id="contact" name="contact" required />
-                    </div>
+                     <div>
+                       <Label htmlFor="email">Your email</Label>
+                       <Input 
+                         id="email" 
+                         name="email" 
+                         type="email" 
+                         required 
+                         className={formErrors.email ? "border-destructive" : ""}
+                       />
+                       {formErrors.email && (
+                         <p className="text-sm text-destructive mt-1">{formErrors.email}</p>
+                       )}
+                     </div>
+                     <div>
+                       <Label htmlFor="contact">Direct contact number</Label>
+                       <Input 
+                         id="contact" 
+                         name="contact" 
+                         required 
+                         placeholder="+27 or +61 phone number"
+                         className={formErrors.phone ? "border-destructive" : ""}
+                       />
+                       {formErrors.phone && (
+                         <p className="text-sm text-destructive mt-1">{formErrors.phone}</p>
+                       )}
+                     </div>
                   </div>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
