@@ -2,6 +2,7 @@ import React from 'react';
 import { MapPin, Globe, ExternalLink } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 const COMPANY_LOGO_URL = "/lovable-uploads/84165b4e-46a6-4065-8ddd-eb8da8017502.png";
 
 const GlobalMap = () => {
@@ -81,7 +82,20 @@ const GlobalMap = () => {
             variant="outline" 
             size="sm" 
             className="text-white border-white/30 hover:bg-white/10"
-            onClick={() => alert('Contact us for detailed network infrastructure information:\n\nSA: +27-87-822-2380\nAU: +61-4-9933-5679')}
+            onClick={() => {
+              toast.info("Global Network Infrastructure", {
+                description: "Contact us for detailed network information:\n\nSA: +27-87-822-2380\nAU: +61-4-9933-5679",
+                duration: 8000,
+                action: {
+                  label: "Copy Contact",
+                  onClick: () => {
+                    if (navigator.clipboard) {
+                      navigator.clipboard.writeText("SA: +27-87-822-2380\nAU: +61-4-9933-5679");
+                    }
+                  }
+                }
+              });
+            }}
           >
             <Globe className="w-3 h-3 mr-1" />
             Network Details

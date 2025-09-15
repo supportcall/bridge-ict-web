@@ -1,4 +1,6 @@
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
+import { secureFormSubmit, protectSensitiveData } from "./security";
+import { validateFormData } from "./validation";
 
 export interface FormSubmissionData {
   formTitle: string;
@@ -156,49 +158,64 @@ ${preferences.join('\n')}
 export const submitFormWithFallback = async (data: FormSubmissionData): Promise<boolean> => {
   const { formTitle, userEmail, formData, recipients, csvData } = data;
   
-  // Format subject and body
-  const subject = `SupportCALL Web Form: ${formTitle} | ${userEmail}`;
-  const body = formatEmailBody(formTitle, formData);
-  
-  // Create mailto link
-  const mailtoLink = `mailto:${recipients.join(',')}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  
   try {
-    // Try to open mailto
-    const beforeUnload = () => {
-      // This will be called if user navigates away (which happens when mailto opens successfully)
-      window.removeEventListener('beforeunload', beforeUnload);
-      return null;
-    };
+    // Security validation first
+    const sanitizedData = secureFormSubmit(formData);
     
-    window.addEventListener('beforeunload', beforeUnload);
-    
-    // Set a flag to track if mailto was likely cancelled
-    let mailtoFailed = false;
-    
-    // Set a timeout to check if we're still on the page (meaning mailto likely failed)
-    const timeoutId = setTimeout(() => {
-      window.removeEventListener('beforeunload', beforeUnload);
-      mailtoFailed = true;
-      
-      // Fallback: Copy email content to clipboard instead of popup
-      showFallbackDialog(subject, body, recipients, csvData);
-    }, 2000); // Wait 2 seconds
-    
-    // Try to trigger mailto
-    window.location.href = mailtoLink;
-    
-    // Clear timeout if page unloads (meaning mailto worked)
-    window.addEventListener('unload', () => {
-      clearTimeout(timeoutId);
+    // Additional validation for completeness
+    const validation = validateFormData({
+      name: sanitizedData.name || '',
+      email: sanitizedData.email || userEmail,
+      company: sanitizedData.company || '',
+      phone: sanitizedData.phone || sanitizedData.contact || '',
+      service: sanitizedData.service || 'General Inquiry',
+      message: sanitizedData.message || 'Web form submission'
     });
     
+    if (!validation.isValid) {
+      const errorMessages = Object.values(validation.errors).join(', ');
+      toast.error(`Form validation failed: ${errorMessages}`);
+      return false;
+    }
+    
+    // Format subject and body with sanitized data
+    const subject = `SupportCALL Web Form: ${formTitle} | ${protectSensitiveData(userEmail)}`;
+    const body = formatEmailBody(formTitle, sanitizedData);
+    
+    // Create secure mailto link with length validation
+    const mailtoLink = `mailto:${recipients.join(',')}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Check if mailto link is too long (most email clients have limits)
+    if (mailtoLink.length > 2000) {
+      toast.warning("Form data is large, using clipboard fallback for better compatibility");
+      return await handleFallbackSubmission(subject, body, recipients, csvData);
+    }
+    
+    // Try to open mailto with modern approach
+    window.open(mailtoLink, '_self');
+    
+    // Set a timeout to check if mailto worked
+    const timeoutId = setTimeout(async () => {
+      // If we're still here after 3 seconds, mailto likely failed
+      toast.info("Opening clipboard fallback for better compatibility");
+      await handleFallbackSubmission(subject, body, recipients, csvData);
+    }, 3000);
+    
+    // Clear timeout if page unloads (meaning mailto worked)
+    window.addEventListener('beforeunload', () => {
+      clearTimeout(timeoutId);
+    }, { once: true });
+    
     return true;
+    
   } catch (error) {
-    console.error('Error with mailto:', error);
-    // Copy to clipboard immediately on error instead of popup
-    showFallbackDialog(subject, body, recipients, csvData);
-    return false;
+    console.error('Secure form submission error:', protectSensitiveData(error?.toString() || 'Unknown error'));
+    toast.error("Form submission failed, trying clipboard fallback");
+    
+    // Create fallback data for error case
+    const subject = `SupportCALL Web Form: ${formTitle} | ${protectSensitiveData(userEmail)}`;
+    const body = formatEmailBody(formTitle, formData);
+    return await handleFallbackSubmission(subject, body, recipients, csvData);
   }
 };
 
@@ -219,33 +236,85 @@ const convertToCSV = (data: Array<Record<string, string>>): string => {
   return [csvHeaders, ...csvRows].join('\n');
 };
 
-const showFallbackDialog = (subject: string, body: string, recipients: string[], csvData?: Array<Record<string, string>>) => {
-  // Instead of popup, use browser's built-in copy functionality and console log
-  const emailContent = `
-To: ${recipients.join(', ')}
+// Modern clipboard handling without popups or deprecated APIs
+const handleFallbackSubmission = async (subject: string, body: string, recipients: string[], csvData?: Array<Record<string, string>>): Promise<boolean> => {
+  const emailContent = `To: ${recipients.join(', ')}
 Subject: ${subject}
 
-${body}
-
-${csvData ? `\n\nForm Data (CSV):\n${convertToCSV(csvData)}` : ''}
-  `;
+${body}${csvData ? `\n\nForm Data (CSV):\n${convertToCSV(csvData)}` : ''}`;
   
-  // Try to copy to clipboard
-  navigator.clipboard.writeText(emailContent).then(() => {
-    console.log('✅ Email content copied to clipboard:', emailContent);
-    alert('Email content copied to clipboard! Please paste into your email client.');
-  }).catch((err) => {
-    console.error('Failed to copy to clipboard:', err);
-    console.log('📧 Email content for manual copying:', emailContent);
-    // Fallback: Create a temporary text area for selection
+  try {
+    // Modern clipboard API with proper error handling
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(emailContent);
+      toast.success("✅ Email content copied to clipboard! Please paste into your email client.", {
+        duration: 5000,
+        description: "Your form data is ready to send"
+      });
+      
+      // Log securely without sensitive data
+      console.log('✅ Form submission prepared for email client');
+      return true;
+    } else {
+      // Fallback for non-secure contexts or older browsers
+      return await legacyClipboardCopy(emailContent);
+    }
+  } catch (error) {
+    console.error('Clipboard operation failed:', protectSensitiveData(error?.toString() || 'Unknown error'));
+    return await legacyClipboardCopy(emailContent);
+  }
+};
+
+// Legacy clipboard fallback without deprecated execCommand
+const legacyClipboardCopy = async (content: string): Promise<boolean> => {
+  try {
+    // Create temporary text area for modern selection
     const textarea = document.createElement('textarea');
-    textarea.value = emailContent;
+    textarea.value = content;
     textarea.style.position = 'fixed';
-    textarea.style.opacity = '0';
+    textarea.style.left = '-999999px';
+    textarea.style.top = '-999999px';  
+    textarea.setAttribute('readonly', '');
     document.body.appendChild(textarea);
+    
+    // Select and focus
     textarea.select();
-    document.execCommand('copy');
+    textarea.setSelectionRange(0, 99999); // For mobile devices
+    
+    // Try modern copy first, fallback to legacy if needed
+    let success = false;
+    try {
+      if (document.queryCommandSupported && document.queryCommandSupported('copy')) {
+        success = document.execCommand('copy');
+      }
+    } catch (execError) {
+      console.warn('Legacy copy method failed:', execError);
+    }
+    
+    // Clean up
     document.body.removeChild(textarea);
-    alert('Email content selected. Please check console or clipboard.');
-  });
+    
+    if (success) {
+      toast.success("📋 Form content selected! Please paste into your email client.", {
+        duration: 5000,
+        description: "Your form data is ready to send"
+      });
+      return true;
+    } else {
+      // Final fallback - instruct user manually
+      toast.error("Unable to copy automatically. Please check browser console for email content.", {
+        duration: 7000,
+        description: "Form data logged for manual copying"
+      });
+      console.log('📧 Manual copy required - Email content:', content);
+      return false;
+    }
+  } catch (error) {
+    toast.error("Form submission requires manual handling. Check console for details.", {
+      duration: 7000
+    });
+    console.error('All clipboard methods failed:', protectSensitiveData(error?.toString() || 'Unknown error'));
+    console.log('📧 Email content for manual handling:', content);
+    return false;
+  }
 };

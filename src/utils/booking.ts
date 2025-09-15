@@ -1,5 +1,6 @@
 // Booking utility functions for regional Google Calendar links
 import { handleBookingFailure } from './errorHandling';
+import { toast } from "sonner";
 
 export const BOOKING_LINKS = {
   SA: 'https://calendar.app.google/BkHkcJArVgXqQFJd8', // South African bookings
@@ -32,7 +33,7 @@ const detectUserRegion = (): Region => {
 };
 
 /**
- * Opens booking calendar with error handling and fallbacks
+ * Opens booking calendar with error handling and fallbacks - no popups
  */
 export const openBooking = (preferredRegion?: Region) => {
   try {
@@ -41,13 +42,23 @@ export const openBooking = (preferredRegion?: Region) => {
       return;
     }
     
-    // Show region selection dialog with fallback handling
-    const region = window.confirm(
-      'Choose your region:\n\nOK = Australia (+61)\nCancel = South Africa (+27)'
-    );
+    // Use toast for region selection instead of confirm popup
+    toast.message("Choose your region for booking:", {
+      duration: 8000,
+      action: {
+        label: "Australia (+61)",
+        onClick: () => {
+          window.open(BOOKING_LINKS.AU, '_blank', 'noopener,noreferrer');
+        }
+      },
+      cancel: {
+        label: "South Africa (+27)",
+        onClick: () => {
+          window.open(BOOKING_LINKS.SA, '_blank', 'noopener,noreferrer');
+        }
+      }
+    });
     
-    const selectedRegion = region ? 'AU' : 'SA';
-    window.open(BOOKING_LINKS[selectedRegion], '_blank', 'noopener,noreferrer');
   } catch (error) {
     console.error('Booking system failed:', error);
     

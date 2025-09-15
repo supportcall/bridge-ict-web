@@ -2,6 +2,8 @@
  * Error handling utilities for external services and self-contained operation
  */
 
+import { toast } from "sonner";
+
 // Fallback contact information when external services fail
 export const FALLBACK_CONTACT = {
   SA: {
@@ -34,23 +36,27 @@ export const checkServiceAvailability = async (url: string): Promise<boolean> =>
 // Graceful degradation for booking systems
 export const handleBookingFailure = (region: 'SA' | 'AU') => {
   const contact = FALLBACK_CONTACT[region];
-  const message = `
-Booking system temporarily unavailable.
+  const message = `Booking system temporarily unavailable.
 
 Please contact us directly:
 Phone: ${contact.phone}
 Email: ${contact.email}
 
-We'll get back to you within 24 hours to schedule your consultation.
-  `.trim();
+We'll get back to you within 24 hours to schedule your consultation.`;
   
-  // Show user-friendly message
-  alert(message);
-  
-  // Copy contact info to clipboard if possible
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(`${contact.phone} | ${contact.email}`).catch(() => {});
-  }
+  // Use toast instead of alert popup
+  toast.error("Booking system unavailable", {
+    description: message,
+    duration: 10000,
+    action: {
+      label: "Copy Contact",
+      onClick: () => {
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(`${contact.phone} | ${contact.email}`).catch(() => {});
+        }
+      }
+    }
+  });
 };
 
 // Handle external link failures gracefully
@@ -64,15 +70,24 @@ export const safeExternalLink = (url: string, fallbackAction?: () => void) => {
     if (fallbackAction) {
       fallbackAction();
     } else {
-      // Fallback: copy URL to clipboard and notify user
+      // Fallback: copy URL to clipboard and notify user with toast
       if (navigator.clipboard) {
         navigator.clipboard.writeText(url).then(() => {
-          alert(`Link copied to clipboard: ${url}\n\nPlease paste this into your browser.`);
+          toast.success("Link copied to clipboard!", {
+            description: `Please paste this into your browser: ${url}`,
+            duration: 5000
+          });
         }).catch(() => {
-          alert(`Please visit: ${url}`);
+          toast.info("Please visit manually", {
+            description: url,
+            duration: 5000
+          });
         });
       } else {
-        alert(`Please visit: ${url}`);
+        toast.info("Please visit manually", {
+          description: url,
+          duration: 5000
+        });
       }
     }
   }
