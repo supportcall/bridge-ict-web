@@ -26,7 +26,7 @@ const categories: Category[] = [
   {
     title: "SupportCALL Essentials",
     items: [
-      { name: "FNB Bank details [site]", url: "https://supportcall.co.za/bank.html" },
+      { name: "Bank details [site]", url: "https://supportcall.co.za/bank.html" },
       { name: "Speedtest - Telemetry [site]", url: "http://speedtest.supportcall-isp.co.za/" },
       { name: "SC-Wiki [site]", url: "http://wiki.supportcall.co.za/" },
       { name: "Ticket System [site]", url: "http://tickets.supportcall-isp.co.za/" },
