@@ -13,7 +13,7 @@ import { generateServiceSchema } from "@/utils/seo";
 import { useState } from "react";
 import { submitFormWithFallback } from "@/utils/formSubmission";
 import { useToast } from "@/hooks/use-toast";
-import { validateFormData, sanitizeInput, RateLimiter } from "@/utils/validation";
+import { validateFormData, sanitizeInput, sanitizeInputRealtime, RateLimiter } from "@/utils/validation";
 import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelector";
 
 const ClientServiceInterestPricing = () => {
@@ -128,13 +128,13 @@ const ClientServiceInterestPricing = () => {
     const formData = new FormData(form);
     const rawData = Object.fromEntries(formData.entries());
     
-    // Sanitize all text inputs
+    // Sanitize all text inputs (using validation sanitization which trims)
     const sanitizedData: Record<string, any> = {};
     Object.entries(rawData).forEach(([key, value]) => {
       if (typeof value === 'string') {
         if (key === 'other_service') {
-          // Preserve spaces for longer text fields but limit length
-          sanitizedData[key] = value.replace(/[<>]/g, "").slice(0, 500);
+          // Preserve spaces for longer text fields but limit length and trim
+          sanitizedData[key] = value.trim().replace(/[<>]/g, "").slice(0, 500);
         } else {
           sanitizedData[key] = sanitizeInput(value);
         }

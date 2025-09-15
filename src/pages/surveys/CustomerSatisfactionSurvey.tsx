@@ -12,7 +12,7 @@ import { generateServiceSchema } from "@/utils/seo";
 import { useState } from "react";
 import { submitFormWithFallback } from "@/utils/formSubmission";
 import { useToast } from "@/hooks/use-toast";
-import { validateFormData, sanitizeInput, RateLimiter } from "@/utils/validation";
+import { validateFormData, sanitizeInput, sanitizeInputRealtime, RateLimiter } from "@/utils/validation";
 
 const CustomerSatisfactionSurvey = () => {
   const { toast } = useToast();

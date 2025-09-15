@@ -1,5 +1,13 @@
 // Input validation and sanitization utilities
 
+// For real-time input (preserves spaces while typing)
+export const sanitizeInputRealtime = (input: string): string => {
+  return input
+    .replace(/[<>]/g, '') // Remove basic HTML tags only
+    .slice(0, 1000); // Limit length
+};
+
+// For validation (trims spaces)
 export const sanitizeInput = (input: string): string => {
   return input
     .trim()

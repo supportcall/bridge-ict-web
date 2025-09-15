@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { openBooking } from "@/utils/booking";
-import { validateFormData, sanitizeInput, RateLimiter } from "@/utils/validation";
+import { validateFormData, sanitizeInput, sanitizeInputRealtime, RateLimiter } from "@/utils/validation";
 import { submitFormWithFallback } from "@/utils/formSubmission";
 
 const Contact = () => {
@@ -127,7 +127,8 @@ const Contact = () => {
       // Preserve spaces and new lines for message, only strip angle brackets and limit length
       sanitizedValue = value.replace(/[<>]/g, "").slice(0, 2000);
     } else {
-      sanitizedValue = sanitizeInput(value);
+      // Use realtime sanitization to preserve spaces while typing
+      sanitizedValue = sanitizeInputRealtime(value);
     }
     
     setFormData({
