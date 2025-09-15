@@ -182,8 +182,8 @@ export const submitFormWithFallback = async (data: FormSubmissionData): Promise<
     const subject = `SupportCALL Web Form: ${formTitle} | ${protectSensitiveData(userEmail)}`;
     const body = formatEmailBody(formTitle, sanitizedData);
     
-    // Create secure mailto link with length validation
-    const mailtoLink = `mailto:${recipients.join(',')}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    // Create secure mailto link with length validation (use semicolons for Outlook compatibility)
+    const mailtoLink = `mailto:${recipients.join(';')}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     
     // Check if mailto link is too long (most email clients have limits)
     if (mailtoLink.length > 2000) {
@@ -238,7 +238,7 @@ const convertToCSV = (data: Array<Record<string, string>>): string => {
 
 // Modern clipboard handling without popups or deprecated APIs
 const handleFallbackSubmission = async (subject: string, body: string, recipients: string[], csvData?: Array<Record<string, string>>): Promise<boolean> => {
-  const emailContent = `To: ${recipients.join(', ')}
+  const emailContent = `To: ${recipients.join('; ')}
 Subject: ${subject}
 
 ${body}${csvData ? `\n\nForm Data (CSV):\n${convertToCSV(csvData)}` : ''}`;
