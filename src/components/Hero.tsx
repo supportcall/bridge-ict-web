@@ -61,14 +61,22 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button variant="premium" size="lg" className="group animate-pulse hover:animate-none" asChild>
-              <a href="#contact">
-                Book FREE Consultation
-                <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-              </a>
+            <Button variant="premium" size="lg" className="group animate-pulse hover:animate-none" onClick={() => {
+              const element = document.querySelector('#contact');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}>
+              Book FREE Consultation
+              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
             </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a href="#testimonials">See Client Results</a>
+            <Button variant="outline" size="lg" onClick={() => {
+              const element = document.querySelector('#testimonials');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}>
+              See Client Results
             </Button>
           </div>
 
