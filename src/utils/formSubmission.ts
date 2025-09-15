@@ -181,7 +181,7 @@ export const submitFormWithFallback = async (data: FormSubmissionData): Promise<
       window.removeEventListener('beforeunload', beforeUnload);
       mailtoFailed = true;
       
-      // Fallback: Show user the formatted email content to copy/paste
+      // Fallback: Copy email content to clipboard instead of popup
       showFallbackDialog(subject, body, recipients, csvData);
     }, 2000); // Wait 2 seconds
     
@@ -196,112 +196,56 @@ export const submitFormWithFallback = async (data: FormSubmissionData): Promise<
     return true;
   } catch (error) {
     console.error('Error with mailto:', error);
-    // Show fallback immediately on error
+    // Copy to clipboard immediately on error instead of popup
     showFallbackDialog(subject, body, recipients, csvData);
     return false;
   }
 };
 
+const convertToCSV = (data: Array<Record<string, string>>): string => {
+  if (!data.length) return '';
+  
+  const headers = Object.keys(data[0]);
+  const csvHeaders = headers.join(',');
+  
+  const csvRows = data.map(row => 
+    headers.map(header => {
+      const value = row[header] || '';
+      // Escape quotes and wrap in quotes if contains comma
+      return value.includes(',') ? `"${value.replace(/"/g, '""')}"` : value;
+    }).join(',')
+  );
+  
+  return [csvHeaders, ...csvRows].join('\n');
+};
+
 const showFallbackDialog = (subject: string, body: string, recipients: string[], csvData?: Array<Record<string, string>>) => {
-  // Create a modal with the email content for user to copy
-  const modal = document.createElement('div');
-  modal.style.cssText = `
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.8);
-    z-index: 10000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+  // Instead of popup, use browser's built-in copy functionality and console log
+  const emailContent = `
+To: ${recipients.join(', ')}
+Subject: ${subject}
+
+${body}
+
+${csvData ? `\n\nForm Data (CSV):\n${convertToCSV(csvData)}` : ''}
   `;
   
-  const content = document.createElement('div');
-  content.style.cssText = `
-    background: white;
-    border-radius: 8px;
-    padding: 30px;
-    max-width: 800px;
-    max-height: 80vh;
-    overflow-y: auto;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    color: #333;
-  `;
-  
-  // Generate CSV download link if CSV data exists
-  let csvDownloadHtml = '';
-  if (csvData && csvData.length > 0) {
-    const csvContent = generateCSV(csvData);
-    const csvBlob = new Blob([csvContent], { type: 'text/csv' });
-    const csvUrl = URL.createObjectURL(csvBlob);
-    csvDownloadHtml = `
-      <div style="margin: 20px 0; padding: 15px; background: #f0f9ff; border-radius: 6px;">
-        <h4 style="margin: 0 0 10px 0; color: #0369a1;">📊 CSV Data Available</h4>
-        <a href="${csvUrl}" download="supportcall-form-data.csv" 
-           style="display: inline-block; padding: 8px 16px; background: #0369a1; color: white; text-decoration: none; border-radius: 4px; font-weight: 500;">
-          📥 Download CSV Data
-        </a>
-      </div>
-    `;
-  }
-  
-  content.innerHTML = `
-    <div style="text-align: center; margin-bottom: 25px;">
-      <h2 style="color: #dc2626; margin: 0 0 10px 0;">⚠️ Email Client Issue</h2>
-      <p style="margin: 0; color: #666;">Your email client didn't open. Please copy the information below and email it manually.</p>
-    </div>
-    
-    <div style="margin-bottom: 20px;">
-      <h3 style="margin: 0 0 10px 0; color: #0369a1;">📧 Email Recipients:</h3>
-      <div style="background: #f8fafc; padding: 12px; border-radius: 6px; font-family: monospace; font-size: 14px;">
-        ${recipients.join(', ')}
-      </div>
-      <button onclick="navigator.clipboard.writeText('${recipients.join(', ')}')" 
-              style="margin-top: 8px; padding: 6px 12px; background: #10b981; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">
-        📋 Copy Recipients
-      </button>
-    </div>
-    
-    <div style="margin-bottom: 20px;">
-      <h3 style="margin: 0 0 10px 0; color: #0369a1;">📝 Subject Line:</h3>
-      <div style="background: #f8fafc; padding: 12px; border-radius: 6px; font-family: monospace; font-size: 14px;">
-        ${subject}
-      </div>
-      <button onclick="navigator.clipboard.writeText('${subject.replace(/'/g, "\\'")}')" 
-              style="margin-top: 8px; padding: 6px 12px; background: #10b981; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">
-        📋 Copy Subject
-      </button>
-    </div>
-    
-    <div style="margin-bottom: 25px;">
-      <h3 style="margin: 0 0 10px 0; color: #0369a1;">📄 Email Body:</h3>
-      <textarea readonly style="width: 100%; height: 250px; padding: 12px; border: 2px solid #e5e7eb; border-radius: 6px; font-family: monospace; font-size: 12px; background: #f8fafc; resize: vertical;">${body}</textarea>
-      <button onclick="navigator.clipboard.writeText(this.previousElementSibling.value)" 
-              style="margin-top: 8px; padding: 6px 12px; background: #10b981; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">
-        📋 Copy Email Body
-      </button>
-    </div>
-    
-    ${csvDownloadHtml}
-    
-    <div style="text-align: center; margin-top: 25px;">
-      <button onclick="this.closest('[style*=\"fixed\"]').remove()" 
-              style="padding: 12px 24px; background: #dc2626; color: white; border: none; border-radius: 6px; font-weight: 500; cursor: pointer;">
-        ✖️ Close
-      </button>
-    </div>
-  `;
-  
-  modal.appendChild(content);
-  document.body.appendChild(modal);
-  
-  // Close on background click
-  modal.onclick = (e) => {
-    if (e.target === modal) {
-      modal.remove();
-    }
-  };
+  // Try to copy to clipboard
+  navigator.clipboard.writeText(emailContent).then(() => {
+    console.log('✅ Email content copied to clipboard:', emailContent);
+    alert('Email content copied to clipboard! Please paste into your email client.');
+  }).catch((err) => {
+    console.error('Failed to copy to clipboard:', err);
+    console.log('📧 Email content for manual copying:', emailContent);
+    // Fallback: Create a temporary text area for selection
+    const textarea = document.createElement('textarea');
+    textarea.value = emailContent;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    alert('Email content selected. Please check console or clipboard.');
+  });
 };
