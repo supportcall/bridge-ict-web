@@ -11,7 +11,6 @@ import { initializeMarketingOptimizations } from "./utils/marketingOptimization"
 import { initializeResponsiveOptimizations } from "./utils/responsiveOptimization";
 import { initializeEnhancedSEO } from "./utils/seoEnhanced";
 import { initializeNavigationOptimizations } from "./utils/navigationOptimization";
-import { initializeComprehensiveOptimizations, validateSiteIntegrity } from "./utils/siteOptimization";
 
 // Initialize all optimizations: security, performance, error handling, marketing, cross-platform, responsive, SEO, navigation
 initializeSecurity();
@@ -20,7 +19,6 @@ initializeCrossPlatformOptimizations();
 initializeResponsiveOptimizations();
 initializeEnhancedSEO();
 initializeNavigationOptimizations();
-initializeComprehensiveOptimizations();
 performanceObserver.observeWebVitals();
 optimizeCriticalPath();
 performanceObserver.preloadCriticalResources();
@@ -29,11 +27,6 @@ performanceObserver.preloadCriticalResources();
 setTimeout(() => {
   optimizeForLeadGeneration();
   initializeMarketingOptimizations();
-  
-  // Final validation after all optimizations
-  setTimeout(() => {
-    validateSiteIntegrity();
-  }, 2000);
 }, 1000);
 
 const container = document.getElementById("root");
