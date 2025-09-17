@@ -8,8 +8,7 @@ const FloatingScrollToTop = () => {
 
   // Show button when page is scrolled down (visible unless at the very top)
   const toggleVisibility = () => {
-    // Show button when scrolled down more than 20px to avoid flicker
-    if (window.scrollY > 20) {
+    if (window.scrollY > 0) { // Show immediately when not at the very top
       setIsVisible(true);
     } else {
       setIsVisible(false);

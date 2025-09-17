@@ -59,7 +59,7 @@ const Navigation = () => {
             <div className="ml-10 flex items-baseline space-x-4">
               {navItems.map((item) => (
                 item.type === "route" ? (
-                <Link
+                  <Link
                     key={item.name}
                     to={item.href}
                     className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
@@ -69,10 +69,6 @@ const Navigation = () => {
                         window.scrollTo({ top: 0, behavior: "smooth" });
                       }
                       setIsOpen(false);
-                      // Ensure all route navigation scrolls to top
-                      setTimeout(() => {
-                        window.scrollTo({ top: 0, behavior: "instant" });
-                      }, 50);
                     }}
                   >
                     {item.name}
@@ -128,10 +124,6 @@ const Navigation = () => {
                         window.scrollTo({ top: 0, behavior: "smooth" });
                       }
                       setIsOpen(false);
-                      // Ensure all route navigation scrolls to top
-                      setTimeout(() => {
-                        window.scrollTo({ top: 0, behavior: "instant" });
-                      }, 50);
                     }}
                   >
                     {item.name}

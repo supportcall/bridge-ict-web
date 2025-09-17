@@ -11,16 +11,14 @@ import { initializeMarketingOptimizations } from "./utils/marketingOptimization"
 import { initializeResponsiveOptimizations } from "./utils/responsiveOptimization";
 import { initializeEnhancedSEO } from "./utils/seoEnhanced";
 import { initializeNavigationOptimizations } from "./utils/navigationOptimization";
-import { initializeComprehensiveOptimizations } from "./utils/comprehensiveOptimization";
 
-// Initialize all optimizations: security, performance, error handling, marketing, cross-platform, responsive, SEO, navigation, and comprehensive final optimizations
+// Initialize all optimizations: security, performance, error handling, marketing, cross-platform, responsive, SEO, navigation
 initializeSecurity();
 initializeErrorHandling();
 initializeCrossPlatformOptimizations();
 initializeResponsiveOptimizations();
 initializeEnhancedSEO();
 initializeNavigationOptimizations();
-initializeComprehensiveOptimizations(); // Final comprehensive optimization layer
 performanceObserver.observeWebVitals();
 optimizeCriticalPath();
 performanceObserver.preloadCriticalResources();

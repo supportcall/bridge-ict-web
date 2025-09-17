@@ -116,26 +116,10 @@ const Footer = () => {
               <h4 className="font-semibold text-white mb-4">Services</h4>
               <ul className="space-y-2">
                 <li><button type="button" onClick={() => handleAnchorClick("#services")} className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Services</button></li>
-                <li><Link 
-                  to="/remote-support" 
-                  className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200"
-                  onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
-                >Remote Services</Link></li>
-                <li><Link 
-                  to="/services/rmm" 
-                  className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200"
-                  onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
-                >Remote Monitoring & Mgmt</Link></li>
-                <li><Link 
-                  to="/services/wsystem" 
-                  className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200"
-                  onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
-                >Security & Compliance</Link></li>
-                <li><Link 
-                  to="/services/seniors" 
-                  className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200"
-                  onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
-                >Senior Care</Link></li>
+                <li><Link to="/remote-support" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Remote Services</Link></li>
+                <li><Link to="/services/rmm" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Remote Monitoring & Mgmt</Link></li>
+                <li><Link to="/services/wsystem" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Security & Compliance</Link></li>
+                <li><Link to="/services/seniors" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Senior Care</Link></li>
               </ul>
             </div>
 
@@ -156,16 +140,8 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li><a href="https://tickets.supportcall-isp.co.za/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Ticket System</a></li>
                 <li><a href="https://wiki.supportcall.co.za/doku.php" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Our Docuwiki</a></li>
-                <li><Link 
-                  to="/links" 
-                  className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200"
-                  onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
-                >Links</Link></li>
-                <li><Link 
-                  to="/feedback-insights" 
-                  className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200"
-                  onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
-                >Feedback & Insights</Link></li>
+                <li><Link to="/links" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Links</Link></li>
+                <li><Link to="/feedback-insights" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Feedback & Insights</Link></li>
               </ul>
             </div>
           </div>
