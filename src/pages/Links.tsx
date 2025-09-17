@@ -36,8 +36,7 @@ const categories: Category[] = [
   {
     title: "Points of Presence",
     items: [
-      { name: "Australia - Interactive Map", url: "https://www.google.com/maps/d/u/0/embed?mid=1RhfknrgNES8b2Yu8jsnxQviwg1Eisiw&ehbc=2E312F" },
-      { name: "South Africa - Interactive Map", url: "https://www.google.com/maps/d/u/0/embed?mid=1OGOelK9H1wcnUUE_TmMlZOemRGFo5Rhe&ehbc=2E312F" }
+      { name: "Global PoP's - Interactive Map", url: "https://www.google.com/maps/d/u/0/embed?mid=1JK87sp9NvlGv0-AOphrhFECN5m9P6EA&ehbc=2E312F&noprof=1" }
     ]
   },
   {
