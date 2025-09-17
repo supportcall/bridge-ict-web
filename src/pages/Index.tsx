@@ -59,18 +59,80 @@ const ContactLoading = () => (
 
 
 const Index = () => {
-  usePageSEO(generateMarketingMeta('home'));
+  console.log('Index component loading...');
+  
+  try {
+    console.log('Setting up SEO...');
+    usePageSEO(generateMarketingMeta('home'));
+    console.log('SEO setup complete');
+  } catch (error) {
+    console.error('Error in SEO setup:', error);
+  }
+  
+  console.log('Rendering Index component');
   return (
     <div className="min-h-screen dark">
       {/* Conversion banner for immediate attention */}
-      <ConversionBanner />
+      {(() => {
+        try {
+          console.log('Loading ConversionBanner');
+          return <ConversionBanner />;
+        } catch (error) {
+          console.error('Error loading ConversionBanner:', error);
+          return null;
+        }
+      })()}
       
       {/* Critical above-the-fold content loads immediately */}
-      <Navigation />
-      <Hero />
-      <AudienceChooser extraNote={<>We also offer Microsoft Windows & Office, <strong>Linux alternative solutions</strong> for Enterprise, SME, Home User and Seniors</>} />
-      <About />
-      <Services />
+      {(() => {
+        try {
+          console.log('Loading Navigation');
+          return <Navigation />;
+        } catch (error) {
+          console.error('Error loading Navigation:', error);
+          return null;
+        }
+      })()}
+      
+      {(() => {
+        try {
+          console.log('Loading Hero');
+          return <Hero />;
+        } catch (error) {
+          console.error('Error loading Hero:', error);
+          return null;
+        }
+      })()}
+      
+      {(() => {
+        try {
+          console.log('Loading AudienceChooser');
+          return <AudienceChooser extraNote={<>We also offer Microsoft Windows & Office, <strong>Linux alternative solutions</strong> for Enterprise, SME, Home User and Seniors</>} />;
+        } catch (error) {
+          console.error('Error loading AudienceChooser:', error);
+          return null;
+        }
+      })()}
+      
+      {(() => {
+        try {
+          console.log('Loading About');
+          return <About />;
+        } catch (error) {
+          console.error('Error loading About:', error);
+          return null;
+        }
+      })()}
+      
+      {(() => {
+        try {
+          console.log('Loading Services');
+          return <Services />;
+        } catch (error) {
+          console.error('Error loading Services:', error);
+          return null;
+        }
+      })()}
       
       <Suspense fallback={<TestimonialsLoading />}>
         <Testimonials />
