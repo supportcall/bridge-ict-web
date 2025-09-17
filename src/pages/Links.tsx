@@ -34,6 +34,13 @@ const categories: Category[] = [
     ]
   },
   {
+    title: "Points of Presence",
+    items: [
+      { name: "Australia - Interactive Map", url: "https://www.google.com/maps/d/u/0/embed?mid=1RhfknrgNES8b2Yu8jsnxQviwg1Eisiw&ehbc=2E312F" },
+      { name: "South Africa - Interactive Map", url: "https://www.google.com/maps/d/u/0/embed?mid=1OGOelK9H1wcnUUE_TmMlZOemRGFo5Rhe&ehbc=2E312F" }
+    ]
+  },
+  {
     title: "Security Tools & Downloads",
     items: [
       { name: "ESET Status [site]", url: "https://status.eset.com/" },
