@@ -80,7 +80,7 @@ const categories: Category[] = [
     title: "Network & Status",
     items: [
       { name: "Submarine Cable Map [site]", url: "https://www.submarinecablemap.com/" },
-      { name: "Internet Exchange (IX) traffic monitoring dashboard [site]", url: "https://metrics.internet.asn.au/d/ix-aggregates/ix-aggregates?orgId=1" }
+      { name: "IX Traffic Dashboard [site]", url: "https://metrics.internet.asn.au/d/ix-aggregates/ix-aggregates?orgId=1" }
     ]
   },
   {
