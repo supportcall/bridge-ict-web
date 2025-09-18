@@ -80,9 +80,13 @@ export const optimizeCriticalPath = () => {
     if (index > 2 && !img.hasAttribute('loading')) {
       img.setAttribute('loading', 'lazy');
     }
-    // Add content-visibility for performance
-    if (index > 3) {
-      img.style.contentVisibility = 'auto';
+    // Add content-visibility for performance (only if supported)
+    if (index > 3 && 'contentVisibility' in img.style) {
+      try {
+        img.style.contentVisibility = 'auto';
+      } catch (e) {
+        // Ignore if not supported
+      }
     }
   });
   
@@ -113,21 +117,41 @@ export const optimizeCriticalPath = () => {
   dnsPreconnect.href = '//www.google-analytics.com';
   document.head.appendChild(dnsPreconnect);
 
-  // Enable passive event listeners for better scrolling performance
+  // Enable passive event listeners for better scrolling performance (safer approach)
   if ('addEventListener' in window) {
-    const originalAddEventListener = window.addEventListener;
-    window.addEventListener = function(type, listener, options) {
-      if (type === 'scroll' || type === 'wheel' || type === 'touchstart' || type === 'touchmove') {
-        if (typeof options === 'boolean') {
-          options = { passive: true, capture: options };
-        } else if (typeof options === 'object' && options !== null) {
-          options.passive = true;
-        } else {
-          options = { passive: true };
+    try {
+      // Test if passive events are supported
+      let passiveSupported = false;
+      const testOptions = Object.defineProperty({}, 'passive', {
+        get: function() {
+          passiveSupported = true;
+          return false;
         }
+      });
+      
+      const testListener = () => {};
+      window.addEventListener('test' as any, testListener, testOptions);
+      window.removeEventListener('test' as any, testListener);
+      
+      if (passiveSupported) {
+        // Only override if passive events are supported
+        const originalAddEventListener = window.addEventListener;
+        window.addEventListener = function(type, listener, options) {
+          if (type === 'scroll' || type === 'wheel' || type === 'touchstart' || type === 'touchmove') {
+            if (typeof options === 'boolean') {
+              options = { passive: true, capture: options };
+            } else if (typeof options === 'object' && options !== null) {
+              options.passive = true;
+            } else {
+              options = { passive: true };
+            }
+          }
+          return originalAddEventListener.call(this, type, listener, options);
+        };
       }
-      return originalAddEventListener.call(this, type, listener, options);
-    };
+    } catch (e) {
+      // Passive events not supported, skip this optimization
+    }
   }
 };
 
