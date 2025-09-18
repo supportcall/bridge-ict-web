@@ -36,7 +36,7 @@ const categories: Category[] = [
   {
     title: "Points of Presence",
     items: [
-      { name: "Global PoP's - Interactive Map", url: "https://www.google.com/maps/d/u/0/embed?mid=1JK87sp9NvlGv0-AOphrhFECN5m9P6EA&ehbc=2E312F&noprof=1" }
+      { name: "Global PoP's - Interactive Map [site]", url: "https://www.google.com/maps/d/u/0/embed?mid=1JK87sp9NvlGv0-AOphrhFECN5m9P6EA&ehbc=2E312F&noprof=1" }
     ]
   },
   {
@@ -92,45 +92,45 @@ const categories: Category[] = [
   {
     title: "Remote Support - SupportDesk",
     items: [
-      { name: "Windows x64 (.exe) — Run as Administrator via PowerShell", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.exe" },
-      { name: "Windows x64 (.msi) — Run as Administrator via PowerShell", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.msi" },
-      { name: "Android (.apk)", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.apk" },
-      { name: "Archive (.zip)", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.zip" },
-      { name: "SupportDesk GitHub", url: "https://github.com/rustdesk/rustdesk/releases/latest" },
-      { name: "Download Site", url: "http://156.155.253.71:8000/" },
+      { name: "Windows x64 (.exe) — Run as Administrator via PowerShell [DL]", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.exe" },
+      { name: "Windows x64 (.msi) — Run as Administrator via PowerShell [DL]", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.msi" },
+      { name: "Android (.apk) [DL]", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.apk" },
+      { name: "Archive (.zip) [DL]", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.zip" },
+      { name: "SupportDesk GitHub [site]", url: "https://github.com/rustdesk/rustdesk/releases/latest" },
+      { name: "Download Site [site]", url: "http://156.155.253.71:8000/" },
       { name: "Relay Server (Copy Information)", url: "host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=", type: "copy" }
     ]
   },
   {
     title: "Remote Support - Google Remote Desktop",
     items: [
-      { name: "Client — MSI Download", url: "https://dl.google.com/dl/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi" },
-      { name: "Web Client — Run in Browser", url: "https://remotedesktop.google.com/support/" }
+      { name: "Client — MSI Download [DL]", url: "https://dl.google.com/dl/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi" },
+      { name: "Web Client — Run in Browser [site]", url: "https://remotedesktop.google.com/support/" }
     ]
   },
   {
     title: "TacticalRMM",
     items: [
-      { name: "Windows Workstation/Desktop x64 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-workstation-amd64.exe" },
-      { name: "Windows Workstation/Desktop x86 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-workstation-386.exe" },
-      { name: "Windows Server x64 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-server-amd64.exe" },
-      { name: "Windows Server x86 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-server-386.exe" }
+      { name: "Windows Workstation/Desktop x64 — Download (Run as Administrator) [DL]", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-workstation-amd64.exe" },
+      { name: "Windows Workstation/Desktop x86 — Download (Run as Administrator) [DL]", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-workstation-386.exe" },
+      { name: "Windows Server x64 — Download (Run as Administrator) [DL]", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-server-amd64.exe" },
+      { name: "Windows Server x86 — Download (Run as Administrator) [DL]", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-server-386.exe" }
     ]
   },
   {
     title: "AnyDesk — No Longer Supported",
     items: [
-      { name: "Download AnyDesk", url: "https://anydesk.com/download" }
+      { name: "Download AnyDesk [site]", url: "https://anydesk.com/download" }
     ]
   },
   {
     title: "TeamViewer — No Longer Supported",
     items: [
-      { name: "Download Latest TeamViewer", url: "https://download.teamviewer.com/full" },
-      { name: "TeamViewer v14 Portable", url: "https://download.teamviewer.com/download/version_14x/TeamViewerPortable.zip" },
-      { name: "TeamViewer v14 QuickSupport", url: "https://download.teamviewer.com/download/version_14x/TeamViewerQS.exe" },
-      { name: "TeamViewer v12 Portable", url: "https://download.teamviewer.com/download/version_12x/TeamViewerPortable.zip" },
-      { name: "TeamViewer v12 QuickSupport", url: "https://download.teamviewer.com/download/version_12x/TeamViewerQS.exe" }
+      { name: "Download Latest TeamViewer [DL]", url: "https://download.teamviewer.com/full" },
+      { name: "TeamViewer v14 Portable [DL]", url: "https://download.teamviewer.com/download/version_14x/TeamViewerPortable.zip" },
+      { name: "TeamViewer v14 QuickSupport [DL]", url: "https://download.teamviewer.com/download/version_14x/TeamViewerQS.exe" },
+      { name: "TeamViewer v12 Portable [DL]", url: "https://download.teamviewer.com/download/version_12x/TeamViewerPortable.zip" },
+      { name: "TeamViewer v12 QuickSupport [DL]", url: "https://download.teamviewer.com/download/version_12x/TeamViewerQS.exe" }
     ]
   }
 ];
