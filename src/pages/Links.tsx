@@ -181,11 +181,11 @@ const Links = () => {
       </section>
 
       {/* Key/Legend Section */}
-      <section className="py-8 bg-background">
+      <section className="py-4 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-card p-6 rounded-lg border border-border/50">
-            <h2 className="text-lg font-semibold mb-4 text-foreground">Key</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+          <div className="bg-card/50 p-3 rounded border border-border/30">
+            <h2 className="text-sm font-medium mb-2 text-muted-foreground">Key</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-2 text-xs">
               <div className="flex items-center gap-2">
                 <Badge variant="outline" className="text-xs">[site]</Badge>
                 <span className="text-muted-foreground">External websites</span>
