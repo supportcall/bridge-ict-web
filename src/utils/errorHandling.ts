@@ -109,7 +109,9 @@ SA: ${FALLBACK_CONTACT.SA.phone}
 AU: ${FALLBACK_CONTACT.AU.phone}
     `.trim();
     
-    console.warn('Offline mode detected');
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('Offline mode detected');
+    }
     return offlineMessage;
   }
   return null;
@@ -119,11 +121,15 @@ AU: ${FALLBACK_CONTACT.AU.phone}
 export const initializeErrorHandling = () => {
   // Handle offline/online events
   window.addEventListener('offline', () => {
-    console.warn('Application is now offline');
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('Application is now offline');
+    }
   });
   
   window.addEventListener('online', () => {
-    console.log('Application is back online');
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Application is back online');
+    }
   });
   
   // Global error handler for unhandled promises

@@ -105,7 +105,9 @@ export const enforceSecurityBestPractices = () => {
     'Referrer-Policy'
   ];
   
-  console.log('Security headers should be configured on server:', securityHeaders);
+  if (process.env.NODE_ENV === 'development') {
+    console.log('Security headers should be configured on server:', securityHeaders);
+  }
 };
 
 // Data protection utilities

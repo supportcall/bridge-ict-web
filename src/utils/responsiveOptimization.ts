@@ -19,7 +19,9 @@ export const optimizeImagesForDevice = () => {
     // Add error handling
     img.onerror = function() {
       this.style.display = 'none';
-      console.warn(`Failed to load image: ${this.src}`);
+      if (process.env.NODE_ENV === 'development') {
+        console.warn(`Failed to load image: ${this.src}`);
+      }
     };
   });
 };

@@ -253,7 +253,9 @@ ${body}${csvData ? `\n\nForm Data (CSV):\n${convertToCSV(csvData)}` : ''}`;
       });
       
       // Log securely without sensitive data
-      console.log('✅ Form submission prepared for email client');
+      if (process.env.NODE_ENV === 'development') {
+        console.log('✅ Form submission prepared for email client');
+      }
       return true;
     } else {
       // Fallback for non-secure contexts or older browsers
@@ -284,11 +286,14 @@ const legacyClipboardCopy = async (content: string): Promise<boolean> => {
     // Try modern copy first, fallback to legacy if needed
     let success = false;
     try {
-      if (document.queryCommandSupported && document.queryCommandSupported('copy')) {
+      // Use deprecated execCommand only as last resort
+      if (typeof document !== 'undefined' && document.execCommand) {
         success = document.execCommand('copy');
       }
     } catch (execError) {
-      console.warn('Legacy copy method failed:', execError);
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('Legacy copy method failed:', execError);
+      }
     }
     
     // Clean up
@@ -306,7 +311,9 @@ const legacyClipboardCopy = async (content: string): Promise<boolean> => {
         duration: 7000,
         description: "Form data logged for manual copying"
       });
-      console.log('📧 Manual copy required - Email content:', content);
+      if (process.env.NODE_ENV === 'development') {
+        console.log('📧 Manual copy required - Email content:', content);
+      }
       return false;
     }
   } catch (error) {
@@ -314,7 +321,9 @@ const legacyClipboardCopy = async (content: string): Promise<boolean> => {
       duration: 7000
     });
     console.error('All clipboard methods failed:', protectSensitiveData(error?.toString() || 'Unknown error'));
-    console.log('📧 Email content for manual handling:', content);
+    if (process.env.NODE_ENV === 'development') {
+      console.log('📧 Email content for manual handling:', content);
+    }
     return false;
   }
 };

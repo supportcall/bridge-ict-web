@@ -5,7 +5,9 @@ export const performanceObserver = {
   observeWebVitals: () => {
     if (typeof window !== 'undefined' && 'web-vital' in window) {
       // This would integrate with web-vitals library in production
-      console.log('Web Vitals monitoring enabled');
+      if (process.env.NODE_ENV === 'development') {
+        console.log('Web Vitals monitoring enabled');
+      }
     }
   },
 
@@ -69,7 +71,9 @@ export const memoryUsage = () => {
 // Critical rendering path optimization - Self-contained with maximum performance
 export const optimizeCriticalPath = () => {
   // Self-contained optimization - no external preconnects needed
-  console.log('Self-contained mode: Maximum performance optimizations enabled');
+  if (process.env.NODE_ENV === 'development') {
+    console.log('Self-contained mode: Maximum performance optimizations enabled');
+  }
   
   // Ensure all images have loading="lazy" except above-the-fold
   document.querySelectorAll('img').forEach((img, index) => {
@@ -132,7 +136,7 @@ export const registerServiceWorker = async () => {
   if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
     try {
       const registration = await navigator.serviceWorker.register('/sw.js');
-      console.log('Service Worker registered:', registration);
+      console.log('Service Worker registered successfully');
     } catch (error) {
       console.error('Service Worker registration failed:', error);
     }
