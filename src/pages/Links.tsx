@@ -181,23 +181,29 @@ const Links = () => {
       </section>
 
       {/* Key/Legend Section */}
-      <section className="py-6 bg-background">
+      <section className="py-8 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <p className="text-xs text-muted-foreground mb-3">
-              <span className="inline-flex items-center gap-1 mr-4">
-                <Badge variant="outline" className="text-xs">[site]</Badge> External sites
-              </span>
-              <span className="inline-flex items-center gap-1 mr-4">
-                <Badge variant="outline" className="text-xs">[DL]</Badge> Downloads
-              </span>
-              <span className="inline-flex items-center gap-1 mr-4">
-                <Copy className="w-3 h-3" /> Copy
-              </span>
-            </p>
-            <p className="text-xs text-muted-foreground/80">
-              "Run as Administrator": Download → Right-click → Select "Run as Administrator"
-            </p>
+          <div className="bg-card p-6 rounded-lg border border-border/50">
+            <h2 className="text-lg font-semibold mb-4 text-foreground">Key</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+              <div className="flex items-center gap-2">
+                <Badge variant="outline" className="text-xs">[site]</Badge>
+                <span className="text-muted-foreground">External websites</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Badge variant="outline" className="text-xs">[DL]</Badge>
+                <span className="text-muted-foreground">File downloads</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Copy className="w-4 h-4 text-primary shrink-0" />
+                <span className="text-muted-foreground">Copy to clipboard</span>
+              </div>
+              <div className="col-span-full sm:col-span-2 lg:col-span-1">
+                <div className="text-muted-foreground">
+                  <strong>"Download (Run as Administrator)":</strong> Download file, then right-click and select "Run as Administrator"
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
