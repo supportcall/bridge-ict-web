@@ -179,24 +179,24 @@ const Links = () => {
             </p>
             
             {/* Key/Legend */}
-            <div className="max-w-2xl mx-auto">
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4">
-                <h3 className="text-white font-medium mb-3 text-sm">Key:</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-white/70">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
+                <h3 className="text-white font-medium mb-4 text-center">Key:</h3>
+                <div className="flex flex-wrap justify-center gap-6 text-sm text-white/80">
                   <div className="flex items-center gap-2">
-                    <span className="text-primary">[site]</span>
+                    <span className="bg-primary/20 text-primary px-2 py-1 rounded text-xs font-mono">[site]</span>
                     <span>External websites</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-primary">[DL]</span>
-                    <span>Direct file downloads</span>
+                    <span className="bg-primary/20 text-primary px-2 py-1 rounded text-xs font-mono">[DL]</span>
+                    <span>Direct downloads</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-primary">Download (Run as Administrator)</span>
-                    <span>Download & run as Admin</span>
+                    <span className="bg-accent/20 text-accent px-2 py-1 rounded text-xs">Run as Admin</span>
+                    <span>Download & right-click → Run as Administrator</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-primary">Copy Information</span>
+                    <span className="bg-secondary/20 text-secondary px-2 py-1 rounded text-xs">Copy Info</span>
                     <span>Click to copy to clipboard</span>
                   </div>
                 </div>
