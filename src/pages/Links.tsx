@@ -99,7 +99,7 @@ const categories: Category[] = [
       { name: "Archive (.zip) [DL]", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.zip" },
       { name: "SupportDesk GitHub [site]", url: "https://github.com/rustdesk/rustdesk/releases/latest" },
       { name: "Download Site [site]", url: "http://156.155.253.71:8000/" },
-      { name: "Relay Server (Copy Information)", url: "host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=", type: "copy" }
+      { name: "Relay Server (Copy Info)", url: "host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=", type: "copy" }
     ]
   },
   {
@@ -196,7 +196,7 @@ const Links = () => {
                     <span>Download & right-click → Run as Administrator</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="bg-muted/50 text-muted-foreground px-2 py-1 rounded text-xs">(Copy Info)</span>
+                    <span className="bg-orange-500/20 text-orange-400 px-2 py-1 rounded text-xs">(Copy Info)</span>
                     <span>Click to copy to clipboard</span>
                   </div>
                 </div>
