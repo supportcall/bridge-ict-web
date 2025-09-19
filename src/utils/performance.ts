@@ -111,11 +111,15 @@ export const optimizeCriticalPath = () => {
     viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover');
   }
 
-  // Add resource hints for performance
-  const dnsPreconnect = document.createElement('link');
-  dnsPreconnect.rel = 'dns-prefetch';
-  dnsPreconnect.href = '//www.google-analytics.com';
-  document.head.appendChild(dnsPreconnect);
+  // Add resource hints for performance (with error handling)
+  try {
+    const dnsPreconnect = document.createElement('link');
+    dnsPreconnect.rel = 'dns-prefetch';
+    dnsPreconnect.href = '//www.google-analytics.com';
+    document.head.appendChild(dnsPreconnect);
+  } catch (error) {
+    // Ignore DNS prefetch errors in privacy-focused browsers
+  }
 
   // Enable passive event listeners for better scrolling performance (safer approach)
   if ('addEventListener' in window) {
