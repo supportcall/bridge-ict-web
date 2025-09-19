@@ -93,8 +93,8 @@ const categories: Category[] = [
   {
     title: "Remote Support - SupportDesk",
     items: [
-      { name: "Windows x64 (.exe) — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.exe" },
-      { name: "Windows x64 (.msi) — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.msi" },
+      { name: "Windows x64 (.exe) [DL & Run as Admin]", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.exe" },
+      { name: "Windows x64 (.msi) [DL & Run as Admin]", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.msi" },
       { name: "Android (.apk) [DL]", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.apk" },
       { name: "Archive (.zip) [DL]", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.zip" },
       { name: "SupportDesk GitHub [site]", url: "https://github.com/rustdesk/rustdesk/releases/latest" },
@@ -112,10 +112,10 @@ const categories: Category[] = [
   {
     title: "TacticalRMM",
     items: [
-      { name: "Windows Workstation/Desktop x64 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-workstation-amd64.exe" },
-      { name: "Windows Workstation/Desktop x86 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-workstation-386.exe" },
-      { name: "Windows Server x64 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-server-amd64.exe" },
-      { name: "Windows Server x86 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-server-386.exe" }
+      { name: "Windows Workstation/Desktop x64 [DL & Run as Admin]", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-workstation-amd64.exe" },
+      { name: "Windows Workstation/Desktop x86 [DL & Run as Admin]", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-workstation-386.exe" },
+      { name: "Windows Server x64 [DL & Run as Admin]", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-server-amd64.exe" },
+      { name: "Windows Server x86 [DL & Run as Admin]", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-server-386.exe" }
     ]
   },
   {
@@ -192,11 +192,11 @@ const Links = () => {
                     <span>Direct downloads</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="bg-accent/20 text-accent px-2 py-1 rounded text-xs">Run as Admin</span>
+                    <span className="bg-accent/20 text-accent px-2 py-1 rounded text-xs">[DL & Run as Admin]</span>
                     <span>Download & right-click → Run as Administrator</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="bg-secondary/20 text-secondary px-2 py-1 rounded text-xs">Copy Info</span>
+                    <span className="bg-secondary/20 text-secondary px-2 py-1 rounded text-xs">(Copy Info)</span>
                     <span>Click to copy to clipboard</span>
                   </div>
                 </div>
