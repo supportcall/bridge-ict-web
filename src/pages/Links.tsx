@@ -79,7 +79,8 @@ const categories: Category[] = [
   {
     title: "Network & Status",
     items: [
-      { name: "Submarine Cable Map [site]", url: "https://www.submarinecablemap.com/" }
+      { name: "Submarine Cable Map [site]", url: "https://www.submarinecablemap.com/" },
+      { name: "Australian IX Traffic [site]", url: "https://metrics.internet.asn.au/d/ix-aggregates/ix-aggregates?orgId=1&from=now-2d&to=now" }
     ]
   },
   {
@@ -92,20 +93,20 @@ const categories: Category[] = [
   {
     title: "Remote Support - SupportDesk",
     items: [
-      { name: "Windows x64 (.exe) — Run as Administrator via PowerShell", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.exe" },
-      { name: "Windows x64 (.msi) — Run as Administrator via PowerShell", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.msi" },
-      { name: "Android (.apk)", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.apk" },
-      { name: "Archive (.zip)", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.zip" },
-      { name: "SupportDesk GitHub", url: "https://github.com/rustdesk/rustdesk/releases/latest" },
-      { name: "Download Site", url: "http://156.155.253.71:8000/" },
+      { name: "Windows x64 (.exe) — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.exe" },
+      { name: "Windows x64 (.msi) — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.msi" },
+      { name: "Android (.apk) [DL]", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.apk" },
+      { name: "Archive (.zip) [DL]", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.zip" },
+      { name: "SupportDesk GitHub [site]", url: "https://github.com/rustdesk/rustdesk/releases/latest" },
+      { name: "Download Site [site]", url: "http://156.155.253.71:8000/" },
       { name: "Relay Server (Copy Information)", url: "host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=", type: "copy" }
     ]
   },
   {
     title: "Remote Support - Google Remote Desktop",
     items: [
-      { name: "Client — MSI Download", url: "https://dl.google.com/dl/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi" },
-      { name: "Web Client — Run in Browser", url: "https://remotedesktop.google.com/support/" }
+      { name: "Client — MSI [DL]", url: "https://dl.google.com/dl/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi" },
+      { name: "Web Client — Run in Browser [site]", url: "https://remotedesktop.google.com/support/" }
     ]
   },
   {
@@ -120,17 +121,17 @@ const categories: Category[] = [
   {
     title: "AnyDesk — No Longer Supported",
     items: [
-      { name: "Download AnyDesk", url: "https://anydesk.com/download" }
+      { name: "Download AnyDesk [site]", url: "https://anydesk.com/download" }
     ]
   },
   {
     title: "TeamViewer — No Longer Supported",
     items: [
-      { name: "Download Latest TeamViewer", url: "https://download.teamviewer.com/full" },
-      { name: "TeamViewer v14 Portable", url: "https://download.teamviewer.com/download/version_14x/TeamViewerPortable.zip" },
-      { name: "TeamViewer v14 QuickSupport", url: "https://download.teamviewer.com/download/version_14x/TeamViewerQS.exe" },
-      { name: "TeamViewer v12 Portable", url: "https://download.teamviewer.com/download/version_12x/TeamViewerPortable.zip" },
-      { name: "TeamViewer v12 QuickSupport", url: "https://download.teamviewer.com/download/version_12x/TeamViewerQS.exe" }
+      { name: "Download Latest TeamViewer [site]", url: "https://download.teamviewer.com/full" },
+      { name: "TeamViewer v14 Portable [DL]", url: "https://download.teamviewer.com/download/version_14x/TeamViewerPortable.zip" },
+      { name: "TeamViewer v14 QuickSupport [DL]", url: "https://download.teamviewer.com/download/version_14x/TeamViewerQS.exe" },
+      { name: "TeamViewer v12 Portable [DL]", url: "https://download.teamviewer.com/download/version_12x/TeamViewerPortable.zip" },
+      { name: "TeamViewer v12 QuickSupport [DL]", url: "https://download.teamviewer.com/download/version_12x/TeamViewerQS.exe" }
     ]
   }
 ];
@@ -173,9 +174,34 @@ const Links = () => {
           <div className="text-center">
             <Badge variant="secondary" className="mb-4">Resources</Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Links</h1>
-            <p className="text-white/80 text-lg max-w-3xl mx-auto">
+            <p className="text-white/80 text-lg max-w-3xl mx-auto mb-8">
               Quick access to SupportCALL tools, downloads, status pages and reference resources.
             </p>
+            
+            {/* Key/Legend */}
+            <div className="max-w-2xl mx-auto">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4">
+                <h3 className="text-white font-medium mb-3 text-sm">Key:</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-white/70">
+                  <div className="flex items-center gap-2">
+                    <span className="text-primary">[site]</span>
+                    <span>External websites</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-primary">[DL]</span>
+                    <span>Direct file downloads</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-primary">Download (Run as Administrator)</span>
+                    <span>Download & run as Admin</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-primary">Copy Information</span>
+                    <span>Click to copy to clipboard</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
