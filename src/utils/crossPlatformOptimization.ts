@@ -27,21 +27,12 @@ export const optimizeForDevice = () => {
       viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
     }
     
-    // Fix iOS scroll bounce (with proper error handling)
-    try {
-      document.body.addEventListener('touchmove', (e) => {
-        if (e.target === document.body) {
-          e.preventDefault();
-        }
-      }, { passive: false });
-    } catch (e) {
-      // Fallback for browsers that don't support passive option
-      document.body.addEventListener('touchmove', (e) => {
-        if (e.target === document.body) {
-          e.preventDefault();
-        }
-      });
-    }
+    // Fix iOS scroll bounce
+    document.body.addEventListener('touchmove', (e) => {
+      if (e.target === document.body) {
+        e.preventDefault();
+      }
+    }, { passive: false });
   }
   
   // Android-specific optimizations

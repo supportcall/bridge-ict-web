@@ -108,9 +108,7 @@ export const trackConversion = (eventName: string, value?: number) => {
   }
   
   // Console tracking for development
-  if (process.env.NODE_ENV === 'development') {
-    console.log(`Conversion Event: ${eventName}`, { value });
-  }
+  console.log(`Conversion Event: ${eventName}`, { value });
 };
 
 // Marketing performance optimization

@@ -106,16 +106,12 @@ export const optimizeFormNavigation = () => {
   
   forms.forEach((form) => {
     form.addEventListener('submit', (e) => {
-      // Track form submissions - safe gtag usage
-      try {
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'form_submit', {
-            form_id: form.id || 'unknown',
-            form_action: form.action || 'unknown'
-          });
-        }
-      } catch (error) {
-        // Ignore gtag errors to prevent page breakage
+      // Track form submissions
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'form_submit', {
+          form_id: form.id || 'unknown',
+          form_action: form.action || 'unknown'
+        });
       }
     });
   });

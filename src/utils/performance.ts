@@ -5,9 +5,7 @@ export const performanceObserver = {
   observeWebVitals: () => {
     if (typeof window !== 'undefined' && 'web-vital' in window) {
       // This would integrate with web-vitals library in production
-      if (process.env.NODE_ENV === 'development') {
-        console.log('Web Vitals monitoring enabled');
-      }
+      console.log('Web Vitals monitoring enabled');
     }
   },
 
@@ -71,22 +69,16 @@ export const memoryUsage = () => {
 // Critical rendering path optimization - Self-contained with maximum performance
 export const optimizeCriticalPath = () => {
   // Self-contained optimization - no external preconnects needed
-  if (process.env.NODE_ENV === 'development') {
-    console.log('Self-contained mode: Maximum performance optimizations enabled');
-  }
+  console.log('Self-contained mode: Maximum performance optimizations enabled');
   
   // Ensure all images have loading="lazy" except above-the-fold
   document.querySelectorAll('img').forEach((img, index) => {
     if (index > 2 && !img.hasAttribute('loading')) {
       img.setAttribute('loading', 'lazy');
     }
-    // Add content-visibility for performance (only if supported)
-    if (index > 3 && 'contentVisibility' in img.style) {
-      try {
-        img.style.contentVisibility = 'auto';
-      } catch (e) {
-        // Ignore if not supported
-      }
+    // Add content-visibility for performance
+    if (index > 3) {
+      img.style.contentVisibility = 'auto';
     }
   });
   
@@ -111,51 +103,27 @@ export const optimizeCriticalPath = () => {
     viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover');
   }
 
-  // Add resource hints for performance (with error handling)
-  try {
-    const dnsPreconnect = document.createElement('link');
-    dnsPreconnect.rel = 'dns-prefetch';
-    dnsPreconnect.href = '//www.google-analytics.com';
-    document.head.appendChild(dnsPreconnect);
-  } catch (error) {
-    // Ignore DNS prefetch errors in privacy-focused browsers
-  }
+  // Add resource hints for performance
+  const dnsPreconnect = document.createElement('link');
+  dnsPreconnect.rel = 'dns-prefetch';
+  dnsPreconnect.href = '//www.google-analytics.com';
+  document.head.appendChild(dnsPreconnect);
 
-  // Enable passive event listeners for better scrolling performance (safer approach)
+  // Enable passive event listeners for better scrolling performance
   if ('addEventListener' in window) {
-    try {
-      // Test if passive events are supported
-      let passiveSupported = false;
-      const testOptions = Object.defineProperty({}, 'passive', {
-        get: function() {
-          passiveSupported = true;
-          return false;
+    const originalAddEventListener = window.addEventListener;
+    window.addEventListener = function(type, listener, options) {
+      if (type === 'scroll' || type === 'wheel' || type === 'touchstart' || type === 'touchmove') {
+        if (typeof options === 'boolean') {
+          options = { passive: true, capture: options };
+        } else if (typeof options === 'object' && options !== null) {
+          options.passive = true;
+        } else {
+          options = { passive: true };
         }
-      });
-      
-      const testListener = () => {};
-      window.addEventListener('test' as any, testListener, testOptions);
-      window.removeEventListener('test' as any, testListener);
-      
-      if (passiveSupported) {
-        // Only override if passive events are supported
-        const originalAddEventListener = window.addEventListener;
-        window.addEventListener = function(type, listener, options) {
-          if (type === 'scroll' || type === 'wheel' || type === 'touchstart' || type === 'touchmove') {
-            if (typeof options === 'boolean') {
-              options = { passive: true, capture: options };
-            } else if (typeof options === 'object' && options !== null) {
-              options.passive = true;
-            } else {
-              options = { passive: true };
-            }
-          }
-          return originalAddEventListener.call(this, type, listener, options);
-        };
       }
-    } catch (e) {
-      // Passive events not supported, skip this optimization
-    }
+      return originalAddEventListener.call(this, type, listener, options);
+    };
   }
 };
 
@@ -164,7 +132,7 @@ export const registerServiceWorker = async () => {
   if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
     try {
       const registration = await navigator.serviceWorker.register('/sw.js');
-      console.log('Service Worker registered successfully');
+      console.log('Service Worker registered:', registration);
     } catch (error) {
       console.error('Service Worker registration failed:', error);
     }

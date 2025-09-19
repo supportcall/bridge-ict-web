@@ -143,25 +143,20 @@ export const optimizeMeta = () => {
   }
   canonical.href = window.location.href.split('?')[0].split('#')[0];
 
-  // Add preconnect for performance (only if not blocked by browser)
-  try {
-    const preconnects = [
-      'https://www.google-analytics.com',
-      'https://www.googletagmanager.com'
-    ];
+  // Add preconnect for performance
+  const preconnects = [
+    'https://www.google-analytics.com',
+    'https://www.googletagmanager.com'
+  ];
 
-    preconnects.forEach(url => {
-      if (!document.querySelector(`link[href="${url}"]`)) {
-        const link = document.createElement('link');
-        link.rel = 'preconnect';
-        link.href = url;
-        link.crossOrigin = 'anonymous';
-        document.head.appendChild(link);
-      }
-    });
-  } catch (error) {
-    // Ignore errors if browser blocks external connections
-  }
+  preconnects.forEach(url => {
+    if (!document.querySelector(`link[href="${url}"]`)) {
+      const link = document.createElement('link');
+      link.rel = 'preconnect';
+      link.href = url;
+      document.head.appendChild(link);
+    }
+  });
 };
 
 export const addLocalBusinessMarkup = () => {
