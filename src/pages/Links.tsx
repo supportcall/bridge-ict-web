@@ -36,7 +36,7 @@ const categories: Category[] = [
   {
     title: "Points of Presence",
     items: [
-      { name: "Global PoP's - Interactive Map", url: "https://www.google.com/maps/d/u/0/embed?mid=1JK87sp9NvlGv0-AOphrhFECN5m9P6EA&ehbc=2E312F&noprof=1" }
+      { name: "Global PoP's - Interactive Map [site]", url: "https://www.google.com/maps/d/u/0/embed?mid=1JK87sp9NvlGv0-AOphrhFECN5m9P6EA&ehbc=2E312F&noprof=1" }
     ]
   },
   {
@@ -46,8 +46,8 @@ const categories: Category[] = [
       { name: "Malwarebytes Status [site]", url: "https://status.malwarebytes.com/" },
       { name: "AdwCleaner [DL]", url: "https://downloads.malwarebytes.com/file/adwcleaner" },
       { name: "Malwarebytes FREE [DL]", url: "https://www.malwarebytes.com/mwb-download/thankyou" },
-      { name: "ESET Home Downloads [DL]", url: "https://www.eset.com/int/download-home/" },
-      { name: "ESET Internet Security Premium [DL]", url: "https://www.eset.com/int/home/smart-security-premium/download/" },
+      { name: "ESET Home Downloads [site]", url: "https://www.eset.com/int/download-home/" },
+      { name: "ESET Internet Security Premium [site]", url: "https://www.eset.com/int/home/smart-security-premium/download/" },
       { name: "ESET Online Installer [DL]", url: "https://download.eset.com/com/eset/tools/installers/live_eav/latest/eset_nod32_antivirus_live_installer.exe" },
       { name: "ESET v18.x Offline Installers [site]", url: "https://help.eset.com/esu/18/en-US/?installation_offline.html" },
       { name: "ESET Free Online Scanner [site]", url: "https://www.eset.com/za/home/online-scanner/" },
