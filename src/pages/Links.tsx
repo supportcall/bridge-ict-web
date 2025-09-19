@@ -196,7 +196,7 @@ const Links = () => {
                     <span>Download & right-click → Run as Administrator</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="bg-secondary/20 text-secondary px-2 py-1 rounded text-xs">(Copy Info)</span>
+                    <span className="bg-muted/50 text-muted-foreground px-2 py-1 rounded text-xs">(Copy Info)</span>
                     <span>Click to copy to clipboard</span>
                   </div>
                 </div>
