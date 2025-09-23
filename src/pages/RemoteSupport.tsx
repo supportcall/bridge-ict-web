@@ -198,11 +198,8 @@ const RemoteSupport = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               Supported Platforms
             </h2>
-            <p className="text-lg text-muted-foreground mb-4">
+            <p className="text-lg text-muted-foreground">
               We provide remote support across all major operating systems and platforms
-            </p>
-            <p className="text-sm text-muted-foreground/80 italic">
-              * Local support levels may vary based on support levels available at the time
             </p>
           </div>
 
