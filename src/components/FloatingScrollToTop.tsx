@@ -8,7 +8,7 @@ const FloatingScrollToTop = () => {
 
   // Show button when page is scrolled down (visible after meaningful scroll)
   const toggleVisibility = () => {
-    if (window.scrollY > 100) { // Show after scrolling 100px from top for better UX
+    if (window.scrollY > 50) { // Show after scrolling 50px from top for better UX
       setIsVisible(true);
     } else {
       setIsVisible(false);
