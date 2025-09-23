@@ -77,7 +77,7 @@ const OutcomeBasedPlan = () => {
                 />
               </div>
               <p className="text-sm text-muted-foreground mt-2">
-                Minimum 3 months • Pay monthly or upfront
+                Minimum 3 months • Pay monthly or the minimum upfront
               </p>
             </CardHeader>
             <CardContent>
