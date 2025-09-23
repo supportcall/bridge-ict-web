@@ -13,14 +13,28 @@ import {
   Database,
   Lock,
   Phone,
-  ArrowRight
+  ArrowRight,
+  Heart,
+  Zap
 } from "lucide-react";
 import servicesIcon from "@/assets/services-icon.jpg";
 import { openBooking } from "@/utils/booking";
 import { useNavigate } from "react-router-dom";
 import OutcomeBasedPlan from "@/components/OutcomeBasedPlan";
+import { usePageSEO } from "@/hooks/usePageSEO";
+import { generateServiceSchema, MARKETING_OPTIMIZATIONS } from "@/utils/seo";
 
 const Services = () => {
+  const navigate = useNavigate();
+  
+  // SEO optimization for services section
+  usePageSEO({
+    title: "Comprehensive ICT Services | SupportCALL - Remote Monitoring, Security & Tech Support",
+    description: "Expert ICT services including TacticalRMM monitoring, W.system security, senior care support, and local tech sourcing. Professional IT solutions that drive real results.",
+    keywords: "ICT services, remote monitoring, IT security, senior tech support, TacticalRMM, W.system, local tech support, IT consulting",
+    structuredData: generateServiceSchema('SupportCALL ICT Services', 'Comprehensive ICT solutions including remote monitoring, security, compliance, and specialized support services.')
+  });
+
   const primaryServices = [
     {
       icon: <Server className="w-8 h-8" />,
@@ -41,10 +55,16 @@ const Services = () => {
       features: ["Remote Location Coverage", "Local Tech Sourcing", "On-site Support", "Emergency Response", "Field Reporting"]
     },
     {
-      icon: <Users className="w-8 h-8" />,
+      icon: <Heart className="w-8 h-8" />,
       title: "Peace of Mind for Seniors",
       description: "Specialized reduced-cost monthly remote support service for verified pensioners and retired users, providing patient and comprehensive tech assistance for desktop and laptop users.",
       features: ["Reduced Monthly Fee", "Senior-Friendly Support", "Remote Assistance", "Verified Eligibility", "Patient Guidance"]
+    },
+    {
+      icon: <Zap className="w-8 h-8" />,
+      title: "Outcome-Based Solutions",
+      description: "Stop worrying about hourly rates and surprise costs. Tell us what you want achieved, and we'll provide a fixed price quote for your desired outcome with worry-free, outcome-focused solutions.",
+      features: ["Fixed Price Quotes", "No Hourly Surprises", "Outcome Focused", "Monthly Subscription Model", "Results Guaranteed"]
     }
   ];
 
@@ -81,7 +101,6 @@ const Services = () => {
     }
   ];
 
-  const navigate = useNavigate();
   return (
     <section id="services" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -129,9 +148,13 @@ const Services = () => {
         </div>
 
         {/* Primary Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16">
           {primaryServices.map((service, index) => (
-            <Card key={index} className="hover:shadow-elegant transition-all duration-300 group">
+            <Card 
+              key={index} 
+              className="hover:shadow-elegant transition-all duration-300 group h-full"
+              data-track="service-card"
+            >
               <CardHeader>
                 <div className="flex items-start space-x-4">
                   <div className="text-primary group-hover:text-primary-glow transition-colors">
@@ -262,6 +285,8 @@ const Services = () => {
               size="lg"
               onClick={() => openBooking()}
               className="animate-pulse hover:animate-none"
+              data-cta="book-consultation"
+              aria-label="Book free consultation with ICT experts"
             >
               Book FREE Consultation Now
             </Button>
@@ -271,11 +296,14 @@ const Services = () => {
               onClick={() => {
                 const contactSection = document.querySelector('#contact');
                 if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                  contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 } else {
                   navigate('/#contact');
+                  setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
                 }
               }}
+              data-cta="get-quote"
+              aria-label="Get instant quote for ICT services"
             >
               Get Instant Quote
             </Button>
