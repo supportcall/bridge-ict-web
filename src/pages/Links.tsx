@@ -36,7 +36,7 @@ const categories: Category[] = [
   {
     title: "Points of Presence",
     items: [
-      { name: "Global PoP's - Interactive Map", url: "https://www.google.com/maps/d/u/0/embed?mid=1JK87sp9NvlGv0-AOphrhFECN5m9P6EA&ehbc=2E312F&noprof=1" }
+      { name: "Global PoP's - Interactive Map [site]", url: "https://www.google.com/maps/d/u/0/embed?mid=1JK87sp9NvlGv0-AOphrhFECN5m9P6EA&ehbc=2E312F&noprof=1" }
     ]
   },
   {
@@ -46,8 +46,8 @@ const categories: Category[] = [
       { name: "Malwarebytes Status [site]", url: "https://status.malwarebytes.com/" },
       { name: "AdwCleaner [DL]", url: "https://downloads.malwarebytes.com/file/adwcleaner" },
       { name: "Malwarebytes FREE [DL]", url: "https://www.malwarebytes.com/mwb-download/thankyou" },
-      { name: "ESET Home Downloads [DL]", url: "https://www.eset.com/int/download-home/" },
-      { name: "ESET Internet Security Premium [DL]", url: "https://www.eset.com/int/home/smart-security-premium/download/" },
+      { name: "ESET Home Downloads [site]", url: "https://www.eset.com/int/download-home/" },
+      { name: "ESET Internet Security Premium [site]", url: "https://www.eset.com/int/home/smart-security-premium/download/" },
       { name: "ESET Online Installer [DL]", url: "https://download.eset.com/com/eset/tools/installers/live_eav/latest/eset_nod32_antivirus_live_installer.exe" },
       { name: "ESET v18.x Offline Installers [site]", url: "https://help.eset.com/esu/18/en-US/?installation_offline.html" },
       { name: "ESET Free Online Scanner [site]", url: "https://www.eset.com/za/home/online-scanner/" },
@@ -79,7 +79,8 @@ const categories: Category[] = [
   {
     title: "Network & Status",
     items: [
-      { name: "Submarine Cable Map [site]", url: "https://www.submarinecablemap.com/" }
+      { name: "Submarine Cable Map [site]", url: "https://www.submarinecablemap.com/" },
+      { name: "Australian IX Traffic [site]", url: "https://metrics.internet.asn.au/d/ix-aggregates/ix-aggregates?orgId=1&from=now-2d&to=now" }
     ]
   },
   {
@@ -92,45 +93,45 @@ const categories: Category[] = [
   {
     title: "Remote Support - SupportDesk",
     items: [
-      { name: "Windows x64 (.exe) — Run as Administrator via PowerShell", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.exe" },
-      { name: "Windows x64 (.msi) — Run as Administrator via PowerShell", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.msi" },
-      { name: "Android (.apk)", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.apk" },
-      { name: "Archive (.zip)", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.zip" },
-      { name: "SupportDesk GitHub", url: "https://github.com/rustdesk/rustdesk/releases/latest" },
-      { name: "Download Site", url: "http://156.155.253.71:8000/" },
-      { name: "Relay Server (Copy Information)", url: "host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=", type: "copy" }
+      { name: "Windows x64 (.exe) [DL & Run as Admin]", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.exe" },
+      { name: "Windows x64 (.msi) [DL & Run as Admin]", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.msi" },
+      { name: "Android (.apk) [DL]", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.apk" },
+      { name: "Archive (.zip) [DL]", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.zip" },
+      { name: "SupportDesk GitHub [site]", url: "https://github.com/rustdesk/rustdesk/releases/latest" },
+      { name: "Download Site [site]", url: "http://156.155.253.71:8000/" },
+      { name: "Relay Server (Copy Info)", url: "host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=", type: "copy" }
     ]
   },
   {
     title: "Remote Support - Google Remote Desktop",
     items: [
-      { name: "Client — MSI Download", url: "https://dl.google.com/dl/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi" },
-      { name: "Web Client — Run in Browser", url: "https://remotedesktop.google.com/support/" }
+      { name: "Client — MSI [DL]", url: "https://dl.google.com/dl/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi" },
+      { name: "Web Client — Run in Browser [site]", url: "https://remotedesktop.google.com/support/" }
     ]
   },
   {
     title: "TacticalRMM",
     items: [
-      { name: "Windows Workstation/Desktop x64 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-workstation-amd64.exe" },
-      { name: "Windows Workstation/Desktop x86 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-workstation-386.exe" },
-      { name: "Windows Server x64 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-server-amd64.exe" },
-      { name: "Windows Server x86 — Download (Run as Administrator)", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-server-386.exe" }
+      { name: "Windows Workstation/Desktop x64 [DL & Run as Admin]", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-workstation-amd64.exe" },
+      { name: "Windows Workstation/Desktop x86 [DL & Run as Admin]", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-workstation-386.exe" },
+      { name: "Windows Server x64 [DL & Run as Admin]", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-server-amd64.exe" },
+      { name: "Windows Server x86 [DL & Run as Admin]", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-server-386.exe" }
     ]
   },
   {
     title: "AnyDesk — No Longer Supported",
     items: [
-      { name: "Download AnyDesk", url: "https://anydesk.com/download" }
+      { name: "Download AnyDesk [site]", url: "https://anydesk.com/download" }
     ]
   },
   {
     title: "TeamViewer — No Longer Supported",
     items: [
-      { name: "Download Latest TeamViewer", url: "https://download.teamviewer.com/full" },
-      { name: "TeamViewer v14 Portable", url: "https://download.teamviewer.com/download/version_14x/TeamViewerPortable.zip" },
-      { name: "TeamViewer v14 QuickSupport", url: "https://download.teamviewer.com/download/version_14x/TeamViewerQS.exe" },
-      { name: "TeamViewer v12 Portable", url: "https://download.teamviewer.com/download/version_12x/TeamViewerPortable.zip" },
-      { name: "TeamViewer v12 QuickSupport", url: "https://download.teamviewer.com/download/version_12x/TeamViewerQS.exe" }
+      { name: "Download Latest TeamViewer [site]", url: "https://download.teamviewer.com/full" },
+      { name: "TeamViewer v14 Portable [DL]", url: "https://download.teamviewer.com/download/version_14x/TeamViewerPortable.zip" },
+      { name: "TeamViewer v14 QuickSupport [DL]", url: "https://download.teamviewer.com/download/version_14x/TeamViewerQS.exe" },
+      { name: "TeamViewer v12 Portable [DL]", url: "https://download.teamviewer.com/download/version_12x/TeamViewerPortable.zip" },
+      { name: "TeamViewer v12 QuickSupport [DL]", url: "https://download.teamviewer.com/download/version_12x/TeamViewerQS.exe" }
     ]
   }
 ];
@@ -173,9 +174,34 @@ const Links = () => {
           <div className="text-center">
             <Badge variant="secondary" className="mb-4">Resources</Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Links</h1>
-            <p className="text-white/80 text-lg max-w-3xl mx-auto">
+            <p className="text-white/80 text-lg max-w-3xl mx-auto mb-8">
               Quick access to SupportCALL tools, downloads, status pages and reference resources.
             </p>
+            
+            {/* Key/Legend */}
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
+                <h3 className="text-white font-medium mb-4 text-center">Key:</h3>
+                <div className="flex flex-wrap justify-center gap-6 text-sm text-white/80">
+                  <div className="flex items-center gap-2">
+                    <span className="bg-primary/20 text-primary px-2 py-1 rounded text-xs font-mono">[site]</span>
+                    <span>External websites</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="bg-primary/20 text-primary px-2 py-1 rounded text-xs font-mono">[DL]</span>
+                    <span>Direct downloads</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="bg-accent/20 text-accent px-2 py-1 rounded text-xs">[DL & Run as Admin]</span>
+                    <span>Download & right-click → Run as Administrator</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="bg-orange-500/20 text-orange-400 px-2 py-1 rounded text-xs">(Copy Info)</span>
+                    <span>Click to copy to clipboard</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
