@@ -44,9 +44,15 @@ const OutcomeBasedPlan = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
             Know Your IT Project Cost Upfront
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-4">
             Stop worrying about hourly rates and surprise costs. Tell us what you want achieved, 
             and we'll provide a <strong className="text-primary">fixed price quote</strong> for your desired outcome.
+          </p>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-2">
+            Our aim is a worry-free outcome-focused solution.
+          </p>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
+            Monthly subscription is required.
           </p>
         </div>
 
@@ -57,7 +63,7 @@ const OutcomeBasedPlan = () => {
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <DollarSign className="w-8 h-8 text-primary" />
               </div>
-              <CardTitle className="text-2xl">Simple Subscription Model</CardTitle>
+              <CardTitle className="text-2xl">Outcome-Based Solutions Plan</CardTitle>
               <div className="flex items-center justify-center gap-4 mt-4">
                 <div className="text-right">
                   <p className="text-sm text-muted-foreground">Starting from</p>
