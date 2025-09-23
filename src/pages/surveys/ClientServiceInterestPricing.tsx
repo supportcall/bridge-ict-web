@@ -262,52 +262,52 @@ const ClientServiceInterestPricing = () => {
                   <CardTitle>Your Details</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="grid md:grid-cols-2 gap-4">
-                     <div>
-                       <Label htmlFor="name">Your name</Label>
-                       <Input 
-                         id="name" 
-                         name="name" 
-                         required 
-                         className={formErrors.name ? "border-destructive" : ""}
-                       />
-                       {formErrors.name && (
-                         <p className="text-sm text-destructive mt-1">{formErrors.name}</p>
-                       )}
-                     </div>
-                     <div>
-                       <Label htmlFor="surname">Your surname</Label>
-                       <Input id="surname" name="surname" required />
-                     </div>
-                  </div>
-                  <div className="grid md:grid-cols-2 gap-4">
-                     <div>
-                       <Label htmlFor="email">Your email</Label>
-                       <Input 
-                         id="email" 
-                         name="email" 
-                         type="email" 
-                         required 
-                         className={formErrors.email ? "border-destructive" : ""}
-                       />
-                       {formErrors.email && (
-                         <p className="text-sm text-destructive mt-1">{formErrors.email}</p>
-                       )}
-                     </div>
+                   <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="contact">Direct contact number</Label>
+                        <Label htmlFor="name">Your name *</Label>
                         <Input 
-                          id="contact" 
-                          name="contact" 
+                          id="name" 
+                          name="name" 
                           required 
-                          placeholder="+27 or +61 phone number"
-                          className={formErrors.contact ? "border-destructive" : ""}
+                          className={formErrors.name ? "border-destructive" : ""}
                         />
-                        {formErrors.contact && (
-                          <p className="text-sm text-destructive mt-1">{formErrors.contact}</p>
+                        {formErrors.name && (
+                          <p className="text-sm text-destructive mt-1">{formErrors.name}</p>
                         )}
                       </div>
-                  </div>
+                      <div>
+                        <Label htmlFor="surname">Your surname *</Label>
+                        <Input id="surname" name="surname" required />
+                      </div>
+                   </div>
+                   <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="email">Your email *</Label>
+                        <Input 
+                          id="email" 
+                          name="email" 
+                          type="email" 
+                          required 
+                          className={formErrors.email ? "border-destructive" : ""}
+                        />
+                        {formErrors.email && (
+                          <p className="text-sm text-destructive mt-1">{formErrors.email}</p>
+                        )}
+                      </div>
+                       <div>
+                         <Label htmlFor="contact">Direct contact number *</Label>
+                         <Input 
+                           id="contact" 
+                           name="contact" 
+                           required 
+                           placeholder="+27 or +61 phone number"
+                           className={formErrors.contact ? "border-destructive" : ""}
+                         />
+                         {formErrors.contact && (
+                           <p className="text-sm text-destructive mt-1">{formErrors.contact}</p>
+                         )}
+                       </div>
+                   </div>
                    <div className="grid md:grid-cols-2 gap-4">
                      <div>
                        <Label htmlFor="company">Company Name (optional)</Label>
@@ -325,18 +325,18 @@ const ClientServiceInterestPricing = () => {
                        <Input id="website" name="website" />
                      </div>
                    </div>
-                   <div>
-                     <Label htmlFor="location">Where are you from</Label>
-                     <Input 
-                       id="location" 
-                       name="location" 
-                       required 
-                       className={formErrors.location ? "border-destructive" : ""}
-                     />
-                     {formErrors.location && (
-                       <p className="text-sm text-destructive mt-1">{formErrors.location}</p>
-                     )}
-                   </div>
+                    <div>
+                      <Label htmlFor="location">Where are you from *</Label>
+                      <Input 
+                        id="location" 
+                        name="location" 
+                        required 
+                        className={formErrors.location ? "border-destructive" : ""}
+                      />
+                      {formErrors.location && (
+                        <p className="text-sm text-destructive mt-1">{formErrors.location}</p>
+                      )}
+                    </div>
                   <div className="flex items-center gap-2">
                     <input id="anonymous" name="anonymous" type="checkbox" className="h-4 w-4" />
                     <Label htmlFor="anonymous">Remain Anonymous (personal information will not be shared with 3rd-parties)</Label>

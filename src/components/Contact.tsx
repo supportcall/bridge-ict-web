@@ -149,13 +149,13 @@ const Contact = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us",
-      details: ["+27 (0)87 822 2380", "+61 (0)4 9933 5679", "+27 (0)78 862 0716 (Emergency)", "+61 (0)4 9933 5679 (Emergency)"],
+      details: ["+61 (0)4 9933 5679", "+61 (0)4 9933 5679 (Emergency)", "+27 (0)87 822 2380", "+27 (0)78 862 0716 (Emergency)", "+61 (0)4 9933 5679 (International Emergency)"],
       description: "Available with after-hours standby"
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email Support",
-      details: ["info@supportcall.co.za", "info@supportcall.com.au"],
+      details: ["info@supportcall.com.au", "info@supportcall.co.za"],
       description: "We aim to respond ASAP, within 24 hours"
     },
     {
@@ -167,7 +167,7 @@ const Contact = () => {
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Business Hours",
-      details: ["SA: Mon - Fri: 09:00 - 15:00 SAST", "AU: Mon - Fri: 09:00 - 15:00 AEST"],
+      details: ["AU: Mon - Fri: 09:00 - 15:00 AEST", "SA: Mon - Fri: 09:00 - 15:00 SAST"],
       description: "Regular support hours"
     }
   ];

@@ -8,7 +8,7 @@ const FloatingScrollToTop = () => {
 
   // Show button when page is scrolled down (visible unless at the very top)
   const toggleVisibility = () => {
-    if (window.scrollY > 0) { // Show immediately when scrolled away from top
+    if (window.scrollY > 0) { // Show immediately when not at the very top
       setIsVisible(true);
     } else {
       setIsVisible(false);
@@ -23,6 +23,8 @@ const FloatingScrollToTop = () => {
   };
 
   useEffect(() => {
+    // Set initial visibility state
+    toggleVisibility();
     window.addEventListener("scroll", toggleVisibility);
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);

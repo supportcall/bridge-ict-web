@@ -288,9 +288,9 @@ const AudienceChooser: React.FC<AudienceChooserProps> = ({ extraNote }) => {
         </div>
 
         <div className="mt-6 text-center text-xs text-muted-foreground">
-          Not sure? <button onClick={(e) => { e.preventDefault(); const el = document.querySelector('#contact'); el?.scrollIntoView({ behavior: 'smooth' }); }} className="underline underline-offset-4 bg-transparent border-0 p-0 text-inherit cursor-pointer">
+          Not sure? <a href="#contact" onClick={(e) => { e.preventDefault(); const el = document.querySelector('#contact'); el?.scrollIntoView({ behavior: 'smooth' }); }} className="underline underline-offset-4">
             Talk to an expert
-          </button>
+          </a>
           {extraNote && <p className="mt-1">{extraNote}</p>}
         </div>
       </div>
