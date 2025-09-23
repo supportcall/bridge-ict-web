@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
+import OutcomeBasedPlan from "@/components/OutcomeBasedPlan";
 import AudienceChooser from "@/components/AudienceChooser";
 import ConversionBanner from "@/components/ConversionBanner";
 import Footer from "@/components/Footer";
@@ -71,6 +72,7 @@ const Index = () => {
       <AudienceChooser extraNote={<>We also offer Microsoft Windows & Office, <strong>Linux alternative solutions</strong> for Enterprise, SME, Home User and Seniors</>} />
       <About />
       <Services />
+      <OutcomeBasedPlan />
       
       <Suspense fallback={<TestimonialsLoading />}>
         <Testimonials />

@@ -18,6 +18,7 @@ import {
 import servicesIcon from "@/assets/services-icon.jpg";
 import { openBooking } from "@/utils/booking";
 import { useNavigate } from "react-router-dom";
+import OutcomeBasedPlan from "@/components/OutcomeBasedPlan";
 
 const Services = () => {
   const primaryServices = [
@@ -281,6 +282,9 @@ const Services = () => {
           </div>
         </div>
       </div>
+      
+      {/* Outcome-Based Solutions Plan */}
+      <OutcomeBasedPlan />
     </section>
   );
 };
