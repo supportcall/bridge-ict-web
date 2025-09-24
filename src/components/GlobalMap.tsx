@@ -3,7 +3,7 @@ import { MapPin, Globe, ExternalLink } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-const COMPANY_LOGO_URL = "/logo.png";
+const COMPANY_LOGO_URL = "https://www.supportcall.co.za/images/logo.png";
 
 const GlobalMap = () => {
   return (

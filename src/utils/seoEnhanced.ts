@@ -20,7 +20,7 @@ export const addStructuredDataToHead = () => {
     "alternateName": "SupportCALL ICT Services",
     "description": "Professional ICT services from home to enterprise. Expert cybersecurity, monitoring & emergency response across South Africa & Australia.",
     "url": "https://www.supportcall.co.za",
-    "logo": "https://www.supportcall.co.za/logo.png",
+    "logo": "https://www.supportcall.co.za/images/logo.png",
     "image": "https://www.supportcall.co.za/og-image.jpg",
     "telephone": ["+27-87-822-2380", "+61-4-9933-5679"],
     "email": "info@supportcall.co.za",

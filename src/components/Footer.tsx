@@ -75,7 +75,7 @@ const Footer = () => {
               <div className="mb-6">
                 <div className="flex items-center mb-4">
                     <img 
-                      src="/logo.png" 
+                      src="https://www.supportcall.co.za/images/logo.png" 
                       alt="SupportCALL Logo" 
                       className="h-10 w-10 mr-3"
                   />
