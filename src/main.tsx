@@ -6,6 +6,7 @@ import "./index.css";
 // Import optimization controllers
 import { initializeMasterOptimizations } from "./utils/masterOptimization";
 import { initializeComprehensiveSiteOptimization } from "./utils/siteOptimization";
+import { initializeComprehensiveAudit } from "./utils/comprehensiveAudit";
 
 const container = document.getElementById("root");
 
@@ -18,6 +19,7 @@ const initializeAllOptimizations = () => {
   console.log('🎯 Initializing SupportCALL comprehensive optimizations...');
   initializeMasterOptimizations();
   initializeComprehensiveSiteOptimization();
+  initializeComprehensiveAudit();
 };
 
 // Initialize optimizations when DOM is ready

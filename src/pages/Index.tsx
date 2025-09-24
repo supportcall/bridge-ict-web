@@ -63,16 +63,20 @@ const Index = () => {
   usePageSEO(generateMarketingMeta('home'));
   return (
     <div className="min-h-screen dark">
-      {/* Conversion banner for immediate attention */}
+      {/* Critical conversion banner for immediate attention */}
       <ConversionBanner />
       
       {/* Critical above-the-fold content loads immediately */}
       <Navigation />
       <Hero />
+      
+      {/* Perfect content ratios - Core value propositions */}
       <AudienceChooser extraNote={<>We also offer Microsoft Windows & Office, <strong>Linux alternative solutions</strong> for Enterprise, SME, Home User and Seniors</>} />
       <About />
       <Services />
+      <OutcomeBasedPlan />
       
+      {/* Deferred content for optimal loading */}
       <Suspense fallback={<TestimonialsLoading />}>
         <Testimonials />
       </Suspense>
@@ -81,8 +85,7 @@ const Index = () => {
         <Contact />
       </Suspense>
       
-      
-      {/* Footer is critical for SEO and always loads */}
+      {/* Critical footer for SEO and contact information */}
       <Footer />
     </div>
   );

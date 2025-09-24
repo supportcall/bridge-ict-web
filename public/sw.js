@@ -1,5 +1,5 @@
 // Service Worker for Self-Contained Operation - Enhanced Version
-const CACHE_NAME = 'supportcall-v3';
+const CACHE_NAME = 'supportcall-v4';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -10,6 +10,8 @@ const STATIC_ASSETS = [
   '/assets/services-icon.jpg',
   '/logo.png',
   '/og-image.jpg',
+  'https://www.supportcall.co.za/images/logo.png',
+  'https://www.supportcall.co.za/images/favicon.ico',
   '/lovable-uploads/84165b4e-46a6-4065-8ddd-eb8da8017502.png',
   '/lovable-uploads/441f7345-44a4-41ba-9969-e5fac509eb15.png',
   '/lovable-uploads/a84e9f8f-93ab-49b9-9f77-1034f28fc11d.png',

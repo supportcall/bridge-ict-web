@@ -144,9 +144,14 @@ export const ensureMaximumCompatibility = () => {
 export const implementBestPracticeSecurity = () => {
   // Additional client-side security measures
   
-  // Prevent clickjacking
-  if (window.top !== window.self) {
-    window.top.location.href = window.location.href;
+  // Prevent clickjacking (safe check to avoid SecurityError)
+  try {
+    if (window.top !== window.self && window.top.location.hostname !== window.location.hostname) {
+      window.top.location.href = window.location.href;
+    }
+  } catch (e) {
+    // Ignore SecurityError in sandboxed iframes
+    console.log('Clickjacking protection skipped (sandboxed environment)');
   }
 
   // Clear sensitive data on page unload

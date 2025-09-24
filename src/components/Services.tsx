@@ -125,7 +125,6 @@ const Services = () => {
                 className="w-full h-full object-cover"
                 loading="lazy"
                 decoding="async"
-                fetchPriority="low"
               />
               <div className="absolute inset-0 bg-black/70 flex items-center justify-center">
                 <div className="text-center text-white">
@@ -141,7 +140,7 @@ const Services = () => {
           </Card>
         </div>
 
-        /* Primary Services Grid - Perfect grid layout */
+        {/* Primary Services Grid - Perfect grid layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-16">
           {primaryServices.map((service, index) => (
             <Card 

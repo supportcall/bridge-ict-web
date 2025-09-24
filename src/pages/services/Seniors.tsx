@@ -16,7 +16,7 @@ import {
   Laptop
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
-
+import FloatingScrollToTop from "@/components/FloatingScrollToTop";
 import Footer from "@/components/Footer";
 import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelector";
 import { openBooking } from "@/utils/booking";
@@ -337,6 +337,7 @@ const Seniors = () => {
 
       
       <Footer />
+      <FloatingScrollToTop />
     </div>
   );
 };
