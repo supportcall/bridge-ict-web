@@ -308,7 +308,7 @@ const verifySEOOptimization = () => {
     
     // Check meta description
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc && metaDesc.getAttribute('content')?.length! > 120) seoScore++;
+    if (metaDesc && metaDesc.getAttribute('content')?.length && metaDesc.getAttribute('content')!.length > 120) seoScore++;
     
     // Check H1
     const h1 = document.querySelector('h1');
