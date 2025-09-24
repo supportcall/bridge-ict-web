@@ -5,9 +5,9 @@
 // Dynamic meta tags for different pages - optimized for current website content
 export const PAGE_SEO = {
   home: {
-    title: "SupportCALL: Complete ICT Solutions Home to Enterprise | IT Support SA & AU",
-    description: "SupportCALL delivers genuine ICT services that work. Home to enterprise IT support, cybersecurity, emergency response across South Africa & Australia. 20+ years expertise. FREE FIRST consultation - call +27-87-822-2380!",
-    keywords: "SupportCALL, IT support, ICT support, ICT services, computer support, cyber security, managed IT services, emergency IT response, enterprise IT solutions, home computer help, business IT support, network security, remote monitoring, technical support, FREE consultation, South Africa, Australia"
+    title: "SupportCALL: Complete ICT Solutions Home to Enterprise | IT Support AU & SA",
+    description: "SupportCALL delivers genuine ICT services that work. Home to enterprise IT support, cybersecurity, emergency response across Australia & South Africa. 20+ years expertise. FREE FIRST consultation - call +27-87-822-2380!",
+    keywords: "SupportCALL, IT support, ICT support, ICT services, computer support, cyber security, managed IT services, emergency IT response, enterprise IT solutions, home computer help, business IT support, network security, remote monitoring, technical support, FREE consultation, Australia, South Africa"
   },
   rmm: {
     title: "TacticalRMM - Remote Monitoring & Management | SupportCALL",
@@ -31,7 +31,7 @@ export const PAGE_SEO = {
   },
   remoteSupport: {
     title: "Remote IT Support Services | Instant Secure Connection | SupportCALL",
-    description: "Instant remote IT support for Windows, macOS, Linux. Secure remote desktop assistance, troubleshooting, system maintenance. Available 24/7 across SA & AU. Book session now.",
+    description: "Instant remote IT support for Windows, macOS, Linux. Secure remote desktop assistance, troubleshooting, system maintenance. Available 24/7 across AU & SA. Book session now.",
     keywords: "remote IT support, remote desktop, instant support, secure remote connection, troubleshooting, system maintenance, Windows support, macOS support, Linux support"
   },
   links: {

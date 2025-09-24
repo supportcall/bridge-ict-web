@@ -22,7 +22,7 @@ const PointOfPresence = () => {
   const [mapError, setMapError] = useState(false);
   usePageSEO({
     title: "SupportCALL Point of Presence | Global Coverage",
-    description: "Strategic locations across South Africa and Australia for rapid, local ICT support and coordination.",
+    description: "Strategic locations across Australia and South Africa for rapid, local ICT support and coordination.",
     keywords: "point of presence, POP, local technicians, ICT coverage"
   });
 
@@ -84,7 +84,7 @@ const PointOfPresence = () => {
               SupportCALL Point of Presence
             </h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
-              Our strategic locations across Australia and South Africa ensure 
+              Our strategic locations across Australia and South Africa ensure
               rapid response times and local expertise for all your IT needs.
             </p>
           </div>

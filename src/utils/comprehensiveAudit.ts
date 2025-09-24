@@ -42,7 +42,7 @@ export const runComprehensiveSiteAudit = (): AuditResult[] => {
       category: 'SEO',
       status: 'FAIL',
       issue: 'No H1 tag found on page',
-      fix: 'Added SEO-optimized H1: "Professional ICT Services SA & AU"',
+      fix: 'Added SEO-optimized H1: "Professional ICT Services AU & SA"',
       priority: 'HIGH'
     });
   } else if (h1Tags.length > 1) {

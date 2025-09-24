@@ -18,11 +18,11 @@ export const addStructuredDataToHead = () => {
     "@type": "ProfessionalService",
     "name": "SupportCALL",
     "alternateName": "SupportCALL ICT Services",
-    "description": "Professional ICT services from home to enterprise. Expert cybersecurity, monitoring & emergency response across South Africa & Australia.",
+    "description": "Professional ICT services from home to enterprise. Expert cybersecurity, monitoring & emergency response across Australia & South Africa.",
     "url": "https://www.supportcall.co.za",
     "logo": "/logo.png",
     "image": "https://www.supportcall.co.za/og-image.jpg",
-    "telephone": ["+27-87-822-2380", "+61-4-9933-5679"],
+    "telephone": ["+61-4-9933-5679", "+27-87-822-2380"],
     "email": "info@supportcall.co.za",
     "priceRange": "Free Consultation Available",
     "currenciesAccepted": ["ZAR", "AUD", "USD"],
@@ -30,13 +30,13 @@ export const addStructuredDataToHead = () => {
     "areaServed": [
       {
         "@type": "Country",
-        "name": "South Africa",
-        "alternateName": "ZA"
+        "name": "Australia",
+        "alternateName": "AU"
       },
       {
         "@type": "Country", 
-        "name": "Australia",
-        "alternateName": "AU"
+        "name": "South Africa",
+        "alternateName": "ZA"
       }
     ],
     "serviceType": ["IT Support", "Cybersecurity", "Emergency Response", "Remote Monitoring", "Senior Care Tech Support"],
@@ -117,7 +117,7 @@ export const optimizeMeta = () => {
   // Ensure all meta tags are optimized
   const metaTags = {
     'description': 'SupportCALL delivers genuine ICT services that work. Home to enterprise IT support, cybersecurity, and emergency response across Australia & South Africa. 20+ years of expertise. FREE FIRST consultation - CALL NOW!',
-    'keywords': 'SupportCALL, IT support, ICT support, computer support, cyber security, managed IT services, emergency IT response, enterprise IT solutions, home computer help, business IT support, network security, remote monitoring, technical support, FREE consultation, genuine ICT services, South Africa, Australia',
+    'keywords': 'SupportCALL, IT support, ICT support, computer support, cyber security, managed IT services, emergency IT response, enterprise IT solutions, home computer help, business IT support, network security, remote monitoring, technical support, FREE consultation, genuine ICT services, Australia, South Africa',
     'author': 'SupportCALL - David Maree',
     'robots': 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
     'googlebot': 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',

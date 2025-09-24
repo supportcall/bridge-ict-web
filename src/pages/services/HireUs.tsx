@@ -297,7 +297,7 @@ const HireUs = () => {
               No Location Left Behind
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              We actively expand our network of technicians across both South Africa and Australia. 
+              We actively expand our network of technicians across both Australia and South Africa. 
               Even if we don't have a technician in your area immediately, we'll move quickly to secure one within two weeks.
             </p>
           </div>

@@ -41,7 +41,7 @@ const About = () => {
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             SupportCALL delivers comprehensive ICT services, management, and products to clients across 
-            Enterprise, Corporate, SME, and home user levels. With clients in Australia, South Africa and internationally, 
+            Enterprise, Corporate, SME, and home user levels. With clients in Australia, South Africa and internationally,
             we prioritize building true trust relationships by putting our clients' needs, interests, and budgets first.
           </p>
         </div>

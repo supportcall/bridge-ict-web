@@ -32,13 +32,13 @@ const Hero = () => {
             <span className="bg-gradient-primary bg-clip-text text-transparent">
               ICT Services
             </span>{" "}
-            SA & AU
+            AU & SA
           </h1>
 
           {/* Subheadline with strong CTA focus */}
           <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             <strong>20+ years</strong> delivering cutting-edge ICT services across<br className="hidden sm:block" />
-            Australia & South Africa. 
+            Australia & South Africa.
             <span className="text-primary font-semibold"> Get your FREE consultation today</span> and discover why 
             clients trust us with their digital transformation.
           </p>
@@ -82,7 +82,7 @@ const Hero = () => {
 
           {/* Trust indicators */}
           <div className="pt-8">
-            <p className="text-sm text-muted-foreground mb-4">Trusted by clients for 20+ years | Serving SA & AU</p>
+            <p className="text-sm text-muted-foreground mb-4">Trusted by clients for 20+ years | Serving AU & SA</p>
           </div>
         </div>
       </div>
