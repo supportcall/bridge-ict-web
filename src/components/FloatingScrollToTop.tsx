@@ -6,9 +6,9 @@ import { cn } from "@/lib/utils";
 const FloatingScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Show button when page is scrolled down with optimized threshold
+  // Show button when page is scrolled down - ALWAYS VISIBLE unless at very top
   const toggleVisibility = () => {
-    const scrollThreshold = 50; // Show almost immediately but not at very top
+    const scrollThreshold = 20; // Show almost immediately for maximum user convenience
     if (window.scrollY > scrollThreshold) {
       setIsVisible(true);
     } else {

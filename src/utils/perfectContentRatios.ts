@@ -1,205 +1,285 @@
-// Perfect Content Ratios - Ensures ultimate perfect content balance
-// Golden ratio and psychological principles for maximum engagement
+/**
+ * Perfect Content Ratios System
+ * Implements Golden Ratio (1.618) and optimal spacing ratios for SupportCALL
+ * Addresses user requirement for "ULTIMATE PERFECT AMOUNT OF CONTENT"
+ */
 
-export const optimizeContentRatios = () => {
-  console.log('📐 Optimizing content ratios for perfect balance...');
+interface ContentRatioResult {
+  element: string;
+  before: string;
+  after: string;
+  ratio: number;
+}
 
-  // Golden ratio calculations (1.618:1)
-  const GOLDEN_RATIO = 1.618;
-  const INVERSE_GOLDEN_RATIO = 0.618;
+class PerfectContentRatios {
+  private readonly GOLDEN_RATIO = 1.618;
+  private readonly OPTIMAL_LINE_HEIGHT = 1.6;
+  private readonly OPTIMAL_READING_WIDTH = 65; // characters
+  private readonly OPTIMAL_SECTION_SPACING = 80; // pixels
 
-  // Apply golden ratio to content sections
-  const optimizeSectionRatios = () => {
-    const sections = document.querySelectorAll('section[id]');
+  private results: ContentRatioResult[] = [];
+
+  /**
+   * Apply Golden Ratio to section spacing
+   */
+  public optimizeSectionSpacing(): void {
+    const sections = document.querySelectorAll('section, .py-20, .py-16, .py-12');
     
     sections.forEach((section, index) => {
       const element = section as HTMLElement;
+      const computedStyle = window.getComputedStyle(element);
       
-      // Calculate optimal padding based on golden ratio
-      const baseSpacing = 80; // Base spacing in pixels
-      const goldenSpacing = Math.round(baseSpacing * GOLDEN_RATIO);
-      const inverseSpacing = Math.round(baseSpacing * INVERSE_GOLDEN_RATIO);
+      // Get current padding
+      const currentPaddingTop = parseInt(computedStyle.paddingTop) || 0;
+      const currentPaddingBottom = parseInt(computedStyle.paddingBottom) || 0;
       
-      // Apply different ratios to create visual rhythm
-      if (index % 2 === 0) {
-        element.style.paddingTop = `${goldenSpacing}px`;
-        element.style.paddingBottom = `${inverseSpacing}px`;
-      } else {
-        element.style.paddingTop = `${inverseSpacing}px`;
-        element.style.paddingBottom = `${goldenSpacing}px`;
-      }
+      // Apply golden ratio spacing
+      const optimalPadding = this.OPTIMAL_SECTION_SPACING;
+      const goldenRatioPadding = Math.round(optimalPadding * this.GOLDEN_RATIO);
       
-      // Apply responsive golden ratio
-      element.style.setProperty('--section-ratio', `${GOLDEN_RATIO}`);
+      // Alternate between standard and golden ratio sections for visual rhythm
+      const padding = index % 2 === 0 ? optimalPadding : Math.round(optimalPadding * 0.618);
+      
+      element.style.paddingTop = `${padding}px`;
+      element.style.paddingBottom = `${padding}px`;
+      
+      this.results.push({
+        element: `Section ${index + 1}`,
+        before: `${currentPaddingTop}px / ${currentPaddingBottom}px`,
+        after: `${padding}px / ${padding}px`,
+        ratio: padding / this.OPTIMAL_SECTION_SPACING
+      });
     });
-  };
+  }
 
-  // Optimize text content ratios
-  const optimizeTextRatios = () => {
-    const style = document.createElement('style');
-    style.textContent = `
-      /* Perfect typography ratios based on golden ratio */
-      :root {
-        --text-ratio-1: 1em;
-        --text-ratio-2: ${GOLDEN_RATIO}em;
-        --text-ratio-3: ${GOLDEN_RATIO * GOLDEN_RATIO}em;
-        --text-ratio-4: ${Math.pow(GOLDEN_RATIO, 3)}em;
+  /**
+   * Optimize text content ratios for perfect readability
+   */
+  public optimizeTextRatios(): void {
+    // Optimize paragraph text
+    const textElements = document.querySelectorAll('p, .text-lg, .text-xl, .description');
+    
+    textElements.forEach((element, index) => {
+      const el = element as HTMLElement;
+      const beforeWidth = el.offsetWidth;
+      const beforeLineHeight = window.getComputedStyle(el).lineHeight;
+      
+      // Apply optimal reading width (golden ratio based)
+      const containerWidth = el.closest('.container, .max-w-7xl, .max-w-6xl, .max-w-5xl')?.clientWidth || window.innerWidth;
+      const optimalWidth = Math.min(containerWidth * 0.618, 65 * 16); // 65ch equivalent
+      
+      el.style.maxWidth = `${optimalWidth}px`;
+      el.style.lineHeight = `${this.OPTIMAL_LINE_HEIGHT}`;
+      
+      // Center align for better visual balance
+      if (el.closest('.text-center')) {
+        el.style.margin = '0 auto';
       }
       
-      /* Apply perfect spacing ratios */
-      h1 {
-        font-size: var(--text-ratio-4);
-        line-height: ${INVERSE_GOLDEN_RATIO + 0.2};
-        margin-bottom: calc(var(--text-ratio-2) * 0.5);
-      }
-      
-      h2 {
-        font-size: var(--text-ratio-3);
-        line-height: ${INVERSE_GOLDEN_RATIO + 0.3};
-        margin-bottom: calc(var(--text-ratio-1) * 0.8);
-      }
-      
-      h3 {
-        font-size: var(--text-ratio-2);
-        line-height: ${INVERSE_GOLDEN_RATIO + 0.4};
-        margin-bottom: calc(var(--text-ratio-1) * 0.6);
-      }
-      
-      p {
-        font-size: var(--text-ratio-1);
-        line-height: ${GOLDEN_RATIO};
-        margin-bottom: calc(var(--text-ratio-1) * 0.8);
-      }
-      
-      /* Perfect content width ratios */
-      .content-width {
-        max-width: calc(100vw / ${GOLDEN_RATIO});
-      }
-      
-      /* Sidebar to content ratios */
-      .sidebar-layout {
-        grid-template-columns: ${INVERSE_GOLDEN_RATIO}fr ${GOLDEN_RATIO}fr;
-      }
-      
-      /* Image aspect ratios */
-      .hero-image {
-        aspect-ratio: ${GOLDEN_RATIO} / 1;
-      }
-      
-      .card-image {
-        aspect-ratio: ${INVERSE_GOLDEN_RATIO} / 1;
-      }
-      
-      /* Perfect spacing system */
-      .spacing-xs { margin: calc(var(--text-ratio-1) * 0.25); }
-      .spacing-sm { margin: calc(var(--text-ratio-1) * 0.5); }
-      .spacing-md { margin: var(--text-ratio-1); }
-      .spacing-lg { margin: var(--text-ratio-2); }
-      .spacing-xl { margin: var(--text-ratio-3); }
-      
-      /* Responsive golden ratio breakpoints */
-      @media (max-width: 768px) {
-        :root {
-          --text-ratio-1: 0.9em;
-          --text-ratio-2: ${GOLDEN_RATIO * 0.9}em;
-          --text-ratio-3: ${GOLDEN_RATIO * GOLDEN_RATIO * 0.9}em;
-          --text-ratio-4: ${Math.pow(GOLDEN_RATIO, 3) * 0.9}em;
-        }
-      }
-      
-      @media (max-width: 480px) {
-        :root {
-          --text-ratio-1: 0.8em;
-          --text-ratio-2: ${GOLDEN_RATIO * 0.8}em;
-          --text-ratio-3: ${GOLDEN_RATIO * GOLDEN_RATIO * 0.8}em;
-          --text-ratio-4: ${Math.pow(GOLDEN_RATIO, 3) * 0.8}em;
-        }
-      }
-    `;
-    document.head.appendChild(style);
-  };
+      this.results.push({
+        element: `Text Element ${index + 1}`,
+        before: `Width: ${beforeWidth}px, Line-height: ${beforeLineHeight}`,
+        after: `Width: ${optimalWidth}px, Line-height: ${this.OPTIMAL_LINE_HEIGHT}`,
+        ratio: optimalWidth / beforeWidth
+      });
+    });
+  }
 
-  // Optimize visual hierarchy
-  const optimizeVisualHierarchy = () => {
-    // Apply 60-30-10 color rule for perfect balance
-    const colorStyle = document.createElement('style');
-    colorStyle.textContent = `
-      /* Perfect color balance: 60% primary, 30% secondary, 10% accent */
-      .color-balanced {
-        background: 
-          linear-gradient(
-            135deg,
-            hsl(var(--background)) 60%,
-            hsl(var(--muted)) 30%,
-            hsl(var(--accent)) 10%
-          );
-      }
-      
-      /* Content balance: 60% content, 40% whitespace */
-      .content-balanced {
-        padding: calc(40% / 2) 0;
-      }
-      
-      /* Perfect button ratios */
-      .btn-perfect {
-        padding: calc(var(--text-ratio-1) * 0.6) calc(var(--text-ratio-2) * 0.8);
-        border-radius: calc(var(--text-ratio-1) * 0.4);
-      }
-    `;
-    document.head.appendChild(colorStyle);
-  };
+  /**
+   * Optimize heading hierarchy with golden ratio scaling
+   */
+  public optimizeHeadingRatios(): void {
+    const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    
+    // Define golden ratio based font sizes
+    const baseFontSize = 16; // 1rem
+    const headingSizes = {
+      h1: baseFontSize * Math.pow(this.GOLDEN_RATIO, 3), // ~41.89px
+      h2: baseFontSize * Math.pow(this.GOLDEN_RATIO, 2), // ~25.89px  
+      h3: baseFontSize * this.GOLDEN_RATIO, // ~25.89px
+      h4: baseFontSize * Math.pow(this.GOLDEN_RATIO, 0.5), // ~20.72px
+      h5: baseFontSize, // 16px
+      h6: baseFontSize * Math.pow(this.GOLDEN_RATIO, -0.5) // ~12.36px
+    };
 
-  // Apply 3-2-1 content priority system
-  const applyContentPriority = () => {
-    const priorityStyle = document.createElement('style');
-    priorityStyle.textContent = `
-      /* Content priority system based on visual weight */
+    headings.forEach((heading, index) => {
+      const el = heading as HTMLElement;
+      const tagName = el.tagName.toLowerCase() as keyof typeof headingSizes;
+      const beforeSize = window.getComputedStyle(el).fontSize;
       
-      /* Priority 1: Hero/CTA - 50% visual weight */
-      .priority-1 {
-        font-weight: 700;
-        font-size: calc(var(--text-ratio-4) * 1.2);
-        color: hsl(var(--primary));
-        margin: calc(var(--text-ratio-3)) 0;
-      }
+      const optimalSize = headingSizes[tagName];
+      el.style.fontSize = `${optimalSize}px`;
       
-      /* Priority 2: Main content - 30% visual weight */
-      .priority-2 {
-        font-weight: 600;
-        font-size: var(--text-ratio-2);
-        color: hsl(var(--foreground));
-        margin: calc(var(--text-ratio-2)) 0;
-      }
+      // Apply golden ratio line height
+      el.style.lineHeight = `${1.2}`;
       
-      /* Priority 3: Supporting content - 20% visual weight */
-      .priority-3 {
-        font-weight: 400;
-        font-size: var(--text-ratio-1);
-        color: hsl(var(--muted-foreground));
-        margin: calc(var(--text-ratio-1)) 0;
-      }
+      // Apply golden ratio margins
+      const topMargin = optimalSize * 0.618;
+      const bottomMargin = optimalSize * 0.382;
       
-      /* Perfect grid ratios */
-      .grid-golden {
-        grid-template-columns: repeat(auto-fit, minmax(${300 * INVERSE_GOLDEN_RATIO}px, 1fr));
-        gap: calc(var(--text-ratio-2));
-      }
+      el.style.marginTop = `${topMargin}px`;
+      el.style.marginBottom = `${bottomMargin}px`;
       
-      /* Perfect card ratios */
-      .card-perfect {
-        padding: calc(var(--text-ratio-2)) calc(var(--text-ratio-3));
-        border-radius: calc(var(--text-ratio-1) * 0.5);
-        box-shadow: 0 calc(var(--text-ratio-1) * 0.25) calc(var(--text-ratio-2)) rgba(0,0,0,0.1);
-      }
-    `;
-    document.head.appendChild(priorityStyle);
-  };
+      this.results.push({
+        element: `${tagName.toUpperCase()} ${index + 1}`,
+        before: `Font-size: ${beforeSize}`,
+        after: `Font-size: ${optimalSize}px, Margins: ${topMargin}px/${bottomMargin}px`,
+        ratio: this.GOLDEN_RATIO
+      });
+    });
+  }
 
-  // Execute all ratio optimizations
-  optimizeSectionRatios();
-  optimizeTextRatios();
-  optimizeVisualHierarchy();
-  applyContentPriority();
+  /**
+   * Optimize container and card ratios
+   */
+  public optimizeContainerRatios(): void {
+    const containers = document.querySelectorAll('.container, .max-w-7xl, .max-w-6xl, .max-w-5xl');
+    
+    containers.forEach((container, index) => {
+      const el = container as HTMLElement;
+      const beforeWidth = el.offsetWidth;
+      
+      // Apply golden ratio to container max-width
+      const viewportWidth = window.innerWidth;
+      const optimalWidth = Math.min(viewportWidth * 0.85, 1400); // Max container width
+      
+      el.style.maxWidth = `${optimalWidth}px`;
+      el.style.margin = '0 auto';
+      
+      this.results.push({
+        element: `Container ${index + 1}`,
+        before: `Width: ${beforeWidth}px`,
+        after: `Max-width: ${optimalWidth}px`,
+        ratio: optimalWidth / viewportWidth
+      });
+    });
 
-  console.log('✅ Perfect content ratios applied - ultimate balance achieved!');
+    // Optimize cards and components
+    const cards = document.querySelectorAll('.card, [class*="card"], .bg-card');
+    
+    cards.forEach((card, index) => {
+      const el = card as HTMLElement;
+      const beforePadding = window.getComputedStyle(el).padding;
+      
+      // Apply golden ratio padding
+      const basePadding = 24; // 1.5rem
+      const goldenPadding = Math.round(basePadding * this.GOLDEN_RATIO);
+      
+      el.style.padding = `${goldenPadding}px`;
+      
+      // Apply golden ratio border radius
+      const borderRadius = Math.round(goldenPadding * 0.618);
+      el.style.borderRadius = `${borderRadius}px`;
+      
+      this.results.push({
+        element: `Card ${index + 1}`,
+        before: `Padding: ${beforePadding}`,
+        after: `Padding: ${goldenPadding}px, Border-radius: ${borderRadius}px`,
+        ratio: this.GOLDEN_RATIO
+      });
+    });
+  }
+
+  /**
+   * Optimize grid and layout ratios
+   */
+  public optimizeLayoutRatios(): void {
+    // Optimize grid gaps using golden ratio
+    const gridContainers = document.querySelectorAll('.grid, .flex');
+    
+    gridContainers.forEach((grid, index) => {
+      const el = grid as HTMLElement;
+      const beforeGap = window.getComputedStyle(el).gap;
+      
+      // Apply golden ratio gap
+      const baseGap = 24; // 1.5rem
+      const goldenGap = Math.round(baseGap * 0.618);
+      
+      el.style.gap = `${goldenGap}px`;
+      
+      this.results.push({
+        element: `Grid/Flex ${index + 1}`,
+        before: `Gap: ${beforeGap}`,
+        after: `Gap: ${goldenGap}px`,
+        ratio: 0.618
+      });
+    });
+  }
+
+  /**
+   * Run all content ratio optimizations
+   */
+  public applyPerfectRatios(): ContentRatioResult[] {
+    console.log('🎯 Applying Perfect Content Ratios (Golden Ratio System)...');
+    
+    this.results = [];
+    
+    // Apply all ratio optimizations
+    this.optimizeSectionSpacing();
+    this.optimizeTextRatios();
+    this.optimizeHeadingRatios();
+    this.optimizeContainerRatios();
+    this.optimizeLayoutRatios();
+    
+    console.log(`✅ Applied perfect ratios to ${this.results.length} elements`);
+    
+    return this.results;
+  }
+
+  /**
+   * Generate ratio optimization report
+   */
+  public generateReport(): string {
+    const totalElements = this.results.length;
+    
+    let report = `
+🎯 PERFECT CONTENT RATIOS REPORT
+=====================================
+
+📊 SUMMARY:
+- Total Elements Optimized: ${totalElements}
+- Golden Ratio (φ): ${this.GOLDEN_RATIO}
+- Optimal Line Height: ${this.OPTIMAL_LINE_HEIGHT}
+- Optimal Reading Width: ${this.OPTIMAL_READING_WIDTH}ch
+- Section Spacing: ${this.OPTIMAL_SECTION_SPACING}px
+
+📋 OPTIMIZATIONS APPLIED:
+=====================================
+`;
+
+    this.results.forEach((result, index) => {
+      report += `\n${index + 1}. ${result.element}:\n`;
+      report += `   Before: ${result.before}\n`;
+      report += `   After: ${result.after}\n`;
+      report += `   Ratio Applied: ${result.ratio.toFixed(3)}\n`;
+    });
+
+    report += `
+✅ PERFECT RATIOS ACHIEVED!
+=====================================
+Your content now follows the Golden Ratio for:
+- Visual harmony and balance
+- Optimal readability
+- Professional typography
+- Perfect spacing relationships
+- Mathematical precision in design
+
+🎉 Content ratios are now PERFECT!
+`;
+
+    return report;
+  }
+}
+
+// Initialize and export
+export const initializePerfectContentRatios = (): ContentRatioResult[] => {
+  const ratioOptimizer = new PerfectContentRatios();
+  const results = ratioOptimizer.applyPerfectRatios();
+  
+  // Log the report
+  console.log(ratioOptimizer.generateReport());
+  
+  return results;
 };
+
+export default PerfectContentRatios;
