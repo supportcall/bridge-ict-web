@@ -28,18 +28,18 @@ const Hero = () => {
 
           {/* Main Headline - SEO Optimized H1 */}
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
-            Professional{" "}
+            Get{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
-              ICT Services
+              FREE ICT
             </span>{" "}
-            AU & SA
+            Consultation
           </h1>
 
           {/* Subheadline with strong CTA focus */}
           <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             <strong>20+ years</strong> delivering cutting-edge ICT services across<br className="hidden sm:block" />
-            Australia & South Africa.
-            <span className="text-primary font-semibold"> Get your FREE consultation today</span> and discover why 
+            Australia & South Africa. 
+            <span className="text-primary font-semibold"> Book your free consultation today</span> and discover why 
             clients trust us with their digital transformation.
           </p>
 
