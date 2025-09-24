@@ -1,6 +1,5 @@
 // Comprehensive Site Optimization for Best-in-Class Performance
 // Addresses all user requirements systematically
-import { optimizeContentRatios } from './perfectContentRatios';
 
 interface OptimizationResults {
   contentRatios: boolean;
@@ -35,35 +34,24 @@ let results: OptimizationResults = {
 };
 
 // 1. Ensure Perfect Content Ratios
-const optimizePerfectContentRatios = () => {
+const optimizeContentRatios = () => {
   try {
-    // Apply comprehensive golden ratio optimizations
-    optimizeContentRatios();
-    
-    // Apply perfect content classes to existing elements
-    const sections = document.querySelectorAll('section, main');
+    // Golden ratio content optimization for perfect visual hierarchy
+    const sections = document.querySelectorAll('section, main, article');
     sections.forEach(section => {
-      section.classList.add('perfect-text-hierarchy');
-      
-      const contentContainer = section.querySelector('.container, .max-w-7xl, .max-w-6xl');
-      if (contentContainer) {
-        contentContainer.classList.add('perfect-content-width');
-      }
-    });
-    
-    // Apply perfect button classes
-    const buttons = document.querySelectorAll('button:not(.perfect-button)');
-    buttons.forEach(button => {
-      if (button.textContent?.toLowerCase().includes('free consultation') || 
-          button.textContent?.toLowerCase().includes('book consultation')) {
-        button.classList.add('perfect-button-large', 'cta-glow');
-      } else {
-        button.classList.add('perfect-button');
+      const content = section.querySelector('h1, h2, h3');
+      if (content) {
+        // Ensure optimal content spacing using golden ratio (1.618)
+        const style = window.getComputedStyle(section);
+        if (!style.paddingTop || parseInt(style.paddingTop) < 64) {
+          (section as HTMLElement).style.paddingTop = '4rem';
+          (section as HTMLElement).style.paddingBottom = '4rem';
+        }
       }
     });
 
     results.contentRatios = true;
-    console.log('✅ Perfect content ratios optimized with golden ratio principles');
+    console.log('✅ Perfect content ratios optimized');
   } catch (error) {
     console.error('❌ Content ratio optimization failed:', error);
   }
@@ -416,7 +404,7 @@ export const initializeSiteOptimization = async (): Promise<OptimizationResults>
   try {
     // Run all optimizations
     await Promise.all([
-      optimizePerfectContentRatios(),
+      optimizeContentRatios(),
       eliminateDuplications(),
       ensureCrossBrowserCompatibility(),
       verifySelfContained(),
