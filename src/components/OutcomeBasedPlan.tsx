@@ -34,24 +34,24 @@ const OutcomeBasedPlan = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-primary/5 to-accent/5">
+    <section className="py-16 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <Badge variant="secondary" className="mb-4">
             <Target className="w-4 h-4 mr-2" />
             Outcome-Based Solutions Plan
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-card-foreground mb-6">
             Know Your IT Project Cost Upfront
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-4">
+          <p className="text-lg text-card-foreground/80 max-w-3xl mx-auto mb-4">
             Stop worrying about hourly rates and surprise costs. Tell us what you want achieved, 
             and we'll provide a <strong className="text-primary">fixed price quote</strong> for your desired outcome.
           </p>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-2">
+          <p className="text-lg text-card-foreground/80 max-w-3xl mx-auto mb-2">
             Our aim is a worry-free outcome-focused solution.
           </p>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
+          <p className="text-lg text-card-foreground/80 max-w-3xl mx-auto mb-8">
             Monthly subscription is required.
           </p>
         </div>
@@ -153,7 +153,7 @@ const OutcomeBasedPlan = () => {
 
         {/* Example Outcomes */}
         <div className="mb-12">
-          <h3 className="text-2xl font-semibold text-center mb-8">Example Outcome-Based Projects</h3>
+          <h3 className="text-2xl font-semibold text-center mb-8 text-card-foreground">Example Outcome-Based Projects</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {exampleOutcomes.map((example, index) => (
               <Card key={index} className="hover:shadow-lg transition-all duration-300">
@@ -180,18 +180,18 @@ const OutcomeBasedPlan = () => {
           <CardContent className="p-6">
             <div className="flex items-center justify-center space-x-4 mb-4">
               <Clock className="w-6 h-6 text-accent" />
-              <h4 className="text-xl font-semibold text-foreground">Flexible Payment Options</h4>
+              <h4 className="text-xl font-semibold text-card-foreground">Flexible Payment Options</h4>
             </div>
             <div className="grid md:grid-cols-2 gap-6 text-center">
               <div className="bg-card p-4 rounded-lg">
-                <h5 className="font-semibold text-foreground mb-2">Monthly Payments</h5>
-                <p className="text-sm text-muted-foreground">
+                <h5 className="font-semibold text-card-foreground mb-2">Monthly Payments</h5>
+                <p className="text-sm text-card-foreground/70">
                   Pay {formatPrice(10)} per month for minimum 3 months commitment
                 </p>
               </div>
               <div className="bg-card p-4 rounded-lg">
-                <h5 className="font-semibold text-foreground mb-2">Upfront Payment</h5>
-                <p className="text-sm text-muted-foreground">
+                <h5 className="font-semibold text-card-foreground mb-2">Upfront Payment</h5>
+                <p className="text-sm text-card-foreground/70">
                   Pay {formatPrice(30)} upfront for 3 months and save on transaction fees
                 </p>
               </div>
@@ -201,10 +201,10 @@ const OutcomeBasedPlan = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <h3 className="text-2xl font-semibold text-foreground mb-4">
+          <h3 className="text-2xl font-semibold text-card-foreground mb-4">
             Ready for Predictable IT Project Costs?
           </h3>
-          <p className="text-muted-foreground mb-8">
+          <p className="text-card-foreground/80 mb-8">
             Start with our Outcome-Based Solutions Plan and never worry about hourly billing again
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
