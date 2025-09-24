@@ -10,7 +10,7 @@ interface CurrencySelectorProps {
 
 const CurrencySelector = ({ onCurrencyChange, selectedCurrency }: CurrencySelectorProps) => {
   return (
-    <div className="flex items-center gap-3 p-3 bg-primary/10 rounded-lg border border-primary/20 shadow-sm">
+    <div className="currency-selector flex items-center gap-3 p-3 bg-primary/10 rounded-lg border border-primary/20 shadow-sm">
       <span className="text-sm font-medium text-foreground">Select Currency:</span>
       <Select value={selectedCurrency} onValueChange={(value: Currency) => onCurrencyChange(value)}>
         <SelectTrigger className="w-28 bg-background border-primary/30 text-foreground shadow-sm hover:border-primary/50 transition-colors">

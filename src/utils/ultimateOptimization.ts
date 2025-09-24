@@ -128,7 +128,17 @@ const ensureLinksOpenAtTop = () => {
     const allLinks = document.querySelectorAll('a[href^="/"], a[href^="#"]');
     
     allLinks.forEach(link => {
+      // Skip if it's inside a select component or other interactive elements
+      const parentSelect = link.closest('[data-radix-select-content], [data-radix-select-item], [role="combobox"], select, .currency-selector');
+      if (parentSelect) return;
+      
       link.addEventListener('click', (e) => {
+        // Don't interfere with form interactions or dropdowns
+        if (e.target instanceof HTMLElement) {
+          const isFormElement = e.target.closest('form, select, [role="combobox"], [data-radix-select-content]');
+          if (isFormElement) return;
+        }
+        
         setTimeout(() => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }, 100);
