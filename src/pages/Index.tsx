@@ -1,11 +1,12 @@
 import React, { Suspense } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
+import About from "@/components/About";  
 import Services from "@/components/Services";
 import OutcomeBasedPlan from "@/components/OutcomeBasedPlan";
 import AudienceChooser from "@/components/AudienceChooser";
 import ConversionBanner from "@/components/ConversionBanner";
+import FloatingScrollToTop from "@/components/FloatingScrollToTop";
 import Footer from "@/components/Footer";
 import { Skeleton } from "@/components/ui/skeleton";
 import { usePageSEO } from "@/hooks/usePageSEO";
@@ -87,6 +88,9 @@ const Index = () => {
       
       {/* Critical footer for SEO and contact information */}
       <Footer />
+      
+      {/* Essential: Always-visible scroll to top button */}
+      <FloatingScrollToTop />
     </div>
   );
 };

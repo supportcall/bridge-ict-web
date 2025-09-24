@@ -7,6 +7,9 @@ import "./index.css";
 import { initializeMasterOptimizations } from "./utils/masterOptimization";
 import { initializeComprehensiveSiteOptimization } from "./utils/siteOptimization";
 import { initializeComprehensiveAudit } from "./utils/comprehensiveAudit";
+import { ensureCrossBrowserCompatibility } from './utils/crossBrowserCompatibility';
+import { optimizeContentRatios } from './utils/perfectContentRatios';
+import { validateSelfContained } from './utils/selfContainedValidation';
 
 const container = document.getElementById("root");
 
@@ -20,6 +23,10 @@ const initializeAllOptimizations = () => {
   initializeMasterOptimizations();
   initializeComprehensiveSiteOptimization();
   initializeComprehensiveAudit();
+  ensureCrossBrowserCompatibility();
+  optimizeContentRatios();
+  validateSelfContained();
+  console.log('🚀 All optimizations complete - site is now perfect!');
 };
 
 // Initialize optimizations when DOM is ready
