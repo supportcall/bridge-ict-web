@@ -56,15 +56,9 @@ const Services = () => {
     },
     {
       icon: <Heart className="w-8 h-8" />,
-      title: "Peace of Mind for Seniors",
-      description: "Specialized reduced-cost monthly remote support service for verified pensioners and retired users, providing patient and comprehensive tech assistance for desktop and laptop users.",
+      title: "Peace of Mind for Seniors", 
+      description: "Specialized reduced-cost monthly remote support service for verified pensioners and retired users, providing patient and comprehensive tech assistance.",
       features: ["Reduced Monthly Fee", "Senior-Friendly Support", "Remote Assistance", "Verified Eligibility", "Patient Guidance"]
-    },
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Outcome-Based Solutions",
-      description: "Stop worrying about hourly rates and surprise costs. Tell us what you want achieved, and we'll provide a fixed price quote for your desired outcome with worry-free, outcome-focused solutions.",
-      features: ["Fixed Price Quotes", "No Hourly Surprises", "Outcome Focused", "Monthly Subscription Model", "Results Guaranteed"]
     }
   ];
 
@@ -147,8 +141,8 @@ const Services = () => {
           </Card>
         </div>
 
-        {/* Primary Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16">
+        /* Primary Services Grid - Perfect grid layout */
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-16">
           {primaryServices.map((service, index) => (
             <Card 
               key={index} 
@@ -271,8 +265,8 @@ const Services = () => {
           </CardContent>
         </Card>
 
-        {/* CTA Section */}
-        <div className="text-center mt-16">
+        {/* CTA Section with Outcome-Based Plan Integration */}
+        <div className="text-center mt-16 mb-16">
           <h3 className="text-2xl font-semibold text-foreground mb-4">
             Ready to Stop IT Problems Before They Cost You Money?
           </h3>
@@ -311,8 +305,9 @@ const Services = () => {
         </div>
       </div>
       
-      {/* Outcome-Based Solutions Plan */}
+      {/* Outcome-Based Solutions Plan Component */}
       <OutcomeBasedPlan />
+      
     </section>
   );
 };

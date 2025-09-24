@@ -72,7 +72,6 @@ const Index = () => {
       <AudienceChooser extraNote={<>We also offer Microsoft Windows & Office, <strong>Linux alternative solutions</strong> for Enterprise, SME, Home User and Seniors</>} />
       <About />
       <Services />
-      <OutcomeBasedPlan />
       
       <Suspense fallback={<TestimonialsLoading />}>
         <Testimonials />

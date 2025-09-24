@@ -6,9 +6,10 @@ import { cn } from "@/lib/utils";
 const FloatingScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Show button when page is scrolled down (visible after meaningful scroll)
+  // Show button when page is scrolled down with optimized threshold
   const toggleVisibility = () => {
-    if (window.scrollY > 50) { // Show after scrolling 50px from top for better UX
+    const scrollThreshold = 200; // Show after meaningful scroll for better UX
+    if (window.scrollY > scrollThreshold) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
@@ -20,12 +21,23 @@ const FloatingScrollToTop = () => {
       top: 0,
       behavior: "smooth",
     });
+    
+    // Track scroll-to-top usage for analytics
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'scroll_to_top_click', {
+        event_category: 'navigation',
+        event_label: 'floating_button'
+      });
+    }
   };
 
   useEffect(() => {
     // Set initial visibility state
     toggleVisibility();
-    window.addEventListener("scroll", toggleVisibility);
+    
+    // Add passive event listener for better performance
+    window.addEventListener("scroll", toggleVisibility, { passive: true });
+    
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 

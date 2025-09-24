@@ -13,28 +13,28 @@ All colors MUST be HSL for consistency.
 
 @layer base {
   :root {
-    /* Light mode - Professional ICT Theme */
+    /* Light mode - Professional ICT Theme with enhanced contrast */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 220 15% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 15% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 15% 10%;
 
-    /* ICT Brand Colors */
-    --primary: 200 100% 40%;
+    /* ICT Brand Colors with better contrast */
+    --primary: 200 100% 45%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 200 100% 60%;
+    --primary-glow: 200 100% 65%;
 
-    --secondary: 220 15% 25%;
+    --secondary: 220 15% 20%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted-foreground: 220 15% 35%;
 
-    --accent: 142 71% 45%;
+    --accent: 142 71% 40%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -83,35 +83,35 @@ All colors MUST be HSL for consistency.
   }
 
   .dark {
-    /* Dark mode - SupportCALL inspired */
+    /* Dark mode - SupportCALL inspired with improved contrast */
     --background: 220 15% 8%;
-    --foreground: 0 0% 95%;
+    --foreground: 0 0% 98%;
 
-    --card: 220 15% 10%;
-    --card-foreground: 0 0% 95%;
+    --card: 220 15% 12%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 220 15% 10%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 220 15% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 200 100% 60%;
+    --primary: 200 100% 65%;
     --primary-foreground: 220 15% 8%;
-    --primary-glow: 200 100% 70%;
+    --primary-glow: 200 100% 75%;
 
-    --secondary: 220 15% 15%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 220 15% 15%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 0 0% 85%;
 
-    --accent: 142 71% 55%;
+    --accent: 142 71% 60%;
     --accent-foreground: 220 15% 8%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 95%;
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 15%;
-    --ring: 200 100% 60%;
+    --border: 220 15% 25%;
+    --input: 220 15% 18%;
+    --ring: 200 100% 65%;
 
     /* Dark mode gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
