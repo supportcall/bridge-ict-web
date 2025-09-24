@@ -250,13 +250,13 @@ const Contact = () => {
             {/* Quick Actions */}
             <div className="space-y-4">
               <Button 
-                variant="premium" 
-                className="w-full animate-pulse hover:animate-none" 
+                variant="outline" 
+                className="w-full" 
                 size="lg"
                 onClick={() => openBooking()}
               >
                 <Calendar className="w-4 h-4 mr-2" />
-                Book FREE Consultation NOW
+                Schedule Consultation
               </Button>
             </div>
           </div>

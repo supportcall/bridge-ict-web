@@ -20,7 +20,7 @@ import {
 import servicesIcon from "@/assets/services-icon.jpg";
 import { openBooking } from "@/utils/booking";
 import { useNavigate } from "react-router-dom";
-import OutcomeBasedPlan from "@/components/OutcomeBasedPlan";
+
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { generateServiceSchema, MARKETING_OPTIMIZATIONS } from "@/utils/seo";
 
@@ -264,49 +264,30 @@ const Services = () => {
           </CardContent>
         </Card>
 
-        {/* CTA Section with Outcome-Based Plan Integration */}
-        <div className="text-center mt-16 mb-16">
-          <h3 className="text-2xl font-semibold text-foreground mb-4">
-            Ready to Stop IT Problems Before They Cost You Money?
-          </h3>
-          <p className="text-muted-foreground mb-8">
-            <strong>FREE consultation</strong> with our experts - discover exactly how we can solve your IT challenges and save you money
+        {/* Simplified CTA Section - No duplication */}
+        <div className="text-center mt-16">
+          <p className="text-muted-foregor mb-8">
+            <strong>Ready to stop IT problems?</strong> Get expert help with our comprehensive ICT solutions.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              variant="premium" 
-              size="lg"
-              onClick={() => openBooking()}
-              className="animate-pulse hover:animate-none"
-              data-cta="book-consultation"
-              aria-label="Book free consultation with ICT experts"
-            >
-              Book FREE Consultation Now
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              onClick={() => {
-                const contactSection = document.querySelector('#contact');
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                } else {
-                  navigate('/#contact');
-                  setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
-                }
-              }}
-              data-cta="get-quote"
-              aria-label="Get instant quote for ICT services"
-            >
-              Get Instant Quote
-            </Button>
-          </div>
+          <Button 
+            variant="outline" 
+            size="lg"
+            onClick={() => {
+              const contactSection = document.querySelector('#contact');
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              } else {
+                navigate('/#contact');
+                setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+              }
+            }}
+            data-cta="get-quote"
+            aria-label="Get instant quote for ICT services"
+          >
+            Get Instant Quote
+          </Button>
         </div>
       </div>
-      
-      {/* Outcome-Based Solutions Plan Component */}
-      <OutcomeBasedPlan />
-      
     </section>
   );
 };
