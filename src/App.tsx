@@ -3,6 +3,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import { useOptimizations } from "@/hooks/useOptimizations";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import ScrollToTop from "@/components/ScrollToTop";
 import FloatingScrollToTop from "@/components/FloatingScrollToTop";
@@ -20,9 +22,13 @@ import CustomerSatisfactionSurvey from "./pages/surveys/CustomerSatisfactionSurv
 import ClientServiceInterestPricing from "./pages/surveys/ClientServiceInterestPricing";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
-const queryClient = new QueryClient();
+const App = () => {
+  const [queryClient] = useState(() => new QueryClient());
+  
+  // Apply essential optimizations
+  useOptimizations();
 
-const App = () => (
+  return (
   <ErrorBoundary>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -53,5 +59,6 @@ const App = () => (
     </QueryClientProvider>
   </ErrorBoundary>
 );
+};
 
 export default App;
