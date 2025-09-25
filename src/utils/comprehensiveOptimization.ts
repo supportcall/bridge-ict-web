@@ -327,9 +327,10 @@ class ComprehensiveOptimizer {
       // Disable right-click on sensitive images
       const sensitiveImages = document.querySelectorAll('img[src*="logo"]');
       sensitiveImages.forEach(img => {
-        img.addEventListener('contextmenu', e => e.preventDefault());
-        img.style.userSelect = 'none';
-        img.setAttribute('draggable', 'false');
+        const htmlImg = img as HTMLImageElement;
+        htmlImg.addEventListener('contextmenu', e => e.preventDefault());
+        htmlImg.style.userSelect = 'none';
+        htmlImg.setAttribute('draggable', 'false');
       });
 
       this.results.bestPractices = true;
