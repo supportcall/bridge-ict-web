@@ -8,7 +8,7 @@ const FloatingScrollToTop = () => {
 
   // Show button when page is scrolled down - ALWAYS VISIBLE unless at very top
   const toggleVisibility = () => {
-    const scrollThreshold = 20; // Show almost immediately for maximum user convenience
+    const scrollThreshold = 10; // Show almost immediately for maximum user convenience
     if (window.scrollY > scrollThreshold) {
       setIsVisible(true);
     } else {
