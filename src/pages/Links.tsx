@@ -61,8 +61,8 @@ const categories: Category[] = [
       { name: "XnConvert [site]", url: "https://www.xnview.com/en/xnconvert/" },
       { name: "XnConvert 32-bit [DL]", url: "https://download.xnview.com/XnConvert-win.exe" },
       { name: "XnConvert 64-bit [DL]", url: "https://download.xnview.com/XnConvert-win-x64.exe" },
-      { name: "XnConvert profile ZIP [DL]", url: "http://www.supportcall.co.za/sc-extras/sc-resize-aspectfit-50%-jpg.zip" },
-      { name: "XnConvert profile XBS [DL]", url: "http://www.supportcall.co.za/sc-extras/sc-resize-aspectfit-50%-jpg.xbs" }
+      { name: "XnConvert profile ZIP [DL]", url: "http://www.supportcall.co.za/sc-extras/sc-resize-aspectfit-50-jpg.zip" },
+      { name: "XnConvert profile XBS [DL]", url: "http://www.supportcall.co.za/sc-extras/sc-resize-aspectfit-50-jpg.xbs" }
     ]
   },
   {
