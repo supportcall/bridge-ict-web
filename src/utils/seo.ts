@@ -140,20 +140,3 @@ export const MARKETING_OPTIMIZATIONS = {
     'Australia & South Africa Coverage'
   ]
 };
-
-// Lead generation optimization
-export const optimizeForLeadGeneration = () => {
-  // Ensure contact forms are easily accessible
-  const contactForms = document.querySelectorAll('form[data-contact]');
-  contactForms.forEach(form => {
-    form.setAttribute('data-conversion-optimized', 'true');
-  });
-  
-  // Track form interactions
-  const formInputs = document.querySelectorAll('input, textarea, select');
-  formInputs.forEach(input => {
-    input.addEventListener('focus', () => {
-      trackConversion('form_field_engagement');
-    });
-  });
-};
