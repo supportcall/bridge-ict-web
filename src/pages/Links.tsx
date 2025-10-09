@@ -30,7 +30,8 @@ const categories: Category[] = [
       { name: "Speedtest - Telemetry [site]", url: "http://speedtest.supportcall-isp.co.za/" },
       { name: "SC-Wiki [site]", url: "http://wiki.supportcall.co.za/" },
       { name: "Ticket System [site]", url: "http://tickets.supportcall-isp.co.za/" },
-      { name: "WebDev - TestSite [site]", url: "https://clientsitetest.supportcall-isp.co.za/" }
+      { name: "WebDev - TestSite [site]", url: "https://clientsitetest.supportcall-isp.co.za/" },
+      { name: "WAN IP Lookup [site]", url: "https://wanip.io/" }
     ]
   },
   {
