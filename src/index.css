@@ -23,18 +23,18 @@ All colors MUST be HSL for consistency.
     --popover: 0 0% 100%;
     --popover-foreground: 220 15% 10%;
 
-    /* ICT Brand Colors with better contrast */
-    --primary: 200 100% 45%;
+    /* ICT Brand Colors - Vibrant & Professional */
+    --primary: 200 100% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 200 100% 65%;
+    --primary-glow: 195 100% 60%;
 
-    --secondary: 220 15% 20%;
+    --secondary: 220 20% 25%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 14% 96%;
-    --muted-foreground: 220 15% 35%;
+    --muted-foreground: 220 15% 40%;
 
-    --accent: 142 71% 40%;
+    --accent: 142 76% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -46,21 +46,21 @@ All colors MUST be HSL for consistency.
 
     --radius: 0.75rem;
 
-    /* SupportCALL brand colors - Professional ICT palette */
-    --supportcall-blue: 210 100% 45%;
-    --supportcall-green: 142 76% 35%;
-    --supportcall-navy: 210 50% 12%;
+    /* SupportCALL brand colors - Vibrant Professional Palette */
+    --supportcall-blue: 210 100% 50%;
+    --supportcall-green: 142 80% 40%;
+    --supportcall-navy: 210 55% 15%;
     --supportcall-gray: 220 15% 88%;
-    --supportcall-orange: 25 95% 53%;
+    --supportcall-orange: 25 95% 55%;
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
     --gradient-dark: linear-gradient(135deg, hsl(var(--tech-navy)), hsl(220 15% 15%));
     --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
 
-    /* Shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(var(--supportcall-navy) / 0.3);
-    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.2);
+    /* Shadows - Enhanced Vibrancy */
+    --shadow-elegant: 0 10px 40px -10px hsl(var(--primary) / 0.4);
+    --shadow-glow: 0 0 50px hsl(var(--primary) / 0.35);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -93,17 +93,17 @@ All colors MUST be HSL for consistency.
     --popover: 220 15% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 200 100% 65%;
+    --primary: 200 100% 60%;
     --primary-foreground: 220 15% 8%;
-    --primary-glow: 200 100% 75%;
+    --primary-glow: 195 100% 70%;
 
-    --secondary: 220 15% 18%;
+    --secondary: 220 20% 22%;
     --secondary-foreground: 0 0% 98%;
 
     --muted: 220 15% 18%;
     --muted-foreground: 0 0% 85%;
 
-    --accent: 142 71% 60%;
+    --accent: 142 76% 55%;
     --accent-foreground: 220 15% 8%;
 
     --destructive: 0 84% 65%;
@@ -119,8 +119,8 @@ All colors MUST be HSL for consistency.
     --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
 
     /* Enhanced shadows for dark mode */
-    --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
-    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
+    --shadow-elegant: 0 10px 40px -10px hsl(0 0% 0% / 0.6);
+    --shadow-glow: 0 0 50px hsl(var(--primary) / 0.4);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
