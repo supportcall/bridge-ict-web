@@ -46,16 +46,16 @@ const Navigation = () => {
       {/* Special Offer Banner */}
       {showBanner && (
         <div className="bg-[#2a2a2a] text-white py-3 px-4 relative z-50 border-b border-white/10">
-          <div className="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-2">
-            <div className="flex items-center gap-2 flex-1 min-w-0">
-              <span className="font-bold text-sm sm:text-base whitespace-nowrap text-supportcall-orange">SPECIAL OFFER:</span>
+          <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+            <div className="flex items-center gap-2 flex-1">
+              <span className="font-bold text-sm sm:text-base text-supportcall-orange">SPECIAL OFFER:</span>
               <span className="text-sm sm:text-base">2 months FREE ICT TacticalRMM + Emergency Remote Support Plan - Book Today!</span>
             </div>
-            <div className="flex items-center gap-2 flex-shrink-0">
+            <div className="flex items-center gap-3 flex-shrink-0">
               <Button 
                 size="sm"
                 onClick={() => openBooking()}
-                className="whitespace-nowrap bg-cyan-500 hover:bg-cyan-600 text-white border-0"
+                className="bg-cyan-500 hover:bg-cyan-600 text-white border-0"
               >
                 <Phone className="w-4 h-4 mr-1" />
                 Book Now
