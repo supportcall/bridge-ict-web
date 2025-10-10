@@ -1,35 +1,6 @@
 import { toast } from "sonner";
+import { secureFormSubmit, protectSensitiveData } from "./security";
 import { validateFormData } from "./validation";
-
-// Simple security utilities for form submission
-const sanitizeInput = (input: string): string => {
-  return input
-    .replace(/[<>]/g, '') // Remove angle brackets
-    .trim()
-    .slice(0, 5000); // Max length
-};
-
-const secureFormSubmit = (formData: Record<string, any>): Record<string, any> => {
-  const sanitized: Record<string, any> = {};
-  for (const [key, value] of Object.entries(formData)) {
-    if (typeof value === 'string') {
-      sanitized[key] = sanitizeInput(value);
-    } else {
-      sanitized[key] = value;
-    }
-  }
-  return sanitized;
-};
-
-const protectSensitiveData = (data: string): string => {
-  // Simple obfuscation for logging
-  if (!data) return '';
-  const emailRegex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi;
-  return data.replace(emailRegex, (match) => {
-    const [local, domain] = match.split('@');
-    return `${local.substring(0, 2)}***@${domain}`;
-  });
-};
 
 export interface FormSubmissionData {
   formTitle: string;
