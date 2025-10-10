@@ -17,7 +17,7 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { openBooking } from "@/utils/booking";
 import { validateFormData, sanitizeInput, sanitizeInputRealtime, RateLimiter } from "@/utils/validation";
-import { submitFormWithFallback } from "@/utils/formSubmission";
+import { submitToPhp } from "@/utils/phpFormSubmission";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -85,27 +85,13 @@ const Contact = () => {
       return;
     }
     
-    // Submit form with fallback handling
-    const submissionData = {
-      formTitle: "Contact Form",
-      userEmail: formData.email,
-      formData: {
-        ...formData,
-        service: formData.service || 'General'
-      },
-      recipients: [
-        "info@supportcall.co.za",
-        "info@supportcall.com.au", 
-        "scmyhelp@gmail.com"
-      ]
-    };
+    // Submit form via PHP
+    const success = await submitToPhp(formData, "Contact Form - SupportCALL");
     
-    await submitFormWithFallback(submissionData);
-    
-    toast({
-      title: "Form Submitted",
-      description: "Your email client should open with the pre-filled message. If not, a backup option will appear.",
-    });
+    if (!success) {
+      setIsSubmitting(false);
+      return;
+    }
     
     // Reset form
     setFormData({

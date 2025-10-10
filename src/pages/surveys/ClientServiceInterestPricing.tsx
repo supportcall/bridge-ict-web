@@ -11,7 +11,7 @@ import { Separator } from "@/components/ui/separator";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { generateServiceSchema } from "@/utils/seo";
 import { useState } from "react";
-import { submitFormWithFallback } from "@/utils/formSubmission";
+import { submitToPhp } from "@/utils/phpFormSubmission";
 import { useToast } from "@/hooks/use-toast";
 import { validateFormData, sanitizeInput, sanitizeInputRealtime, RateLimiter } from "@/utils/validation";
 import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelector";
@@ -215,27 +215,13 @@ const ClientServiceInterestPricing = () => {
       'Other Service': sanitizedData.other_service as string || 'None specified'
     }];
 
-    // Submit form with enhanced email handling
-    const submissionData = {
-      formTitle: "Client Service Interest & Pricing Survey",
-      userEmail: sanitizedData.email as string,
-      formData: sanitizedData,
-      recipients: [
-        "info@supportcall.co.za",
-        "info@supportcall.com.au",
-        "feedback@supportcall.co.za", 
-        "feedback@supportcall.com.au",
-        "scmyhelp@gmail.com"
-      ],
-      csvData
-    };
-
-    await submitFormWithFallback(submissionData);
+    // Submit form via PHP
+    const success = await submitToPhp(sanitizedData, "Client Service Interest & Pricing Survey");
     
-    toast({
-      title: "Survey Submitted",
-      description: "Your service interest and pricing feedback has been submitted. Thank you!",
-    });
+    if (!success) {
+      setIsSubmitting(false);
+      return;
+    }
     
     setSubmitted(true);
     setIsSubmitting(false);

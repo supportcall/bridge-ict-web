@@ -10,7 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { generateServiceSchema } from "@/utils/seo";
 import { useState } from "react";
-import { submitFormWithFallback } from "@/utils/formSubmission";
+import { submitToPhp } from "@/utils/phpFormSubmission";
 import { useToast } from "@/hooks/use-toast";
 import { validateFormData, sanitizeInput, sanitizeInputRealtime, RateLimiter } from "@/utils/validation";
 
@@ -142,27 +142,13 @@ const CustomerSatisfactionSurvey = () => {
       'Recommend to Others': sanitizedData.recommendation_to_others as string
     }];
 
-    // Submit form with enhanced email handling
-    const submissionData = {
-      formTitle: "Customer Satisfaction Survey",
-      userEmail: sanitizedData.email as string,
-      formData: sanitizedData,
-      recipients: [
-        "info@supportcall.co.za",
-        "info@supportcall.com.au",
-        "feedback@supportcall.co.za",
-        "feedback@supportcall.com.au",
-        "scmyhelp@gmail.com"
-      ],
-      csvData
-    };
-
-    await submitFormWithFallback(submissionData);
+    // Submit form via PHP
+    const success = await submitToPhp(sanitizedData, "Customer Satisfaction Survey");
     
-    toast({
-      title: "Survey Submitted",
-      description: "Your feedback has been submitted. Thank you for your time!",
-    });
+    if (!success) {
+      setIsSubmitting(false);
+      return;
+    }
     
     setSubmitted(true);
     setIsSubmitting(false);
