@@ -21,6 +21,7 @@ import Links from "./pages/Links";
 import CustomerSatisfactionSurvey from "./pages/surveys/CustomerSatisfactionSurvey";
 import ClientServiceInterestPricing from "./pages/surveys/ClientServiceInterestPricing";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const App = () => {
   const [queryClient] = useState(() => new QueryClient());
@@ -32,6 +33,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <AnimatedBackground />
           <SkipLink />
           <ScrollToTop />
           <FloatingScrollToTop />
