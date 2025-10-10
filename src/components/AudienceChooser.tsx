@@ -201,7 +201,6 @@ const audiences = [
         items: [
           "Remote system monitoring",
           "Automated patch management",
-          
           "Scripted task automation",
           "Real-time alerting",
           "Issue resolution ASAP (Client Availability)",

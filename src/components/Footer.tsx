@@ -37,33 +37,6 @@ const Footer = () => {
     }
   };
 
-  const footerLinks = {
-    services: [
-      "Enterprise Solutions",
-      "Security & Compliance", 
-      "Cloud Services",
-      "Proactive Support & Monitoring",
-      "Remote Monitoring",
-      "Consulting"
-    ],
-    company: [
-      "About Us",
-      "Our Team",
-      "Careers", 
-      "News & Updates",
-      "Case Studies",
-      "Contact"
-    ],
-    support: [
-      "Help Center",
-      "Documentation",
-      "System Status",
-      "Emergency Support",
-      "Training",
-      "Community"
-    ]
-  };
-
   return (
     <footer className="bg-gradient-dark text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

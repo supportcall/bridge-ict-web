@@ -7,6 +7,7 @@ import { openBooking } from "@/utils/booking";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showBanner, setShowBanner] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -41,8 +42,38 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="sticky top-0 w-full z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <>
+      {/* Special Offer Banner */}
+      {showBanner && (
+        <div className="bg-gradient-to-r from-primary to-accent text-white py-3 px-4 relative z-50">
+          <div className="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-2">
+            <div className="flex items-center gap-2 flex-1 min-w-0">
+              <span className="font-bold text-sm sm:text-base whitespace-nowrap">SPECIAL OFFER:</span>
+              <span className="text-sm sm:text-base">2 months FREE ICT TacticalRMM + Emergency Remote Support Plan - Book Today!</span>
+            </div>
+            <div className="flex items-center gap-2 flex-shrink-0">
+              <Button 
+                variant="secondary" 
+                size="sm"
+                onClick={() => openBooking()}
+                className="whitespace-nowrap"
+              >
+                Book Now
+              </Button>
+              <button
+                onClick={() => setShowBanner(false)}
+                className="text-white hover:text-white/80 transition-colors p-1"
+                aria-label="Close banner"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      
+      <nav className="sticky top-0 w-full z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
@@ -155,6 +186,7 @@ const Navigation = () => {
         )}
       </div>
     </nav>
+    </>
   );
 };
 
