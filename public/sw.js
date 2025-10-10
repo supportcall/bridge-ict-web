@@ -1,5 +1,5 @@
 // Service Worker for Self-Contained Operation - Enhanced Version
-const CACHE_NAME = 'supportcall-v4';
+const CACHE_NAME = 'supportcall-v5';
 const STATIC_ASSETS = [
   '/',
   '/index.html',

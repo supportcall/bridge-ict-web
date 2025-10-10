@@ -5,7 +5,6 @@ import About from "@/components/About";
 import Services from "@/components/Services";
 import OutcomeBasedPlan from "@/components/OutcomeBasedPlan";
 import AudienceChooser from "@/components/AudienceChooser";
-import ConversionBanner from "@/components/ConversionBanner";
 import Footer from "@/components/Footer";
 import { Skeleton } from "@/components/ui/skeleton";
 import { usePageSEO } from "@/hooks/usePageSEO";
@@ -63,9 +62,6 @@ const Index = () => {
   usePageSEO(generateMarketingMeta('home'));
   return (
     <div className="min-h-screen dark">
-      {/* Critical conversion banner for immediate attention */}
-      <ConversionBanner />
-      
       {/* Critical above-the-fold content loads immediately */}
       <Navigation />
       <Hero />

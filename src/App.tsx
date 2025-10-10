@@ -4,7 +4,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import { useOptimizations } from "@/hooks/useOptimizations";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import ScrollToTop from "@/components/ScrollToTop";
 import FloatingScrollToTop from "@/components/FloatingScrollToTop";
@@ -24,9 +23,6 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const App = () => {
   const [queryClient] = useState(() => new QueryClient());
-  
-  // Apply essential optimizations
-  useOptimizations();
 
   return (
   <ErrorBoundary>

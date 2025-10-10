@@ -30,7 +30,8 @@ const categories: Category[] = [
       { name: "Speedtest - Telemetry [site]", url: "http://speedtest.supportcall-isp.co.za/" },
       { name: "SC-Wiki [site]", url: "http://wiki.supportcall.co.za/" },
       { name: "Ticket System [site]", url: "http://tickets.supportcall-isp.co.za/" },
-      { name: "WebDev - TestSite [site]", url: "https://clientsitetest.supportcall-isp.co.za/" }
+      { name: "WebDev - TestSite [site]", url: "https://clientsitetest.supportcall-isp.co.za/" },
+      { name: "WAN IP Lookup [site]", url: "https://wanip.io/" }
     ]
   },
   {
@@ -52,7 +53,7 @@ const categories: Category[] = [
       { name: "ESET v18.x Offline Installers [site]", url: "https://help.eset.com/esu/18/en-US/?installation_offline.html" },
       { name: "ESET Free Online Scanner [site]", url: "https://www.eset.com/za/home/online-scanner/" },
       { name: "ESET Tools & Utilities [site]", url: "https://www.eset.com/au/download-utilities/" },
-      { name: "SC-USCS (SC - Ultimate Secure Clean Script) [site]", url: "https://www.supportcall.co.za/store/index_sc-uscs.html" }
+      { name: "SC-USCS (SC - Ultimate Secure Clean Script) [site]", url: "https://sc-uscs.com/" }
     ]
   },
   {
