@@ -36,7 +36,7 @@ export const PAGE_SEO = {
   },
   links: {
     title: "FREE IT Tools & Resources | Expert-Curated Downloads | SupportCALL",
-    description: "Access professional-grade IT tools and resources FREE! Expert-curated security utilities, remote support tools, system diagnostics, and professional IT resources. Trusted by 500+ businesses. Download essential tools to protect and optimize your systems today!",
+    description: "Access professional-grade IT tools and resources FREE! Expert-curated security utilities, remote support tools, system diagnostics, and professional IT resources. Download essential tools to protect and optimize your systems today!",
     keywords: "free IT tools, IT resources, downloads, remote support tools, security utilities, system diagnostics, technical resources, professional tools, virus removal, system optimization"
   },
   notFound: {
@@ -134,7 +134,6 @@ export const MARKETING_OPTIMIZATIONS = {
   // Trust signals for conversion optimization
   trustSignals: [
     '20+ Years Experience',
-    '500+ Satisfied Clients',
     '24/7 Emergency Response',
     'Enterprise Security Certified',
     'Australia & South Africa Coverage'
