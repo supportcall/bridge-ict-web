@@ -64,7 +64,8 @@ const Index = () => {
     <div className="min-h-screen dark">
       {/* Critical above-the-fold content loads immediately */}
       <Navigation />
-      <Hero />
+      <main id="main-content">
+        <Hero />
       
       {/* Perfect content ratios - Core value propositions */}
       <AudienceChooser extraNote={<>We also offer Microsoft Windows & Office, <strong>Linux alternative solutions</strong> for Enterprise, SME, Home User and Seniors</>} />
@@ -80,6 +81,7 @@ const Index = () => {
       <Suspense fallback={<ContactLoading />}>
         <Contact />
       </Suspense>
+      </main>
       
       {/* Critical footer for SEO and contact information */}
       <Footer />

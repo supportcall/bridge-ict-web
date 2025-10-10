@@ -23,11 +23,15 @@ import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelec
 import { openBooking } from "@/utils/booking";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { generateMarketingMeta } from "@/utils/seo";
+import { generateBreadcrumbSchema, SERVICE_BREADCRUMBS } from "@/utils/breadcrumbSchema";
 
 const HireUs = () => {
   const { currency, setCurrency, getHourlyRate } = useCurrencyPricing();
   const hourlyRate = getHourlyRate();
-  usePageSEO(generateMarketingMeta('hireUs'));
+  usePageSEO({ 
+    ...generateMarketingMeta('hireUs'),
+    structuredData: generateBreadcrumbSchema(SERVICE_BREADCRUMBS.hireUs)
+  });
 
   const services = [
     {

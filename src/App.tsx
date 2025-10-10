@@ -7,6 +7,7 @@ import { useState } from "react";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import ScrollToTop from "@/components/ScrollToTop";
 import FloatingScrollToTop from "@/components/FloatingScrollToTop";
+import SkipLink from "@/components/SkipLink";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import RMM from "./pages/services/RMM";
@@ -31,6 +32,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <SkipLink />
           <ScrollToTop />
           <FloatingScrollToTop />
           <GoogleAnalytics measurementId="G-GNYHGV5NNM" />

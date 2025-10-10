@@ -21,10 +21,17 @@ import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelec
 import { openBooking } from "@/utils/booking";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { generateMarketingMeta, generateServiceSchema } from "@/utils/seo";
+import { generateBreadcrumbSchema, SERVICE_BREADCRUMBS } from "@/utils/breadcrumbSchema";
 
 const Seniors = () => {
   const { currency, setCurrency, formatPrice } = useCurrencyPricing();
-  usePageSEO({ ...generateMarketingMeta('seniors'), structuredData: generateServiceSchema('SupportCALL Tech Angels (Seniors)', 'Senior-friendly monthly remote support, safety checks, and patient guidance.') });
+  usePageSEO({ 
+    ...generateMarketingMeta('seniors'), 
+    structuredData: [
+      generateServiceSchema('SupportCALL Tech Angels (Seniors)', 'Senior-friendly monthly remote support, safety checks, and patient guidance.'),
+      generateBreadcrumbSchema(SERVICE_BREADCRUMBS.seniors)
+    ]
+  });
 
   const services = [
     {

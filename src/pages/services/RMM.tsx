@@ -20,10 +20,17 @@ import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelec
 import { openBooking } from "@/utils/booking";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { generateMarketingMeta, generateServiceSchema } from "@/utils/seo";
+import { generateBreadcrumbSchema, SERVICE_BREADCRUMBS } from "@/utils/breadcrumbSchema";
 
 const RMM = () => {
   const { currency, setCurrency, formatPrice } = useCurrencyPricing();
-  usePageSEO({ ...generateMarketingMeta('rmm'), structuredData: generateServiceSchema('SupportCALL TacticalRMM', 'Remote monitoring & management with proactive alerts, patching, asset tracking, and automation.') });
+  usePageSEO({ 
+    ...generateMarketingMeta('rmm'), 
+    structuredData: [
+      generateServiceSchema('SupportCALL TacticalRMM', 'Remote monitoring & management with proactive alerts, patching, asset tracking, and automation.'),
+      generateBreadcrumbSchema(SERVICE_BREADCRUMBS.rmm)
+    ]
+  });
 
   const features = [
     {
@@ -121,7 +128,7 @@ const RMM = () => {
   return (
     <div className="min-h-screen dark">
       <Navigation />
-      
+      <main id="main-content">
       {/* Hero Section */}
       <section className="pt-20 pb-16 bg-gradient-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -265,7 +272,7 @@ const RMM = () => {
         </div>
       </section>
 
-      
+      </main>
       <Footer />
     </div>
   );

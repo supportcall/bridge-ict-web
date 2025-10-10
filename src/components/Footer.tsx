@@ -49,12 +49,15 @@ const Footer = () => {
                 <div className="flex items-center mb-4">
                     <img 
                       src="/logo.png" 
-                      alt="SupportCALL Logo" 
+                      alt="SupportCALL ICT Services Logo - Professional IT Support Australia & South Africa" 
                       className="h-10 w-10 mr-3"
+                      width="40"
+                      height="40"
+                      loading="lazy"
                   />
-                  <h3 className="text-2xl font-bold text-primary-glow">
+                  <span className="text-2xl font-bold text-primary-glow">
                     SupportCALL
-                  </h3>
+                  </span>
                 </div>
                 <p className="text-white/80 mb-6 leading-relaxed">
                   Delivering ICT services, management, and products to enterprises, SME and home users across 

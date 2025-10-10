@@ -29,10 +29,17 @@ import CurrencySelector, { useCurrencyPricing } from "@/components/CurrencySelec
 import { openBooking } from "@/utils/booking";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { generateMarketingMeta, generateServiceSchema } from "@/utils/seo";
+import { generateBreadcrumbSchema, SERVICE_BREADCRUMBS } from "@/utils/breadcrumbSchema";
 
 const WSystem = () => {
   const { currency, setCurrency, formatPrice } = useCurrencyPricing();
-  usePageSEO({ ...generateMarketingMeta('wsystem'), structuredData: generateServiceSchema('SupportCALL W.system', 'Unified XDR & SIEM platform with analytics, compliance, and incident response.') });
+  usePageSEO({ 
+    ...generateMarketingMeta('wsystem'), 
+    structuredData: [
+      generateServiceSchema('SupportCALL W.system', 'Unified XDR & SIEM platform with analytics, compliance, and incident response.'),
+      generateBreadcrumbSchema(SERVICE_BREADCRUMBS.wsystem)
+    ]
+  });
 
   const features = [
     {

@@ -79,10 +79,12 @@ const Navigation = () => {
           <div className="flex-shrink-0 flex items-center">
             <img 
               src="/logo.png" 
-              alt="SupportCALL Logo" 
+              alt="SupportCALL ICT Services Logo - Professional IT Support Australia & South Africa" 
               className="h-10 w-10 mr-3"
+              width="40"
+              height="40"
             />
-            <h1 className="text-xl font-bold text-primary">SupportCALL</h1>
+            <span className="text-xl font-bold text-primary">SupportCALL</span>
           </div>
 
           {/* Desktop Navigation */}
