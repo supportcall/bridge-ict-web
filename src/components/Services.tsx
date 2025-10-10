@@ -19,13 +19,14 @@ import {
 } from "lucide-react";
 import servicesIcon from "@/assets/services-icon.jpg";
 import { openBooking } from "@/utils/booking";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { generateServiceSchema, MARKETING_OPTIMIZATIONS } from "@/utils/seo";
 
 const Services = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   
   // SEO optimization for services section
   usePageSEO({
@@ -276,9 +277,14 @@ const Services = () => {
               const contactSection = document.querySelector('#contact');
               if (contactSection) {
                 contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              } else {
-                navigate('/#contact');
-                setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+              } else if (location.pathname !== '/') {
+                navigate('/');
+                setTimeout(() => {
+                  const element = document.querySelector('#contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }, 100);
               }
             }}
             data-cta="get-quote"
