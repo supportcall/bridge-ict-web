@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { openBooking } from "@/utils/booking";
 
@@ -45,24 +45,24 @@ const Navigation = () => {
     <>
       {/* Special Offer Banner */}
       {showBanner && (
-        <div className="bg-gradient-to-r from-primary to-accent text-white py-3 px-4 relative z-50">
+        <div className="bg-[#2a2a2a] text-white py-3 px-4 relative z-50 border-b border-white/10">
           <div className="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-2">
             <div className="flex items-center gap-2 flex-1 min-w-0">
-              <span className="font-bold text-sm sm:text-base whitespace-nowrap">SPECIAL OFFER:</span>
+              <span className="font-bold text-sm sm:text-base whitespace-nowrap text-supportcall-orange">SPECIAL OFFER:</span>
               <span className="text-sm sm:text-base">2 months FREE ICT TacticalRMM + Emergency Remote Support Plan - Book Today!</span>
             </div>
             <div className="flex items-center gap-2 flex-shrink-0">
               <Button 
-                variant="secondary" 
                 size="sm"
                 onClick={() => openBooking()}
-                className="whitespace-nowrap"
+                className="whitespace-nowrap bg-cyan-500 hover:bg-cyan-600 text-white border-0"
               >
+                <Phone className="w-4 h-4 mr-1" />
                 Book Now
               </Button>
               <button
                 onClick={() => setShowBanner(false)}
-                className="text-white hover:text-white/80 transition-colors p-1"
+                className="text-white hover:text-white/70 transition-colors p-1"
                 aria-label="Close banner"
               >
                 <X className="h-5 w-5" />
