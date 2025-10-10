@@ -55,6 +55,19 @@ export const usePageSEO = (meta: PageMeta) => {
       robots.setAttribute("content", "noindex, nofollow");
     }
 
+    // Update Open Graph meta tags for social sharing conversion
+    const ogTitle = document.querySelector('meta[property="og:title"]') as HTMLMetaElement;
+    if (ogTitle && meta.title) ogTitle.setAttribute("content", meta.title);
+    
+    const ogDesc = document.querySelector('meta[property="og:description"]') as HTMLMetaElement;
+    if (ogDesc && meta.description) ogDesc.setAttribute("content", meta.description);
+    
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]') as HTMLMetaElement;
+    if (twitterTitle && meta.title) twitterTitle.setAttribute("content", meta.title);
+    
+    const twitterDesc = document.querySelector('meta[name="twitter:description"]') as HTMLMetaElement;
+    if (twitterDesc && meta.description) twitterDesc.setAttribute("content", meta.description);
+
     // Remove previously injected JSON-LD by this hook
     document.querySelectorAll('script[data-seo-ld="true"]').forEach((el) => el.remove());
 

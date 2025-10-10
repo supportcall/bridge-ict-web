@@ -2,47 +2,47 @@
  * SEO optimization utilities for maximum search visibility and client acquisition
  */
 
-// Dynamic meta tags for different pages - optimized for current website content
+// Dynamic meta tags for different pages - MAXIMIZED for marketing impact and conversion
 export const PAGE_SEO = {
   home: {
-    title: "SupportCALL: Complete ICT Solutions Home to Enterprise | IT Support AU & SA",
-    description: "SupportCALL delivers genuine ICT services that work. Home to enterprise IT support, cybersecurity, emergency response across Australia & South Africa. 20+ years expertise. FREE FIRST consultation - call +27-87-822-2380!",
-    keywords: "SupportCALL, IT support, ICT support, ICT services, computer support, cyber security, managed IT services, emergency IT response, enterprise IT solutions, home computer help, business IT support, network security, remote monitoring, technical support, FREE consultation, Australia, South Africa"
+    title: "🎉 SPECIAL: 2 Months FREE! | Complete ICT Solutions AU & SA | SupportCALL",
+    description: "⚡ SPECIAL OFFER: Get 2 months FREE ICT TacticalRMM + Emergency Support! 20+ years trusted expertise. Home to enterprise IT solutions. 24/7 emergency response across Australia & South Africa. Book your FREE consultation NOW - Call +27-87-822-2380 or +61-4-9933-5679. Stop losing money to IT problems today!",
+    keywords: "SupportCALL, IT support, ICT support, FREE consultation, special offer, 2 months free, TacticalRMM, emergency IT support, cybersecurity, managed IT services, enterprise IT solutions, home computer help, business IT support, network security, remote monitoring, technical support, Australia, South Africa, 24/7 support"
   },
   rmm: {
-    title: "TacticalRMM - Remote Monitoring & Management | SupportCALL",
-    description: "Proactive remote monitoring and management with TacticalRMM. 24/7 system monitoring, automated patching, security alerts. Enterprise-grade RMM solutions. FREE FIRST consultation available.",
-    keywords: "TacticalRMM, remote monitoring, managed IT services, proactive IT support, automated patching, system monitoring, RMM solutions, SupportCALL"
+    title: "🎉 2 Months FREE TacticalRMM! | Remote Monitoring & Management | SupportCALL",
+    description: "⚡ LIMITED TIME: 2 months FREE TacticalRMM + Emergency Remote Support! Stop downtime before it costs you thousands. 24/7 proactive monitoring, automated patching, instant security alerts. Enterprise-grade protection at SME prices. Book FREE consultation NOW - +27-87-822-2380. Available across AU & SA.",
+    keywords: "TacticalRMM, free offer, 2 months free, remote monitoring, managed IT services, proactive IT support, automated patching, system monitoring, RMM solutions, prevent downtime, emergency support, SupportCALL, Australia, South Africa"
   },
   wsystem: {
-    title: "W.system XDR & SIEM Security Platform | SupportCALL",
-    description: "Advanced XDR and SIEM cybersecurity platform by W.system. Unified endpoint protection, cloud workload security, real-time threat detection. Enterprise cybersecurity solutions.",
-    keywords: "W.system, XDR security, SIEM platform, endpoint protection, cloud security, threat detection, cybersecurity platform, enterprise security"
+    title: "Stop Cyber Attacks NOW! | W.system XDR & SIEM Security | SupportCALL",
+    description: "Don't wait for a breach to cost your business! Advanced W.system XDR & SIEM protection. Unified endpoint security, real-time threat detection, compliance reporting. Enterprise cybersecurity that actually works. FREE security assessment worth $500! Call +27-87-822-2380 to protect your business today.",
+    keywords: "W.system, XDR security, SIEM platform, endpoint protection, cyber attack prevention, threat detection, cybersecurity platform, enterprise security, free security assessment, data breach prevention, compliance, SupportCALL"
   },
   seniors: {
-    title: "Tech Angels - Senior Technology Support | SupportCALL", 
-    description: "Compassionate technology support for seniors aged 65+. Patient, understanding tech help designed for older adults. Peace of mind technology assistance. FREE FIRST consultation.",
-    keywords: "Tech Angels, senior tech support, elderly technology help, patient IT assistance, senior-friendly tech support, technology for seniors"
+    title: "Peace of Mind Tech Support for Seniors 65+ | Reduced Rates | SupportCALL", 
+    description: "Patient, compassionate technology support designed for seniors. No rushing, no jargon - just friendly help when you need it. SPECIAL reduced monthly rates for verified pensioners. Remote assistance for computers, phones, tablets. FREE FIRST consultation - Call +27-87-822-2380. We treat you like family!",
+    keywords: "senior tech support, elderly technology help, patient IT assistance, pensioner discount, senior-friendly tech support, technology for seniors, reduced rates, compassionate support, remote help for elderly"
   },
   hireUs: {
-    title: "Hire ICT Consultants - Expert IT Services | SupportCALL",
-    description: "Professional ICT consulting with 20+ years experience. Onsite and remote support services. Expert technicians for business IT needs. Flexible engagement models available.",
-    keywords: "hire ICT consultants, IT consulting services, onsite support, remote IT assistance, business technology services, professional IT consultants"
+    title: "Hire Expert ICT Consultants - 20+ Years Proven Results | SupportCALL",
+    description: "Get access to 20+ years ICT expertise without full-time costs! Flexible hiring: onsite, remote, or hybrid. Emergency callouts, project work, ongoing support. No lock-in contracts. Serving enterprise to home users across AU & SA. Book FREE consultation to discuss your needs - Call +27-87-822-2380 NOW!",
+    keywords: "hire ICT consultants, IT consulting services, onsite support, remote IT assistance, flexible ICT staffing, emergency callouts, project-based IT, business technology services, professional IT consultants, SupportCALL"
   },
   remoteSupport: {
-    title: "Remote IT Support Services | Instant Secure Connection | SupportCALL",
-    description: "Instant remote IT support for Windows, macOS, Linux. Secure remote desktop assistance, troubleshooting, system maintenance. Available 24/7 across AU & SA. Book session now.",
-    keywords: "remote IT support, remote desktop, instant support, secure remote connection, troubleshooting, system maintenance, Windows support, macOS support, Linux support"
+    title: "Instant Remote IT Support | Available NOW 24/7 | Windows, Mac, Linux",
+    description: "IT problem right now? Get instant secure remote support in minutes! Expert help for Windows, macOS, Linux. Fix issues without waiting for onsite visits. Available 24/7 across Australia & South Africa. Safe, secure, professional. Book session NOW - Call +27-87-822-2380 or +61-4-9933-5679. Emergency support available!",
+    keywords: "remote IT support, instant support, 24/7 IT help, remote desktop, secure remote connection, immediate assistance, Windows support, macOS support, Linux support, emergency IT support, same-day support, SupportCALL"
   },
   links: {
-    title: "Useful IT Resources & Tools | Downloads & Links | SupportCALL",
-    description: "Essential IT tools, downloads, and resources curated by SupportCALL experts. Security utilities, remote support tools, system diagnostics, and professional IT resources.",
-    keywords: "IT resources, IT tools, downloads, remote support tools, security utilities, system diagnostics, technical resources"
+    title: "FREE IT Tools & Resources | Expert-Curated Downloads | SupportCALL",
+    description: "Access professional-grade IT tools and resources FREE! Expert-curated security utilities, remote support tools, system diagnostics, and professional IT resources. Trusted by 500+ businesses. Download essential tools to protect and optimize your systems today!",
+    keywords: "free IT tools, IT resources, downloads, remote support tools, security utilities, system diagnostics, technical resources, professional tools, virus removal, system optimization"
   },
   notFound: {
-    title: "404 - Page Not Found | SupportCALL",
-    description: "The page you're looking for could not be found. Return to SupportCALL homepage for complete ICT solutions and expert IT support services.",
-    keywords: "404 error, page not found, SupportCALL"
+    title: "Page Not Found | Get FREE IT Consultation Instead | SupportCALL",
+    description: "Oops! Page not found. But don't leave empty-handed - claim your FREE IT consultation! 20+ years expertise, 24/7 emergency support across AU & SA. Call +27-87-822-2380 now to discuss your IT needs.",
+    keywords: "404 error, page not found, free consultation, IT support, SupportCALL"
   }
 };
 
