@@ -45,7 +45,7 @@ const Navigation = () => {
     <>
       {/* Special Offer Banner */}
       {showBanner && (
-        <div className="bg-[#2a2a2a] text-white py-3 px-4 relative z-50 border-b border-white/10">
+        <div className="bg-secondary text-secondary-foreground py-3 px-4 relative z-50 border-b border-border">
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
             <div className="flex items-center gap-2 flex-1">
               <span className="font-bold text-sm sm:text-base text-supportcall-orange">SPECIAL OFFER:</span>
@@ -55,14 +55,15 @@ const Navigation = () => {
               <Button 
                 size="sm"
                 onClick={() => openBooking()}
-                className="bg-cyan-500 hover:bg-cyan-600 text-white border-0"
+                variant="default"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground"
               >
                 <Phone className="w-4 h-4 mr-1" />
                 Book Now
               </Button>
               <button
                 onClick={() => setShowBanner(false)}
-                className="text-white hover:text-white/70 transition-colors p-1"
+                className="text-secondary-foreground hover:text-secondary-foreground/70 transition-colors p-1"
                 aria-label="Close banner"
               >
                 <X className="h-5 w-5" />
