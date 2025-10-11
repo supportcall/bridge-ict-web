@@ -71,8 +71,17 @@ try {
     // Set timeout
     stream_set_timeout($socket, 30);
     
-    // Read initial server greeting (220)
-    $response = fgets($socket, 1024);
+    // Read ALL server greeting lines (220) - some servers send multiple
+    do {
+        $response = fgets($socket, 1024);
+        if ($response === false) {
+            throw new Exception("Failed to read server greeting");
+        }
+        // Continue reading if line starts with "220-" (multiline greeting)
+        $continue = (strlen($response) >= 4 && substr($response, 0, 4) === '220-');
+    } while ($continue);
+    
+    // Final line should be "220 " (with space)
     if (strpos($response, '220') === false) {
         throw new Exception("Invalid server greeting: $response");
     }
