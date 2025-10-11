@@ -38,17 +38,120 @@ function sanitize($input) {
 
 // Build email content
 $subject = isset($data['subject']) ? sanitize($data['subject']) : 'New Form Submission';
-$emailBody = "New form submission received:\n\n";
+
+// Organize form fields into categories
+$contactInfo = [];
+$requestDetails = [];
+$additionalInfo = [];
 
 foreach ($data as $key => $value) {
     if ($key !== 'subject') {
         $sanitizedKey = sanitize($key);
         $sanitizedValue = is_array($value) ? json_encode($value) : sanitize($value);
-        $emailBody .= ucfirst(str_replace('_', ' ', $sanitizedKey)) . ": " . $sanitizedValue . "\n";
+        $label = ucfirst(str_replace('_', ' ', $sanitizedKey));
+        
+        // Categorize fields
+        if (in_array($key, ['name', 'email', 'phone', 'company'])) {
+            $contactInfo[$label] = $sanitizedValue;
+        } elseif (in_array($key, ['service', 'message', 'form_type'])) {
+            $requestDetails[$label] = $sanitizedValue;
+        } else {
+            $additionalInfo[$label] = $sanitizedValue;
+        }
     }
 }
 
-$emailBody .= "\n---\nSubmitted: " . date('Y-m-d H:i:s') . "\n";
+// Build professional HTML email
+$emailBody = '
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4; }
+        .container { max-width: 600px; margin: 20px auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .header { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 30px 20px; text-align: center; }
+        .header h1 { margin: 0; font-size: 24px; font-weight: 600; }
+        .header p { margin: 5px 0 0; font-size: 14px; opacity: 0.9; }
+        .content { padding: 30px 20px; }
+        .section { margin-bottom: 30px; }
+        .section-title { font-size: 18px; font-weight: 600; color: #1e3a8a; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #3b82f6; }
+        .field { margin-bottom: 12px; padding: 12px; background: #f8fafc; border-left: 3px solid #3b82f6; border-radius: 4px; }
+        .field-label { font-weight: 600; color: #1e3a8a; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .field-value { color: #334155; font-size: 15px; word-wrap: break-word; white-space: pre-wrap; }
+        .message-field { background: #eff6ff; border-left-color: #2563eb; padding: 15px; }
+        .footer { background: #f8fafc; padding: 20px; text-align: center; border-top: 1px solid #e2e8f0; }
+        .footer p { margin: 5px 0; font-size: 13px; color: #64748b; }
+        .timestamp { color: #94a3b8; font-size: 12px; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📨 New Form Submission</h1>
+            <p>' . htmlspecialchars($subject) . '</p>
+        </div>
+        <div class="content">';
+
+// Contact Information Section
+if (!empty($contactInfo)) {
+    $emailBody .= '
+            <div class="section">
+                <div class="section-title">👤 Contact Information</div>';
+    foreach ($contactInfo as $label => $value) {
+        $emailBody .= '
+                <div class="field">
+                    <div class="field-label">' . htmlspecialchars($label) . '</div>
+                    <div class="field-value">' . htmlspecialchars($value) . '</div>
+                </div>';
+    }
+    $emailBody .= '
+            </div>';
+}
+
+// Request Details Section
+if (!empty($requestDetails)) {
+    $emailBody .= '
+            <div class="section">
+                <div class="section-title">📋 Request Details</div>';
+    foreach ($requestDetails as $label => $value) {
+        $fieldClass = strtolower($label) === 'message' ? 'field message-field' : 'field';
+        $emailBody .= '
+                <div class="' . $fieldClass . '">
+                    <div class="field-label">' . htmlspecialchars($label) . '</div>
+                    <div class="field-value">' . nl2br(htmlspecialchars($value)) . '</div>
+                </div>';
+    }
+    $emailBody .= '
+            </div>';
+}
+
+// Additional Information Section
+if (!empty($additionalInfo)) {
+    $emailBody .= '
+            <div class="section">
+                <div class="section-title">ℹ️ Additional Information</div>';
+    foreach ($additionalInfo as $label => $value) {
+        $emailBody .= '
+                <div class="field">
+                    <div class="field-label">' . htmlspecialchars($label) . '</div>
+                    <div class="field-value">' . htmlspecialchars($value) . '</div>
+                </div>';
+    }
+    $emailBody .= '
+            </div>';
+}
+
+$emailBody .= '
+        </div>
+        <div class="footer">
+            <p class="timestamp">Submitted on ' . date('l, F j, Y \a\t g:i A') . '</p>
+            <p><strong>SupportCALL</strong> | Digital Transformation Partner</p>
+        </div>
+    </div>
+</body>
+</html>';
 
 // Create email headers
 $headers = [
@@ -56,7 +159,7 @@ $headers = [
     'Reply-To: ' . (isset($data['email']) ? sanitize($data['email']) : $fromEmail),
     'X-Mailer: PHP/' . phpversion(),
     'MIME-Version: 1.0',
-    'Content-Type: text/plain; charset=UTF-8'
+    'Content-Type: text/html; charset=UTF-8'
 ];
 
 // Send via SMTP using fsockopen with direct SSL/TLS (port 465)
@@ -148,7 +251,7 @@ try {
     fputs($socket, "Reply-To: " . (isset($data['email']) ? sanitize($data['email']) : $fromEmail) . "\r\n");
     fputs($socket, "Subject: " . $subject . "\r\n");
     fputs($socket, "MIME-Version: 1.0\r\n");
-    fputs($socket, "Content-Type: text/plain; charset=UTF-8\r\n");
+    fputs($socket, "Content-Type: text/html; charset=UTF-8\r\n");
     fputs($socket, "X-Mailer: PHP/" . phpversion() . "\r\n");
     fputs($socket, "\r\n");
     fputs($socket, $emailBody . "\r\n");
