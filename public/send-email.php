@@ -20,7 +20,7 @@ $smtpPort = 465; // Using port 465 with direct SSL/TLS
 $smtpUsername = 'sendserver@supportcall.co.za';
 $smtpPassword = '74Dhm28#74Dhm28#';
 $fromEmail = 'sendserver@supportcall.co.za';
-$toEmail = 'info@supportcall.co.za';
+$toEmails = ['info@supportcall.co.za', 'scmyhelp@gmail.com'];
 
 // Get POST data
 $data = json_decode(file_get_contents('php://input'), true);
@@ -117,11 +117,13 @@ try {
         throw new Exception("MAIL FROM failed: $response");
     }
     
-    // RCPT TO
-    fputs($socket, "RCPT TO:<" . $toEmail . ">\r\n");
-    $response = fgets($socket, 1024);
-    if (strpos($response, '250') === false) {
-        throw new Exception("RCPT TO failed: $response");
+    // RCPT TO - send to both recipients
+    foreach ($toEmails as $toEmail) {
+        fputs($socket, "RCPT TO:<" . $toEmail . ">\r\n");
+        $response = fgets($socket, 1024);
+        if (strpos($response, '250') === false) {
+            throw new Exception("RCPT TO failed for $toEmail: $response");
+        }
     }
     
     // DATA
@@ -133,7 +135,7 @@ try {
     
     // Email headers and body
     fputs($socket, "From: " . $fromEmail . "\r\n");
-    fputs($socket, "To: " . $toEmail . "\r\n");
+    fputs($socket, "To: " . implode(', ', $toEmails) . "\r\n");
     fputs($socket, "Reply-To: " . (isset($data['email']) ? sanitize($data['email']) : $fromEmail) . "\r\n");
     fputs($socket, "Subject: " . $subject . "\r\n");
     fputs($socket, "MIME-Version: 1.0\r\n");
