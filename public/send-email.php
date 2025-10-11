@@ -38,118 +38,25 @@ function sanitize($input) {
 
 // Build email content
 $subject = isset($data['subject']) ? sanitize($data['subject']) : 'New Form Submission';
-$formType = isset($data['form_type']) ? sanitize($data['form_type']) : 'Contact Form';
+$emailBody = "New form submission received:\n\n";
 
-// Create HTML email body
-$emailBody = '
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; margin: 0; padding: 0; }
-        .container { max-width: 600px; margin: 20px auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .header { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #ffffff; padding: 30px 20px; text-align: center; }
-        .header h1 { margin: 0; font-size: 24px; font-weight: 600; }
-        .content { padding: 30px 20px; }
-        .section { margin-bottom: 25px; }
-        .section-title { font-size: 16px; font-weight: 600; color: #1e40af; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #e5e7eb; }
-        .field { margin-bottom: 15px; padding: 12px; background: #f9fafb; border-left: 3px solid #3b82f6; border-radius: 4px; }
-        .field-label { font-weight: 600; color: #4b5563; margin-bottom: 4px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .field-value { color: #1f2937; font-size: 15px; word-wrap: break-word; }
-        .footer { background: #f9fafb; padding: 20px; text-align: center; color: #6b7280; font-size: 12px; border-top: 1px solid #e5e7eb; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>📧 ' . htmlspecialchars($formType) . '</h1>
-        </div>
-        <div class="content">';
-
-// Contact Information Section
-$contactFields = ['name', 'email', 'phone', 'company'];
-$hasContactInfo = false;
-foreach ($contactFields as $field) {
-    if (isset($data[$field]) && !empty($data[$field])) {
-        $hasContactInfo = true;
-        break;
-    }
-}
-
-if ($hasContactInfo) {
-    $emailBody .= '<div class="section"><div class="section-title">Contact Information</div>';
-    foreach ($contactFields as $field) {
-        if (isset($data[$field]) && !empty($data[$field])) {
-            $label = ucfirst(str_replace('_', ' ', $field));
-            $value = sanitize($data[$field]);
-            $emailBody .= '<div class="field"><div class="field-label">' . $label . '</div><div class="field-value">' . $value . '</div></div>';
-        }
-    }
-    $emailBody .= '</div>';
-}
-
-// Service/Request Information Section
-$serviceFields = ['service', 'message', 'details', 'description'];
-$hasServiceInfo = false;
-foreach ($serviceFields as $field) {
-    if (isset($data[$field]) && !empty($data[$field])) {
-        $hasServiceInfo = true;
-        break;
-    }
-}
-
-if ($hasServiceInfo) {
-    $emailBody .= '<div class="section"><div class="section-title">Request Details</div>';
-    foreach ($serviceFields as $field) {
-        if (isset($data[$field]) && !empty($data[$field])) {
-            $label = ucfirst(str_replace('_', ' ', $field));
-            $value = sanitize($data[$field]);
-            $emailBody .= '<div class="field"><div class="field-label">' . $label . '</div><div class="field-value">' . nl2br($value) . '</div></div>';
-        }
-    }
-    $emailBody .= '</div>';
-}
-
-// Additional Information Section (all other fields)
-$skipFields = array_merge(['subject', 'form_type', 'submitted_at'], $contactFields, $serviceFields);
-$hasAdditionalInfo = false;
 foreach ($data as $key => $value) {
-    if (!in_array($key, $skipFields) && !empty($value)) {
-        $hasAdditionalInfo = true;
-        break;
+    if ($key !== 'subject') {
+        $sanitizedKey = sanitize($key);
+        $sanitizedValue = is_array($value) ? json_encode($value) : sanitize($value);
+        $emailBody .= ucfirst(str_replace('_', ' ', $sanitizedKey)) . ": " . $sanitizedValue . "\n";
     }
 }
 
-if ($hasAdditionalInfo) {
-    $emailBody .= '<div class="section"><div class="section-title">Additional Information</div>';
-    foreach ($data as $key => $value) {
-        if (!in_array($key, $skipFields) && !empty($value)) {
-            $label = ucfirst(str_replace('_', ' ', $key));
-            $sanitizedValue = is_array($value) ? implode(', ', array_map('sanitize', $value)) : sanitize($value);
-            $emailBody .= '<div class="field"><div class="field-label">' . $label . '</div><div class="field-value">' . nl2br($sanitizedValue) . '</div></div>';
-        }
-    }
-    $emailBody .= '</div>';
-}
+$emailBody .= "\n---\nSubmitted: " . date('Y-m-d H:i:s') . "\n";
 
-$emailBody .= '
-        </div>
-        <div class="footer">
-            <p><strong>Submitted:</strong> ' . date('l, F j, Y \a\t g:i A') . '</p>
-            <p>This email was automatically generated from your website contact form.</p>
-        </div>
-    </div>
-</body>
-</html>';
-
-// Create email headers for HTML
+// Create email headers
 $headers = [
     'From: ' . $fromEmail,
     'Reply-To: ' . (isset($data['email']) ? sanitize($data['email']) : $fromEmail),
     'X-Mailer: PHP/' . phpversion(),
     'MIME-Version: 1.0',
-    'Content-Type: text/html; charset=UTF-8'
+    'Content-Type: text/plain; charset=UTF-8'
 ];
 
 // Send via SMTP using fsockopen with direct SSL/TLS (port 465)
@@ -241,7 +148,7 @@ try {
     fputs($socket, "Reply-To: " . (isset($data['email']) ? sanitize($data['email']) : $fromEmail) . "\r\n");
     fputs($socket, "Subject: " . $subject . "\r\n");
     fputs($socket, "MIME-Version: 1.0\r\n");
-    fputs($socket, "Content-Type: text/html; charset=UTF-8\r\n");
+    fputs($socket, "Content-Type: text/plain; charset=UTF-8\r\n");
     fputs($socket, "X-Mailer: PHP/" . phpversion() . "\r\n");
     fputs($socket, "\r\n");
     fputs($socket, $emailBody . "\r\n");
