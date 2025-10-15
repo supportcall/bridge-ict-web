@@ -190,6 +190,8 @@ const Seniors = () => {
                 src={seniorsSupport} 
                 alt="Happy seniors receiving patient tech support from friendly technician" 
                 className="w-full h-auto object-cover"
+                width="1000"
+                height="667"
                 loading="lazy"
                 decoding="async"
               />

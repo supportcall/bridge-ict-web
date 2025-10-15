@@ -62,11 +62,17 @@ export const usePageSEO = (meta: PageMeta) => {
     const ogDesc = document.querySelector('meta[property="og:description"]') as HTMLMetaElement;
     if (ogDesc && meta.description) ogDesc.setAttribute("content", meta.description);
     
+    const ogUrl = document.querySelector('meta[property="og:url"]') as HTMLMetaElement;
+    if (ogUrl) ogUrl.setAttribute("content", window.location.href);
+    
     const twitterTitle = document.querySelector('meta[name="twitter:title"]') as HTMLMetaElement;
     if (twitterTitle && meta.title) twitterTitle.setAttribute("content", meta.title);
     
     const twitterDesc = document.querySelector('meta[name="twitter:description"]') as HTMLMetaElement;
     if (twitterDesc && meta.description) twitterDesc.setAttribute("content", meta.description);
+    
+    const twitterUrl = document.querySelector('meta[property="twitter:url"]') as HTMLMetaElement;
+    if (twitterUrl) twitterUrl.setAttribute("content", window.location.href);
 
     // Remove previously injected JSON-LD by this hook
     document.querySelectorAll('script[data-seo-ld="true"]').forEach((el) => el.remove());

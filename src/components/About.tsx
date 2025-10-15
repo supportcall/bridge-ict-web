@@ -54,6 +54,8 @@ const About = () => {
                 src={professionalTeam} 
                 alt="Professional SupportCALL team celebrating success with clients" 
                 className="w-full h-auto object-cover"
+                width="800"
+                height="600"
                 loading="lazy"
                 decoding="async"
               />

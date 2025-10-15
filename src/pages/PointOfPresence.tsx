@@ -110,6 +110,8 @@ const PointOfPresence = () => {
                   src={professionalTeam} 
                   alt="SupportCALL professional team celebrating successful global presence" 
                   className="w-full h-auto object-cover"
+                  width="800"
+                  height="600"
                   loading="lazy"
                   decoding="async"
                 />

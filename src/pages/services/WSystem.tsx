@@ -212,6 +212,8 @@ const WSystem = () => {
                 src={securityMonitoring} 
                 alt="Professional security specialist monitoring IT systems in modern security operations center" 
                 className="w-full h-auto object-cover"
+                width="1000"
+                height="667"
                 loading="lazy"
                 decoding="async"
               />

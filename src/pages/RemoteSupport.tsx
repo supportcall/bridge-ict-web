@@ -181,6 +181,8 @@ const RemoteSupport = () => {
                 src={remoteSupportTech} 
                 alt="IT technician providing friendly remote support to happy clients via video call" 
                 className="w-full h-auto object-cover"
+                width="1000"
+                height="667"
                 loading="lazy"
                 decoding="async"
               />

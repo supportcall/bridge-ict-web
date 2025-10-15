@@ -154,6 +154,8 @@ const HireUs = () => {
                 src={consultingMeeting} 
                 alt="Professional IT consultants collaborating with business clients in modern office" 
                 className="w-full h-auto object-cover"
+                width="1000"
+                height="667"
                 loading="lazy"
                 decoding="async"
               />

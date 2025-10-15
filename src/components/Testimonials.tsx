@@ -66,6 +66,8 @@ const Testimonials = () => {
               src={teamHelpingClient} 
               alt="Happy clients receiving excellent IT support from SupportCALL team" 
               className="w-full h-auto object-cover"
+              width="1200"
+              height="800"
               loading="lazy"
               decoding="async"
             />

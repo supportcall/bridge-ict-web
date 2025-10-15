@@ -177,6 +177,8 @@ const RMM = () => {
                 src={teamHelpingClient} 
                 alt="Professional IT support team helping business clients with monitoring systems" 
                 className="w-full h-auto object-cover"
+                width="1000"
+                height="667"
                 loading="lazy"
                 decoding="async"
               />

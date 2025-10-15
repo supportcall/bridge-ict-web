@@ -196,6 +196,8 @@ const Contact = () => {
               src={customerSupport} 
               alt="Friendly SupportCALL customer service representative ready to help" 
               className="w-full h-auto object-cover"
+              width="800"
+              height="600"
               loading="lazy"
               decoding="async"
             />

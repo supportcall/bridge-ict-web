@@ -124,6 +124,8 @@ const Services = () => {
                 src={servicesIcon} 
                 alt="ICT services montage highlighting SupportCALL offerings" 
                 className="w-full h-full object-cover"
+                width="1200"
+                height="800"
                 loading="lazy"
                 decoding="async"
               />
@@ -267,7 +269,7 @@ const Services = () => {
 
         {/* Simplified CTA Section - No duplication */}
         <div className="text-center mt-16">
-          <p className="text-muted-foregor mb-8">
+          <p className="text-muted-foreground mb-8">
             <strong>Ready to stop IT problems?</strong> Get expert help with our comprehensive ICT solutions.
           </p>
           <Button 
