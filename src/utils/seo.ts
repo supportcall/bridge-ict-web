@@ -30,9 +30,9 @@ export const PAGE_SEO = {
     keywords: "hire ICT consultants, IT consulting services, onsite support, remote IT assistance, flexible ICT staffing, emergency callouts, project-based IT, business technology services, professional IT consultants, SupportCALL"
   },
   remoteSupport: {
-    title: "Instant Remote IT Support | Available NOW 24/7 | Windows, Mac, Linux",
-    description: "IT problem right now? Get instant secure remote support in minutes! Expert help for Windows, macOS, Linux. Fix issues without waiting for onsite visits. Available 24/7 across Australia & South Africa. Safe, secure, professional. Book session NOW - Call +27-87-822-2380 or +61-4-9933-5679. Emergency support available!",
-    keywords: "remote IT support, instant support, 24/7 IT help, remote desktop, secure remote connection, immediate assistance, Windows support, macOS support, Linux support, emergency IT support, same-day support, SupportCALL"
+    title: "Remote IT Support | Available NOW 24/7 | Windows, Mac, Linux",
+    description: "IT problem right now? Get secure remote support from our expert team! Professional help for Windows, macOS, Linux. Fix issues without waiting for onsite visits. Available 24/7 across Australia & South Africa. Safe, secure, professional. Book session NOW - Call +27-87-822-2380 or +61-4-9933-5679. Emergency support available!",
+    keywords: "remote IT support, professional support, 24/7 IT help, remote desktop, secure remote connection, expert assistance, Windows support, macOS support, Linux support, emergency IT support, same-day support, SupportCALL"
   },
   links: {
     title: "FREE IT Tools & Resources | Expert-Curated Downloads | SupportCALL",
@@ -125,7 +125,7 @@ export const MARKETING_OPTIMIZATIONS = {
   // High-converting call-to-action phrases
   ctaPhrases: [
     'Book FREE FIRST Consultation NOW',
-    'Get Instant Quote',
+    'Get Your Quote',
     'Claim Your FREE FIRST Assessment',
     'Emergency Support Available',
     'Talk to Expert Today'

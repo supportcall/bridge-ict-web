@@ -288,9 +288,9 @@ const Services = () => {
               }
             }}
             data-cta="get-quote"
-            aria-label="Get instant quote for ICT services"
+            aria-label="Get quote for ICT services"
           >
-            Get Instant Quote
+            Get Your Quote
           </Button>
         </div>
       </div>

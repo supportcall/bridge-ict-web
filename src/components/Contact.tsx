@@ -262,9 +262,9 @@ const Contact = () => {
           <div className="lg:col-span-2">
             <Card className="shadow-elegant">
               <CardHeader>
-                <CardTitle className="text-2xl">Get Instant FREE Quote</CardTitle>
+                <CardTitle className="text-2xl">Get Your FREE Quote</CardTitle>
                 <p className="text-muted-foreground">
-                  <strong>Fast response guaranteed!</strong> Fill out the form below and get your personalized quote within 24 hours. 
+                  <strong>Fast response guaranteed!</strong> Fill out the form below and get your personalized quote within 24 hours.
                   No hidden fees, no surprises - just honest pricing from ICT experts.
                 </p>
               </CardHeader>

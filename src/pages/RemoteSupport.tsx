@@ -23,9 +23,9 @@ import { generateServiceSchema } from "@/utils/seo";
 const RemoteSupport = () => {
   usePageSEO({
     title: "Remote Support Services | SupportCALL",
-    description: "Instant, secure remote IT support for Windows, macOS, Linux, servers and cloud instances. ScreenConnect-based sessions with enterprise-grade encryption.",
-    keywords: "remote IT support, ScreenConnect, secure remote help, instant tech support",
-    structuredData: generateServiceSchema('SupportCALL Remote Support', 'Secure, instant remote IT support over ScreenConnect with enterprise encryption.')
+    description: "Secure remote IT support for Windows, macOS, Linux, servers and cloud instances. ScreenConnect-based sessions with enterprise-grade encryption.",
+    keywords: "remote IT support, ScreenConnect, secure remote help, professional tech support",
+    structuredData: generateServiceSchema('SupportCALL Remote Support', 'Secure, professional remote IT support over ScreenConnect with enterprise encryption.')
   });
   const features = [
     {
@@ -140,7 +140,7 @@ const RemoteSupport = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Badge variant="secondary" className="mb-4">
-              Instant IT Support
+              Professional IT Support
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Remote Support Services
@@ -170,7 +170,7 @@ const RemoteSupport = () => {
               Why Choose Our Remote Support?
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Professional remote IT support with enterprise-grade security and instant connectivity
+              Professional remote IT support with enterprise-grade security and secure connectivity
             </p>
           </div>
 
@@ -314,10 +314,10 @@ const RemoteSupport = () => {
       <section className="py-20 bg-gradient-dark">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready for Instant IT Support?
+            Ready for Professional IT Support?
           </h2>
           <p className="text-xl text-white/80 mb-8">
-            Connect with our expert technicians in minutes and get your issues resolved quickly and securely.
+            Connect with our expert technicians and get your issues resolved quickly and securely.
           </p>
           <Button 
             variant="premium" 
