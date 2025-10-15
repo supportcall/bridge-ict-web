@@ -18,6 +18,7 @@ import { useToast } from "@/hooks/use-toast";
 import { openBooking } from "@/utils/booking";
 import { validateFormData, sanitizeInput, sanitizeInputRealtime, RateLimiter } from "@/utils/validation";
 import { submitToPhp } from "@/utils/phpFormSubmission";
+import customerSupport from "@/assets/customer-support.jpg";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -188,7 +189,17 @@ const Contact = () => {
         </div>
 
 
-        <div className="text-center mb-16">
+        {/* Friendly Support Image */}
+        <div className="mb-16">
+          <div className="rounded-lg overflow-hidden shadow-elegant max-w-2xl mx-auto">
+            <img 
+              src={customerSupport} 
+              alt="Friendly SupportCALL customer service representative ready to help" 
+              className="w-full h-auto object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">

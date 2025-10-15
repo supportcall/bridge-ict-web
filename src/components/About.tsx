@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, Award, Clock, Heart, Shield, Globe2 } from "lucide-react";
+import professionalTeam from "@/assets/professional-team.jpg";
 
 const About = () => {
   const values = [
@@ -46,8 +47,17 @@ const About = () => {
 
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16">
-          {/* Left Column - Story */}
+          {/* Left Column - Story with Image */}
           <div className="space-y-6">
+            <div className="rounded-lg overflow-hidden shadow-elegant">
+              <img 
+                src={professionalTeam} 
+                alt="Professional SupportCALL team celebrating success with clients" 
+                className="w-full h-auto object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
             <h3 className="text-2xl font-semibold text-foreground">
               Building Trust Through Excellence
             </h3>

@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Quote, Users, Clock, Award, TrendingUp, Shield, Heart } from "lucide-react";
+import teamHelpingClient from "@/assets/team-helping-client.jpg";
 
 const Testimonials = () => {
   const testimonials = [
@@ -58,6 +59,18 @@ const Testimonials = () => {
           </p>
         </div>
 
+        {/* Happy Clients Image */}
+        <div className="mb-16">
+          <div className="rounded-lg overflow-hidden shadow-elegant max-w-4xl mx-auto">
+            <img 
+              src={teamHelpingClient} 
+              alt="Happy clients receiving excellent IT support from SupportCALL team" 
+              className="w-full h-auto object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
 
         {/* Testimonials Grid */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
