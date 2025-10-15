@@ -6,7 +6,7 @@
 export const PAGE_SEO = {
   home: {
     title: "🎉 SPECIAL: 2 Months FREE! | Complete ICT Solutions AU & SA | SupportCALL",
-    description: "⚡ SPECIAL OFFER: Get 2 months FREE ICT TacticalRMM + Emergency Support! 20+ years trusted expertise. Home to enterprise IT solutions. 24/7 emergency response across Australia & South Africa. Book your FREE consultation NOW - Call +27-87-822-2380 or +61-4-9933-5679. Stop losing money to IT problems today!",
+    description: "Professional ICT support from home to enterprise. 20+ years expertise in cybersecurity, monitoring & emergency response. AU & SA. 24/7. Free consultation.",
     keywords: "SupportCALL, IT support, ICT support, FREE consultation, special offer, 2 months free, TacticalRMM, emergency IT support, cybersecurity, managed IT services, enterprise IT solutions, home computer help, business IT support, network security, remote monitoring, technical support, Australia, South Africa, 24/7 support"
   },
   rmm: {
