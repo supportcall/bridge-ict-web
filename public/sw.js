@@ -1,5 +1,5 @@
 // Service Worker for Self-Contained Operation - Enhanced Version
-const CACHE_NAME = 'supportcall-v5';
+const CACHE_NAME = 'supportcall-v6-clean';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -50,18 +50,33 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Activate event - clean up old caches
+// Activate event - clean up old caches and force immediate control
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys()
       .then(cacheNames => {
+        // Delete ALL old caches to ensure fresh content
         return Promise.all(
           cacheNames
             .filter(cacheName => cacheName !== CACHE_NAME)
-            .map(cacheName => caches.delete(cacheName))
+            .map(cacheName => {
+              console.log('Deleting old cache:', cacheName);
+              return caches.delete(cacheName);
+            })
         );
       })
-      .then(() => self.clients.claim())
+      .then(() => {
+        // Force immediate control of all clients
+        return self.clients.claim();
+      })
+      .then(() => {
+        // Notify all clients to reload for fresh content
+        return self.clients.matchAll().then(clients => {
+          clients.forEach(client => {
+            client.postMessage({ type: 'CACHE_UPDATED', cacheName: CACHE_NAME });
+          });
+        });
+      })
   );
 });
 
@@ -70,6 +85,26 @@ self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
   
   const url = new URL(event.request.url);
+  
+  // Always fetch index.html and root from network first to avoid stale content
+  if (url.pathname === '/' || url.pathname === '/index.html' || url.pathname.includes('/index.html')) {
+    event.respondWith(
+      fetch(event.request)
+        .then(response => {
+          if (response && response.status === 200) {
+            const responseToCache = response.clone();
+            caches.open(CACHE_NAME)
+              .then(cache => cache.put(event.request, responseToCache));
+          }
+          return response;
+        })
+        .catch(() => {
+          return caches.match(event.request)
+            .then(response => response || caches.match('/offline.html'));
+        })
+    );
+    return;
+  }
   
   // Handle different caching strategies
   if (CACHE_FIRST.some(pattern => url.pathname.includes(pattern))) {
