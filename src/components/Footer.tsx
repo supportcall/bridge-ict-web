@@ -21,18 +21,13 @@ const Footer = () => {
   const navigate = useNavigate();
   const handleAnchorClick = (href: string) => {
     if (location.pathname !== '/') {
-      navigate('/');
-      // Scroll to anchor after navigation completes
-      setTimeout(() => {
-        const element = document.querySelector(href);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
+      // Navigate to home with hash
+      navigate('/' + href);
     } else {
+      // Already on home page - scroll to element
       const element = document.querySelector(href);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
   };
