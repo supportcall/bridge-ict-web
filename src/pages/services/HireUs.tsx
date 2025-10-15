@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import consultingMeeting from "@/assets/consulting-meeting.jpg";
 import { 
   Users, 
   Briefcase, 
@@ -144,6 +145,19 @@ const HireUs = () => {
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Comprehensive IT support across remote, onsite, and consulting services
             </p>
+          </div>
+
+          {/* Human-friendly Image */}
+          <div className="mb-16">
+            <div className="rounded-lg overflow-hidden shadow-elegant max-w-3xl mx-auto">
+              <img 
+                src={consultingMeeting} 
+                alt="Professional IT consultants collaborating with business clients in modern office" 
+                className="w-full h-auto object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">

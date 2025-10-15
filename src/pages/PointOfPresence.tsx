@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import professionalTeam from "@/assets/professional-team.jpg";
 import { 
   MapPin, 
   Globe, 
@@ -101,6 +102,19 @@ const PointOfPresence = () => {
             <p className="text-lg text-muted-foreground mb-8">
               Explore our point of presence locations in your region
             </p>
+            
+            {/* Human-friendly Image */}
+            <div className="mb-12">
+              <div className="rounded-lg overflow-hidden shadow-elegant max-w-2xl mx-auto">
+                <img 
+                  src={professionalTeam} 
+                  alt="SupportCALL professional team celebrating successful global presence" 
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
             
             <Tabs value={selectedCountry} onValueChange={setSelectedCountry} className="w-full max-w-md mx-auto">
               <TabsList className="grid w-full grid-cols-2">

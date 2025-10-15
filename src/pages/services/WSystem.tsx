@@ -2,6 +2,7 @@ import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import securityMonitoring from "@/assets/security-monitoring.jpg";
 import { 
   Shield, 
   Eye, 
@@ -202,6 +203,19 @@ const WSystem = () => {
               W.system unifies historically separate security functions into a single agent and platform architecture, 
               providing comprehensive protection for your entire infrastructure.
             </p>
+          </div>
+
+          {/* Human-friendly Image */}
+          <div className="mb-16">
+            <div className="rounded-lg overflow-hidden shadow-elegant max-w-3xl mx-auto">
+              <img 
+                src={securityMonitoring} 
+                alt="Professional security specialist monitoring IT systems in modern security operations center" 
+                className="w-full h-auto object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -1,6 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import helpingSenior from "@/assets/helping-senior.jpg";
+import seniorsSupport from "@/assets/seniors-tech-support.jpg";
 import { 
   Heart, 
   Phone, 
@@ -179,6 +181,19 @@ const Seniors = () => {
               Remote support limited to services that can be actioned remotely. For complex issues 
               requiring physical access, on-site support may be necessary at additional cost.
             </p>
+          </div>
+
+          {/* Human-friendly Image */}
+          <div className="mb-16">
+            <div className="rounded-lg overflow-hidden shadow-elegant max-w-3xl mx-auto">
+              <img 
+                src={seniorsSupport} 
+                alt="Happy seniors receiving patient tech support from friendly technician" 
+                className="w-full h-auto object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

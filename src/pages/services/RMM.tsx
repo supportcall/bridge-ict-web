@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import teamHelpingClient from "@/assets/team-helping-client.jpg";
 import { 
   Monitor, 
   Shield, 
@@ -167,6 +168,19 @@ const RMM = () => {
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Proactive monitoring and management tools to keep your business systems running smoothly
             </p>
+          </div>
+
+          {/* Human-friendly Image */}
+          <div className="mb-16">
+            <div className="rounded-lg overflow-hidden shadow-elegant max-w-3xl mx-auto">
+              <img 
+                src={teamHelpingClient} 
+                alt="Professional IT support team helping business clients with monitoring systems" 
+                className="w-full h-auto object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

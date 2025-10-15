@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import remoteSupportTech from "@/assets/remote-support-tech.jpg";
 import { 
   Monitor, 
   Shield, 
@@ -171,6 +172,19 @@ const RemoteSupport = () => {
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Professional remote IT support with enterprise-grade security and instant connectivity
             </p>
+          </div>
+
+          {/* Human-friendly Image */}
+          <div className="mb-16">
+            <div className="rounded-lg overflow-hidden shadow-elegant max-w-3xl mx-auto">
+              <img 
+                src={remoteSupportTech} 
+                alt="IT technician providing friendly remote support to happy clients via video call" 
+                className="w-full h-auto object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
