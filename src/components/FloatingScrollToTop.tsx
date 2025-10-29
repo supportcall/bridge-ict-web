@@ -5,15 +5,20 @@ import { cn } from "@/lib/utils";
 
 const FloatingScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isAtBottom, setIsAtBottom] = useState(false);
 
-  // Show button when page is scrolled down - ALWAYS VISIBLE unless at very top
+  // Show buttons based on scroll position
   const toggleVisibility = () => {
-    const scrollThreshold = 10; // Show almost immediately for maximum user convenience
-    if (window.scrollY > scrollThreshold) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
+    const scrollThreshold = 10;
+    const scrolled = window.scrollY > scrollThreshold;
+    setIsVisible(scrolled);
+    
+    // Check if at bottom (within 50px threshold for better UX)
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.scrollY;
+    const atBottom = scrollTop + windowHeight >= documentHeight - 50;
+    setIsAtBottom(atBottom);
   };
 
   const scrollToTop = () => {
@@ -73,11 +78,12 @@ const FloatingScrollToTop = () => {
             : "translate-y-16 opacity-0 pointer-events-none"
         )}
         aria-label="Scroll to top"
+        tabIndex={isVisible ? 0 : -1}
       >
         <ArrowUp className="h-5 w-5" />
       </Button>
 
-      {/* Scroll to Bottom Button */}
+      {/* Scroll to Bottom Button - Hidden when at bottom */}
       <Button
         onClick={scrollToBottom}
         variant="default"
@@ -87,11 +93,12 @@ const FloatingScrollToTop = () => {
           "bg-primary hover:bg-primary/90 text-primary-foreground",
           "hover:scale-110 hover:shadow-glow",
           "focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
-          isVisible
+          isVisible && !isAtBottom
             ? "translate-y-0 opacity-100 pointer-events-auto"
             : "translate-y-16 opacity-0 pointer-events-none"
         )}
         aria-label="Scroll to bottom"
+        tabIndex={isVisible && !isAtBottom ? 0 : -1}
       >
         <ArrowDown className="h-5 w-5" />
       </Button>
