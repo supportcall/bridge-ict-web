@@ -125,9 +125,9 @@ const Footer = () => {
         <div className="py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-white/60 mb-4 md:mb-0">
-              © {new Date().getFullYear()} SupportCALL. All rights reserved. | ABN 21 498 105 915 | 
-              <a href="https://wiki.supportcall.co.za/doku.php?id=policy_-_privacy_policy" target="_blank" rel="noopener noreferrer" className="hover:text-primary-glow ml-1">Privacy Policy</a>
+              © {new Date().getFullYear()} SupportCALL. All rights reserved. | ABN 21 498 105 915
               <br />
+              <a href="https://wiki.supportcall.co.za/doku.php?id=policy_-_privacy_policy" target="_blank" rel="noopener noreferrer" className="hover:text-primary-glow">Privacy Policy</a> | 
               <a href="https://wiki.supportcall.co.za/doku.php?id=terms_of_enduser_ticket_system_usage" target="_blank" rel="noopener noreferrer" className="hover:text-primary-glow ml-1">Terms of Service</a> | 
               <a href="https://wiki.supportcall.co.za/doku.php?id=terms_of_enduser_signup_debitorder" target="_blank" rel="noopener noreferrer" className="hover:text-primary-glow ml-1">Service Application & Debit Order Terms</a>
             </div>
