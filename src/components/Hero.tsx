@@ -21,15 +21,9 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8 animate-fade-in">
           {/* Badge */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-            <div className="inline-flex items-center px-4 py-2 rounded-full border border-supportcall-orange/20 bg-supportcall-orange/10 text-supportcall-orange text-sm font-medium">
-              <Globe className="w-4 h-4 mr-2" />
-              SupportCALL - Est. 2013 in SA
-            </div>
-            <div className="inline-flex items-center px-4 py-2 rounded-full border border-supportcall-orange/20 bg-supportcall-orange/10 text-supportcall-orange text-sm font-medium">
-              <Globe className="w-4 h-4 mr-2" />
-              Est. 2025 in AU
-            </div>
+          <div className="inline-flex items-center px-4 py-2 rounded-full border border-supportcall-orange/20 bg-supportcall-orange/10 text-supportcall-orange text-sm font-medium">
+            <Globe className="w-4 h-4 mr-2" />
+            SupportCALL - Est. 2013 in SA | Est. 2025 in AU
           </div>
 
           {/* Main Headline - SEO Optimized H1 */}
