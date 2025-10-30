@@ -15,11 +15,11 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // SMTP Configuration - Port 465 with SSL/TLS (Secure Recommended)
-$smtpHost = 'mail.supportcall.com.au';
+$smtpHost = 'supportcall.com.au';
 $smtpPort = 465; // Using port 465 with direct SSL/TLS
-$smtpUsername = 'sendserver@supportcall.com.au';
+$smtpUsername = 'info@supportcall.com.au';
 $smtpPassword = '74Dhm28#74Dhm28#';
-$fromEmail = 'sendserver@supportcall.com.au';
+$fromEmail = 'info@supportcall.com.au';
 $toEmails = ['info@supportcall.com.au', 'info@supportcall.co.za', 'scmyhelp@gmail.com'];
 
 // Get POST data
