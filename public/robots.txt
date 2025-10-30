@@ -17,7 +17,7 @@ Allow: /
 Crawl-delay: 2
 
 # Sitemap location
-Sitemap: https://www.supportcall.co.za/sitemap.xml
+Sitemap: https://www.supportcall.com.au/sitemap.xml
 
 # High-value pages for prioritized crawling
 # FREE consultation landing

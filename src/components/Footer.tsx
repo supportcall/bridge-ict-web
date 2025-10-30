@@ -68,7 +68,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center">
                   <Mail className="w-4 h-4 mr-3 text-primary-glow" />
-                  <span className="text-sm">info@supportcall.com.au | info@supportcall.co.za</span>
+                  <span className="text-sm">info@supportcall.com.au</span>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="w-4 h-4 mr-3 text-primary-glow" />
@@ -99,9 +99,9 @@ const Footer = () => {
               <h4 className="font-semibold text-white mb-4">Company</h4>
               <ul className="space-y-2">
                 <li><button type="button" onClick={() => handleAnchorClick("#about")} className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">About Us</button></li>
-                <li><a href="https://wiki.supportcall.co.za/doku.php?id=supportcall_ausa_company_profile#company_information" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Company Profile</a></li>
-                <li><a href="https://wiki.supportcall.co.za/doku.php?id=buzi_rmm_compli_pricing" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">MSP Partners</a></li>
-                <li><a href="https://supportcall.co.za/forms/SC-RegForm.pdf" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Sign Up Form</a></li>
+                <li><a href="https://wiki.supportcall.com.au/doku.php?id=supportcall_ausa_company_profile#company_information" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Company Profile</a></li>
+                <li><a href="https://wiki.supportcall.com.au/doku.php?id=buzi_rmm_compli_pricing" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">MSP Partners</a></li>
+                <li><a href="https://supportcall.com.au/forms/SC-RegForm.pdf" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Sign Up Form</a></li>
               </ul>
             </div>
 
@@ -110,7 +110,7 @@ const Footer = () => {
               <h4 className="font-semibold text-white mb-4">Support</h4>
               <ul className="space-y-2">
                 <li><a href="https://tickets.supportcall-isp.co.za/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Ticket System</a></li>
-                <li><a href="https://wiki.supportcall.co.za/doku.php" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Our Docuwiki</a></li>
+                <li><a href="https://wiki.supportcall.com.au/doku.php" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Our Docuwiki</a></li>
                 <li><Link to="/links" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Links</Link></li>
                 <li><Link to="/feedback-insights" className="text-white/60 hover:text-primary-glow text-sm transition-colors duration-200">Feedback & Insights</Link></li>
               </ul>
@@ -127,9 +127,9 @@ const Footer = () => {
             <div className="text-sm text-white/60 mb-4 md:mb-0">
               © {new Date().getFullYear()} SupportCALL. All rights reserved. | ABN 21 498 105 915
               <br />
-              <a href="https://wiki.supportcall.co.za/doku.php?id=policy_-_privacy_policy" target="_blank" rel="noopener noreferrer" className="hover:text-primary-glow">Privacy Policy</a> | 
-              <a href="https://wiki.supportcall.co.za/doku.php?id=terms_of_enduser_ticket_system_usage" target="_blank" rel="noopener noreferrer" className="hover:text-primary-glow ml-1">Terms of Service</a> | 
-              <a href="https://wiki.supportcall.co.za/doku.php?id=terms_of_enduser_signup_debitorder" target="_blank" rel="noopener noreferrer" className="hover:text-primary-glow ml-1">Service Application & Debit Order Terms</a>
+              <a href="https://wiki.supportcall.com.au/doku.php?id=policy_-_privacy_policy" target="_blank" rel="noopener noreferrer" className="hover:text-primary-glow">Privacy Policy</a> | 
+              <a href="https://wiki.supportcall.com.au/doku.php?id=terms_of_enduser_ticket_system_usage" target="_blank" rel="noopener noreferrer" className="hover:text-primary-glow ml-1">Terms of Service</a> | 
+              <a href="https://wiki.supportcall.com.au/doku.php?id=terms_of_enduser_signup_debitorder" target="_blank" rel="noopener noreferrer" className="hover:text-primary-glow ml-1">Service Application & Debit Order Terms</a>
             </div>
             
             <div className="text-xs text-white/40">

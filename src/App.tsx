@@ -37,7 +37,7 @@ const App = () => {
           <SkipLink />
           <ScrollToTop />
           <FloatingScrollToTop />
-          <GoogleAnalytics measurementId="G-GNYHGV5NNM" />
+          <GoogleAnalytics measurementId="G-604F9HYTTP" />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/services/rmm" element={<RMM />} />

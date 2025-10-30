@@ -26,11 +26,11 @@ const categories: Category[] = [
   {
     title: "SupportCALL Essentials",
     items: [
-      { name: "Bank details [site]", url: "https://supportcall.co.za/bank.html" },
-      { name: "Speedtest - Telemetry [site]", url: "http://speedtest.supportcall-isp.co.za/" },
-      { name: "SC-Wiki [site]", url: "http://wiki.supportcall.co.za/" },
-      { name: "Ticket System [site]", url: "http://tickets.supportcall-isp.co.za/" },
-      { name: "WebDev - TestSite [site]", url: "https://clientsitetest.supportcall-isp.co.za/" },
+      { name: "Bank details [site]", url: "https://supportcall.com.au/bank.html" },
+      { name: "Speedtest - Telemetry [site]", url: "http://speedtest.supportcall-isp.com.au/" },
+      { name: "SC-Wiki [site]", url: "http://wiki.supportcall.com.au/" },
+      { name: "Ticket System [site]", url: "http://tickets.supportcall-isp.com.au/" },
+      { name: "WebDev - TestSite [site]", url: "https://clientsitetest.supportcall-isp.com.au/" },
       { name: "WAN IP Lookup [site]", url: "https://wanip.io/" }
     ]
   },
@@ -62,8 +62,8 @@ const categories: Category[] = [
       { name: "XnConvert [site]", url: "https://www.xnview.com/en/xnconvert/" },
       { name: "XnConvert 32-bit [DL]", url: "https://download.xnview.com/XnConvert-win.exe" },
       { name: "XnConvert 64-bit [DL]", url: "https://download.xnview.com/XnConvert-win-x64.exe" },
-      { name: "XnConvert profile ZIP [DL]", url: "http://www.supportcall.co.za/sc-extras/sc-resize-aspectfit-50-jpg.zip" },
-      { name: "XnConvert profile XBS [DL]", url: "http://www.supportcall.co.za/sc-extras/sc-resize-aspectfit-50-jpg.xbs" }
+      { name: "XnConvert profile ZIP [DL]", url: "http://www.supportcall.com.au/sc-extras/sc-resize-aspectfit-50-jpg.zip" },
+      { name: "XnConvert profile XBS [DL]", url: "http://www.supportcall.com.au/sc-extras/sc-resize-aspectfit-50-jpg.xbs" }
     ]
   },
   {
@@ -87,20 +87,20 @@ const categories: Category[] = [
   {
     title: "Handy 3rd Party Sites",
     items: [
-      { name: "Handy 3rd Party Sites [site]", url: "https://wiki.supportcall.co.za/doku.php?id=handy_site" }
+      { name: "Handy 3rd Party Sites [site]", url: "https://wiki.supportcall.com.au/doku.php?id=handy_site" }
     ]
   },
   // Newly added categories based on user request
   {
     title: "Remote Support - SupportDesk",
     items: [
-      { name: "Windows x64 (.exe) [DL & Run as Admin]", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.exe" },
-      { name: "Windows x64 (.msi) [DL & Run as Admin]", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.msi" },
-      { name: "Android (.apk) [DL]", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.apk" },
-      { name: "Archive (.zip) [DL]", url: "https://www.supportcall.co.za/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.zip" },
+      { name: "Windows x64 (.exe) [DL & Run as Admin]", url: "https://www.supportcall.com.au/sc-extras/host=scrdp01.supportcall.com.au,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.exe" },
+      { name: "Windows x64 (.msi) [DL & Run as Admin]", url: "https://www.supportcall.com.au/sc-extras/host=scrdp01.supportcall.com.au,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.msi" },
+      { name: "Android (.apk) [DL]", url: "https://www.supportcall.com.au/sc-extras/host=scrdp01.supportcall.com.au,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.apk" },
+      { name: "Archive (.zip) [DL]", url: "https://www.supportcall.com.au/sc-extras/host=scrdp01.supportcall.com.au,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=.zip" },
       { name: "SupportDesk GitHub [site]", url: "https://github.com/rustdesk/rustdesk/releases/latest" },
       { name: "Download Site [site]", url: "http://156.155.253.71:8000/" },
-      { name: "Relay Server (Copy Info)", url: "host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=", type: "copy" }
+      { name: "Relay Server (Copy Info)", url: "host=scrdp01.supportcall.com.au,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqsqI=", type: "copy" }
     ]
   },
   {
@@ -113,10 +113,10 @@ const categories: Category[] = [
   {
     title: "TacticalRMM",
     items: [
-      { name: "Windows Workstation/Desktop x64 [DL & Run as Admin]", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-workstation-amd64.exe" },
-      { name: "Windows Workstation/Desktop x86 [DL & Run as Admin]", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-workstation-386.exe" },
-      { name: "Windows Server x64 [DL & Run as Admin]", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-server-amd64.exe" },
-      { name: "Windows Server x86 [DL & Run as Admin]", url: "https://www.supportcall.co.za/sc-extras/trmm-sc-newclients-server-386.exe" }
+      { name: "Windows Workstation/Desktop x64 [DL & Run as Admin]", url: "https://www.supportcall.com.au/sc-extras/trmm-sc-newclients-workstation-amd64.exe" },
+      { name: "Windows Workstation/Desktop x86 [DL & Run as Admin]", url: "https://www.supportcall.com.au/sc-extras/trmm-sc-newclients-workstation-386.exe" },
+      { name: "Windows Server x64 [DL & Run as Admin]", url: "https://www.supportcall.com.au/sc-extras/trmm-sc-newclients-server-amd64.exe" },
+      { name: "Windows Server x86 [DL & Run as Admin]", url: "https://www.supportcall.com.au/sc-extras/trmm-sc-newclients-server-386.exe" }
     ]
   },
   {

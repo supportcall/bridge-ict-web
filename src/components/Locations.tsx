@@ -10,7 +10,7 @@ const Locations = () => {
       region: "KwaZulu-Natal",
       timezone: "SAST (UTC+2)",
       contact: "+27 (0)87 822 2380",
-      email: "info@supportcall.co.za",
+      email: "info@supportcall.com.au",
       description: "Southern Africa Regional HQ",
       coordinates: { lat: -29.8587, lng: 31.0218 }
     },

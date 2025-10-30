@@ -142,7 +142,7 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email Support",
-      details: ["info@supportcall.com.au", "info@supportcall.co.za"],
+      details: ["info@supportcall.com.au"],
       description: "We aim to respond ASAP, within 24 hours"
     },
     {
