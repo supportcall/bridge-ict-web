@@ -8,7 +8,7 @@ import { toast } from "sonner";
 export const FALLBACK_CONTACT = {
   SA: {
     phone: '+27 (0)87 822 2380',
-    email: 'info@supportcall.co.za',
+    email: 'info@supportcall.com.au',
     address: 'Coordination Centre: Durban, South Africa'
   },
   AU: {

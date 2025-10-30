@@ -17,23 +17,23 @@ export const generateBreadcrumbSchema = (items: Array<{ name: string; url: strin
 // Common breadcrumb paths for service pages
 export const SERVICE_BREADCRUMBS = {
   rmm: [
-    { name: "Home", url: "https://www.supportcall.co.za/" },
-    { name: "Services", url: "https://www.supportcall.co.za/#services" },
-    { name: "Remote Monitoring & Management", url: "https://www.supportcall.co.za/services/rmm" }
+    { name: "Home", url: "https://www.supportcall.com.au/" },
+    { name: "Services", url: "https://www.supportcall.com.au/#services" },
+    { name: "Remote Monitoring & Management", url: "https://www.supportcall.com.au/services/rmm" }
   ],
   wsystem: [
-    { name: "Home", url: "https://www.supportcall.co.za/" },
-    { name: "Services", url: "https://www.supportcall.co.za/#services" },
-    { name: "Security & Compliance", url: "https://www.supportcall.co.za/services/wsystem" }
+    { name: "Home", url: "https://www.supportcall.com.au/" },
+    { name: "Services", url: "https://www.supportcall.com.au/#services" },
+    { name: "Security & Compliance", url: "https://www.supportcall.com.au/services/wsystem" }
   ],
   seniors: [
-    { name: "Home", url: "https://www.supportcall.co.za/" },
-    { name: "Services", url: "https://www.supportcall.co.za/#services" },
-    { name: "Senior Tech Support", url: "https://www.supportcall.co.za/services/seniors" }
+    { name: "Home", url: "https://www.supportcall.com.au/" },
+    { name: "Services", url: "https://www.supportcall.com.au/#services" },
+    { name: "Senior Tech Support", url: "https://www.supportcall.com.au/services/seniors" }
   ],
   hireUs: [
-    { name: "Home", url: "https://www.supportcall.co.za/" },
-    { name: "Services", url: "https://www.supportcall.co.za/#services" },
-    { name: "Hire Us", url: "https://www.supportcall.co.za/services/hire-us" }
+    { name: "Home", url: "https://www.supportcall.com.au/" },
+    { name: "Services", url: "https://www.supportcall.com.au/#services" },
+    { name: "Hire Us", url: "https://www.supportcall.com.au/services/hire-us" }
   ]
 };

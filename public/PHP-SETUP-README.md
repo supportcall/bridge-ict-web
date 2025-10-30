@@ -36,15 +36,15 @@ If using static hosting (like Netlify, Vercel), you need to host the PHP file se
 
 ## SMTP Configuration
 The PHP script is already configured with your SMTP settings:
-- **Host**: mail.supportcall.co.za
+- **Host**: mail.supportcall.com.au
 - **Port**: 465 (SSL/TLS)
-- **Username**: sendserver@supportcall.co.za
-- **Recipient**: info@supportcall.co.za
+- **Username**: sendserver@supportcall.com.au
+- **Recipient**: info@supportcall.com.au
 
 ## Testing
 1. Visit your contact form
 2. Fill out and submit
-3. Check info@supportcall.co.za for the email
+3. Check info@supportcall.com.au for the email
 4. If it fails, check your PHP hosting error logs
 
 ## Security Note
