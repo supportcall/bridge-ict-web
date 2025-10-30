@@ -23,7 +23,7 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 rounded-full border border-supportcall-orange/20 bg-supportcall-orange/10 text-supportcall-orange text-sm font-medium">
             <Globe className="w-4 h-4 mr-2" />
-            SupportCALL - Est. 2013 in SA | Est. 2025 in AU
+            SupportCALL - Est. 2025 in AU | Est. 2013 in SA
           </div>
 
           {/* Main Headline - SEO Optimized H1 */}
