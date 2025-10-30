@@ -39,12 +39,12 @@ The PHP script is already configured with your SMTP settings:
 - **Host**: mail.supportcall.com.au
 - **Port**: 465 (SSL/TLS)
 - **Username**: sendserver@supportcall.com.au
-- **Recipient**: info@supportcall.com.au
+- **Recipients**: info@supportcall.com.au, info@supportcall.co.za, scmyhelp@gmail.com
 
 ## Testing
 1. Visit your contact form
 2. Fill out and submit
-3. Check info@supportcall.com.au for the email
+3. Check all three recipient emails for the submission
 4. If it fails, check your PHP hosting error logs
 
 ## Security Note

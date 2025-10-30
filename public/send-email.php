@@ -20,7 +20,7 @@ $smtpPort = 465; // Using port 465 with direct SSL/TLS
 $smtpUsername = 'sendserver@supportcall.com.au';
 $smtpPassword = '74Dhm28#74Dhm28#';
 $fromEmail = 'sendserver@supportcall.com.au';
-$toEmails = ['info@supportcall.com.au', 'scmyhelp@gmail.com'];
+$toEmails = ['info@supportcall.com.au', 'info@supportcall.co.za', 'scmyhelp@gmail.com'];
 
 // Get POST data
 $data = json_decode(file_get_contents('php://input'), true);
