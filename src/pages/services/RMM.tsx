@@ -143,7 +143,7 @@ const RMM = () => {
             <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
               SupportCALL RMM offers extensive Remote Monitoring and Management services,
               designed to ensure your IT systems run at peak performance while we handle the technical 
-              details—maintaining security, reliability, and efficiency.
+              details-maintaining security, reliability, and efficiency.
             </p>
             <div className="flex justify-center">
               <Button 

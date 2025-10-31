@@ -109,7 +109,7 @@ const Testimonials = () => {
                     "{testimonial.testimonial}"
                   </p>
                   <div className="text-sm text-muted-foreground font-medium">
-                    — {testimonial.contact}
+                    - {testimonial.contact}
                   </div>
                 </div>
               </CardContent>

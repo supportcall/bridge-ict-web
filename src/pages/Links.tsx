@@ -106,8 +106,8 @@ const categories: Category[] = [
   {
     title: "Remote Support - Google Remote Desktop",
     items: [
-      { name: "Client — MSI [DL]", url: "https://dl.google.com/dl/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi" },
-      { name: "Web Client — Run in Browser [site]", url: "https://remotedesktop.google.com/support/" }
+      { name: "Client - MSI [DL]", url: "https://dl.google.com/dl/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi" },
+      { name: "Web Client - Run in Browser [site]", url: "https://remotedesktop.google.com/support/" }
     ]
   },
   {
@@ -120,13 +120,13 @@ const categories: Category[] = [
     ]
   },
   {
-    title: "AnyDesk — No Longer Supported",
+    title: "AnyDesk - No Longer Supported",
     items: [
       { name: "Download AnyDesk [site]", url: "https://anydesk.com/download" }
     ]
   },
   {
-    title: "TeamViewer — No Longer Supported",
+    title: "TeamViewer - No Longer Supported",
     items: [
       { name: "Download Latest TeamViewer [site]", url: "https://download.teamviewer.com/full" },
       { name: "TeamViewer v14 Portable [DL]", url: "https://download.teamviewer.com/download/version_14x/TeamViewerPortable.zip" },
