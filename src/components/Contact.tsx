@@ -166,6 +166,7 @@ const Contact = () => {
     "Security & Compliance",
     "Senior Care",
     "Consultation",
+    "Investment",
     "Join our Team",
     "MSP Partnering"
   ];
