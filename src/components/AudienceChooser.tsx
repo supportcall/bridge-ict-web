@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 import { Building2, Briefcase, Home as HomeIcon, ShieldCheck, Headphones } from "lucide-react";
@@ -232,12 +232,6 @@ const audiences = [
 
 interface AudienceChooserProps { extraNote?: React.ReactNode; }
 const AudienceChooser: React.FC<AudienceChooserProps> = ({ extraNote }) => {
-  const [openCard, setOpenCard] = useState<string | null>(null);
-
-  const toggleCard = (name: string) => {
-    setOpenCard(openCard === name ? null : name);
-  };
-
   return (
     <section aria-labelledby="audience-heading" className="bg-background border-y border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -252,11 +246,7 @@ const AudienceChooser: React.FC<AudienceChooserProps> = ({ extraNote }) => {
 
         <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {audiences.map(({ name, Icon, categories }) => (
-            <Card 
-              key={name} 
-              className="hover:shadow-lg transition-shadow cursor-pointer"
-              onClick={() => toggleCard(name)}
-            >
+            <Card key={name} className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-muted">
@@ -267,8 +257,11 @@ const AudienceChooser: React.FC<AudienceChooserProps> = ({ extraNote }) => {
               </CardHeader>
               <CardContent className="space-y-3 text-sm text-muted-foreground">
                 <p><em>All ICT services are available, but primary focus services in this sector are:</em></p>
-                {openCard === name && (
-                  <div className="mt-3 space-y-4 animate-fade-in">
+                <details className="group">
+                  <summary className="cursor-pointer text-primary underline underline-offset-4">
+                    View focus services
+                  </summary>
+                  <div className="mt-3 space-y-4">
                     {categories.map((cat) => (
                       <article key={cat.title}>
                         <h3 className="font-medium text-foreground">{cat.title}</h3>
@@ -287,12 +280,7 @@ const AudienceChooser: React.FC<AudienceChooserProps> = ({ extraNote }) => {
                       </article>
                     ))}
                   </div>
-                )}
-                {openCard !== name && (
-                  <p className="text-primary underline underline-offset-4">
-                    Click to view focus services
-                  </p>
-                )}
+                </details>
               </CardContent>
             </Card>
           ))}
