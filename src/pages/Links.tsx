@@ -27,10 +27,10 @@ const categories: Category[] = [
     title: "SupportCALL Essentials",
     items: [
       { name: "Bank details [site]", url: "https://supportcall.com.au/bank.html" },
-      { name: "Speedtest - Telemetry [site]", url: "http://speedtest.supportcall-isp.com.au/" },
+      { name: "Speedtest - Telemetry [site]", url: "http://speedtest.supportcall-isp.co.za/" },
       { name: "SC-Wiki [site]", url: "http://wiki.supportcall.com.au/" },
-      { name: "Ticket System [site]", url: "http://tickets.supportcall-isp.com.au/" },
-      { name: "WebDev - TestSite [site]", url: "https://clientsitetest.supportcall-isp.com.au/" },
+      { name: "Ticket System [site]", url: "http://tickets.supportcall-isp.co.za/" },
+      { name: "WebDev - TestSite [site]", url: "https://clientsitetest.supportcall-isp.co.za/" },
       { name: "WAN IP Lookup [site]", url: "https://wanip.io/" }
     ]
   },
