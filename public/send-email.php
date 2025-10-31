@@ -126,7 +126,7 @@ if (!empty($additionalInfo)) {
 }
 
 $emailBody .= '    <div class="timestamp">
-                Submitted: ' . date('l, F j, Y \a\t g:i A') . '
+                Submitted: ' . date('l, F j, Y \a\t g:i A T (P)') . '
             </div>
         </div>
         <div class="footer">
