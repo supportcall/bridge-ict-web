@@ -11,6 +11,7 @@ const FloatingScrollToTop = () => {
   const toggleVisibility = () => {
     const scrollThreshold = 10;
     const scrolled = window.scrollY > scrollThreshold;
+    const isAtTop = window.scrollY <= scrollThreshold;
     setIsVisible(scrolled);
     
     // Check if at bottom (within 50px threshold for better UX)
@@ -63,7 +64,7 @@ const FloatingScrollToTop = () => {
 
   return (
     <>
-      {/* Scroll to Top Button */}
+      {/* Scroll to Top Button - Always visible except when at top */}
       <Button
         onClick={scrollToTop}
         variant="default"
@@ -73,9 +74,9 @@ const FloatingScrollToTop = () => {
           "bg-primary hover:bg-primary/90 text-primary-foreground",
           "hover:scale-110 hover:shadow-glow",
           "focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
-          isVisible
-            ? "translate-y-0 opacity-100 pointer-events-auto"
-            : "translate-y-16 opacity-0 pointer-events-none"
+          !isVisible
+            ? "translate-y-16 opacity-0 pointer-events-none"
+            : "translate-y-0 opacity-100 pointer-events-auto"
         )}
         aria-label="Scroll to top"
         tabIndex={isVisible ? 0 : -1}
@@ -83,7 +84,7 @@ const FloatingScrollToTop = () => {
         <ArrowUp className="h-5 w-5" />
       </Button>
 
-      {/* Scroll to Bottom Button - Hidden when at bottom */}
+      {/* Scroll to Bottom Button - Always visible except when at top or bottom */}
       <Button
         onClick={scrollToBottom}
         variant="default"
@@ -93,9 +94,9 @@ const FloatingScrollToTop = () => {
           "bg-primary hover:bg-primary/90 text-primary-foreground",
           "hover:scale-110 hover:shadow-glow",
           "focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
-          isVisible && !isAtBottom
-            ? "translate-y-0 opacity-100 pointer-events-auto"
-            : "translate-y-16 opacity-0 pointer-events-none"
+          !isVisible || isAtBottom
+            ? "translate-y-16 opacity-0 pointer-events-none"
+            : "translate-y-0 opacity-100 pointer-events-auto"
         )}
         aria-label="Scroll to bottom"
         tabIndex={isVisible && !isAtBottom ? 0 : -1}

@@ -79,6 +79,7 @@ const Navigation = () => {
               className="h-10 w-10 mr-3"
               width="40"
               height="40"
+              fetchPriority="high"
             />
             <span className="text-xl font-bold text-primary">SupportCALL</span>
           </div>
