@@ -28,7 +28,7 @@ const RMM = () => {
   usePageSEO({ 
     ...generateMarketingMeta('rmm'), 
     structuredData: [
-      generateServiceSchema('SupportCALL TacticalRMM', 'Remote monitoring & management with proactive alerts, patching, asset tracking, and automation.'),
+      generateServiceSchema('SupportCALL RMM', 'Remote monitoring & management with proactive alerts, patching, asset tracking, and automation.'),
       generateBreadcrumbSchema(SERVICE_BREADCRUMBS.rmm)
     ]
   });
@@ -135,13 +135,13 @@ const RMM = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Badge variant="secondary" className="mb-4">
-              SupportCALL TacticalRMM
+              SupportCALL RMM
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              SupportCALL TacticalRMM - Confidence in Your IT Systems
+              SupportCALL RMM - Confidence in Your IT Systems
             </h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
-              SupportCALL TacticalRMM offers extensive Remote Monitoring and Management services, 
+              SupportCALL RMM offers extensive Remote Monitoring and Management services,
               designed to ensure your IT systems run at peak performance while we handle the technical 
               details—maintaining security, reliability, and efficiency.
             </p>
@@ -163,7 +163,7 @@ const RMM = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Key Features of SupportCALL TacticalRMM
+              Key Features of SupportCALL RMM
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Proactive monitoring and management tools to keep your business systems running smoothly
@@ -210,7 +210,7 @@ const RMM = () => {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Why Choose SupportCALL TacticalRMM?
+              Why Choose SupportCALL RMM?
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               We don't just monitor; we act. Our proactive approach identifies and resolves potential 
@@ -234,7 +234,7 @@ const RMM = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              TacticalRMM Service Packages
+              RMM Service Packages
             </h2>
             <div className="flex justify-center mb-6">
               <CurrencySelector onCurrencyChange={setCurrency} selectedCurrency={currency} />
@@ -283,7 +283,7 @@ const RMM = () => {
             Ready to Transform Your IT Management?
           </h2>
           <p className="text-xl text-white/80 mb-8">
-            Join other businesses that trust SupportCALL TacticalRMM for their IT infrastructure.
+            Join other businesses that trust SupportCALL RMM for their IT infrastructure.
           </p>
         </div>
       </section>

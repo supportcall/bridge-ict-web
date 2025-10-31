@@ -45,7 +45,7 @@ const Navigation = () => {
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
             <div className="flex items-center gap-2 flex-1">
               <span className="font-bold text-sm sm:text-base text-destructive">SPECIAL OFFER:</span>
-              <span className="text-sm sm:text-base">2 months FREE ICT TacticalRMM + Emergency Remote Support Plan - Book Today!</span>
+              <span className="text-sm sm:text-base">2 months FREE ICT RMM + Emergency Remote Support Plan - Book Today!</span>
             </div>
             <div className="flex items-center gap-3 flex-shrink-0">
               <Button 

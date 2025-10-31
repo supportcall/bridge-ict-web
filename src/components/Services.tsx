@@ -31,15 +31,15 @@ const Services = () => {
   // SEO optimization for services section
   usePageSEO({
     title: "Comprehensive ICT Services | SupportCALL - Remote Monitoring, Security & Tech Support",
-    description: "Expert ICT services including TacticalRMM monitoring, W.system security, senior care support, and local tech sourcing. Professional IT solutions that drive real results.",
-    keywords: "ICT services, remote monitoring, IT security, senior tech support, TacticalRMM, W.system, local tech support, IT consulting",
+    description: "Expert ICT services including RMM monitoring, W.system security, senior care support, and local tech sourcing. Professional IT solutions that drive real results.",
+    keywords: "ICT services, remote monitoring, IT security, senior tech support, RMM, W.system, local tech support, IT consulting",
     structuredData: generateServiceSchema('SupportCALL ICT Services', 'Comprehensive ICT solutions including remote monitoring, security, compliance, and specialized support services.')
   });
 
   const primaryServices = [
     {
       icon: <Server className="w-8 h-8" />,
-      title: "TacticalRMM - Remote Management & Monitoring",
+      title: "SupportCALL RMM - Remote Management & Monitoring",
       description: "Proactive system monitoring with real-time alerts, automated patch management, security checks, and remote issue resolution to keep your IT infrastructure running at peak performance.",
       features: ["Proactive Monitoring", "Patch Management", "Security Checks", "Remote Issue Resolution", "Automated Maintenance"]
     },
@@ -109,7 +109,7 @@ const Services = () => {
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             <strong>Don't let IT problems cost you money.</strong><br />
-            From TacticalRMM monitoring and W.system security to local tech sourcing for remote locations, 
+            From RMM monitoring and W.system security to local tech sourcing for remote locations, 
             we provide <span className="text-primary font-semibold">genuine ICT services that work</span> - including specialized support where no local 
             technical assistance is available.<br />
             <strong className="text-primary font-semibold">Get your FREE consultation today!</strong>

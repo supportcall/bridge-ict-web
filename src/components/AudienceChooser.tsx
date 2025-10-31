@@ -11,7 +11,7 @@ const audiences = [
     Icon: Building2,
     categories: [
       {
-        title: "TacticalRMM (Remote Monitoring & Managment)",
+        title: "SupportCALL RMM (Remote Monitoring & Management)",
         items: [
           "Remote system monitoring",
           "Automated patch management",
@@ -74,7 +74,7 @@ const audiences = [
     Icon: Briefcase,
     categories: [
       {
-        title: "TacticalRMM (Remote Monitoring & Managment)",
+        title: "SupportCALL RMM (Remote Monitoring & Management)",
         items: [
           "Remote system monitoring",
           "Automated patch management",
@@ -137,7 +137,7 @@ const audiences = [
     Icon: HomeIcon,
     categories: [
       {
-        title: "TacticalRMM (Remote Monitoring & Managment)",
+        title: "SupportCALL RMM (Remote Monitoring & Management)",
         items: [
           "Remote system monitoring",
           "Automated patch management",
@@ -197,7 +197,7 @@ const audiences = [
     Icon: Headphones,
     categories: [
       {
-        title: "TacticalRMM (Remote Monitoring & Managment)",
+        title: "SupportCALL RMM (Remote Monitoring & Management)",
         items: [
           "Remote system monitoring",
           "Automated patch management",
