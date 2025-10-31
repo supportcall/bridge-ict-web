@@ -33,7 +33,7 @@ const Services = () => {
     title: "Comprehensive ICT Services | SupportCALL - Remote Monitoring, Security & Tech Support",
     description: "Expert ICT services including RMM monitoring, W.system security, senior care support, and local tech sourcing. Professional IT solutions that drive real results.",
     keywords: "ICT services, remote monitoring, IT security, senior tech support, RMM, W.system, local tech support, IT consulting",
-    structuredData: generateServiceSchema('SupportCALL ICT Services', 'Comprehensive ICT solutions including remote monitoring, security, compliance, and specialized support services.')
+    structuredData: generateServiceSchema('SupportCALL ICT Services', 'Comprehensive ICT solutions including remote monitoring, security, compliance, and specialised support services.')
   });
 
   const primaryServices = [
@@ -58,7 +58,7 @@ const Services = () => {
     {
       icon: <Heart className="w-8 h-8" />,
       title: "Peace of Mind for Seniors", 
-      description: "Specialized reduced-cost monthly remote support service for verified pensioners and retired users, providing patient and comprehensive tech assistance.",
+      description: "Specialised reduced-cost monthly remote support service for verified pensioners and retired users, providing patient and comprehensive tech assistance.",
       features: ["Reduced Monthly Fee", "Senior-Friendly Support", "Remote Assistance", "Verified Eligibility", "Patient Guidance"]
     }
   ];
@@ -110,7 +110,7 @@ const Services = () => {
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             <strong>Don't let IT problems cost you money.</strong><br />
             From RMM monitoring and W.system security to local tech sourcing for remote locations, 
-            we provide <span className="text-primary font-semibold">genuine ICT services that work</span> - including specialized support where no local 
+            we provide <span className="text-primary font-semibold">genuine ICT services that work</span> - including specialised support where no local 
             technical assistance is available.<br />
             <strong className="text-primary font-semibold">Get your FREE consultation today!</strong>
           </p>
@@ -176,10 +176,10 @@ const Services = () => {
           ))}
         </div>
 
-        {/* Specialized Services */}
+        {/* Specialised Services */}
         <div className="mb-16">
           <h3 className="text-2xl font-semibold text-foreground mb-8 text-center">
-            Specialized Services
+            Specialised Services
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {specializedServices.map((service, index) => (

@@ -5,12 +5,12 @@ import heroImage from "@/assets/hero-tech.jpg";
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Optimized Background Image with lazy loading */}
+      {/* Optimised Background Image with lazy loading */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ 
           backgroundImage: `url(${heroImage})`,
-          willChange: 'transform', // Optimize for animations
+          willChange: 'transform', // Optimise for animations
           backfaceVisibility: 'hidden' // Improve performance
         }}
       >
@@ -26,7 +26,7 @@ const Hero = () => {
             SupportCALL - Est. 2025 in AU | Est. 2013 in SA
           </div>
 
-          {/* Main Headline - SEO Optimized H1 */}
+          {/* Main Headline - SEO Optimised H1 */}
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
             Get{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">

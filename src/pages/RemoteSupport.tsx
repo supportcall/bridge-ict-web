@@ -93,7 +93,7 @@ const RemoteSupport = () => {
       problems: [
         "Application installation",
         "Software updates",
-        "License activation",
+        "Licence activation",
         "Configuration issues"
       ]
     },

@@ -213,7 +213,7 @@ const audiences = [
           "Software installation updates",
           "Virus malware protection",
           "Virus malware removal",
-          "Scammer analises and guidance",
+          "Scammer analyses and guidance",
           "Data backup recovery (optional)",
           "ICT trouble shooting",
         ],

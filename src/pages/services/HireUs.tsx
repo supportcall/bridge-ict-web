@@ -75,7 +75,7 @@ const HireUs = () => {
       zarRate: "Premium rates apply",
       audRate: "Premium rates apply",
       usdRate: "Premium rates apply",
-      description: "XCP-ng, HAProxy, TrueNAS and specialized systems"
+      description: "XCP-ng, HAProxy, TrueNAS and specialised systems"
     }
   ];
 
