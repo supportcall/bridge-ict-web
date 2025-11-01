@@ -95,8 +95,8 @@ const categories: Category[] = [
     title: "Remote Support - SupportDesk",
     items: [
       { name: "Latest install script (cmd) [DL & Run as Admin]", url: "https://www.supportcall.com.au/sc-extras/Install-SupportDESK-Latest-and-ApplyConfig.cmd" },
-      { name: "Windows x64 (.exe) [DL & Run as Admin]", url: "https://www.supportcall.com.au/sc-extras/rustdesk-1.4.3-x86_64.exe" },
-      { name: "Windows x64 (.msi) [DL & Run as Admin]", url: "https://www.supportcall.com.au/sc-extras/rustdesk-1.4.3-x86_64.msi" },
+      { name: "Windows x64 (.exe) [DL & Run as Admin]", url: "https://www.supportcall.com.au/sc-extras/rustdesk-1.4-3-x86_64.exe" },
+      { name: "Windows x64 (.msi) [DL & Run as Admin]", url: "https://www.supportcall.com.au/sc-extras/rustdesk-1.4-3-x86_64.msi" },
       { name: "Android (.apk) [DL]", url: "https://www.supportcall.com.au/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqzqI=.apk" },
       { name: "Archive (.zip) [DL]", url: "https://www.supportcall.com.au/sc-extras/host=scrdp01.supportcall.co.za,key=tOs01oX2M9d2RfgqinSaGklv5eJZDw8ViTabWlTqzqI=.zip" },
       { name: "SupportDesk GitHub [site]", url: "https://github.com/rustdesk/rustdesk/releases/latest" },
