@@ -8,6 +8,7 @@ import { openBooking } from "@/utils/booking";
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showBanner, setShowBanner] = useState(true);
+  const [showSurveyBanner, setShowSurveyBanner] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -60,6 +61,34 @@ const Navigation = () => {
                 onClick={() => setShowBanner(false)}
                 className="text-white hover:text-white/70 transition-colors p-1"
                 aria-label="Close banner"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Survey Banner */}
+      {showSurveyBanner && (
+        <div className="bg-[#2a2a2a] text-white py-3 px-4 relative z-50 border-b border-white/10">
+          <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+            <div className="flex items-center gap-2 flex-1">
+              <span className="text-sm sm:text-base">In an effort to serve you best at a price point that works for you, please complete our survey</span>
+            </div>
+            <div className="flex items-center gap-3 flex-shrink-0">
+              <Link to="/surveys/client-service-interest-pricing">
+                <Button 
+                  size="sm"
+                  className="bg-cyan-500 hover:bg-cyan-600 text-white border-0"
+                >
+                  Take Survey
+                </Button>
+              </Link>
+              <button
+                onClick={() => setShowSurveyBanner(false)}
+                className="text-white hover:text-white/70 transition-colors p-1"
+                aria-label="Close survey banner"
               >
                 <X className="h-5 w-5" />
               </button>
