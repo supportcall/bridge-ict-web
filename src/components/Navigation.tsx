@@ -46,7 +46,7 @@ const Navigation = () => {
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
             <div className="flex items-center gap-2 flex-1">
               <span className="font-bold text-sm sm:text-base text-destructive">SPECIAL OFFER:</span>
-              <span className="text-sm sm:text-base">2 months FREE ICT RMM + Emergency Remote Support Plan - Book Today!</span>
+              <span className="text-sm sm:text-base">Sign up for 6 months and get 2 months FREE - Book Today!</span>
             </div>
             <div className="flex items-center gap-3 flex-shrink-0">
               <Button 
@@ -74,7 +74,8 @@ const Navigation = () => {
         <div className="bg-[#2a2a2a] text-white py-3 px-4 relative z-50 border-b border-white/10">
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
             <div className="flex items-center gap-2 flex-1">
-              <span className="text-sm sm:text-base">In an effort to serve you best at a price point that works for you, please complete our survey</span>
+              <span className="font-bold text-sm sm:text-base text-destructive">RATE SURVEY:</span>
+              <span className="text-sm sm:text-base">Help us serve you better at pricing that works for you - share your feedback</span>
             </div>
             <div className="flex items-center gap-3 flex-shrink-0">
               <Link to="/surveys/client-service-interest-pricing">
