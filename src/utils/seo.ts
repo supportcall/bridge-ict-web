@@ -5,13 +5,13 @@
 // Dynamic meta tags for different pages - MAXIMIZED for marketing impact and conversion
 export const PAGE_SEO = {
   home: {
-    title: "🎉 SPECIAL: 2 Months FREE! | Complete ICT Solutions AU & SA | SupportCALL",
+    title: "SPECIAL: 2 Months FREE! | Complete ICT Solutions AU & SA | SupportCALL",
     description: "Professional ICT support from home to enterprise. 20+ years expertise in cybersecurity, monitoring & emergency response. AU & SA. 24/7. Free consultation.",
     keywords: "SupportCALL, IT support, ICT support, FREE consultation, special offer, 2 months free, RMM, emergency IT support, cybersecurity, managed IT services, enterprise IT solutions, home computer help, business IT support, network security, remote monitoring, technical support, Australia, South Africa, 24/7 support"
   },
   rmm: {
-    title: "🎉 2 Months FREE RMM! | Remote Monitoring & Management | SupportCALL",
-    description: "⚡ LIMITED TIME: 2 months FREE RMM + Emergency Remote Support! Stop downtime before it costs you thousands. 24/7 proactive monitoring, automated patching, instant security alerts. Enterprise-grade protection at SME prices. Book FREE consultation NOW - +27-87-822-2380. Available across AU & SA.",
+    title: "2 Months FREE RMM! | Remote Monitoring & Management | SupportCALL",
+    description: "LIMITED TIME: 2 months FREE RMM + Emergency Remote Support! Stop downtime before it costs you thousands. 24/7 proactive monitoring, automated patching, instant security alerts. Enterprise-grade protection at SME prices. Book FREE consultation NOW - +27-87-822-2380. Available across AU & SA.",
     keywords: "RMM, free offer, 2 months free, remote monitoring, managed IT services, proactive IT support, automated patching, system monitoring, RMM solutions, prevent downtime, emergency support, SupportCALL, Australia, South Africa"
   },
   wsystem: {
