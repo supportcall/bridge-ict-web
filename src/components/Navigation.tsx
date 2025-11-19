@@ -46,7 +46,7 @@ const Navigation = () => {
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
             <div className="flex items-center gap-2 flex-1">
               <span className="font-bold text-sm sm:text-base text-destructive">SPECIAL OFFER:</span>
-              <span className="text-sm sm:text-base">Sign up for 6 months and get 2 months FREE - Book Today!</span>
+              <span className="text-sm sm:text-base">2 Months FREE! Sign up for 6 months and get 2 months FREE RMM - Book Today!</span>
             </div>
             <div className="flex items-center gap-3 flex-shrink-0">
               <Button 
