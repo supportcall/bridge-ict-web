@@ -76,7 +76,7 @@ const Hero = () => {
                 element.scrollIntoView({ behavior: 'smooth' });
               }
             }}>
-              See Client Results
+              See Client Testimonials
             </Button>
           </div>
 
