@@ -74,8 +74,8 @@ const Navigation = () => {
         <div className="bg-[#2a2a2a] text-white py-3 px-4 relative z-50 border-b border-white/10">
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
             <div className="flex items-center gap-2 flex-1">
-              <span className="font-bold text-sm sm:text-base text-destructive">RATE SURVEY:</span>
-              <span className="text-sm sm:text-base">Help us serve you better at pricing that works for you - Share Your Expectations Now!</span>
+              <span className="font-bold text-sm sm:text-base text-destructive">RATES SURVEY:</span>
+              <span className="text-sm sm:text-base">We trust our service - help us keep pricing fair and right for you - Take Survey!</span>
             </div>
             <div className="flex items-center gap-3 flex-shrink-0">
               <Link to="/surveys/client-service-interest-pricing">
