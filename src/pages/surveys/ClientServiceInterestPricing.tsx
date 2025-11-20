@@ -362,12 +362,29 @@ const ClientServiceInterestPricing = () => {
                         {group.items.map((item) => (
                           <li key={item} className="flex items-center justify-between gap-3">
                             <label className="flex items-center gap-2">
-                              <input type="checkbox" name={`services[${item}]`} className="h-4 w-4" />
+                              <input 
+                                type="checkbox" 
+                                name={`services[${item}]`} 
+                                id={`checkbox-${item}`}
+                                className="h-4 w-4" 
+                              />
                               <span>{item}</span>
                             </label>
                             <div className="flex items-center gap-2">
                               <span className="text-sm text-muted-foreground">Rate (1-3)</span>
-                              <Input type="number" name={`ratings[${item}]`} min={1} max={3} className="w-20" />
+                              <Input 
+                                type="number" 
+                                name={`ratings[${item}]`} 
+                                min={1} 
+                                max={3} 
+                                className="w-20"
+                                onChange={(e) => {
+                                  const checkbox = document.getElementById(`checkbox-${item}`) as HTMLInputElement;
+                                  if (checkbox && e.target.value) {
+                                    checkbox.checked = true;
+                                  }
+                                }}
+                              />
                             </div>
                           </li>
                         ))}
@@ -377,12 +394,29 @@ const ClientServiceInterestPricing = () => {
 
                   <div>
                     <label className="flex items-center gap-2">
-                      <input type="checkbox" name="services[Other]" className="h-4 w-4" />
+                      <input 
+                        type="checkbox" 
+                        name="services[Other]" 
+                        id="checkbox-Other"
+                        className="h-4 w-4" 
+                      />
                       <span>Other</span>
                     </label>
                     <div className="mt-2 grid md:grid-cols-[1fr_100px] gap-3">
                       <Input name="other_service" placeholder="Other (please specify)" />
-                      <Input type="number" name="ratings[Other]" min={1} max={3} placeholder="1-3" />
+                      <Input 
+                        type="number" 
+                        name="ratings[Other]" 
+                        min={1} 
+                        max={3} 
+                        placeholder="1-3"
+                        onChange={(e) => {
+                          const checkbox = document.getElementById('checkbox-Other') as HTMLInputElement;
+                          if (checkbox && e.target.value) {
+                            checkbox.checked = true;
+                          }
+                        }}
+                      />
                     </div>
                   </div>
                 </CardContent>
