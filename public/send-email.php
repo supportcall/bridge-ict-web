@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $smtpHost = 'mail.supportcall.com.au';
 $smtpPort = 465; // Using port 465 with direct SSL/TLS
 $smtpUsername = 'sendserver@supportcall.com.au';
-$smtpPassword = '74Dhm28#74Dhm28#';
+$smtpPassword = 'sendserver@OOGlid16}K%-25';
 $fromEmail = 'sendserver@supportcall.com.au';
 $toEmails = ['info@supportcall.com.au', 'info@supportcall.co.za', 'scmyhelp@gmail.com'];
 
